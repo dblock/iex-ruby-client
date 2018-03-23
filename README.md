@@ -25,9 +25,10 @@ Fetches a single stock quote.
 ```ruby
 quote = IEX::Quote.get('MSFT')
 
-quote.last_trade_price # 84.26
-quote.change # 0.09
-quote.change_percent # 0.11
+quote.latest_price # 90.165
+quote.change # 0.375
+quote.change_percent # 0.00418
+quote.change_percent_s # '+0.42%'
 ```
 
 See [#quote](https://iextrading.com/developer/docs/#quote) for detailed documentation or [quote.rb](lib/iex/quote.rb) for returned fields.

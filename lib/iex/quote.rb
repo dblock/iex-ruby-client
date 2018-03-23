@@ -37,6 +37,14 @@ module IEX
     property 'week_52_low', from: 'week52Low'
     property 'ytd_change', from: 'ytdChange'
 
+    def change_percent_s
+      [
+        change_percent > 0 ? '+' : '',
+        format('%.2f', change_percent * 100),
+        '%'
+      ].join
+    end
+
     def self.get(symbol)
       new IEX::Api::Quote.get(q: symbol)
     rescue Faraday::ResourceNotFound => e

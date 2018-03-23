@@ -17,6 +17,7 @@ describe IEX::Quote do
       expect(subject.week_52_high).to eq 97.24
       expect(subject.week_52_low).to eq 64.35
       expect(subject.change_percent).to eq 0.00418
+      expect(subject.change_percent_s).to eq '+0.42%'
     end
   end
   context 'invalid symbol', vcr: { cassette_name: 'invalid' } do
