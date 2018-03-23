@@ -45,4 +45,4 @@ Copyright (c) 2018, [Daniel Doubrovkine](https://twitter.com/dblockdotorg) and [
 
 This project is licensed under the [MIT License](LICENSE.md).
 
-Data provided for free by [IEX](https://iextrading.com/developer), see [terms](https://iextrading.com/api-exhibit-a).
+Data provided for free by [IEX](https://iextrading.com/developer), see [terms](https://iextrading.com/api-terms).
