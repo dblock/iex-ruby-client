@@ -1,0 +1,1 @@
+require_relative 'errors/symbol_not_found_error'

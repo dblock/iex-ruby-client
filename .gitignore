@@ -1,0 +1,6 @@
+.env
+pkg
+Gemfile.lock
+.DS_Store
+.bundle
+.idea

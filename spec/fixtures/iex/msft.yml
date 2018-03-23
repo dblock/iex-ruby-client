@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.iextrading.com/1.0/stock/MSFT/quote
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 23 Mar 2018 15:15:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '836'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=d3f239a37b4141acbf609e8663f3302a; Domain=.iextrading.com; Path=/; Expires=Sat,
+        24 Mar 2018 03:15:57 GMT; Secure
+      Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
+        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+      X-Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
+        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+      Frame-Options:
+      - deny
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: UTF-8
+      string: '{"symbol":"MSFT","companyName":"Microsoft Corporation","primaryExchange":"Nasdaq
+        Global Select","sector":"Technology","calculationPrice":"tops","open":89.45,"openTime":1521811800352,"close":89.79,"closeTime":1521748800315,"high":90.46,"low":89.161,"latestPrice":90.165,"latestSource":"IEX
+        real time price","latestTime":"11:15:45 AM","latestUpdate":1521818145007,"latestVolume":10015072,"iexRealtimePrice":90.165,"iexRealtimeSize":200,"iexLastUpdated":1521818145007,"delayedPrice":90.34,"delayedPriceTime":1521817252749,"previousClose":89.79,"change":0.375,"changePercent":0.00418,"iexMarketPercent":0.03178,"iexVolume":318279,"avgTotalVolume":32176892,"iexBidPrice":89.8,"iexBidSize":100,"iexAskPrice":92.31,"iexAskSize":100,"marketCap":694251822501,"peRatio":27.32,"week52High":97.24,"week52Low":64.35,"ytdChange":0.049583743433526506}'
+    http_version: 
+  recorded_at: Fri, 23 Mar 2018 15:15:57 GMT
+recorded_with: VCR 4.0.0
