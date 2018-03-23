@@ -9,7 +9,7 @@ describe IEX::Quote do
       expect(subject.symbol).to eq 'MSFT'
       expect(subject.primary_exchange).to eq 'Nasdaq Global Select'
       expect(subject.company_name).to eq 'Microsoft Corporation'
-      expect(subject.market_cap).to eq 694251822501
+      expect(subject.market_cap).to eq 694_251_822_501
     end
     it 'coerces numbers' do
       expect(subject.latest_price).to eq 90.165
