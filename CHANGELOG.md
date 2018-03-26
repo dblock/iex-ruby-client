@@ -1,5 +1,6 @@
 ### 0.3.0 (Next)
 
+* Added `IEX::Resources::News#get` - [@dblock](https://github.com/dblock).
 * Added `IEX::Resources::Price#get` - [@dblock](https://github.com/dblock).
 * Your contribution here.
 

@@ -56,6 +56,34 @@ company.company_name # 'Microsoft Corporation'
 
 See [#company](https://iextrading.com/developer/docs/#company) for detailed documentation or [company.rb](lib/iex/resources/company.rb) for returned fields.
 
+### Get Recent News
+
+Fetches news for a symbol.
+
+```ruby
+news = IEX::Resources::News.get('MSFT')
+
+news.size # 10
+
+latest = news.first
+latest.headline # 'Smartsheet files for $100M IPO with growing losses'
+latest.url # 'https://...'
+```
+
+Use `market` to get market-wide news.
+
+```ruby
+news = IEX::Resources::News.get(:market)
+```
+
+Retrieve a range between 1 and 50.
+
+```ruby
+news = IEX::Resources::News.get('MSFT', 5)
+```
+
+See [#news](https://iextrading.com/developer/docs/#news) for detailed documentation or [news.rb](lib/iex/resources/news.rb) for returned fields.
+
 ## Errors
 
 ### SymbolNotFound

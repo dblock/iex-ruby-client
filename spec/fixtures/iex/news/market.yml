@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.iextrading.com/1.0/stock/market/news/last/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 26 Mar 2018 21:44:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '828'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=5784f139630b4048b4ae89c527e263ed; Domain=.iextrading.com; Path=/; Expires=Tue,
+        27 Mar 2018 09:44:56 GMT; Secure
+      Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
+        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+      X-Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
+        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+      Frame-Options:
+      - deny
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3siZGF0ZXRpbWUiOiIyMDE4LTAzLTI2VDE3OjM5OjAwLTA0OjAwIiwiaGVhZGxpbmUiOiJDb2hlbiAmIFN0ZWVycyBJbmZyYXN0cnVjdHVyZSBGdW5kLCBJbmMuIChVVEYpIE5vdGlmaWNhdGlvbiBvZiBTb3VyY2VzIG9mIERpc3RyaWJ1dGlvbiBVbmRlciBTZWN0aW9uIDE5KGEpIiwic291cmNlIjoiUFIgTmV3c3dpcmUiLCJ1cmwiOiJodHRwczovL2FwaS5pZXh0cmFkaW5nLmNvbS8xLjAvc3RvY2svbWFya2V0L2FydGljbGUvODUxNzMzNzgzMjIyOTY3NCIsInN1bW1hcnkiOiIgICAgICBORVcgWU9SSyAsICBNYXJjaCAyNiwgMjAxOCAgL1BSTmV3c3dpcmUvIC0tVGhpcyBwcmVzcyByZWxlYXNlIHByb3ZpZGVzIHNoYXJlaG9sZGVycyBvZiBDb2hlbiZhbXA7U3RlZXJzIEluZnJhc3RydWN0dXJlIEZ1bmQsIEluYy4gKE5ZU0U6IFVURikgKHRoZSBcIkZ1bmRcIikgd2l0aCBpbmZvcm1hdGlvbiByZWdhcmRpbmcgdGhlIHNvdXJjZXMgb2YgdGhlIGRpc3RyaWJ1dGlvbiB0byBiZSBwYWlkIG9uICBNYXJjaCAyOSwgMjAxOCAgYW5kIGN1bXVsYXRpdmUgZGlzdHJpYnV0aW9uc+KApiIsInJlbGF0ZWQiOiJBU1MxMDMxOSxBU1MxMDMxOTA0MixCYW5raW5nIGFuZCBGaW5hbmNlLEJhbmtpbmcsQ2FwaXRhbCBHYWlucyxDTlMsQ29tbW9kaXRpZXMsQ2FzaCBPciBTdG9jayBEaXZpZGVuZCxGaW5hbmNpYWwsRmluYW5jaWFsIGFuZCBCdXNpbmVzcyBTZXJ2aWNlcyxIT05HS09ORyxMT05ET04wMSxNYXJrZXQsTXV0dWFsIEZ1bmRzLE5hdGlvbmFsIE5ld3MsTmV3IFlvcmssTllTRTAwMDEsV2hvbGVzYWxlIGFuZCBSZXRhaWwsVE9LWU8wMDEsVVRGLFdBU0hJTkdUIn1d
+    http_version: 
+  recorded_at: Mon, 26 Mar 2018 21:44:56 GMT
+recorded_with: VCR 4.0.0

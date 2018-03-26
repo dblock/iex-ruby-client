@@ -20,3 +20,4 @@ end
 require_relative 'api/quote'
 require_relative 'api/company'
 require_relative 'api/price'
+require_relative 'api/news'
