@@ -19,6 +19,12 @@ describe IEX::Quote do
       expect(subject.change_percent).to eq 0.00418
       expect(subject.change_percent_s).to eq '+0.42%'
     end
+    it 'coerces times' do
+      expect(subject.latest_update).to eq 1_521_818_145_007
+      expect(subject.latest_update_t).to eq Time.at(1_521_818_145)
+      expect(subject.iex_last_updated).to eq 1_521_818_145_007
+      expect(subject.iex_last_updated_t).to eq Time.at(1_521_818_145)
+    end
   end
   context 'invalid symbol', vcr: { cassette_name: 'invalid' } do
     subject do
