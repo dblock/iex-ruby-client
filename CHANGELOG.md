@@ -1,3 +1,7 @@
+### 0.3.0 (Next)
+
+* Your contribution here.
+
 ### 0.2.0 (2018/03/26)
 
 * Moved `IEX::Quote` into `IEX::Resources::Quote` - [@dblock](https://github.com/dblock).
