@@ -10,16 +10,7 @@ module IEX
       end
 
       def self.connection(symbol)
-        Faraday.new(
-          url: "https://api.iextrading.com/1.0/stock/#{symbol}/company",
-          request: {
-            params_encoder: Faraday::FlatParamsEncoder
-          }
-        ) do |c|
-          c.use ::FaradayMiddleware::ParseJson
-          c.use Faraday::Response::RaiseError
-          c.use Faraday::Adapter::NetHttp
-        end
+        IEX::Api.default_connection "#{symbol}/company"
       end
     end
   end
