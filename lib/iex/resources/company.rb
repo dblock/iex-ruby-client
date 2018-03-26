@@ -12,7 +12,7 @@ module IEX
       property 'sector'
 
       def self.get(symbol)
-        new IEX::Api::Company.get(q: symbol)
+        new IEX::Api::Company.get(symbol)
       rescue Faraday::ResourceNotFound => e
         raise IEX::Errors::SymbolNotFoundError.new(symbol, e.response[:body])
       end

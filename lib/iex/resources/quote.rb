@@ -48,7 +48,7 @@ module IEX
       property 'ytd_change', from: 'ytdChange' # price change percentage from start of year to previous close
 
       def self.get(symbol)
-        new IEX::Api::Quote.get(q: symbol)
+        new IEX::Api::Quote.get(symbol)
       rescue Faraday::ResourceNotFound => e
         raise IEX::Errors::SymbolNotFoundError.new(symbol, e.response[:body])
       end

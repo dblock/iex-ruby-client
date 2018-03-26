@@ -1,12 +1,8 @@
 module IEX
   module Api
     module Company
-      def self.get(params)
-        params = params.dup
-        symbol = params.delete(:q)
-        connection(symbol).get do |c|
-          c.params.merge!(params)
-        end.body
+      def self.get(symbol)
+        connection(symbol).get.body
       end
 
       def self.connection(symbol)
