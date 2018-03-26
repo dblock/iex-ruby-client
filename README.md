@@ -18,6 +18,16 @@ Run `bundle install`.
 
 ## Usage
 
+### Get a Single Price
+
+Fetches a single number, being the IEX real time price, the 15 minute delayed market price, or the previous close price.
+
+```ruby
+IEX::Resources::Price.get('MSFT') # 93.78
+```
+
+See [#price](https://iextrading.com/developer/docs/#price) for detailed documentation.
+
 ### Get a Quote
 
 Fetches a single stock quote.
