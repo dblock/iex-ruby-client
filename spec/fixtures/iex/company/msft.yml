@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.iextrading.com/1.0/stock/MSFT/company
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 26 Mar 2018 20:47:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '490'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=a59dd70ac7f44bb1a19cebd4d5204e8d; Domain=.iextrading.com; Path=/; Expires=Tue,
+        27 Mar 2018 08:47:50 GMT; Secure
+      Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
+        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+      X-Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
+        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+      Frame-Options:
+      - deny
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: UTF-8
+      string: '{"symbol":"MSFT","companyName":"Microsoft Corporation","exchange":"Nasdaq
+        Global Select","industry":"Application Software","website":"http://www.microsoft.com","description":"Microsoft
+        Corp is a technology company. It develop, license, and support a wide range
+        of software products and services. Its business is organized into three segments:
+        Productivity and Business Processes, Intelligent Cloud, and More Personal
+        Computing.","CEO":"Satya Nadella","issueType":"cs","sector":"Technology"}'
+    http_version: 
+  recorded_at: Mon, 26 Mar 2018 20:47:50 GMT
+recorded_with: VCR 4.0.0

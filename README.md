@@ -23,7 +23,7 @@ Run `bundle install`.
 Fetches a single stock quote.
 
 ```ruby
-quote = IEX::Quote.get('MSFT')
+quote = IEX::Resources::Quote.get('MSFT')
 
 quote.latest_price # 90.165
 quote.change # 0.375
@@ -31,7 +31,24 @@ quote.change_percent # 0.00418
 quote.change_percent_s # '+0.42%'
 ```
 
-See [#quote](https://iextrading.com/developer/docs/#quote) for detailed documentation or [quote.rb](lib/iex/quote.rb) for returned fields.
+See [#quote](https://iextrading.com/developer/docs/#quote) for detailed documentation or [quote.rb](lib/iex/resources/quote.rb) for returned fields.
+
+### Get Company Information
+
+Fetches company information for a symbol.
+
+```ruby
+company = IEX::Resources::Company.get('MSFT')
+
+company.ceo # 'Satya Nadella'
+company.company_name # 'Microsoft Corporation'
+```
+
+See [#company](https://iextrading.com/developer/docs/#company) for detailed documentation or [company.rb](lib/iex/resources/company.rb) for returned fields.
+
+## Errors
+
+### SymbolNotFound
 
 If a symbol cannot be found an [IEX::Errors::SymbolNotFound](lib/iex/errors/symbol_not_found_error.rb) exception is raised.
 

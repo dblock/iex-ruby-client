@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe IEX::Quote do
-  context 'known symbol', vcr: { cassette_name: 'msft' } do
+describe IEX::Resources::Quote do
+  context 'known symbol', vcr: { cassette_name: 'quote/msft' } do
     subject do
-      IEX::Quote.get('MSFT')
+      IEX::Resources::Quote.get('MSFT')
     end
     it 'retrieves a quote' do
       expect(subject.symbol).to eq 'MSFT'
@@ -26,9 +26,9 @@ describe IEX::Quote do
       expect(subject.iex_last_updated_t).to eq Time.at(1_521_818_145)
     end
   end
-  context 'invalid symbol', vcr: { cassette_name: 'invalid' } do
+  context 'invalid symbol', vcr: { cassette_name: 'quote/invalid' } do
     subject do
-      IEX::Quote.get('INVALID')
+      IEX::Resources::Quote.get('INVALID')
     end
     it 'fails with SymbolNotFoundError' do
       expect { subject }.to raise_error IEX::Errors::SymbolNotFoundError, 'Symbol INVALID Not Found'
