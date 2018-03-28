@@ -84,6 +84,35 @@ news = IEX::Resources::News.get('MSFT', 5)
 
 See [#news](https://iextrading.com/developer/docs/#news) for detailed documentation or [news.rb](lib/iex/resources/news.rb) for returned fields.
 
+### Get Chart
+
+Fetches charts for a symbol.
+
+```ruby
+chart = IEX::Resources::Chart.get('MSFT')
+
+chart.size # 38510
+
+first = chart.first
+first.label # '9:30 AM'
+first.high # 94.97
+```
+
+You can specify a chart range and additional options.
+
+```ruby
+# 1d or 1m data depending on the day or week and time of day
+IEX::Resources::Chart.get('MSFT', 'dynamic')
+
+# a specific date
+IEX::Resources::Chart.get('MSFT', Date.new(2018, 3, 26))
+
+# every n-th data point
+IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10)
+```
+
+See [#chart](https://iextrading.com/developer/docs/#chart) for detailed documentation or [chart/default](lib/iex/resources/chart/default.rb) and [chart/one_day](lib/iex/resources/chart/one_day.rb) for returned fields.
+
 ## Errors
 
 ### SymbolNotFound

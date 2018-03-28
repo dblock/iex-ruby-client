@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.iextrading.com/1.0/stock/MSFT/chart
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 28 Mar 2018 02:05:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '4731'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=f9e06af4657e469c9aeb97f9e22be56b; Domain=.iextrading.com; Path=/; Expires=Wed,
+        28 Mar 2018 14:05:06 GMT; Secure
+      Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
+        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+      X-Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
+        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+      Frame-Options:
+      - deny
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: UTF-8
+      string: '[{"date":"2018-02-26","open":94.4,"high":95.45,"low":94.25,"close":95.42,"volume":30199846,"unadjustedVolume":30199846,"change":1.36,"changePercent":1.446,"vwap":95.0439,"label":"Feb
+        26","changeOverTime":0},{"date":"2018-02-27","open":95.74,"high":95.84,"low":94.2,"close":94.2,"volume":25869119,"unadjustedVolume":25869119,"change":-1.22,"changePercent":-1.279,"vwap":95.0159,"label":"Feb
+        27","changeOverTime":-0.012785579543072719},{"date":"2018-02-28","open":94.84,"high":95.705,"low":93.63,"close":93.77,"volume":31167338,"unadjustedVolume":31167338,"change":-0.43,"changePercent":-0.456,"vwap":94.6005,"label":"Feb
+        28","changeOverTime":-0.017291972332844328},{"date":"2018-03-01","open":93.99,"high":94.57,"low":91.84,"close":92.85,"volume":37135561,"unadjustedVolume":37135561,"change":-0.92,"changePercent":-0.981,"vwap":92.8725,"label":"Mar
+        1","changeOverTime":-0.026933556906309025},{"date":"2018-03-02","open":91.58,"high":93.15,"low":90.86,"close":93.05,"volume":32830389,"unadjustedVolume":32830389,"change":0.2,"changePercent":0.215,"vwap":92.1025,"label":"Mar
+        2","changeOverTime":-0.02483756025990363},{"date":"2018-03-05","open":92.34,"high":94.27,"low":92.26,"close":93.64,"volume":23901578,"unadjustedVolume":23901578,"change":0.59,"changePercent":0.634,"vwap":93.3993,"label":"Mar
+        5","changeOverTime":-0.018654370153007766},{"date":"2018-03-06","open":94.34,"high":94.49,"low":92.941,"close":93.32,"volume":22175776,"unadjustedVolume":22175776,"change":-0.32,"changePercent":-0.342,"vwap":93.4811,"label":"Mar
+        6","changeOverTime":-0.022007964787256428},{"date":"2018-03-07","open":93.16,"high":93.9406,"low":92.43,"close":93.86,"volume":26716127,"unadjustedVolume":26716127,"change":0.54,"changePercent":0.579,"vwap":93.3396,"label":"Mar
+        7","changeOverTime":-0.016348773841961876},{"date":"2018-03-08","open":94.27,"high":95.1,"low":93.765,"close":94.43,"volume":25887828,"unadjustedVolume":25887828,"change":0.57,"changePercent":0.607,"vwap":94.4376,"label":"Mar
+        8","changeOverTime":-0.010375183399706507},{"date":"2018-03-09","open":95.29,"high":96.54,"low":95,"close":96.54,"volume":36937254,"unadjustedVolume":36937254,"change":2.11,"changePercent":2.234,"vwap":96.0072,"label":"Mar
+        9","changeOverTime":0.011737581219870096},{"date":"2018-03-12","open":96.5,"high":97.21,"low":96.04,"close":96.77,"volume":26073742,"unadjustedVolume":26073742,"change":0.23,"changePercent":0.238,"vwap":96.6893,"label":"Mar
+        12","changeOverTime":0.014147977363236159},{"date":"2018-03-13","open":97,"high":97.24,"low":93.97,"close":94.41,"volume":35387817,"unadjustedVolume":35387817,"change":-2.36,"changePercent":-2.439,"vwap":95.1757,"label":"Mar
+        13","changeOverTime":-0.010584783064347151},{"date":"2018-03-14","open":95.12,"high":95.41,"low":93.5,"close":93.85,"volume":32131981,"unadjustedVolume":32131981,"change":-0.56,"changePercent":-0.593,"vwap":94.3105,"label":"Mar
+        14","changeOverTime":-0.0164535736742822},{"date":"2018-03-15","open":93.53,"high":94.58,"low":92.83,"close":94.18,"volume":27610998,"unadjustedVolume":27610998,"change":0.33,"changePercent":0.352,"vwap":93.9895,"label":"Mar
+        15","changeOverTime":-0.012995179207713214},{"date":"2018-03-16","open":94.68,"high":95.38,"low":93.92,"close":94.6,"volume":49081279,"unadjustedVolume":49081279,"change":0.42,"changePercent":0.446,"vwap":94.5295,"label":"Mar
+        16","changeOverTime":-0.008593586250262077},{"date":"2018-03-19","open":93.74,"high":93.9,"low":92.11,"close":92.89,"volume":33344085,"unadjustedVolume":33344085,"change":-1.71,"changePercent":-1.808,"vwap":92.841,"label":"Mar
+        19","changeOverTime":-0.02651435757702789},{"date":"2018-03-20","open":93.05,"high":93.77,"low":93,"close":93.13,"volume":23075240,"unadjustedVolume":23075240,"change":0.24,"changePercent":0.258,"vwap":93.3411,"label":"Mar
+        20","changeOverTime":-0.023999161601341502},{"date":"2018-03-21","open":92.93,"high":94.05,"low":92.21,"close":92.48,"volume":24457082,"unadjustedVolume":24457082,"change":-0.65,"changePercent":-0.698,"vwap":92.9449,"label":"Mar
+        21","changeOverTime":-0.03081115070215885},{"date":"2018-03-22","open":91.265,"high":91.75,"low":89.66,"close":89.79,"volume":38604715,"unadjustedVolume":38604715,"change":-2.69,"changePercent":-2.909,"vwap":90.6126,"label":"Mar
+        22","changeOverTime":-0.059002305596311},{"date":"2018-03-23","open":89.5,"high":90.46,"low":87.08,"close":87.18,"volume":44068949,"unadjustedVolume":44068949,"change":-2.61,"changePercent":-2.907,"vwap":88.8312,"label":"Mar
+        23","changeOverTime":-0.08635506183190102},{"date":"2018-03-26","open":90.61,"high":94,"low":90.4,"close":93.78,"volume":56396780,"unadjustedVolume":56396780,"change":6.6,"changePercent":7.571,"vwap":92.6083,"label":"Mar
+        26","changeOverTime":-0.017187172500524005}]'
+    http_version: 
+  recorded_at: Wed, 28 Mar 2018 02:05:06 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.iextrading.com/1.0/stock/MSFT/chart/1d?chartInterval=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 28 Mar 2018 02:36:05 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=a267b9fbf451419f89df951ca9c48eb3; Domain=.iextrading.com; Path=/; Expires=Wed,
+        28 Mar 2018 14:36:05 GMT; Secure
+      Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
+        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+      X-Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
+        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+      Frame-Options:
+      - deny
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"date":"20180327","minute":"09:30","label":"09:30 AM","high":94.97,"low":94.76,"average":94.868,"volume":10002,"notional":948875.43,"numberOfTrades":72,"marketHigh":95,"marketLow":94.76,"marketAverage":94.887,"marketVolume":1742030,"marketNotional":165295915.663,"marketNumberOfTrades":2798,"changeOverTime":0,"marketChangeOverTime":0},{"date":"20180327","minute":"09:41","label":"09:41
+        AM","high":94.76,"low":94.425,"average":94.657,"volume":3013,"notional":285200.69,"numberOfTrades":29,"marketHigh":94.76,"marketLow":94.415,"marketAverage":94.638,"marketVolume":209616,"marketNotional":19837730.4823,"marketNumberOfTrades":1360,"changeOverTime":-0.0022241430197748294,"marketChangeOverTime":-0.0026241740175155207},{"date":"20180327","minute":"09:51","label":"09:51
+        AM","high":94.7,"low":94.53,"average":94.572,"volume":2148,"notional":203139.92,"numberOfTrades":17,"marketHigh":0,"marketLow":0,"marketAverage":0,"marketVolume":0,"marketNotional":0,"marketNumberOfTrades":0,"changeOverTime":-0.0031201248049921183,"marketChangeOverTime":null},{"date":"20180327","minute":"10:01","label":"10:01
+        AM","high":94.59,"low":94.47,"average":94.56,"volume":6285,"notional":594312.155,"numberOfTrades":30,"marketHigh":94.6,"marketLow":94.45,"marketAverage":94.525,"marketVolume":171076,"marketNotional":16170904.2306,"marketNumberOfTrades":1079,"changeOverTime":-0.0032466163511404556,"marketChangeOverTime":-0.0038150642342996907},{"date":"20180327","minute":"10:11","label":"10:11
+        AM","high":94.375,"low":94.105,"average":94.195,"volume":6545,"notional":616506.225,"numberOfTrades":21,"marketHigh":0,"marketLow":0,"marketAverage":0,"marketVolume":0,"marketNotional":0,"marketNumberOfTrades":0,"changeOverTime":-0.007094067546485663,"marketChangeOverTime":null},{"date":"20180327","minute":"10:21","label":"10:21
+        AM","high":94.12,"low":94,"average":94.062,"volume":2406,"notional":226312.5,"numberOfTrades":23,"marketHigh":94.12,"marketLow":94,"marketAverage":94.048,"marketVolume":136504,"marketNotional":12837930.5185,"marketNumberOfTrades":1099,"changeOverTime":-0.0084960155162963,"marketChangeOverTime":-0.008842096388335585},{"date":"20180327","minute":"10:31","label":"10:31
+        AM","high":94.135,"low":94.02,"average":94.065,"volume":750,"notional":70549,"numberOfTrades":7,"marketHigh":94.135,"marketLow":94.016,"marketAverage":94.073,"marketVolume":45906,"marketNotional":4318517.8276,"marketNumberOfTrades":383,"changeOverTime":-0.008464392629759216,"marketChangeOverTime":-0.00857862510143652},{"date":"20180327","minute":"10:41","label":"10:41
+        AM","high":94.095,"low":94.005,"average":94.04,"volume":2368,"notional":222685.645,"numberOfTrades":25,"marketHigh":94.15,"marketLow":93.97,"marketAverage":94.042,"marketVolume":201248,"marketNotional":18925825.3879,"marketNumberOfTrades":1410,"changeOverTime":-0.008727916684234819,"marketChangeOverTime":-0.008905329497191384},{"date":"20180327","minute":"10:51","label":"10:51
+        AM","high":94.2,"low":94.06,"average":94.099,"volume":1893,"notional":178129.1,"numberOfTrades":14,"marketHigh":94.495,"marketLow":94.055,"marketAverage":94.131,"marketVolume":91890,"marketNotional":8649699.7826,"marketNumberOfTrades":777,"changeOverTime":-0.00810599991567221,"marketChangeOverTime":-0.007967371715830411},{"date":"20180327","minute":"11:02","label":"11:02
+        AM","high":93.92,"low":93.81,"average":93.834,"volume":1300,"notional":121984,"numberOfTrades":8,"marketHigh":0,"marketLow":0,"marketAverage":0,"marketVolume":0,"marketNotional":0,"marketNumberOfTrades":0,"changeOverTime":-0.010899354893114558,"marketChangeOverTime":null},{"date":"20180327","minute":"11:12","label":"11:12
+        AM","high":93.89,"low":93.84,"average":93.875,"volume":1250,"notional":117344,"numberOfTrades":8,"marketHigh":93.91,"marketLow":93.825,"marketAverage":93.871,"marketVolume":58704,"marketNotional":5510596.0723,"marketNumberOfTrades":460,"changeOverTime":-0.010467175443774455,"marketChangeOverTime":-0.010707473099581664},{"date":"20180327","minute":"11:22","label":"11:22
+        AM","high":93.54,"low":93.465,"average":93.503,"volume":1300,"notional":121554.5,"numberOfTrades":11,"marketHigh":93.57,"marketLow":93.46,"marketAverage":93.513,"marketVolume":92801,"marketNotional":8678103.4083,"marketNumberOfTrades":595,"changeOverTime":-0.01438841337437276,"marketChangeOverTime":-0.014480381927977438},{"date":"20180327","minute":"11:32","label":"11:32
+        AM","high":93.89,"low":93.78,"average":93.817,"volume":1107,"notional":103855.14,"numberOfTrades":12,"marketHigh":93.9,"marketLow":93.77,"marketAverage":93.837,"marketVolume":120178,"marketNotional":11277187.1809,"marketNumberOfTrades":685,"changeOverTime":-0.011078551250158136,"marketChangeOverTime":-0.011065794049764427},{"date":"20180327","minute":"11:42","label":"11:42
+        AM","high":94.09,"low":94,"average":94.042,"volume":1547,"notional":145482.645,"numberOfTrades":7,"marketHigh":94.1,"marketLow":93.95,"marketAverage":94.034,"marketVolume":101138,"marketNotional":9510360.1936,"marketNumberOfTrades":629,"changeOverTime":-0.008706834759876813,"marketChangeOverTime":-0.008989640308999066},{"date":"20180327","minute":"11:52","label":"11:52
+        AM","high":94.14,"low":94.1,"average":94.112,"volume":581,"notional":54679.42,"numberOfTrades":7,"marketHigh":94.15,"marketLow":94.08,"marketAverage":94.119,"marketVolume":39811,"marketNotional":3746956.0712,"marketNumberOfTrades":376,"changeOverTime":-0.007968967407344945,"marketChangeOverTime":-0.008093837933542009},{"date":"20180327","minute":"12:02","label":"12:02
+        PM","high":94.04,"low":94.015,"average":94.031,"volume":548,"notional":51528.96,"numberOfTrades":6,"marketHigh":0,"marketLow":0,"marketAverage":0,"marketVolume":0,"marketNotional":0,"marketNumberOfTrades":0,"changeOverTime":-0.008822785343846071,"marketChangeOverTime":null},{"date":"20180327","minute":"12:12","label":"12:12
+        PM","high":93.81,"low":93.72,"average":93.754,"volume":900,"notional":84378.5,"numberOfTrades":7,"marketHigh":93.81,"marketLow":93.71,"marketAverage":93.755,"marketVolume":43162,"marketNotional":4046662.3023,"marketNumberOfTrades":352,"changeOverTime":-0.011742631867436756,"marketChangeOverTime":-0.011929979870793734},{"date":"20180327","minute":"12:22","label":"12:22
+        PM","high":93.78,"low":93.695,"average":93.732,"volume":3600,"notional":337436.5,"numberOfTrades":18,"marketHigh":93.795,"marketLow":93.675,"marketAverage":93.739,"marketVolume":64327,"marketNotional":6029975.7542,"marketNumberOfTrades":405,"changeOverTime":-0.011974533035375424,"marketChangeOverTime":-0.0120986014944091},{"date":"20180327","minute":"12:32","label":"12:32
+        PM","high":93.09,"low":92.97,"average":93.064,"volume":2500,"notional":232660.5,"numberOfTrades":17,"marketHigh":0,"marketLow":0,"marketAverage":0,"marketVolume":0,"marketNotional":0,"marketNumberOfTrades":0,"changeOverTime":-0.019015895770965997,"marketChangeOverTime":null},{"date":"20180327","minute":"12:42","label":"12:42
+        PM","high":93.115,"low":92.98,"average":93.033,"volume":974,"notional":90613.85,"numberOfTrades":11,"marketHigh":93.12,"marketLow":92.98,"marketAverage":93.03,"marketVolume":57836,"marketNotional":5380488.5381,"marketNumberOfTrades":417,"changeOverTime":-0.019342665598515767,"marketChangeOverTime":-0.019570647190869133},{"date":"20180327","minute":"12:54","label":"12:54
+        PM","high":92.97,"low":92.905,"average":92.942,"volume":600,"notional":55765.5,"numberOfTrades":6,"marketHigh":92.98,"marketLow":92.9,"marketAverage":92.937,"marketVolume":51207,"marketNotional":4759049.6474,"marketNumberOfTrades":440,"changeOverTime":-0.020301893156807374,"marketChangeOverTime":-0.020550760378134022},{"date":"20180327","minute":"13:05","label":"1:05
+        PM","high":93.14,"low":93.11,"average":93.122,"volume":500,"notional":46561,"numberOfTrades":5,"marketHigh":93.189,"marketLow":93.08,"marketAverage":93.128,"marketVolume":77025,"marketNotional":7173168.6568,"marketNumberOfTrades":593,"changeOverTime":-0.018404519964582318,"marketChangeOverTime":-0.01853783974622446},{"date":"20180327","minute":"13:15","label":"1:15
+        PM","high":93.2,"low":93.14,"average":93.175,"volume":959,"notional":89354.665,"numberOfTrades":11,"marketHigh":93.21,"marketLow":93.09,"marketAverage":93.175,"marketVolume":66879,"marketNotional":6231448.9912,"marketNumberOfTrades":543,"changeOverTime":-0.017845848969093876,"marketChangeOverTime":-0.018042513726854083},{"date":"20180327","minute":"13:25","label":"1:25
+        PM","high":92.925,"low":92.88,"average":92.906,"volume":500,"notional":46453,"numberOfTrades":4,"marketHigh":92.94,"marketLow":92.86,"marketAverage":92.9,"marketVolume":45901,"marketNotional":4264182.8066,"marketNumberOfTrades":406,"changeOverTime":-0.020681367795252238,"marketChangeOverTime":-0.020940697882744684},{"date":"20180327","minute":"13:35","label":"1:35
+        PM","high":92.62,"low":92.52,"average":92.541,"volume":1093,"notional":101147.72,"numberOfTrades":11,"marketHigh":92.64,"marketLow":92.42,"marketAverage":92.516,"marketVolume":111509,"marketNotional":10316327.6948,"marketNumberOfTrades":791,"changeOverTime":-0.024528818990597445,"marketChangeOverTime":-0.024987616849515688},{"date":"20180327","minute":"13:45","label":"1:45
+        PM","high":92.61,"low":92.56,"average":92.587,"volume":1243,"notional":115085.73,"numberOfTrades":10,"marketHigh":92.64,"marketLow":92.54,"marketAverage":92.59,"marketVolume":74382,"marketNotional":6887014.2677,"marketNumberOfTrades":548,"changeOverTime":-0.0240439347303621,"marketChangeOverTime":-0.024207741840294214},{"date":"20180327","minute":"13:55","label":"1:55
+        PM","high":92.225,"low":92.15,"average":92.18,"volume":1704,"notional":157074.7,"numberOfTrades":15,"marketHigh":92.23,"marketLow":92.05,"marketAverage":92.184,"marketVolume":83571,"marketNotional":7703883.1726,"marketNumberOfTrades":590,"changeOverTime":-0.02833410633722634,"marketChangeOverTime":-0.028486515539536534},{"date":"20180327","minute":"14:05","label":"2:05
+        PM","high":91.88,"low":91.72,"average":91.812,"volume":1300,"notional":119356,"numberOfTrades":13,"marketHigh":91.906,"marketLow":91.72,"marketAverage":91.82,"marketVolume":110437,"marketNotional":10140368.0569,"marketNumberOfTrades":903,"changeOverTime":-0.03221318041910863,"marketChangeOverTime":-0.03232265747678826},{"date":"20180327","minute":"14:15","label":"2:15
+        PM","high":92.23,"low":92.12,"average":92.188,"volume":859,"notional":79189.235,"numberOfTrades":9,"marketHigh":92.25,"marketLow":92.009,"marketAverage":92.183,"marketVolume":50763,"marketNotional":4679500.7944,"marketNumberOfTrades":475,"changeOverTime":-0.028249778639794165,"marketChangeOverTime":-0.0284970543910124},{"date":"20180327","minute":"14:25","label":"2:25
+        PM","high":92.06,"low":91.895,"average":91.971,"volume":1350,"notional":124160.495,"numberOfTrades":13,"marketHigh":0,"marketLow":0,"marketAverage":0,"marketVolume":0,"marketNotional":0,"marketNumberOfTrades":0,"changeOverTime":-0.03053716743264316,"marketChangeOverTime":null},{"date":"20180327","minute":"14:35","label":"2:35
+        PM","high":91.89,"low":91.83,"average":91.854,"volume":1718,"notional":157805.12,"numberOfTrades":16,"marketHigh":91.89,"marketLow":91.667,"marketAverage":91.841,"marketVolume":68529,"marketNotional":6293743.2533,"marketNumberOfTrades":581,"changeOverTime":-0.03177046000758945,"marketChangeOverTime":-0.03210134159579296},{"date":"20180327","minute":"14:45","label":"2:45
+        PM","high":91.925,"low":91.75,"average":91.855,"volume":1300,"notional":119411,"numberOfTrades":14,"marketHigh":91.93,"marketLow":91.7,"marketAverage":91.814,"marketVolume":99155,"marketNotional":9103858.9678,"marketNumberOfTrades":869,"changeOverTime":-0.031759919045410374,"marketChangeOverTime":-0.032385890585644055},{"date":"20180327","minute":"14:55","label":"2:55
+        PM","high":91.43,"low":91.38,"average":91.405,"volume":600,"notional":54843,"numberOfTrades":6,"marketHigh":91.56,"marketLow":91.35,"marketAverage":91.417,"marketVolume":107704,"marketNotional":9845974.4798,"marketNumberOfTrades":894,"changeOverTime":-0.036503352025972866,"marketChangeOverTime":-0.036569814621602525},{"date":"20180327","minute":"15:05","label":"3:05
+        PM","high":90.91,"low":90.8,"average":90.84,"volume":1301,"notional":118182.31,"numberOfTrades":14,"marketHigh":90.976,"marketLow":90.73,"marketAverage":90.803,"marketVolume":164623,"marketNotional":14948251.1303,"marketNumberOfTrades":1304,"changeOverTime":-0.042458995657123494,"marketChangeOverTime":-0.04304066942784578},{"date":"20180327","minute":"15:15","label":"3:15
+        PM","high":90.78,"low":90.65,"average":90.696,"volume":1700,"notional":154183.5,"numberOfTrades":15,"marketHigh":90.78,"marketLow":90.426,"marketAverage":90.647,"marketVolume":160641,"marketNotional":14561682.1536,"marketNumberOfTrades":1282,"changeOverTime":-0.04397689421090354,"marketChangeOverTime":-0.04468473025809642},{"date":"20180327","minute":"15:25","label":"3:25
+        PM","high":90.3,"low":90.16,"average":90.23,"volume":2300,"notional":207529,"numberOfTrades":20,"marketHigh":90.36,"marketLow":90.14,"marketAverage":90.299,"marketVolume":464737,"marketNotional":41965444.7683,"marketNumberOfTrades":1235,"changeOverTime":-0.04888898258633039,"marketChangeOverTime":-0.048352250571732626},{"date":"20180327","minute":"15:35","label":"3:35
+        PM","high":89.61,"low":89.37,"average":89.441,"volume":4838,"notional":432713.36,"numberOfTrades":32,"marketHigh":89.72,"marketLow":89.34,"marketAverage":89.476,"marketVolume":285980,"marketNotional":25588429.0143,"marketNumberOfTrades":2306,"changeOverTime":-0.05720580174558326,"marketChangeOverTime":-0.057025725336452844},{"date":"20180327","minute":"15:45","label":"3:45
+        PM","high":89.18,"low":88.89,"average":89.07,"volume":8472,"notional":754603.32,"numberOfTrades":49,"marketHigh":89.54,"marketLow":88.88,"marketAverage":89.04,"marketVolume":497075,"marketNotional":44259734.5808,"marketNumberOfTrades":4167,"changeOverTime":-0.06111649871400264,"marketChangeOverTime":-0.06162066457997401},{"date":"20180327","minute":"15:55","label":"3:55
+        PM","high":89.38,"low":89.19,"average":89.255,"volume":10670,"notional":952356.53,"numberOfTrades":84,"marketHigh":89.38,"marketLow":89.18,"marketAverage":89.27,"marketVolume":458420,"marketNotional":40923311.2344,"marketNumberOfTrades":3592,"changeOverTime":-0.05916642071088249,"marketChangeOverTime":-0.05919672874050191}]'
+    http_version: 
+  recorded_at: Wed, 28 Mar 2018 02:36:05 GMT
+recorded_with: VCR 4.0.0
