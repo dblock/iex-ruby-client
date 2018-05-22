@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 23 Mar 2018 15:15:57 GMT
+      - Tue, 22 May 2018 20:13:00 GMT
       Content-Type:
       - text/html; charset=utf-8
       Transfer-Encoding:
@@ -29,20 +29,24 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - ctoken=8fdab40cfa8542669c3411d154319317; Domain=.iextrading.com; Path=/; Expires=Sat,
-        24 Mar 2018 03:15:57 GMT; Secure
+      - ctoken=7b2950e131e948bca00f5eed64893da3; Domain=.iextrading.com; Path=/; Expires=Wed,
+        23 May 2018 08:13:00 GMT; Secure
       Content-Security-Policy:
       - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
-        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
-        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
+        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
+        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
+        'self' 'unsafe-inline' 'unsafe-eval';
       X-Content-Security-Policy:
       - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
-        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
-        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
+        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
+        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
+        'self' 'unsafe-inline' 'unsafe-eval';
       Frame-Options:
-      - deny
+      - SAMEORIGIN
       X-Frame-Options:
-      - deny
+      - SAMEORIGIN
       Strict-Transport-Security:
       - max-age=15768000
       Access-Control-Allow-Origin:
@@ -57,5 +61,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: Unknown symbol
     http_version: 
-  recorded_at: Fri, 23 Mar 2018 15:15:57 GMT
+  recorded_at: Tue, 22 May 2018 20:13:00 GMT
 recorded_with: VCR 4.0.0

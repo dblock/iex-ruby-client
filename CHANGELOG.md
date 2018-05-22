@@ -3,6 +3,7 @@
 * Added `IEX::Resources::Chart#get` - [@dblock](https://github.com/dblock).
 * Added `IEX::Resources::News#get` - [@dblock](https://github.com/dblock).
 * Added `IEX::Resources::Price#get` - [@dblock](https://github.com/dblock).
+* Fix: added `IEX::Resources::Quote#extendedPrice` and `IEX::Resources::Quote#extendedPriceTime` - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 0.2.0 (2018/03/26)

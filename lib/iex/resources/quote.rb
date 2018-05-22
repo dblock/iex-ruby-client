@@ -24,6 +24,8 @@ module IEX
       property 'iex_last_updated_t', from: 'iexLastUpdated', with: ->(v) { v > 0 ? Time.at(v / 1000) : nil } # last update time of the data
       property 'delayed_price', from: 'delayedPrice' # 15 minute delayed market price
       property 'delayed_price_time', from: 'delayedPriceTime' # time of the delayed market price
+      property 'extended_price', from: 'extendedPrice' # ?
+      property 'extended_price_time', from: 'extendedPriceTime' # ?
       property 'previous_close', from: 'previousClose' # adjusted close price of the last trading day of the stock
       property 'change' # change in value, calculated using calculation_price from previous_close
       property 'change_percent', from: 'changePercent' # change in percent, calculated using calculation_price from previous_close
