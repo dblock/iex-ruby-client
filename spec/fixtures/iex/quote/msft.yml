@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.14.0
+      - Faraday v0.15.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,16 +21,16 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 22 May 2018 20:12:59 GMT
+      - Wed, 23 May 2018 22:04:57 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '874'
+      - '915'
       Connection:
       - keep-alive
       Set-Cookie:
-      - ctoken=124dc8691fb84575bc5d622d323ab8bb; Domain=.iextrading.com; Path=/; Expires=Wed,
-        23 May 2018 08:12:59 GMT; Secure
+      - ctoken=087fe43d41f94d2fa909aef7ec6b84be; Domain=.iextrading.com; Path=/; Expires=Thu,
+        24 May 2018 10:04:57 GMT; Secure
       Content-Security-Policy:
       - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
         'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
@@ -62,8 +62,8 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"symbol":"MSFT","companyName":"Microsoft Corporation","primaryExchange":"Nasdaq
-        Global Select","sector":"Technology","calculationPrice":"tops","open":97.71,"openTime":1526995800716,"close":97.6,"closeTime":1526932800235,"high":98.17,"low":97.2,"latestPrice":97.54,"latestSource":"IEX
-        real time price","latestTime":"3:59:47 PM","latestUpdate":1527019187506,"latestVolume":13670424,"iexRealtimePrice":97.54,"iexRealtimeSize":100,"iexLastUpdated":1527019187506,"delayedPrice":97.375,"delayedPriceTime":1527019077341,"extendedPrice":97.71,"extendedPriceTime":1526995800696,"previousClose":97.6,"change":-0.06,"changePercent":-0.00061,"iexMarketPercent":0.01322,"iexVolume":180723,"avgTotalVolume":26330377,"iexBidPrice":0,"iexBidSize":0,"iexAskPrice":0,"iexAskSize":0,"marketCap":749419084443,"peRatio":28.86,"week52High":98.69,"week52Low":67.5,"ytdChange":0.14582232709940235}'
+        Global Select","sector":"Technology","calculationPrice":"close","open":96.68,"openTime":1527082200673,"close":98.66,"closeTime":1527105600450,"high":98.73,"low":96.32,"latestPrice":98.66,"latestSource":"Close","latestTime":"May
+        23, 2018","latestUpdate":1527105600450,"latestVolume":20535596,"iexRealtimePrice":98.68,"iexRealtimeSize":42,"iexLastUpdated":1527105595797,"delayedPrice":98.66,"delayedPriceTime":1527105600450,"extendedPrice":98.56,"extendedChange":-0.1,"extendedChangePercent":-0.00101,"extendedPriceTime":1527109075453,"previousClose":97.5,"change":1.16,"changePercent":0.0119,"iexMarketPercent":0.01326,"iexVolume":272302,"avgTotalVolume":25931612,"iexBidPrice":0,"iexBidSize":0,"iexAskPrice":0,"iexAskSize":0,"marketCap":758024265646,"peRatio":29.19,"week52High":98.69,"week52Low":68.02,"ytdChange":0.1446483288134399}'
     http_version: 
-  recorded_at: Tue, 22 May 2018 20:12:59 GMT
+  recorded_at: Wed, 23 May 2018 22:04:57 GMT
 recorded_with: VCR 4.0.0
