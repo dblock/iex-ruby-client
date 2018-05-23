@@ -1,3 +1,7 @@
+### 0.3.2 (Next)
+
+* Your contribution here.
+
 ### 0.3.1 (2018/05/23)
 
 * [#3](https://github.com/dblock/iex-ruby-client/issues/3): Fix: do not error on undefined properties - [@dblock](https://github.com/dblock).
