@@ -1,5 +1,6 @@
 ### 0.3.2 (Next)
 
+* Fix: undefined method > for nil:NilClass error - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 0.3.1 (2018/05/23)
