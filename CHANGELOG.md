@@ -1,6 +1,8 @@
 ### 0.3.3 (Next)
 
 * Your contribution here.
+* [#5](https://github.com/dblock/iex-ruby-client/pull/5): Added `IEX::Resources::OHLC#get` - [@jromanovs](https://github.com/jromanovs). 
+* [#5](https://github.com/dblock/iex-ruby-client/pull/5): Added `IEX::Resources::OHLC#market` - [@jromanovs](https://github.com/jromanovs). 
 
 ### 0.3.2 (2018/05/26)
 

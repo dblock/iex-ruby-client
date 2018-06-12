@@ -43,6 +43,33 @@ quote.change_percent_s # '+0.42%'
 
 See [#quote](https://iextrading.com/developer/docs/#quote) for detailed documentation or [quote.rb](lib/iex/resources/quote.rb) for returned fields.
 
+### Get a OHLC (Open, High, Low, Close) price
+
+Fetches a single stock OHLC price. Open and Close prices contain timestamp.
+```ruby
+ohlc = IEX::Resources::OHLC.get('MSFT')
+
+ohlc.close.price # 90.165
+ohlc.close.time #
+ohlc.open.price # 0.375
+ohlc.open.time
+ohlc.high # 0.00418
+ohlc.low # '+0.42%'
+```
+
+### Get a market OHLC (Open, High, Low, Close) prices
+
+Fetches a hash market OHLC prices.
+```ruby
+market = IEX::Resources::OHLC.market
+market['SPY'].close.price # 278.56
+market['SPY'].close.time # 2018-06-11 23:00:00 +0300
+market['SPY'].open.price # 279.05
+market['SPY'].open.time # 2018-06-12 16:30:00 +0300
+market['SPY'].high #
+market['SPY'].low #
+```
+
 ### Get Company Information
 
 Fetches company information for a symbol.
