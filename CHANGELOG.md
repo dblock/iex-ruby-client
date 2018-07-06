@@ -1,3 +1,7 @@
+### 0.3.4 (Next)
+
+* Your contribution here.
+
 ### 0.3.3 (2018/07/06)
 
 * [#5](https://github.com/dblock/iex-ruby-client/pull/5): Added `IEX::Resources::OHLC#get` - [@jromanovs](https://github.com/jromanovs). 
