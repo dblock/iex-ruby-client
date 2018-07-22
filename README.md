@@ -146,6 +146,14 @@ See [#chart](https://iextrading.com/developer/docs/#chart) for detailed document
 
 If a symbol cannot be found an [IEX::Errors::SymbolNotFound](lib/iex/errors/symbol_not_found_error.rb) exception is raised.
 
+### InvalidOption
+
+If an invalid option is passed to `Chart.get`, an [IEX::Errors::InvalidOption](lib/iex/errors/invalid_option_error.rb) exception is raised.
+
+```ruby
+IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10, invalid_option: 'foo')
+```
+
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md).
