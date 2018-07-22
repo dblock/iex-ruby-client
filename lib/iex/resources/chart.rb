@@ -21,6 +21,8 @@ module IEX
         end
       rescue Faraday::ResourceNotFound => e
         raise IEX::Errors::SymbolNotFoundError.new(symbol, e.response[:body])
+      rescue Faraday::ClientError => e
+        raise IEX::Errors::BadRequestError, e.response[:body]['error']
       end
     end
   end
