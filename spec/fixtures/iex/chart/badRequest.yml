@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.iextrading.com/1.0/stock/MSFT/chart/give-me-bad-request?chartInterval=give-me-bad-request
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 25 Jul 2018 01:10:46 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=21a9d3671fa8497cb94395124b8840d2; Domain=.iextrading.com; Path=/; Expires=Wed,
+        25 Jul 2018 13:10:46 GMT; Secure
+      Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
+        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
+        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
+        'self' 'unsafe-inline' 'unsafe-eval';
+      X-Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
+        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
+        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
+        'self' 'unsafe-inline' 'unsafe-eval';
+      Frame-Options:
+      - SAMEORIGIN
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Wed, 25 Jul 2018 01:10:46 GMT
+recorded_with: VCR 4.0.0
