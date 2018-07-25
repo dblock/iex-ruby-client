@@ -150,6 +150,10 @@ If a symbol cannot be found an [IEX::Errors::SymbolNotFound](lib/iex/errors/symb
 
 If an invalid option is passed to `Chart.get`, an [IEX::Errors::InvalidOption](lib/iex/errors/invalid_option_error.rb) exception is raised.
 
+### BadRequest
+
+nop
+
 ```ruby
 IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10, invalid_option: 'foo')
 ```
