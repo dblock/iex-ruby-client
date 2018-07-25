@@ -5,7 +5,7 @@ module IEX
 
       def initialize(response)
         @response = response
-        super "Invalid option passed into your get chart hash"
+        super 'Invalid option'
       end
     end
   end

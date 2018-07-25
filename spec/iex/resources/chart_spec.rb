@@ -78,13 +78,13 @@ describe IEX::Resources::Chart do
     end
   end
 
-  context 'with invalid options', vcr: { cassette_name: 'chart/invalidOption' } do
+  context 'with invalid option', vcr: { cassette_name: 'chart/invalidOption' } do
     subject do
       IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10, invalid: 'option')
     end
 
     it 'fails with InvalidOptionError' do
-      expect { subject }.to raise_error IEX::Errors::InvalidOptionError, 'Invalid option passed into your get chart hash'
+      expect { subject }.to raise_error IEX::Errors::InvalidOptionError, 'Invalid option'
     end
   end
 end

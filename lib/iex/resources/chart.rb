@@ -22,7 +22,9 @@ module IEX
       rescue Faraday::ResourceNotFound => e
         raise IEX::Errors::SymbolNotFoundError.new(symbol, e.response[:body])
       rescue Faraday::ClientError => e
-        raise IEX::Errors::InvalidOptionError.new(e.response[:body])
+        error_message = JSON.parse(e.response[:body])['error']
+        raise if Regexp.new(/(\".*\") is not allowed/).match(error_message).nil?
+        raise IEX::Errors::InvalidOptionError, error_message
       end
     end
   end
