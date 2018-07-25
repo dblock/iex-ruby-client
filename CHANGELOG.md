@@ -1,11 +1,6 @@
-### 0.3.5 (Next)
+### 0.3.4 (Next)
 
 * Your contribution here.
-
-### 0.3.4 (2018/07/24)
-
-* [#8](https://github.com/dblock/iex-ruby-client/pull/8): Added `IEX::Errors::InvalidOptionError` - [@rodolfobandeira](https://github.com/rodolfobandeira).
-* [#8](https://github.com/dblock/iex-ruby-client/pull/8): Added `IEX::Errors::BadRequestError` - [@rodolfobandeira](https://github.com/rodolfobandeira).
 
 ### 0.3.3 (2018/07/06)
 
