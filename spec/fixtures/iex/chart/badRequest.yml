@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.iextrading.com/1.0/stock/MSFT/chart/1d?chartInterval=10&invalid=option
+    uri: https://api.iextrading.com/1.0/stock/MSFT/chart/1d?badOption=option&chartInterval=10
     body:
       encoding: US-ASCII
       string: ''
@@ -21,16 +21,16 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 25 Jul 2018 23:48:56 GMT
+      - Thu, 26 Jul 2018 13:27:24 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '38'
+      - '40'
       Connection:
       - keep-alive
       Set-Cookie:
-      - ctoken=35d23bfa012d45668f9adf77ad593fe1; Domain=.iextrading.com; Path=/; Expires=Thu,
-        26 Jul 2018 11:48:56 GMT; Secure
+      - ctoken=7604d04eb2cd41f08237efc1ccd582ed; Domain=.iextrading.com; Path=/; Expires=Fri,
+        27 Jul 2018 01:27:24 GMT; Secure
       Content-Security-Policy:
       - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
         'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
@@ -59,7 +59,131 @@ http_interactions:
       - Origin, X-Requested-With, Content-Type, Accept
     body:
       encoding: UTF-8
-      string: '{"error":"\"invalid\" is not allowed"}'
+      string: '{"error":"\"badOption\" is not allowed"}'
     http_version: 
-  recorded_at: Wed, 25 Jul 2018 23:48:56 GMT
+  recorded_at: Thu, 26 Jul 2018 13:27:24 GMT
+- request:
+    method: get
+    uri: https://api.iextrading.com/1.0/stock/MSFT/chart/1d?badOption=option&chartInterval=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 26 Jul 2018 13:27:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '40'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=075123ca2f5d40a896bf9dc52decc835; Domain=.iextrading.com; Path=/; Expires=Fri,
+        27 Jul 2018 01:27:32 GMT; Secure
+      Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
+        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
+        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
+        'self' 'unsafe-inline' 'unsafe-eval';
+      X-Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
+        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
+        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
+        'self' 'unsafe-inline' 'unsafe-eval';
+      Frame-Options:
+      - SAMEORIGIN
+      X-Frame-Options:
+      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: UTF-8
+      string: '{"error":"\"badOption\" is not allowed"}'
+    http_version: 
+  recorded_at: Thu, 26 Jul 2018 13:27:32 GMT
+- request:
+    method: get
+    uri: https://api.iextrading.com/1.0/stock/MSFT/chart/1d?badOption=option&chartInterval=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 26 Jul 2018 13:27:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '40'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=242bccf2acab4022ac9fb53d6e8bf7ef; Domain=.iextrading.com; Path=/; Expires=Fri,
+        27 Jul 2018 01:27:32 GMT; Secure
+      Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
+        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
+        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
+        'self' 'unsafe-inline' 'unsafe-eval';
+      X-Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
+        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
+        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
+        'self' 'unsafe-inline' 'unsafe-eval';
+      Frame-Options:
+      - SAMEORIGIN
+      X-Frame-Options:
+      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: UTF-8
+      string: '{"error":"\"badOption\" is not allowed"}'
+    http_version: 
+  recorded_at: Thu, 26 Jul 2018 13:27:33 GMT
 recorded_with: VCR 4.0.0

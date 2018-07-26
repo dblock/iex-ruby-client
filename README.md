@@ -148,7 +148,7 @@ If a symbol cannot be found an [IEX::Errors::SymbolNotFound](lib/iex/errors/symb
 
 ### BadRequest
 
-All 400 bad request responses from IEX result in a BadRequest exception
+All 400 bad request responses from IEX result in a [IEX::Errors::BadRequest](lib/iex/errors/bad_request_error.rb) exception.
 
 ```ruby
 IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10, invalid_option: 'foo')
