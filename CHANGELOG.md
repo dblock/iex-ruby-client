@@ -1,12 +1,13 @@
 ### 0.3.4 (Next)
 
 * Your contribution here.
+* [#9](https://github.com/dblock/iex-ruby-client/pull/9): Added `IEX::Errors::ClientError` - [@rodolfobandeira](https://github.com/rodolfobandeira).
+* [#10](https://github.com/dblock/iex-ruby-client/pull/10): Added `IEX::Resources::Logo#get` - [@rodolfobandeira](https://github.com/rodolfobandeira).
 
 ### 0.3.3 (2018/07/06)
 
 * [#5](https://github.com/dblock/iex-ruby-client/pull/5): Added `IEX::Resources::OHLC#get` - [@jromanovs](https://github.com/jromanovs). 
 * [#5](https://github.com/dblock/iex-ruby-client/pull/5): Added `IEX::Resources::OHLC#market` - [@jromanovs](https://github.com/jromanovs). 
-* [#9](https://github.com/dblock/iex-ruby-client/pull/9): Added `IEX::Errors::ClientError` - [@rodolfobandeira](https://github.com/rodolfobandeira).
 
 ### 0.3.2 (2018/05/26)
 
