@@ -78,13 +78,13 @@ describe IEX::Resources::Chart do
     end
   end
 
-  context 'with bad request', vcr: { cassette_name: 'chart/badRequest' } do
+  context 'with client error', vcr: { cassette_name: 'chart/badRequest' } do
     subject do
       IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10, bad_option: 'option')
     end
 
-    it 'fails with BadRequestError' do
-      expect { subject }.to raise_error IEX::Errors::BadRequestError, '"badOption" is not allowed'
+    it 'fails with ClientError' do
+      expect { subject }.to raise_error IEX::Errors::ClientError, '"badOption" is not allowed'
     end
   end
 end

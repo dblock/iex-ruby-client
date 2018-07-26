@@ -1,6 +1,6 @@
 module IEX
   module Errors
-    class BadRequestError < StandardError
+    class ClientError < StandardError
       attr_reader :response
 
       def initialize(response)

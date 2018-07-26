@@ -146,9 +146,9 @@ See [#chart](https://iextrading.com/developer/docs/#chart) for detailed document
 
 If a symbol cannot be found an [IEX::Errors::SymbolNotFound](lib/iex/errors/symbol_not_found_error.rb) exception is raised.
 
-### BadRequest
+### ClientError
 
-All 400 bad request responses from IEX result in a [IEX::Errors::BadRequest](lib/iex/errors/bad_request_error.rb) exception.
+All 400-600 bad request responses from IEX result in a [IEX::Errors::Client](lib/iex/errors/client_error.rb) exception.
 
 ```ruby
 IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10, invalid_option: 'foo')
