@@ -148,7 +148,7 @@ If a symbol cannot be found an [IEX::Errors::SymbolNotFound](lib/iex/errors/symb
 
 ### ClientError
 
-All 400-600 bad request responses from IEX result in a [IEX::Errors::Client](lib/iex/errors/client_error.rb) exception.
+All errors that return HTTP codes 400-600 result in a [IEX::Errors::ClientError](lib/iex/errors/client_error.rb) exception.
 
 ```ruby
 IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10, invalid_option: 'foo')
