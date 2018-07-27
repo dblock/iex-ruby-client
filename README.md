@@ -83,6 +83,18 @@ company.company_name # 'Microsoft Corporation'
 
 See [#company](https://iextrading.com/developer/docs/#company) for detailed documentation or [company.rb](lib/iex/resources/company.rb) for returned fields.
 
+### Get Company Logo
+
+Fetches company logo for a symbol.
+
+```ruby
+logo = IEX::Resources::Logo.get('MSFT')
+
+logo.url # 'https://storage.googleapis.com/iex/api/logos/MSFT.png'
+```
+
+See [#logo](https://iextrading.com/developer/docs/#logo) for detailed documentation or [logo.rb](lib/iex/resources/logo.rb) for returned fields.
+
 ### Get Recent News
 
 Fetches news for a symbol.

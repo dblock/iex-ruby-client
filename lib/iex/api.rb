@@ -17,9 +17,10 @@ module IEX
   end
 end
 
-require_relative 'api/quote'
-require_relative 'api/company'
-require_relative 'api/price'
-require_relative 'api/news'
 require_relative 'api/chart'
+require_relative 'api/company'
+require_relative 'api/logo'
+require_relative 'api/news'
 require_relative 'api/ohlc'
+require_relative 'api/price'
+require_relative 'api/quote'

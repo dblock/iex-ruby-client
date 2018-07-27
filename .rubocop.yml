@@ -5,7 +5,7 @@ AllCops:
 Naming/MethodName:
   Enabled: false
 
-Style/FileName:
+Naming/FileName:
   Exclude:
     - 'lib/iex-ruby-client.rb'
 
