@@ -17,6 +17,7 @@ describe IEX::Resources::Chart do
       expect(last.label).to eq 'Mar 26'
     end
   end
+
   context '1d', vcr: { cassette_name: 'chart/1d' } do
     subject do
       IEX::Resources::Chart.get('MSFT', '1d')
@@ -32,6 +33,7 @@ describe IEX::Resources::Chart do
       expect(first.minute).to eq '09:30'
     end
   end
+
   context 'with options', vcr: { cassette_name: 'chart/chartInterval' } do
     subject do
       IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10)
@@ -42,6 +44,7 @@ describe IEX::Resources::Chart do
       expect(first).to be_a IEX::Resources::Chart::OneDay
     end
   end
+
   context 'date', vcr: { cassette_name: 'chart/20180227' } do
     subject do
       IEX::Resources::Chart.get('MSFT', Date.new(2018, 2, 27))
@@ -53,6 +56,7 @@ describe IEX::Resources::Chart do
       expect(first.date).to eq Date.new(2018, 2, 27)
     end
   end
+
   context 'dynamic 1m', vcr: { cassette_name: 'chart/dynamic/1m' } do
     subject do
       IEX::Resources::Chart.get('MSFT', :dynamic)
@@ -64,12 +68,23 @@ describe IEX::Resources::Chart do
       expect(first.date).to eq Date.new(2018, 2, 26)
     end
   end
+
   context 'invalid symbol', vcr: { cassette_name: 'chart/invalid' } do
     subject do
       IEX::Resources::Chart.get('INVALID')
     end
     it 'fails with SymbolNotFoundError' do
       expect { subject }.to raise_error IEX::Errors::SymbolNotFoundError, 'Symbol INVALID Not Found'
+    end
+  end
+
+  context 'with client error', vcr: { cassette_name: 'chart/bad_option' } do
+    subject do
+      IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10, bad_option: 'option')
+    end
+
+    it 'fails with ClientError' do
+      expect { subject }.to raise_error IEX::Errors::ClientError, '"badOption" is not allowed'
     end
   end
 end

@@ -5,4 +5,8 @@ AllCops:
 Naming/MethodName:
   Enabled: false
 
+Style/FileName:
+  Exclude:
+    - 'lib/iex-ruby-client.rb'
+
 inherit_from: .rubocop_todo.yml
