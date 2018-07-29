@@ -24,6 +24,7 @@ describe IEX::Resources::OHLC do
       expect(subject.open.time.to_f).to eq 1_528_723_800.272
     end
   end
+
   context 'market', vcr: { cassette_name: 'ohlc/market' } do
     subject do
       IEX::Resources::OHLC.market

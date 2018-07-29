@@ -9,6 +9,7 @@ describe IEX::Resources::Price do
       expect(subject).to eq 93.78
     end
   end
+
   context 'invalid symbol', vcr: { cassette_name: 'price/invalid' } do
     subject do
       IEX::Resources::Price.get('INVALID')

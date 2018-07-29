@@ -1,3 +1,5 @@
+require_relative 'base'
+
 module IEX
   module Resources
     class Company < Resource
@@ -11,10 +13,10 @@ module IEX
       property 'issue_type', from: 'issueType' # common issue type of the stock
       property 'sector'
 
-      def self.get(symbol)
-        new IEX::Api::Company.get(symbol)
-      rescue Faraday::ResourceNotFound => e
-        raise IEX::Errors::SymbolNotFoundError.new(symbol, e.response[:body])
+      def self.get(stock_symbol)
+        Base.symbol(stock_symbol) do
+          new IEX::Api::Company.get(stock_symbol)
+        end
       end
     end
   end
