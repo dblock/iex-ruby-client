@@ -1,6 +1,7 @@
-### 0.3.4 (Next)
+### 0.4.0 (next)
 
 * Your contribution here.
+
 * [#9](https://github.com/dblock/iex-ruby-client/pull/9): Added `IEX::Errors::ClientError` - [@rodolfobandeira](https://github.com/rodolfobandeira).
 * [#10](https://github.com/dblock/iex-ruby-client/pull/10): Added `IEX::Resources::Logo#get` - [@rodolfobandeira](https://github.com/rodolfobandeira).
 
