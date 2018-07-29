@@ -1,10 +1,12 @@
+require_relative 'base'
+
 module IEX
   module Resources
     module Price
-      def self.get(symbol)
-        IEX::Api::Price.get(symbol)
-      rescue Faraday::ResourceNotFound => e
-        raise IEX::Errors::SymbolNotFoundError.new(symbol, e.response[:body])
+      def self.get(stock_symbol)
+        Base.symbol(stock_symbol) do
+          IEX::Api::Price.get(stock_symbol)
+        end
       end
     end
   end

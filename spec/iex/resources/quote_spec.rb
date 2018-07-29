@@ -26,6 +26,7 @@ describe IEX::Resources::Quote do
       expect(subject.iex_last_updated_t).to be nil
     end
   end
+
   context 'invalid symbol', vcr: { cassette_name: 'quote/invalid' } do
     subject do
       IEX::Resources::Quote.get('INVALID')
