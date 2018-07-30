@@ -1,3 +1,7 @@
+### 0.4.1 (Next)
+
+* Your contribution here.
+
 ### 0.4.0 (2018/07/29)
 
 * [#9](https://github.com/dblock/iex-ruby-client/pull/9): Added `IEX::Errors::ClientError` - [@rodolfobandeira](https://github.com/rodolfobandeira).
