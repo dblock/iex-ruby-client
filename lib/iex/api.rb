@@ -20,6 +20,7 @@ end
 require_relative 'api/chart'
 require_relative 'api/company'
 require_relative 'api/logo'
+require_relative 'api/key_stats'
 require_relative 'api/news'
 require_relative 'api/ohlc'
 require_relative 'api/price'

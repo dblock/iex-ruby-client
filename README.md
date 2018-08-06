@@ -16,6 +16,20 @@ gem 'iex-ruby-client'
 
 Run `bundle install`.
 
+
+## Methods Available:
+
+- [Get a Single Price](#get-a-single-price)
+- [Get a Quote](#get-a-quote)
+- [Get a OHLC (Open, High, Low, Close) price](#get-a-ohlc-open-high-low-close-price)
+- [Get a Market OHLC (Open, High, Low, Close) prices](#get-a-market-ohlc-open-high-low-close-prices)
+- [Get Company Information](#get-company-information)
+- [Get Company Logo](#get-company-logo)
+- [Get Recent News](#get-recent-news)
+- [Get Chart](#get-chat)
+- [Get Key Stats](#get-key-stats)
+
+
 ## Usage
 
 ### Get a Single Price
@@ -83,7 +97,7 @@ company.company_name # 'Microsoft Corporation'
 
 See [#company](https://iextrading.com/developer/docs/#company) for detailed documentation or [company.rb](lib/iex/resources/company.rb) for returned fields.
 
-### Get Company Logo
+### Get a Company Logo
 
 Fetches company logo for a symbol.
 
@@ -150,7 +164,79 @@ IEX::Resources::Chart.get('MSFT', Date.new(2018, 3, 26))
 IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10)
 ```
 
-See [#chart](https://iextrading.com/developer/docs/#chart) for detailed documentation or [chart/default](lib/iex/resources/chart/default.rb) and [chart/one_day](lib/iex/resources/chart/one_day.rb) for returned fields.
+### Get Key Stats
+
+Fetches company's key stats for a symbol.
+
+```ruby
+key_stats = IEX::Resources::Logo.get('MSFT')
+
+key_stats.symbol # MSFT
+key_stats.market_cap # 825814890000
+key_stats.market_cap_dollars # '$825,814,890,000'
+key_stats.beta # 1.261768
+key_stats.week_52_high # 111.15
+key_stats.week_52_high_dollar # '$111.15'
+key_stats.week_52_low # 71.28
+key_stats.week_52_low_dollar # '$71.28'
+key_stats.week_52_change_dollar # '$51.77'
+key_stats.short_interest # 47158592
+key_stats.short_date # '2018-07-13'
+key_stats.dividend_rate # 1.68
+key_stats.dividend_yield # 1.5617738
+key_stats.ex_dividend_date # '2018-08-15 00:00:00.0'
+key_stats.latest_eps # 2.11
+key_stats.latest_eps_date # '2018-06-30'
+key_stats.shares_outstanding # 7677000000
+key_stats.float # 7217387757
+key_stats.return_on_equity # 20.82
+key_stats.consensus_eps # 0.86
+key_stats.number_of_estimates # 14
+key_stats.eps_surprise_dollar # nil
+key_stats.eps_surprise_percent # 11.6279
+key_stats.eps_surprise_percent_s # '+1162.79%'
+key_stats.ebitda # 23558000000
+key_stats.revenue_dollar # '$53,456,000,000'
+key_stats.gross_profit # 34114000000
+key_stats.gross_profit_dollar # '$34,114,000,000'
+key_stats.cash_dollar # '$281,251,000,000'
+key_stats.ttm_eps # 3.51
+key_stats.revenue_per_share # 7
+key_stats.revenue_per_employee # 431097
+key_stats.pe_ratio_high # 0
+key_stats.pe_ratio_low # 0
+key_stats.return_on_assets # 6.46
+key_stats.return_on_capital # nil
+key_stats.profit_margin # 15.1
+key_stats.price_to_sales # 7.393182
+key_stats.price_to_sales_dollar # '$7.39'
+key_stats.price_to_book # 10.73
+key_stats.price_to_book_dollar # '$10.73'
+key_stats.day_200_moving_avg # 91.99065
+key_stats.day_50_moving_avg # 102.2528
+key_stats.institution_percent # 75.1
+key_stats.institution_percent_s # '+7510.00%'
+key_stats.insider_percent # nil
+key_stats.insider_percent_s # nil
+key_stats.short_ratio # 1.7330703
+key_stats.year_5_change_percent # 2.85141424991049
+key_stats.year_5_change_percent_s # '+285.14%'
+key_stats.year_2_change_percent # 0.9732002824884664
+key_stats.year_2_change_percent_s # '+97.32%'
+key_stats.year_1_change_percent # 0.5200287133805482
+key_stats.year_1_change_percent_s # '+52.00%'
+key_stats.ytd_change_percent # 0.2628699562098638
+key_stats.month_6_change_percent # 0.23345097958275707
+key_stats.month_6_change_percent_s # '+23.35%'
+key_stats.month_3_change_percent # 0.14846686026648437
+key_stats.month_3_change_percent_s # '+14.85%'
+key_stats.month_1_change_percent # 0.08601716304896513
+key_stats.month_1_change_percent_s # '+8.60%'
+key_stats.day_5_change_percent # -0.0010215453194652084
+key_stats.day_5_change_percent_s # '-0.10%'
+```
+See [#key-stats](https://iextrading.com/developer/docs/#key-stats) for detailed documentation or [key_stats.rb](lib/iex/resources/key_stats.rb) for returned fields.
+
 
 ## Errors
 
