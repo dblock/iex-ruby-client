@@ -169,7 +169,7 @@ IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10)
 Fetches company's key stats for a symbol.
 
 ```ruby
-key_stats = IEX::Resources::Logo.get('MSFT')
+key_stats = IEX::Resources::KeyStats.get('MSFT')
 
 key_stats.symbol # MSFT
 key_stats.market_cap # 825814890000
