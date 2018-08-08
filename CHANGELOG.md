@@ -1,3 +1,7 @@
+### 0.4.2 (Next)
+
+* Your contribution here.
+
 ### 0.4.1 (2018/08/07)
 
 * [#18](https://github.com/dblock/iex-ruby-client/pull/18): Added `IEX::Resources::KeyStats` - [@rodolfobandeira](https://github.com/rodolfobandeira).
