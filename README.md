@@ -28,6 +28,7 @@ Run `bundle install`.
 - [Get Recent News](#get-recent-news)
 - [Get Chart](#get-chat)
 - [Get Key Stats](#get-key-stats)
+- [Get Dividends](#get-dividends)
 
 
 ## Usage
@@ -236,6 +237,25 @@ key_stats.day_5_change_percent # -0.0010215453194652084
 key_stats.day_5_change_percent_s # '-0.10%'
 ```
 See [#key-stats](https://iextrading.com/developer/docs/#key-stats) for detailed documentation or [key_stats.rb](lib/iex/resources/key_stats.rb) for returned fields.
+
+### Get Dividends
+
+Fetches dividends for a symbol.
+
+```ruby
+dividends = IEX::Resources::Dividends.get('MSFT', '6m') # Options are: 5y, 2y, 1y, ytd, 6m, 3m, 1m
+
+dividends.payment_date # '2018-03-08'
+dividends.record_date # '2018-02-15'
+dividends.declared_date # '2017-11-29'
+dividends.amount # 0.42
+dividends.amount_dollar # '$0.42'
+dividends.flag # ''
+dividends.type # 'Dividend income'
+dividends.qualified # 'Q'
+dividends.indicated # ''
+```
+See [#dividends](https://iextrading.com/developer/docs/#dividends) for detailed documentation or [dividends.rb](lib/iex/resources/dividends.rb) for returned fields.
 
 
 ## Errors

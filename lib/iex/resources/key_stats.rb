@@ -26,7 +26,7 @@ module IEX
       property 'symbol'
       property 'ebitda', from: 'EBITDA'
       property 'revenue'
-      property 'revenue_dollar', from: 'revenue', with: ->(v) { Base.to_dollar(amount: v) }
+      property 'revenue_dollar'
       property 'gross_profit', from: 'grossProfit'
       property 'gross_profit_dollar', from: 'grossProfit', with: ->(v) { Base.to_dollar(amount: v) }
       property 'cash'
@@ -70,6 +70,12 @@ module IEX
       property 'month_1_change_percent_s', from: 'month1ChangePercent', with: ->(v) { Base.float_to_percentage(v) }
       property 'day_5_change_percent', from: 'day5ChangePercent'
       property 'day_5_change_percent_s', from: 'day5ChangePercent', with: ->(v) { Base.float_to_percentage(v) }
+
+      def initialize(data = {})
+        super
+        # TODO: require Hashie >= 2.5.8, see https://github.com/intridea/hashie/pull/457
+        self['revenue_dollar'] = Base.to_dollar(amount: revenue)
+      end
 
       def self.get(symbol)
         new IEX::Api::KeyStats.get(symbol)

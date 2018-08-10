@@ -1,5 +1,6 @@
 ### 0.4.2 (Next)
 
+* [#21](https://github.com/dblock/iex-ruby-client/pull/21): Added `IEX::Resources::Dividends` - [@rodolfobandeira](https://github.com/rodolfobandeira).
 * Your contribution here.
 
 ### 0.4.1 (2018/08/07)
@@ -13,8 +14,8 @@
 
 ### 0.3.3 (2018/07/06)
 
-* [#5](https://github.com/dblock/iex-ruby-client/pull/5): Added `IEX::Resources::OHLC#get` - [@jromanovs](https://github.com/jromanovs). 
-* [#5](https://github.com/dblock/iex-ruby-client/pull/5): Added `IEX::Resources::OHLC#market` - [@jromanovs](https://github.com/jromanovs). 
+* [#5](https://github.com/dblock/iex-ruby-client/pull/5): Added `IEX::Resources::OHLC#get` - [@jromanovs](https://github.com/jromanovs).
+* [#5](https://github.com/dblock/iex-ruby-client/pull/5): Added `IEX::Resources::OHLC#market` - [@jromanovs](https://github.com/jromanovs).
 
 ### 0.3.2 (2018/05/26)
 

@@ -38,6 +38,7 @@ describe IEX::Resources::KeyStats do
       expect(subject.eps_surprise_percent).to eq 11.6279
       expect(subject.eps_surprise_percent_s).to eq '+1162.79%'
       expect(subject.ebitda).to eq 23_558_000_000
+      expect(subject.revenue).to eq 53_456_000_000
       expect(subject.revenue_dollar).to eq '$53,456,000,000'
       expect(subject.gross_profit).to eq 34_114_000_000
       expect(subject.gross_profit_dollar).to eq '$34,114,000,000'
