@@ -25,7 +25,6 @@ module IEX
       property 'number_of_estimates', from: 'numberOfEstimates'
       property 'symbol'
       property 'ebitda', from: 'EBITDA'
-      property 'revenue'
       property 'revenue_dollar', from: 'revenue', with: ->(v) { Base.to_dollar(amount: v) }
       property 'gross_profit', from: 'grossProfit'
       property 'gross_profit_dollar', from: 'grossProfit', with: ->(v) { Base.to_dollar(amount: v) }
