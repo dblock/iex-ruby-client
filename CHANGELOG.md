@@ -1,6 +1,7 @@
 ### 0.4.2 (Next)
 
 * Your contribution here.
+* [#21](https://github.com/dblock/iex-ruby-client/pull/21): Added `IEX::Resources::Dividends` - [@rodolfobandeira](https://github.com/rodolfobandeira).
 
 ### 0.4.1 (2018/08/07)
 
