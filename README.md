@@ -10,7 +10,7 @@ A Ruby client for the [IEX Finance API](https://iextrading.com/developer).
 # Table of Contents
 
 - [Installation](#installation)
-- [Methods Available:](#methods-available)
+- [Methods Available](#methods-available)
 - [Usage](#usage)
   - [Get a Single Price](#get-a-single-price)
   - [Get a Quote](#get-a-quote)
@@ -40,7 +40,7 @@ gem 'iex-ruby-client'
 Run `bundle install`.
 
 
-## Methods Available:
+## Methods Available
 
 - [Get a Single Price](#get-a-single-price)
 - [Get a Quote](#get-a-quote)

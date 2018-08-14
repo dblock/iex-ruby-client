@@ -1,3 +1,7 @@
+### 0.4.3 (Next)
+
+* Your contribution here.
+
 ### 0.4.2 (2018/08/14)
 
 * [#24](https://github.com/dblock/iex-ruby-client/pull/24): Add danger-toc and danger-changelog - [@rodolfobandeira](https://github.com/rodolfobandeira).
