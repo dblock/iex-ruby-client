@@ -6,6 +6,29 @@ IEX Finance API
 
 A Ruby client for the [IEX Finance API](https://iextrading.com/developer).
 
+
+# Table of Contents
+
+- [Installation](#installation)
+- [Methods Available:](#methods-available)
+- [Usage](#usage)
+  - [Get a Single Price](#get-a-single-price)
+  - [Get a Quote](#get-a-quote)
+  - [Get a OHLC (Open, High, Low, Close) price](#get-a-ohlc-open-high-low-close-price)
+  - [Get a market OHLC (Open, High, Low, Close) prices](#get-a-market-ohlc-open-high-low-close-prices)
+  - [Get Company Information](#get-company-information)
+  - [Get a Company Logo](#get-a-company-logo)
+  - [Get Recent News](#get-recent-news)
+  - [Get Chart](#get-chart)
+  - [Get Key Stats](#get-key-stats)
+  - [Get Dividends](#get-dividends)
+- [Errors](#errors)
+  - [SymbolNotFound](#symbolnotfound)
+  - [ClientError](#clienterror)
+- [Contributing](#contributing)
+- [Copyright and License](#copyright-and-license)
+
+
 ## Installation
 
 Add to Gemfile.
@@ -155,14 +178,9 @@ first.high # 94.97
 You can specify a chart range and additional options.
 
 ```ruby
-# 1d or 1m data depending on the day or week and time of day
-IEX::Resources::Chart.get('MSFT', 'dynamic')
-
-# a specific date
-IEX::Resources::Chart.get('MSFT', Date.new(2018, 3, 26))
-
-# every n-th data point
-IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10)
+IEX::Resources::Chart.get('MSFT', 'dynamic') # 1d or 1m data depending on the day or week and time of day
+IEX::Resources::Chart.get('MSFT', Date.new(2018, 3, 26)) # a specific date
+IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10) # every n-th data point
 ```
 
 ### Get Key Stats

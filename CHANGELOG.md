@@ -1,5 +1,6 @@
 ### 0.4.2 (Next)
 
+* [#24](https://github.com/dblock/iex-ruby-client/pull/24): Add danger-toc and danger-changelog - [@rodolfobandeira](https://github.com/rodolfobandeira).
 * [#21](https://github.com/dblock/iex-ruby-client/pull/21): Added `IEX::Resources::Dividends` - [@rodolfobandeira](https://github.com/rodolfobandeira).
 * Your contribution here.
 
