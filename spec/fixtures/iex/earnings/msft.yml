@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.iextrading.com/1.0/stock/MSFT/earnings
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 15 Aug 2018 01:14:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1346'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=7590339f2473416cbe5a802b0fbcafc5; Domain=.iextrading.com; Path=/; Expires=Wed,
+        15 Aug 2018 13:14:34 GMT; Secure
+      Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
+        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
+        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
+        'self' 'unsafe-inline' 'unsafe-eval';
+      X-Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
+        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
+        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
+        'self' 'unsafe-inline' 'unsafe-eval';
+      Frame-Options:
+      - SAMEORIGIN
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: UTF-8
+      string: '{"symbol":"MSFT","earnings":[{"actualEPS":1.13,"consensusEPS":1.07,"estimatedEPS":1.07,"announceTime":"AMC","numberOfEstimates":14,"EPSSurpriseDollar":0.06,"EPSReportDate":"2018-07-19","fiscalPeriod":"Q4
+        2018","fiscalEndDate":"2018-06-30","yearAgo":0.98,"yearAgoChangePercent":0.15306122448979584,"estimatedChangePercent":0.09183673469387764,"symbolId":4563},{"actualEPS":0.95,"consensusEPS":0.85,"estimatedEPS":0.85,"announceTime":"AMC","numberOfEstimates":14,"EPSSurpriseDollar":0.1,"EPSReportDate":"2018-04-26","fiscalPeriod":"Q3
+        2018","fiscalEndDate":"2018-03-31","yearAgo":0.73,"yearAgoChangePercent":0.3013698630136986,"estimatedChangePercent":0.1643835616438356,"symbolId":4563},{"actualEPS":0.96,"consensusEPS":0.86,"estimatedEPS":0.86,"announceTime":"AMC","numberOfEstimates":14,"EPSSurpriseDollar":0.1,"EPSReportDate":"2018-01-31","fiscalPeriod":"Q2
+        2018","fiscalEndDate":"2017-12-31","yearAgo":0.83,"yearAgoChangePercent":0.1566265060240964,"estimatedChangePercent":0.036144578313253045,"symbolId":4563},{"actualEPS":0.84,"consensusEPS":0.72,"estimatedEPS":0.72,"announceTime":"AMC","numberOfEstimates":14,"EPSSurpriseDollar":0.12,"EPSReportDate":"2017-10-26","fiscalPeriod":"Q1
+        2018","fiscalEndDate":"2017-09-30","yearAgo":0.76,"yearAgoChangePercent":0.1052631578947368,"estimatedChangePercent":-0.05263157894736847,"symbolId":4563}]}'
+    http_version: 
+  recorded_at: Wed, 15 Aug 2018 01:14:34 GMT
+recorded_with: VCR 4.0.0

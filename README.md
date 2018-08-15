@@ -22,6 +22,7 @@ A Ruby client for the [IEX Finance API](https://iextrading.com/developer).
   - [Get Chart](#get-chart)
   - [Get Key Stats](#get-key-stats)
   - [Get Dividends](#get-dividends)
+  - [Get Earnings](#get-earnings)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
   - [ClientError](#clienterror)
@@ -52,6 +53,7 @@ Run `bundle install`.
 - [Get Chart](#get-chat)
 - [Get Key Stats](#get-key-stats)
 - [Get Dividends](#get-dividends)
+- [Get Earnings](#get-earnings)
 
 
 ## Usage
@@ -274,6 +276,32 @@ dividends.qualified # 'Q'
 dividends.indicated # ''
 ```
 See [#dividends](https://iextrading.com/developer/docs/#dividends) for detailed documentation or [dividends.rb](lib/iex/resources/dividends.rb) for returned fields.
+
+
+### Get Earnings
+
+Fetches earnings for a symbol.
+
+```ruby
+earnings = IEX::Resources::Earnings.get('MSFT')
+
+earnings.actual_eps # 1.13
+earnings.consensus_eps # 1.07
+earnings.estimated_eps # 1.07
+earnings.announce_time # 'AMC'
+earnings.number_of_estimates # 14
+earnings.eps_surprise_dollar # 0.06
+earnings.eps_report_date # '2018-07-19'
+earnings.fiscal_period # 'Q4 2018'
+earnings.fiscal_end_date # '2018-06-30'
+earnings.year_ago # 0.98
+earnings.year_ago_change_percent # 0.15306122448979584
+earnings.year_ago_change_percent_s # '+15.31%'
+earnings.estimated_change_percent # 0.09183673469387764
+earnings.estimated_change_percent_s # '+9.18%'
+earnings.symbol_id # 4563
+```
+See [#earnings](https://iextrading.com/developer/docs/#earnings) for detailed documentation or [earnings.rb](lib/iex/resources/earnings.rb) for returned fields.
 
 
 ## Errors
