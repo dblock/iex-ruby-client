@@ -13,12 +13,6 @@ module IEX
       end
 
       def self.connection(symbol, range)
-        puts [
-          symbol,
-          'chart',
-          range && range.respond_to?(:strftime) ? "date/#{range.strftime('%Y%m%d')}" : range
-        ].compact.join('/')
-
         IEX::Api.default_connection [
           symbol,
           'chart',
