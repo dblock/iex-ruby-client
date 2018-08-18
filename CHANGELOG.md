@@ -1,6 +1,5 @@
-### 0.4.3 (Next)
+### 0.4.3 (2018/08/18)
 
-* Your contribution here.
 * [#27](https://github.com/dblock/iex-ruby-client/pull/27): Added `IEX::Resources::Earnings` - [@rodolfobandeira](https://github.com/rodolfobandeira).
 
 ### 0.4.2 (2018/08/14)
