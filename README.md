@@ -54,6 +54,7 @@ Run `bundle install`.
 - [Get Key Stats](#get-key-stats)
 - [Get Dividends](#get-dividends)
 - [Get Earnings](#get-earnings)
+- [Get Sector Performance](#sectors)
 
 
 ## Usage
@@ -304,7 +305,7 @@ earnings.symbol_id # 4563
 See [#earnings](https://iextrading.com/developer/docs/#earnings) for detailed documentation or [earnings.rb](lib/iex/resources/earnings.rb) for returned fields.
 
 
-### Get Earnings
+### Get Sector Performance
 
 Fetches earnings for a symbol.
 
@@ -315,7 +316,7 @@ earnings.name # Industrials
 earnings.performance # 0.00711
 earnings.last_updated # 1533672000437
 ```
-See [#sector-performance](https://iextrading.com/developer/docs/#sector-performance) for detaile documentation or [sectors](lib/iex/resources/sectors.rb) for returned fields.
+See [#sector-performance](https://iextrading.com/developer/docs/#sector-performance) for detaile documentation or [sectors.rb](lib/iex/resources/sectors.rb) for returned fields.
 
 ## Errors
 
