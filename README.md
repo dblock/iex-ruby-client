@@ -304,6 +304,19 @@ earnings.symbol_id # 4563
 See [#earnings](https://iextrading.com/developer/docs/#earnings) for detailed documentation or [earnings.rb](lib/iex/resources/earnings.rb) for returned fields.
 
 
+### Get Earnings
+
+Fetches earnings for a symbol.
+
+```ruby
+earnings = IEX::Resources::Earnings.get('MSFT')
+
+earnings.name # Industrials
+earnings.performance # 0.00711
+earnings.last_updated # 1533672000437
+```
+See [#sector-performance](https://iextrading.com/developer/docs/#sector-performance) for detaile documentation or [sectors](lib/iex/resources/sectors.rb) for returned fields.
+
 ## Errors
 
 ### SymbolNotFound
