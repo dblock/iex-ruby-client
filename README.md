@@ -23,7 +23,7 @@ A Ruby client for the [IEX Finance API](https://iextrading.com/developer).
   - [Get Key Stats](#get-key-stats)
   - [Get Dividends](#get-dividends)
   - [Get Earnings](#get-earnings)
-  - [Get Sector Performance]
+  - [Get Sector Performance](#get-sector-performance)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
   - [ClientError](#clienterror)
@@ -55,7 +55,7 @@ Run `bundle install`.
 - [Get Key Stats](#get-key-stats)
 - [Get Dividends](#get-dividends)
 - [Get Earnings](#get-earnings)
-- [Get Sector Performance](#sectors)
+- [Get Sector Performance](#get-sector-performant)
 
 
 ## Usage
