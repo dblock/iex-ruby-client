@@ -311,11 +311,12 @@ See [#earnings](https://iextrading.com/developer/docs/#earnings) for detailed do
 Fetches earnings for a symbol.
 
 ```ruby
-earnings = IEX::Resources::Earnings.get('MSFT')
+sectors = EX::Resources::Sectors.get('MARKET')
 
-earnings.name # Industrials
-earnings.performance # 0.00711
-earnings.last_updated # 1533672000437
+sectors.type # sectors
+sectors.name # Industrials
+sectors.performance # 0.00711
+sectors.last_updated # 1533672000437
 ```
 See [#sector-performance](https://iextrading.com/developer/docs/#sector-performance) for detaile documentation or [sectors.rb](lib/iex/resources/sectors.rb) for returned fields.
 
