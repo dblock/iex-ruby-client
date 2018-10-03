@@ -23,6 +23,7 @@ A Ruby client for the [IEX Finance API](https://iextrading.com/developer).
   - [Get Key Stats](#get-key-stats)
   - [Get Dividends](#get-dividends)
   - [Get Earnings](#get-earnings)
+  - [Get Sector Performance]
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
   - [ClientError](#clienterror)
