@@ -308,7 +308,7 @@ See [#earnings](https://iextrading.com/developer/docs/#earnings) for detailed do
 
 ### Get Sector Performance
 
-Fetches earnings for a symbol.
+Fetches latest sector's performance.
 
 ```ruby
 sectors = EX::Resources::Sectors.get('MARKET')
