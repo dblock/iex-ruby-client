@@ -311,7 +311,7 @@ See [#earnings](https://iextrading.com/developer/docs/#earnings) for detailed do
 Fetches latest sector's performance.
 
 ```ruby
-sectors = EX::Resources::Sectors.get('MARKET')
+sectors = IEX::Resources::Sectors.get('MARKET')
 
 sectors.type # sectors
 sectors.name # Industrials
