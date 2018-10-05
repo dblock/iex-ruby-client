@@ -1,9 +1,10 @@
-### 0.4.4 (Next)
-
+### 0.4.4 (next)
 * Your contribution here.
+* [#32](https://github.com/dblock/iex-ruby-client/pull/32): Add `IEX::Resource::Sectors` - [@gil27](https://github.com/gil27).
 
 ### 0.4.3 (2018/08/18)
 
+* Your contribution here.
 * [#27](https://github.com/dblock/iex-ruby-client/pull/27): Added `IEX::Resources::Earnings` - [@rodolfobandeira](https://github.com/rodolfobandeira).
 
 ### 0.4.2 (2018/08/14)
