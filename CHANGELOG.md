@@ -1,5 +1,6 @@
-### 0.4.4 (Next)
+### 0.4.4 (next)
 
+* [#32](https://github.com/dblock/iex-ruby-client/pull/32): Add `IEX::Resource::Sectors` - [@gil27](https://github.com/gil27).
 * Your contribution here.
 
 ### 0.4.3 (2018/08/18)

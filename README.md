@@ -23,6 +23,7 @@ A Ruby client for the [IEX Finance API](https://iextrading.com/developer).
   - [Get Key Stats](#get-key-stats)
   - [Get Dividends](#get-dividends)
   - [Get Earnings](#get-earnings)
+  - [Get Sector Performance](#get-sector-performance)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
   - [ClientError](#clienterror)
@@ -54,6 +55,7 @@ Run `bundle install`.
 - [Get Key Stats](#get-key-stats)
 - [Get Dividends](#get-dividends)
 - [Get Earnings](#get-earnings)
+- [Get Sector Performance](#get-sector-performant)
 
 
 ## Usage
@@ -303,6 +305,20 @@ earnings.symbol_id # 4563
 ```
 See [#earnings](https://iextrading.com/developer/docs/#earnings) for detailed documentation or [earnings.rb](lib/iex/resources/earnings.rb) for returned fields.
 
+
+### Get Sector Performance
+
+Fetches latest sector's performance.
+
+```ruby
+sectors = IEX::Resources::Sectors.get('MARKET')
+
+sectors.type # sectors
+sectors.name # Industrials
+sectors.performance # 0.00711
+sectors.last_updated # 1533672000437
+```
+See [#sector-performance](https://iextrading.com/developer/docs/#sector-performance) for detaile documentation or [sectors.rb](lib/iex/resources/sectors.rb) for returned fields.
 
 ## Errors
 
