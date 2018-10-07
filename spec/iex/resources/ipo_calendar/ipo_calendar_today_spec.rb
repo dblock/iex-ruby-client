@@ -14,6 +14,10 @@ describe 'IEX::Resources::IPOCalendar.today' do
       expect(subject.view_data.count).to eq 1
     end
 
+    it 'includes last update date' do
+      expect(subject.last_update_date).to eq Date.parse('2018-10-02')
+    end
+
     it 'retrieves IPO fields per api response' do
       expect(raw_data.symbol).to eq 'UPWK'
       expect(raw_data.company_name).to eq 'UPWORK INC.'
