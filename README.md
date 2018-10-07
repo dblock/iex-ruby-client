@@ -56,7 +56,7 @@ Run `bundle install`.
 - [Get Key Stats](#get-key-stats)
 - [Get Dividends](#get-dividends)
 - [Get Earnings](#get-earnings)
-- [Get Sector Performance](#get-sector-performant)
+- [Get Sector Performance](#get-sector-performance)
 - [Get IPO Calendar](#get-ipo-calendar)
 
 
@@ -320,7 +320,7 @@ sectors.name # Industrials
 sectors.performance # 0.00711
 sectors.last_updated # 1533672000437
 ```
-See [#sector-performance](https://iextrading.com/developer/docs/#sector-performance) for detaile documentation or [sectors.rb](lib/iex/resources/sectors.rb) for returned fields.
+See [#sector-performance](https://iextrading.com/developer/docs/#sector-performance) for detailed documentation or [sectors.rb](lib/iex/resources/sectors.rb) for returned fields.
 
 
 ### Get IPO Calendar
