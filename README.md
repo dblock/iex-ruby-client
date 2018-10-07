@@ -24,6 +24,7 @@ A Ruby client for the [IEX Finance API](https://iextrading.com/developer).
   - [Get Dividends](#get-dividends)
   - [Get Earnings](#get-earnings)
   - [Get Sector Performance](#get-sector-performance)
+  - [Get IPO Calendar](#get-ipo-calendar)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
   - [ClientError](#clienterror)
@@ -56,6 +57,7 @@ Run `bundle install`.
 - [Get Dividends](#get-dividends)
 - [Get Earnings](#get-earnings)
 - [Get Sector Performance](#get-sector-performant)
+- [Get IPO Calendar](#get-ipo-calendar)
 
 
 ## Usage
@@ -319,6 +321,91 @@ sectors.performance # 0.00711
 sectors.last_updated # 1533672000437
 ```
 See [#sector-performance](https://iextrading.com/developer/docs/#sector-performance) for detaile documentation or [sectors.rb](lib/iex/resources/sectors.rb) for returned fields.
+
+
+### Get IPO Calendar
+
+Fetches a list of IPOs scheduled for the current and next month. Use `today` to get a list of today's IPOs and `upcoming` to get a list of upcoming IPOs. Each scheduled IPO listing is schematically split into separate lists of comprehensive IPO information in `raw_data` with a corresponding abridged summary in `view_data`.
+
+
+```ruby
+# Get Today's IPOs
+ipos_today = IEX::Resources::IPOCalendar.today
+
+# Information current as of last update date (available in today method only)
+ipos_today.last_update_date # => <Date: 2018-10-02 ((2458396j,0s,0n),+0s,2299161j)>
+
+# raw_data is list of IEX::Resources::IPOCalendar::RawData instances 
+# --: same for both today & upcoming method
+ipos_today.raw_data # => Array of IEX::Resources::IPOCalendar::RawData (Hashie::Trash)
+ipos_today.raw_data.first.symbol # => 'UPWK'
+ipos_today.raw_data.first.company_name # => 'UPWORK INC.'
+ipos_today.raw_data.first.expected_date # => <Date: 2018-10-03 ((2458396j,0s,0n),+0s,2299161j)>
+ipos_today.raw_data.first.lead_underwriters # => ['Citigroup Global Markets Inc', 'Jefferies LLC', 'RBC Capital Markets, LLC']
+ipos_today.raw_data.first.underwriters # => ['JMP Securities LLC', 'Stifel Nicolaus & Company, Incorporated']
+ipos_today.raw_data.first.company_counsel # => ['Fenwick & West LLP']
+ipos_today.raw_data.first.underwriter_counsel # => ['Wilson Sonsini Goodrich & Rosati, P.C.']
+ipos_today.raw_data.first.auditor # => 'Computershare Trust Company, N.A'
+ipos_today.raw_data.first.market # => 'NASDAQ Global Select'
+ipos_today.raw_data.first.cik # => '0001627475'
+ipos_today.raw_data.first.address # => '441 LOGUE AVENUE'
+ipos_today.raw_data.first.city # => 'MOUNTAIN VIEW'
+ipos_today.raw_data.first.state # => 'CA'
+ipos_today.raw_data.first.zip # => '94043'
+ipos_today.raw_data.first.phone # => '650-316-7500'
+ipos_today.raw_data.first.ceo # => 'Stephane Kasriel'
+ipos_today.raw_data.first.employees # => 395
+ipos_today.raw_data.first.url # => 'www.upwork.com'
+ipos_today.raw_data.first.status # => 'Filed'
+ipos_today.raw_data.first.shares_offered # => 12_300_000
+ipos_today.raw_data.first.price_low # => 12
+ipos_today.raw_data.first.price_high # => 14
+ipos_today.raw_data.first.offer_amount # => nil or number
+ipos_today.raw_data.first.total_expenses # => 6_000_000
+ipos_today.raw_data.first.shares_over_alloted # => 1_844_999
+ipos_today.raw_data.first.shareholder_shares # => 5_481_819
+ipos_today.raw_data.first.shares_outstanding # => 104_079_498
+ipos_today.raw_data.first.lockup_period_expiration # => empty string, nil, or Date instance
+ipos_today.raw_data.first.quiet_period_expiration # => empty string, nil, or Date instance
+ipos_today.raw_data.first.revenue # => 121_899_000
+ipos_today.raw_data.first.net_income # => 7_196_000 * -1
+ipos_today.raw_data.first.total_assets # => 290_263_000
+ipos_today.raw_data.first.total_liabilities # => 154_388_000
+ipos_today.raw_data.first.stockholder_equity # => 30_611_000 * -1
+ipos_today.raw_data.first.company_description # => 'Our mission is to create economic opportunities...'
+ipos_today.raw_data.first.business_description # => 'Our mission is to create economic opportunities...'
+ipos_today.raw_data.first.use_of_proceeds # => 'We estimate that the net proceeds from the sale by us ...'
+ipos_today.raw_data.first.competition # => 'The market for freelancers and the clients...'
+ipos_today.raw_data.first.amount # => 159_900_000
+ipos_today.raw_data.first.percent_offered # => '11.82'
+
+# IEX::Resources::IPOCalendar::RawData also returns USD denominated formatted values
+ipos_today.raw_data.first.price_low_dollar # => '$12'
+ipos_today.raw_data.first.price_high_dollar # => '$14'
+ipos_today.raw_data.first.total_expenses_dollar # => '$6,000,000'
+ipos_today.raw_data.first.revenue_dollar # => '$121,899,000'
+ipos_today.raw_data.first.net_income_dollar # => '$-7,196,000'
+ipos_today.raw_data.first.total_assets_dollar # => '$290,263,000'
+ipos_today.raw_data.first.total_liabilities_dollar # => '$154,388,000'
+ipos_today.raw_data.first.stockholder_equity_dollar # => '$-30,611,000'
+ipos_today.raw_data.first.amount_dollar # => '$159,900,000'
+
+# raw_data is list of IEX::Resources::IPOCalendar::ViewData instances 
+# --: same for both today & upcoming method
+ipos_today.view_data # => Array of IEX::Resources::IPOCalendar::ViewData (Hashie::Trash)
+ipos_today.view_data.first.company # => 'UPWORK INC.'
+ipos_today.view_data.first.symbol # => 'UPWK'
+ipos_today.view_data.first.price # => '$12.00 - 14.00'
+ipos_today.view_data.first.shares # => '12,300,000'
+ipos_today.view_data.first.amount # => '159,900,000'
+ipos_today.view_data.first.float # => '104,079,498'
+ipos_today.view_data.first.percent # => '11.82%'
+ipos_today.view_data.first.market # => 'NASDAQ Global Select'
+ipos_today.view_data.first.expected # => '2018-10-03'
+
+```
+See [#ipo-calendar](https://iextrading.com/developer/docs/#ipo-calendar) for detailed documentation or [ipo_calendar.rb](lib/iex/resources/ipo_calendar.rb) for returned fields.
+
 
 ## Errors
 
