@@ -1,12 +1,13 @@
 require_relative 'base'
 require_relative 'ipo_calendar/base'
+require_relative 'ipo_calendar/today'
 
 module IEX
   module Resources
     module IPOCalendar
       def self.today
         IEX::Resources::Base.symbol(nil) do
-          IPOCalendar::Base.new IEX::Api::IPOCalendar.today
+          IPOCalendar::Today.new IEX::Api::IPOCalendar.today
         end
       end
 
