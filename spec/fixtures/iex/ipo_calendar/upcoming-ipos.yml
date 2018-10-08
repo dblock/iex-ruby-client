@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.iextrading.com/1.0/stock/market/upcoming-ipos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 26 Mar 2018 20:47:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '490'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=a59dd70ac7f44bb1a19cebd4d5204e8d; Domain=.iextrading.com; Path=/; Expires=Tue,
+        27 Mar 2018 08:47:50 GMT; Secure
+      Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
+        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+      X-Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
+        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
+      Frame-Options:
+      - deny
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: UTF-8
+      string: '{"rawData":[{"symbol":"GH","companyName":"GUARDANT HEALTH, INC.","expectedDate":"2018-10-04","leadUnderwriters":["BofA Merrill Lynch","J.P. Morgan Securities LLC"],"underwriters":["Cowen and Company, LLC","Leerink Partners LLC","William Blair and Co., L.L.C."],"companyCounsel":["Latham & Watkins LLP"],"underwriterCounsel":["Cooley LLP"],"auditor":"Computershare Trust Company, N.A","market":"NASDAQ Global Select","cik":"0001576280","address":"505 PENOBSCOT DR.","city":"REDWOOD CITY","state":"CA","zip":"94063","phone":"855-698-8887","ceo":"Helmy Eltoukhy","employees":348,"url":"www.guardanthealth.com","status":"Filed","sharesOffered":12500000,"priceLow":15,"priceHigh":17,"offerAmount":200000000,"totalExpenses":4241500,"sharesOverAlloted":1875000,"shareholderShares":25000,"sharesOutstanding":83557281,"lockupPeriodExpiration":"2019-04-04","quietPeriodExpiration":"2019-04-04","revenue":36074000,"netIncome":-35483000,"totalAssets":362847000,"totalLiabilities":45066000,"stockholderEquity":276781000,"companyDescription":"We are a leading precision oncology company focused on helping conquer cancer...Our corporate website is &#10; www.guardanthealth.com.","businessDescription":"We are a leading precision oncology company focused on helping conquer cancer...Our corporate website is &#10; www.guardanthealth.com.","useOfProceeds":"We estimate the net proceeds from this offering will be approximately $181.8 &#10; million, or $209.7 million...obligations of the U.S. government.","competition":"Growing understanding of the importance of biomarkers linked with therapy...continue to compete &#10; effectively on each of those layers.","amount":200000000,"percentOffered":"14.96"},{"symbol":"KOD","companyName":"KODIAK SCIENCES INC.","expectedDate":"2018-10-04","leadUnderwriters":["BofA Merrill Lynch","Morgan Stanley & Co. LLC"],"underwriters":["Barclays Capital Inc","Chardan Capital Markets LLC"],"companyCounsel":["Wilson Sonsini Goodrich & Rosati, P.C."],"underwriterCounsel":["Davis Polk & Wardwell LLP"],"auditor":"Computershare Trust Company, N.A","market":"NASDAQ Global","cik":"0001468748","address":"2631 HANOVER STREET","city":"PALO ALTO","state":"CA","zip":"94304","phone":"650-281-0850","ceo":"Victor Perlroth","employees":28,"url":"www.kodiak.com","status":"Filed","sharesOffered":9000000,"priceLow":13,"priceHigh":15,"offerAmount":null,"totalExpenses":3600000,"sharesOverAlloted":1350000,"shareholderShares":null,"sharesOutstanding":35365855,"lockupPeriodExpiration":"","quietPeriodExpiration":"","revenue":0,"netIncome":-16329000,"totalAssets":21703000,"totalLiabilities":55913000,"stockholderEquity":-84227000,"companyDescription":"We are a clinical stage biopharmaceutical company...Our principal &#10; executive office is located at 2631 Hanover Street, Palo Alto, California 94304. &#10; Our telephone number is (650) 281-0850. Our website is www.kodiak.com.","businessDescription":"We are a clinical stage biopharmaceutical company...Our principal &#10; executive office is located at 2631 Hanover Street, Palo Alto, California 94304. &#10; Our telephone number is (650) 281-0850. Our website is www.kodiak.com.","useOfProceeds":"We estimate that the net proceeds from this offering will be approximately...we intend to invest the net proceeds in short-term &#10; interest-bearing investment-grade securities, certificates of deposit or &#10; government securities.","competition":"The biotechnology and pharmaceutical industries are characterized by...our patents and &#10; other proprietary protections for KSI-301 will not prevent development or &#10; commercialization of product candidates that are different from KSI-301.","amount":126000000,"percentOffered":"25.45"}],"viewData":[{"Company":"GUARDANT HEALTH, INC.","Symbol":"GH","Price":"$15.00 - 17.00","Shares":"12,500,000","Amount":"200,000,000","Float":"83,557,281","Percent":"14.96%","Market":"NASDAQ Global Select","Expected":"2018-10-04"},{"Company":"KODIAK SCIENCES INC.","Symbol":"KOD","Price":"$13.00 - 15.00","Shares":"9,000,000","Amount":"126,000,000","Float":"35,365,855","Percent":"25.45%","Market":"NASDAQ Global","Expected":"2018-10-04"}]}'
+      http_version: 
+  recorded_at: Mon, 26 Mar 2018 20:47:50 GMT
+recorded_with: VCR 4.0.0
