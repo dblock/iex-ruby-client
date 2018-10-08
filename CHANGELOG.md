@@ -1,7 +1,7 @@
 ### 0.4.4 (next)
 
-* [#32](https://github.com/dblock/iex-ruby-client/pull/32): Add `IEX::Resource::Sectors` - [@gil27](https://github.com/gil27).
-* [#33](https://github.com/dblock/iex-ruby-client/pull/33): Add `IEX::Resource::Sectors` - [@marchyoung](https://github.com/marchyoung).
+* [#32](https://github.com/dblock/iex-ruby-client/pull/32): Add `IEX::Resources::Sectors` - [@gil27](https://github.com/gil27).
+* [#33](https://github.com/dblock/iex-ruby-client/pull/33): Add `IEX::Resources::IPOCalendar` - [@marchyoung](https://github.com/marchyoung).
 * Your contribution here.
 
 ### 0.4.3 (2018/08/18)
