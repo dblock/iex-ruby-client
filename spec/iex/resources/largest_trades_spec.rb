@@ -11,7 +11,7 @@ describe IEX::Resources::LargestTrades do
       it 'retrieves Sectors' do
         expect(subject.size).to eq 10
         expect(subject.first.price).to eq 226.6
-        expect(subject.first.size).to eq 29363
+        expect(subject.first.size).to eq 29_363
         expect(subject.first.time).to eq 1_539_111_127_208
         expect(subject.first.time_label).to eq '14:52:07'
         expect(subject.first.venue).to eq('EDGX')
