@@ -24,6 +24,7 @@ A Ruby client for the [IEX Finance API](https://iextrading.com/developer).
   - [Get Dividends](#get-dividends)
   - [Get Earnings](#get-earnings)
   - [Get Sector Performance](#get-sector-performance)
+  - [Get Largest Trades](#get-largest-trades)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
   - [ClientError](#clienterror)
@@ -55,8 +56,8 @@ Run `bundle install`.
 - [Get Key Stats](#get-key-stats)
 - [Get Dividends](#get-dividends)
 - [Get Earnings](#get-earnings)
-- [Get Sector Performance](#get-sector-performant)
-
+- [Get Sector Performance](#get-sector-performance)
+- [Get Largest Trades](#get-Largest-trades)
 
 ## Usage
 
@@ -318,7 +319,23 @@ sectors.name # Industrials
 sectors.performance # 0.00711
 sectors.last_updated # 1533672000437
 ```
-See [#sector-performance](https://iextrading.com/developer/docs/#sector-performance) for detaile documentation or [sectors.rb](lib/iex/resources/sectors.rb) for returned fields.
+See [#sector-performance](https://iextrading.com/developer/docs/#sector-performance) for detailed documentation or [sectors.rb](lib/iex/resources/sectors.rb) for returned fields.
+
+### Get Largest Trades
+
+Fetches largest trades.
+
+```ruby
+trades = IEX::Resources::LargestTrades.get('aapl')
+
+trades.price # 186.39
+trades.size # 10000
+trades.time # 1527090690175
+trades.time_label # 11:51:30
+trades.venue # EDGX
+trades.venue_name # Cboe EDGX
+```
+See [#largest-trades](https://iextrading.com/developer/docs/#largest-trades) for detailed documentation or [largest_trades.rb](lib/iex/resources/largest_trades.rb) for returned fields.
 
 ## Errors
 

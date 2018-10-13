@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.iextrading.com/1.0/stock/aapl/largest-trades
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 10 Oct 2018 02:07:42 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=4c3eccc8f87d4862b40b663d77015ba1; Domain=.iextrading.com; Path=/; Expires=Wed,
+        10 Oct 2018 14:07:42 GMT; Secure
+      Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
+        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
+        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
+        'self' 'unsafe-inline' 'unsafe-eval';
+      X-Content-Security-Policy:
+      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
+        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
+        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
+        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
+        'self' 'unsafe-inline' 'unsafe-eval';
+      Frame-Options:
+      - SAMEORIGIN
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"price":226.6,"size":29363,"time":1539111127208,"timeLabel":"14:52:07","venue":"EDGX","venueName":"Cboe
+        EDGX"},{"price":225.42,"size":27908,"time":1539104929104,"timeLabel":"13:08:49","venue":"None","venueName":"Off
+        Exchange"},{"price":227.2,"size":25776,"time":1539114387550,"timeLabel":"15:46:27","venue":"EDGX","venueName":"Cboe
+        EDGX"},{"price":227.15,"size":20243,"time":1539114348298,"timeLabel":"15:45:48","venue":"EDGX","venueName":"Cboe
+        EDGX"},{"price":223.8,"size":16075,"time":1539092734869,"timeLabel":"09:45:34","venue":"None","venueName":"Off
+        Exchange"},{"price":226.7,"size":15988,"time":1539113487482,"timeLabel":"15:31:27","venue":"EDGX","venueName":"Cboe
+        EDGX"},{"price":223.84,"size":14189,"time":1539091902198,"timeLabel":"09:31:42","venue":"EDGX","venueName":"Cboe
+        EDGX"},{"price":223.59,"size":13100,"time":1539094017086,"timeLabel":"10:06:57","venue":"None","venueName":"Off
+        Exchange"},{"price":227.22,"size":12704,"time":1539114422643,"timeLabel":"15:47:02","venue":"None","venueName":"Off
+        Exchange"},{"price":225.66,"size":12172,"time":1539095003151,"timeLabel":"10:23:23","venue":"None","venueName":"Off
+        Exchange"}]'
+    http_version: 
+  recorded_at: Wed, 10 Oct 2018 02:07:42 GMT
+recorded_with: VCR 4.0.0
