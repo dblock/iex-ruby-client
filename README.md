@@ -319,7 +319,7 @@ sectors.name # Industrials
 sectors.performance # 0.00711
 sectors.last_updated # 1533672000437
 ```
-See [#sector-performance](https://iextrading.com/developer/docs/#sector-performance) for detaile documentation or [sectors.rb](lib/iex/resources/sectors.rb) for returned fields.
+See [#sector-performance](https://iextrading.com/developer/docs/#sector-performance) for detailed documentation or [sectors.rb](lib/iex/resources/sectors.rb) for returned fields.
 
 ### Get Largest Trades
 
@@ -335,7 +335,7 @@ trades.time_label # 11:51:30
 trades.venue # EDGX
 trades.venue_name # Cboe EDGX
 ```
-See [#largest-trades](https://iextrading.com/developer/docs/#largest-trades) for detaile documentation or [largest_trades.rb](lib/iex/resources/largest_trades.rb) for returned fields.
+See [#largest-trades](https://iextrading.com/developer/docs/#largest-trades) for detailed documentation or [largest_trades.rb](lib/iex/resources/largest_trades.rb) for returned fields.
 
 ## Errors
 
