@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 10 Oct 2018 02:07:42 GMT
+      - Tue, 16 Oct 2018 15:01:59 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -29,8 +29,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - ctoken=4c3eccc8f87d4862b40b663d77015ba1; Domain=.iextrading.com; Path=/; Expires=Wed,
-        10 Oct 2018 14:07:42 GMT; Secure
+      - ctoken=51f305337e614587a6da212572ca14f5; Domain=.iextrading.com; Path=/; Expires=Wed,
+        17 Oct 2018 03:01:59 GMT; Secure
       Content-Security-Policy:
       - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
         'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
@@ -61,17 +61,16 @@ http_interactions:
       - Origin, X-Requested-With, Content-Type, Accept
     body:
       encoding: ASCII-8BIT
-      string: '[{"price":226.6,"size":29363,"time":1539111127208,"timeLabel":"14:52:07","venue":"EDGX","venueName":"Cboe
-        EDGX"},{"price":225.42,"size":27908,"time":1539104929104,"timeLabel":"13:08:49","venue":"None","venueName":"Off
-        Exchange"},{"price":227.2,"size":25776,"time":1539114387550,"timeLabel":"15:46:27","venue":"EDGX","venueName":"Cboe
-        EDGX"},{"price":227.15,"size":20243,"time":1539114348298,"timeLabel":"15:45:48","venue":"EDGX","venueName":"Cboe
-        EDGX"},{"price":223.8,"size":16075,"time":1539092734869,"timeLabel":"09:45:34","venue":"None","venueName":"Off
-        Exchange"},{"price":226.7,"size":15988,"time":1539113487482,"timeLabel":"15:31:27","venue":"EDGX","venueName":"Cboe
-        EDGX"},{"price":223.84,"size":14189,"time":1539091902198,"timeLabel":"09:31:42","venue":"EDGX","venueName":"Cboe
-        EDGX"},{"price":223.59,"size":13100,"time":1539094017086,"timeLabel":"10:06:57","venue":"None","venueName":"Off
-        Exchange"},{"price":227.22,"size":12704,"time":1539114422643,"timeLabel":"15:47:02","venue":"None","venueName":"Off
-        Exchange"},{"price":225.66,"size":12172,"time":1539095003151,"timeLabel":"10:23:23","venue":"None","venueName":"Off
+      string: '[{"price":217.76,"size":9000,"time":1539699300665,"timeLabel":"10:15:00","venue":"None","venueName":"Off
+        Exchange"},{"price":217.36,"size":8171,"time":1539699439595,"timeLabel":"10:17:19","venue":"XNGS","venueName":"Nasdaq"},{"price":218.671,"size":7444,"time":1539697175918,"timeLabel":"09:39:35","venue":"None","venueName":"Off
+        Exchange"},{"price":218.09,"size":7220,"time":1539698909729,"timeLabel":"10:08:29","venue":"None","venueName":"Off
+        Exchange"},{"price":217.81,"size":6300,"time":1539699334482,"timeLabel":"10:15:34","venue":"None","venueName":"Off
+        Exchange"},{"price":218.7,"size":6000,"time":1539696843070,"timeLabel":"09:34:03","venue":"None","venueName":"Off
+        Exchange"},{"price":218.258,"size":6000,"time":1539696980111,"timeLabel":"09:36:20","venue":"None","venueName":"Off
+        Exchange"},{"price":218.62,"size":6000,"time":1539697154187,"timeLabel":"09:39:14","venue":"None","venueName":"Off
+        Exchange"},{"price":216.963,"size":6000,"time":1539700749730,"timeLabel":"10:39:09","venue":"None","venueName":"Off
+        Exchange"},{"price":216.87,"size":5986,"time":1539700719236,"timeLabel":"10:38:39","venue":"None","venueName":"Off
         Exchange"}]'
     http_version: 
-  recorded_at: Wed, 10 Oct 2018 02:07:42 GMT
+  recorded_at: Tue, 16 Oct 2018 15:01:59 GMT
 recorded_with: VCR 4.0.0

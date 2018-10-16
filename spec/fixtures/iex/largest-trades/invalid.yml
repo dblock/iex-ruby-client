@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.iextrading.com/1.0/stock/INVALID/sector-performance
+    uri: https://api.iextrading.com/1.0/stock/INVALID/largest-trades
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 10 Oct 2018 02:09:37 GMT
+      - Tue, 16 Oct 2018 15:01:59 GMT
       Content-Type:
       - text/html; charset=utf-8
       Transfer-Encoding:
@@ -29,8 +29,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - ctoken=0297b9c91a894b70a03704f4e216b9f9; Domain=.iextrading.com; Path=/; Expires=Wed,
-        10 Oct 2018 14:09:37 GMT; Secure
+      - ctoken=9681561580e34e8aa82578eb2b12405b; Domain=.iextrading.com; Path=/; Expires=Wed,
+        17 Oct 2018 03:01:59 GMT; Secure
       Content-Security-Policy:
       - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
         'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
@@ -61,5 +61,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: Unknown symbol
     http_version: 
-  recorded_at: Wed, 10 Oct 2018 02:09:37 GMT
+  recorded_at: Tue, 16 Oct 2018 15:01:59 GMT
 recorded_with: VCR 4.0.0

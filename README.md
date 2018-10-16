@@ -323,17 +323,17 @@ See [#sector-performance](https://iextrading.com/developer/docs/#sector-performa
 
 ### Get Largest Trades
 
-Fetches largest trades.
+Fetches largest trades in the day for a specific stock. Ordered by largest trade on the top.
 
 ```ruby
 trades = IEX::Resources::LargestTrades.get('aapl')
 
-trades.price # 186.39
-trades.size # 10000
-trades.time # 1527090690175
-trades.time_label # 11:51:30
-trades.venue # EDGX
-trades.venue_name # Cboe EDGX
+trades.first.price # 186.39
+trades.first.size # 10000 - refers to the number of shares negotiated in the day.
+trades.first.time # 1527090690175
+trades.first.time_label # 11:51:30
+trades.first.venue # EDGX
+trades.first.venue_name # Cboe EDGX
 ```
 See [#largest-trades](https://iextrading.com/developer/docs/#largest-trades) for detailed documentation or [largest_trades.rb](lib/iex/resources/largest_trades.rb) for returned fields.
 
