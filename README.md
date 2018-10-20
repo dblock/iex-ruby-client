@@ -25,6 +25,7 @@ A Ruby client for the [IEX Finance API](https://iextrading.com/developer).
   - [Get Earnings](#get-earnings)
   - [Get Sector Performance](#get-sector-performance)
   - [Get Largest Trades](#get-largest-trades)
+  - [Get Cryptocurrencies](#get-cryptocurrencies)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
   - [ClientError](#clienterror)
@@ -336,6 +337,69 @@ trades.first.venue # EDGX
 trades.first.venue_name # Cboe EDGX
 ```
 See [#largest-trades](https://iextrading.com/developer/docs/#largest-trades) for detailed documentation or [largest_trades.rb](lib/iex/resources/largest_trades.rb) for returned fields.
+
+### Get Cryptocurrencies
+
+Fetches a list of cryptocurrencies' latest quotes and information.
+
+```
+crypto = IEX::Resources::Crypto.get
+
+crypto.first.ask_price # 6617.99
+crypto.first.symbol # 'BTCUSDT'
+crypto.first.company_name # 'Bitcoin USD'
+crypto.first.primary_exchange # 'crypto'
+crypto.first.sector # 'cryptocurrency'
+crypto.first.calculation_price # 'realtime'
+crypto.first.open # 6645.76
+crypto.first.open_dollar # '$6,645'
+crypto.first.open_time # 1_538_360_540_423
+crypto.first.close # 6595.49934953
+crypto.first.close_dollar # '$6,595'
+crypto.first.close_time # 1_538_446_940_423
+crypto.first.high # 6663.1
+crypto.first.high_dollar # '$6,663'
+crypto.first.low # 6510
+crypto.first.low_dollar # '$6,510'
+crypto.first.latest_price # 6618.7
+crypto.first.latest_price_dollar # '$6,618'
+crypto.first.latest_source # 'Real time price'
+crypto.first.latest_time # '10:22:20 PM'
+crypto.first.latest_update # 1_538_446_940_423
+crypto.first.latest_volume # 20_027.36393
+crypto.first.latest_volume_dollar # '$20,027'
+crypto.first.iex_realtime_price # nil
+crypto.first.iex_realtime_size # nil
+crypto.first.iex_last_updated # nil
+crypto.first.delayed_price # nil
+crypto.first.delayed_price_time # nil
+crypto.first.extended_change # nil
+crypto.first.extended_change_percent # nil
+crypto.first.extended_price_time # nil
+crypto.first.previous_close # 6645.76
+crypto.first.previous_close_dollar # '$6,645'
+crypto.first.change # -27.06
+crypto.first.change_percent # -0.00407
+crypto.first.change_percent_s # '-0.41%'
+crypto.first.iex_market_percent # nil
+crypto.first.iex_volume # nil
+crypto.first.avg_total_volume # nil
+crypto.first.iex_bid_price # nil
+crypto.first.iex_bid_size # nil
+crypto.first.iex_ask_price # nil
+crypto.first.iex_ask_size # nil
+crypto.first.market_cap # nil
+crypto.first.pe_ratio # nil
+crypto.first.week52_high # nil
+crypto.first.week52_high_dollar # nil
+crypto.first.week52_low # nil
+crypto.first.week52_low_dollar # nil
+crypto.first.ytd_change # nil
+crypto.first.bid_price # 6613.16
+crypto.first.bid_size # 2.166213
+crypto.first.ask_price # 6617.99
+crypto.first.ask_size # 0.264944
+```
 
 ## Errors
 
