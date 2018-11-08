@@ -1,5 +1,6 @@
 ### 0.4.4 (next)
 
+* [#39](https://github.com/dblock/iex-ruby-client/pull/39): Remove default range and use iextrading default range 1m instead in `IEX::Api::Dividends` - [@ildarkayumov](https://github.com/ildarkayumov).
 * [#37](https://github.com/dblock/iex-ruby-client/pull/37): Add `IEX::Resource::Crypto` - [@rodolfobandeira](https://github.com/rodolfobandeira).
 * [#34](https://github.com/dblock/iex-ruby-client/pull/34): Add `IEX::Resource::LargestTrades` - [@gil27](https://github.com/gil27).
 * [#32](https://github.com/dblock/iex-ruby-client/pull/32): Add `IEX::Resource::Sectors` - [@gil27](https://github.com/gil27).
