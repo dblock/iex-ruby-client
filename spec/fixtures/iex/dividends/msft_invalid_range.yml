@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.iextrading.com/1.0/stock/MSFT/dividends/6m/INVALID
+    uri: https://api.iextrading.com/1.0/stock/MSFT/dividends/INVALID
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.15.2
+      - Faraday v0.15.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,16 +21,16 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 11 Aug 2018 13:18:55 GMT
+      - Thu, 08 Nov 2018 15:42:17 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '371'
+      - '2'
       Connection:
       - keep-alive
       Set-Cookie:
-      - ctoken=810c099ba2f8423e9f5adb38c85efd59; Domain=.iextrading.com; Path=/; Expires=Sun,
-        12 Aug 2018 01:18:55 GMT; Secure
+      - ctoken=4c5cef42b56445a0b723b05c4fee4cd3; Domain=.iextrading.com; Path=/; Expires=Fri,
+        09 Nov 2018 03:42:17 GMT; Secure
       Content-Security-Policy:
       - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
         'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
@@ -61,9 +61,7 @@ http_interactions:
       - Origin, X-Requested-With, Content-Type, Accept
     body:
       encoding: UTF-8
-      string: '[{"exDate":"2018-02-14","paymentDate":"2018-03-08","recordDate":"2018-02-15","declaredDate":"2017-11-29","amount":0.42,"flag":"","type":"Dividend
-        income","qualified":"Q","indicated":""},{"exDate":"2017-11-15","paymentDate":"2017-12-14","recordDate":"2017-11-16","declaredDate":"2017-09-19","amount":0.42,"flag":"","type":"Dividend
-        income","qualified":"Q","indicated":""}]'
+      string: "[]"
     http_version: 
-  recorded_at: Sat, 11 Aug 2018 13:18:55 GMT
+  recorded_at: Thu, 08 Nov 2018 15:42:17 GMT
 recorded_with: VCR 4.0.0
