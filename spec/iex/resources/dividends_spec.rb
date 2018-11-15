@@ -23,7 +23,7 @@ describe IEX::Resources::Dividends do
         IEX::Resources::Dividends.get('MSFT')
       end
       it 'retrieves dividends when no range is passed' do
-        expect(subject.size).to eq 2
+        expect(subject.size).to eq 1
       end
     end
     context 'invalid range', vcr: { cassette_name: 'dividends/msft_invalid_range' } do

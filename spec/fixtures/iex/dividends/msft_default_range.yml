@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.iextrading.com/1.0/stock/MSFT/dividends/6m
+    uri: https://api.iextrading.com/1.0/stock/MSFT/dividends
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 08 Nov 2018 15:42:16 GMT
+      - Thu, 15 Nov 2018 07:32:08 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -29,8 +29,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - ctoken=9a22a87041a24b10acc0234239d71f93; Domain=.iextrading.com; Path=/; Expires=Fri,
-        09 Nov 2018 03:42:16 GMT; Secure
+      - ctoken=3593cacf28944137a79f569b94101526; Domain=.iextrading.com; Path=/; Expires=Thu,
+        15 Nov 2018 19:32:08 GMT; Secure
       Content-Security-Policy:
       - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
         'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
@@ -62,8 +62,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '[{"exDate":"2018-02-14","paymentDate":"2018-03-08","recordDate":"2018-02-15","declaredDate":"2017-11-29","amount":0.42,"flag":"","type":"Dividend
-        income","qualified":"Q","indicated":""},{"exDate":"2017-11-15","paymentDate":"2017-12-14","recordDate":"2017-11-16","declaredDate":"2017-09-19","amount":0.42,"flag":"","type":"Dividend
         income","qualified":"Q","indicated":""}]'
     http_version: 
-  recorded_at: Thu, 08 Nov 2018 15:42:16 GMT
+  recorded_at: Thu, 15 Nov 2018 07:32:08 GMT
 recorded_with: VCR 4.0.0
