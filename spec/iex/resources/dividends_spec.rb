@@ -32,8 +32,7 @@ describe IEX::Resources::Dividends do
       end
       let(:dividends) { subject.first }
       it 'retrieves dividends when invalid range is passed' do
-        expect(subject.size).to eq 2 # Falls into default 1 year
-        expect(dividends.type).to eq 'Dividend income'
+        expect(subject.size).to eq 0
       end
     end
     context 'with range', vcr: { cassette_name: 'dividends/msft_1y' } do
@@ -41,7 +40,7 @@ describe IEX::Resources::Dividends do
         IEX::Resources::Dividends.get('MSFT', '1y')
       end
       it 'retrieves dividends with range of 1 year' do
-        expect(subject.size).to eq 2
+        expect(subject.size).to eq 4
       end
     end
   end

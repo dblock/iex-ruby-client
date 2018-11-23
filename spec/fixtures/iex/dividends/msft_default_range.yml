@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.15.2
+      - Faraday v0.15.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,16 +21,16 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 11 Aug 2018 13:16:51 GMT
+      - Thu, 15 Nov 2018 07:32:08 GMT
       Content-Type:
       - application/json; charset=utf-8
-      Content-Length:
-      - '186'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       Set-Cookie:
-      - ctoken=ccb88e016a434ff3b028933badc76184; Domain=.iextrading.com; Path=/; Expires=Sun,
-        12 Aug 2018 01:16:51 GMT; Secure
+      - ctoken=3593cacf28944137a79f569b94101526; Domain=.iextrading.com; Path=/; Expires=Thu,
+        15 Nov 2018 19:32:08 GMT; Secure
       Content-Security-Policy:
       - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
         'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
@@ -60,9 +60,9 @@ http_interactions:
       Access-Control-Allow-Headers:
       - Origin, X-Requested-With, Content-Type, Accept
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: '[{"exDate":"2018-02-14","paymentDate":"2018-03-08","recordDate":"2018-02-15","declaredDate":"2017-11-29","amount":0.42,"flag":"","type":"Dividend
         income","qualified":"Q","indicated":""}]'
     http_version: 
-  recorded_at: Sat, 11 Aug 2018 13:16:51 GMT
+  recorded_at: Thu, 15 Nov 2018 07:32:08 GMT
 recorded_with: VCR 4.0.0

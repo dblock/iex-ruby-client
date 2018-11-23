@@ -9,7 +9,6 @@ module IEX
         IEX::Api.default_connection [
           symbol,
           'dividends',
-          range ? '6m' : nil,
           range
         ].compact.join('/')
       end
