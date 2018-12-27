@@ -1,3 +1,7 @@
+### 0.4.5 (Next)
+
+* Your contribution here.
+
 ### 0.4.4 (2018/12/27)
 
 * [#39](https://github.com/dblock/iex-ruby-client/pull/39): Remove default range and use iextrading default range 1m instead in `IEX::Api::Dividends` - [@ildarkayumov](https://github.com/ildarkayumov).
