@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe IEX::Resources::Estimates do
-  context 'known symbol' do
+  context 'symbol with estimate' do
     context 'with defaults', vcr: { cassette_name: 'estimates/msft' } do
       subject do
         IEX::Resources::Estimates.get('MSFT')
@@ -15,6 +15,15 @@ describe IEX::Resources::Estimates do
         expect(estimates.fiscal_end_date).to eq '2017-03-31'
         expect(estimates.report_date).to eq '2017-04-15'
       end
+    end
+  end
+  context 'symbol with no estimate', vcr: { cassette_name: 'estimates/zg' } do
+    subject do
+      IEX::Resources::Estimates.get('ZG')
+    end
+    let(:estimates) { subject }
+    it 'returns nil' do
+      expect(estimates).to eq nil
     end
   end
 end

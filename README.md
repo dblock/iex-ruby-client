@@ -404,10 +404,10 @@ crypto.first.ask_size # 0.264944
 
 ### Get Estimates
 
-Provides the latest consensus estimate for the next fiscal period
+Provides the latest consensus estimate for the next fiscal period. Returns the estimate object if present or nil if unknown by IEX.
 
 ```
-estimate = IEX::Resources::Estimate.get('MSFT')
+estimate = IEX::Resources::Estimates.get('MSFT')
 
 estimate.consensus_eps # 2.02
 estimate.number_of_estimates # 14

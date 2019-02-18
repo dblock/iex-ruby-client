@@ -11,7 +11,9 @@ module IEX
 
       def self.get(stock_symbol)
         Base.symbol(stock_symbol) do
-          IEX::Api::Estimates.get(stock_symbol)['estimates'].map do |data|
+          response = IEX::Api::Estimates.get(stock_symbol)
+          return nil if response['estimates'].nil?
+          response['estimates'].map do |data|
             new data
           end
         end
