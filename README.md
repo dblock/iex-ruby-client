@@ -26,6 +26,7 @@ A Ruby client for the [IEX Finance API](https://iextrading.com/developer).
   - [Get Sector Performance](#get-sector-performance)
   - [Get Largest Trades](#get-largest-trades)
   - [Get Cryptocurrencies](#get-cryptocurrencies)
+  - [Get Estimates](#get-estimates)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
   - [ClientError](#clienterror)
@@ -399,6 +400,20 @@ crypto.first.bid_price # 6613.16
 crypto.first.bid_size # 2.166213
 crypto.first.ask_price # 6617.99
 crypto.first.ask_size # 0.264944
+```
+
+### Get Estimates
+
+Provides the latest consensus estimate for the next fiscal period
+
+```
+estimate = IEX::Resources::Estimate.get('MSFT')
+
+estimate.consensus_eps # 2.02
+estimate.number_of_estimates # 14
+estimate.fiscal_period # 'Q2 2017
+estimate.fiscal_end_date # '2017-03-31'
+estimate.report_date # '2017-04-15'
 ```
 
 ## Errors
