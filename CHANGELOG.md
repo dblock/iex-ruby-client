@@ -1,6 +1,8 @@
 ### 0.4.5 (Next)
 
 * Your contribution here.
+* [#41](https://github.com/dblock/iex-ruby-client/pull/41): Provide quarterly earnings estimates support - [@Bensign](https://github.com/Bensign).
+
 
 ### 0.4.4 (2018/12/27)
 
