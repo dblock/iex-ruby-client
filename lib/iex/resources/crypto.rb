@@ -58,9 +58,9 @@ module IEX
       property 'ask_price', from: 'askPrice'
       property 'ask_size', from: 'askSize'
 
-      def self.get
-        IEX::Api::Crypto.get.map do |data|
-          new data
+      def self.get(crypto_symbol)
+        Base.symbol(crypto_symbol) do
+          new IEX::Api::Crypto.get(crypto_symbol)
         end
       end
     end
