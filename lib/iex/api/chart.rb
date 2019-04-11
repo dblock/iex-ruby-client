@@ -14,6 +14,7 @@ module IEX
 
       def self.connection(symbol, range)
         IEX::Api.default_connection [
+          'stock',
           symbol,
           'chart',
           range && range.respond_to?(:strftime) ? "date/#{range.strftime('%Y%m%d')}" : range

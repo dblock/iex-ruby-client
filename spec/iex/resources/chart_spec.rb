@@ -8,13 +8,13 @@ describe IEX::Resources::Chart do
     let(:first) { subject.first }
     let(:last) { subject.last }
     it 'retrieves a default chart' do
-      expect(subject.count).to eq 21
+      expect(subject.count).to eq 23
       expect(first).to be_a IEX::Resources::Chart::Default
-      expect(first.label).to eq 'Feb 26'
-      expect(first.change_percent_s).to eq '+1.45%'
-      expect(first.close).to eq 95.42
-      expect(first.date).to eq Date.new(2018, 2, 26)
-      expect(last.label).to eq 'Mar 26'
+      expect(first.label).to eq 'Mar 6'
+      expect(first.change_percent_s).to eq '0.00%'
+      expect(first.close).to eq 111.75
+      expect(first.date).to eq Date.new(2019, 3, 6)
+      expect(last.label).to eq 'Apr 5'
     end
   end
 
@@ -25,11 +25,11 @@ describe IEX::Resources::Chart do
     let(:first) { subject.first }
     let(:last) { subject.last }
     it 'retrieves a 1 day chart' do
-      expect(subject.count).to eq 385
+      expect(subject.count).to eq 390
       expect(first).to be_a IEX::Resources::Chart::OneDay
       expect(first.label).to eq '09:30 AM'
-      expect(first.high).to eq 94.97
-      expect(first.low).to eq 94.76
+      expect(first.high).to eq 119.67
+      expect(first.low).to eq 119.43
       expect(first.minute).to eq '09:30'
     end
   end
@@ -45,15 +45,15 @@ describe IEX::Resources::Chart do
     end
   end
 
-  context 'date', vcr: { cassette_name: 'chart/20180227' } do
+  context 'date', vcr: { cassette_name: 'chart/20190306' } do
     subject do
-      IEX::Resources::Chart.get('MSFT', Date.new(2018, 2, 27))
+      IEX::Resources::Chart.get('MSFT', Date.new(2019, 3, 6))
     end
     let(:first) { subject.first }
-    it 'retrieves a 1 day chart from 2018/2/27' do
+    it 'retrieves a 1 day chart from 2019/3/6' do
       expect(subject.count).to eq 390
       expect(first).to be_a IEX::Resources::Chart::OneDay
-      expect(first.date).to eq Date.new(2018, 2, 27)
+      expect(first.date).to eq Date.new(2019, 3, 6)
     end
   end
 
@@ -63,9 +63,9 @@ describe IEX::Resources::Chart do
     end
     let(:first) { subject.first }
     it 'retrieves a 1m chart from' do
-      expect(subject.count).to eq 21
+      expect(subject.count).to eq 23
       expect(first).to be_a IEX::Resources::Chart::Default
-      expect(first.date).to eq Date.new(2018, 2, 26)
+      expect(first.date).to eq Date.new(2019, 3, 6)
     end
   end
 
