@@ -7,6 +7,7 @@ module IEX
 
       def self.connection(symbol, range = nil)
         IEX::Api.default_connection [
+          'stock',
           symbol,
           'dividends',
           range

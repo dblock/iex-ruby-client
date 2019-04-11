@@ -3,15 +3,15 @@ require_relative 'base'
 module IEX
   module Resources
     class Dividends < Resource
+      property 'ex_date', from: 'exDate'
       property 'payment_date', from: 'paymentDate'
       property 'record_date', from: 'recordDate'
       property 'declared_date', from: 'declaredDate'
       property 'amount'
       property 'amount_dollar'
-      property 'flag'
-      property 'type'
-      property 'qualified'
-      property 'indicated'
+      property 'currency'
+      property 'description'
+      property 'frequency'
 
       def initialize(data)
         super
