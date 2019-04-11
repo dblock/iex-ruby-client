@@ -7,6 +7,7 @@ module IEX
 
       def self.connection(symbol, range)
         IEX::Api.default_connection [
+          'stock',
           symbol,
           'news',
           range ? 'last' : nil,

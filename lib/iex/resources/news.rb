@@ -3,7 +3,7 @@ require_relative 'base'
 module IEX
   module Resources
     class News < Resource
-      property 'datetime', transform_with: ->(v) { DateTime.parse(v) }
+      property 'datetime', transform_with: ->(v) { Time.at(v / 1000.0) }
       property 'headline'
       property 'source'
       property 'url'

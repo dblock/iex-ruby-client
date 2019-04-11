@@ -9,9 +9,9 @@ describe IEX::Resources::News do
       let(:news) { subject.first }
       it 'retrieves news' do
         expect(subject.size).to eq 10
-        expect(news.datetime).to eq DateTime.parse('2018-03-26T15:09:52-04:00')
-        expect(news.headline).to eq 'Smartsheet files for $100M IPO with growing losses'
-        expect(news.related).to eq(['APPSOFTW', 'IPO', 'MSFT', 'NASDAQ01', 'SOF31165134', 'Computing and Information Technology'])
+        expect(news.datetime.to_f).to eq 1_554_412_248.0
+        expect(news.headline).to eq "Spotify joins Microsoft's Xbox Game Bar"
+        expect(news.related).to eq(['MSFT'])
       end
     end
     context 'with range', vcr: { cassette_name: 'news/msft_7' } do
@@ -24,12 +24,12 @@ describe IEX::Resources::News do
     end
     context 'market', vcr: { cassette_name: 'news/market' } do
       subject do
-        IEX::Resources::News.get(:market, 1)
+        IEX::Resources::News.get(:market, 10)
       end
       let(:news) { subject.first }
       it 'retrieves market news' do
-        expect(subject.size).to eq 1
-        expect(news.url).to eq 'https://api.iextrading.com/1.0/stock/market/article/8517337832229674'
+        expect(subject.size).to eq 10
+        expect(news.url).to eq 'https://cloud.iexapis.com/beta/news/article/b8a6ae18-ab19-42e8-b066-d9a9dc111f1f'
       end
     end
   end
