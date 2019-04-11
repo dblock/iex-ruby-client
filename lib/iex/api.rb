@@ -1,12 +1,15 @@
 module IEX
   module Api
-    ROOT_URI = 'https://api.iextrading.com/1.0/stock'.freeze
+    ROOT_URI = 'https://cloud.iexapis.com/beta'.freeze
 
     def self.default_connection(path)
       Faraday.new(
         url: "#{ROOT_URI}/#{path}",
         request: {
           params_encoder: Faraday::FlatParamsEncoder
+        },
+        params: {
+          token: ENV['IEX_CLOUD_SECRET_TOKEN']
         }
       ) do |c|
         c.use ::FaradayMiddleware::ParseJson
