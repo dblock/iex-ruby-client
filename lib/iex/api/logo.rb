@@ -6,7 +6,7 @@ module IEX
       end
 
       def self.connection(symbol)
-        IEX::Api.default_connection "#{symbol.downcase}/logo"
+        IEX::Api.default_connection "stock/#{symbol.downcase}/logo"
       end
     end
   end
