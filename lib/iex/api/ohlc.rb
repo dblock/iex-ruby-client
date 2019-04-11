@@ -10,7 +10,7 @@ module IEX
       end
 
       def self.connection(symbol)
-        IEX::Api.default_connection "#{symbol}/ohlc"
+        IEX::Api.default_connection "stock/#{symbol}/ohlc"
       end
     end
   end
