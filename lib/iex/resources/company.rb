@@ -10,8 +10,10 @@ module IEX
       property 'website'
       property 'description'
       property 'ceo', from: 'CEO'
+      property 'security_name', from: 'securityName'
       property 'issue_type', from: 'issueType' # common issue type of the stock
       property 'sector'
+      property 'employees'
 
       def self.get(stock_symbol)
         Base.symbol(stock_symbol) do
