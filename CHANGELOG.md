@@ -1,6 +1,6 @@
 ### 0.4.5 (Next)
 
-* Your contribution here.
+* [#42](https://github.com/dblock/iex-ruby-client/pull/42): Migrate to new iex cloud apis - [@bingxie](https://github.com/bingxie).
 
 ### 0.4.4 (2018/12/27)
 
