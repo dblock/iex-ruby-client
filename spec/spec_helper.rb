@@ -9,4 +9,4 @@ Dir[File.join(File.dirname(__FILE__), 'support', '**/*.rb')].each do |file|
   require file
 end
 
-ENV['IEX_CLOUD_SECRET_TOKEN'] = 'test-iex-cloud-secret-token'
+ENV['IEX_CLOUD_SECRET_TOKEN'] ||= 'test-iex-cloud-secret-token'
