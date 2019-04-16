@@ -9,7 +9,7 @@ module IEX
           params_encoder: Faraday::FlatParamsEncoder
         },
         params: {
-          token: ENV['IEX_CLOUD_SECRET_TOKEN']
+          token: ENV['IEX_API_PUBLISHABLE_TOKEN']
         }
       ) do |c|
         c.use ::FaradayMiddleware::ParseJson

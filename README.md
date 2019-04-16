@@ -61,7 +61,7 @@ Run `bundle install`.
 
 ### Set API token
 
-To use this gem, set `IEX_CLOUD_SECRET_TOKEN` environment variable to your IEX cloud API token. You can find your token on [IEX Cloud Console](https://iexcloud.io/console/)
+To use this gem, set `IEX_API_PUBLISHABLE_TOKEN` environment variable to your IEX cloud API publishable token. You can find your token on [IEX Cloud Console](https://iexcloud.io/console/)
 
 ### Get a Single Price
 
