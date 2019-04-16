@@ -22,16 +22,6 @@ describe IEX::Resources::News do
         expect(subject.size).to eq 7
       end
     end
-    context 'market', vcr: { cassette_name: 'news/market' } do
-      subject do
-        IEX::Resources::News.get(:market, 10)
-      end
-      let(:news) { subject.first }
-      it 'retrieves market news' do
-        expect(subject.size).to eq 10
-        expect(news.url).to eq 'https://cloud.iexapis.com/beta/news/article/b8a6ae18-ab19-42e8-b066-d9a9dc111f1f'
-      end
-    end
   end
   context 'invalid symbol', vcr: { cassette_name: 'news/invalid' } do
     subject do
