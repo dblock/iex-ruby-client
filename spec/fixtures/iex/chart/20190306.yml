@@ -2,7 +2,7 @@
 http_interactions:
   - request:
       method: get
-      uri: https://cloud.iexapis.com/beta/stock/MSFT/chart/date/20190306?token=test-iex-cloud-secret-token
+      uri: https://cloud.iexapis.com/v1/stock/MSFT/chart/date/20190306?token=test-iex-cloud-secret-token
       body:
         encoding: US-ASCII
         string: ""

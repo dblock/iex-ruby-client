@@ -1,6 +1,6 @@
 module IEX
   module Api
-    ROOT_URI = 'https://cloud.iexapis.com/beta'.freeze
+    ROOT_URI = 'https://cloud.iexapis.com/v1'.freeze
 
     def self.default_connection(path)
       Faraday.new(

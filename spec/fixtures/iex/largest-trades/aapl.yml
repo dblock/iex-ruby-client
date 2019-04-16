@@ -2,7 +2,7 @@
 http_interactions:
   - request:
       method: get
-      uri: https://cloud.iexapis.com/beta/stock/aapl/largest-trades?token=test-iex-cloud-secret-token
+      uri: https://cloud.iexapis.com/v1/stock/aapl/largest-trades?token=test-iex-cloud-secret-token
       body:
         encoding: US-ASCII
         string: ""
