@@ -8,14 +8,13 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
 # Table of Contents
 
 - [Installation](#installation)
-- [Methods Available](#methods-available)
 - [Usage](#usage)
   - [Get an API Token](#get-an-api-token)
   - [Configure](#configure)
   - [Get a Single Price](#get-a-single-price)
   - [Get a Quote](#get-a-quote)
   - [Get a OHLC (Open, High, Low, Close) price](#get-a-ohlc-open-high-low-close-price)
-  - [Get a market OHLC (Open, High, Low, Close) prices](#get-a-market-ohlc-open-high-low-close-prices)
+  - [Get a Market OHLC (Open, High, Low, Close) prices](#get-a-market-ohlc-open-high-low-close-prices)
   - [Get Company Information](#get-company-information)
   - [Get a Company Logo](#get-a-company-logo)
   - [Get Recent News](#get-recent-news)
@@ -25,7 +24,8 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get Earnings](#get-earnings)
   - [Get Sector Performance](#get-sector-performance)
   - [Get Largest Trades](#get-largest-trades)
-  - [Get a quote for Cryptocurrencies](#get-a-quote-for-cryptocurrencies)
+  - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
+- [Configuration](#configuration)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
   - [ClientError](#clienterror)
@@ -41,22 +41,6 @@ gem 'iex-ruby-client'
 ```
 
 Run `bundle install`.
-
-## Methods Available
-
-- [Get a Single Price](#get-a-single-price)
-- [Get a Quote](#get-a-quote)
-- [Get a OHLC (Open, High, Low, Close) price](#get-a-ohlc-open-high-low-close-price)
-- [Get a Market OHLC (Open, High, Low, Close) prices](#get-a-market-ohlc-open-high-low-close-prices)
-- [Get Company Information](#get-company-information)
-- [Get Company Logo](#get-company-logo)
-- [Get Recent News](#get-recent-news)
-- [Get Chart](#get-chat)
-- [Get Key Stats](#get-key-stats)
-- [Get Dividends](#get-dividends)
-- [Get Earnings](#get-earnings)
-- [Get Sector Performance](#get-sector-performance)
-- [Get Largest Trades](#get-Largest-trades)
 
 ## Usage
 
@@ -118,7 +102,7 @@ ohlc.high # 0.00418
 ohlc.low # '+0.42%'
 ```
 
-### Get a market OHLC (Open, High, Low, Close) prices
+### Get a Market OHLC (Open, High, Low, Close) prices
 
 Fetches a hash market OHLC prices.
 
@@ -310,9 +294,9 @@ trades.first.venue_name # Cboe EDGX
 
 See [#largest-trades](https://iexcloud.io/docs/api/#largest-trades) for detailed documentation or [largest_trades.rb](lib/iex/resources/largest_trades.rb) for returned fields.
 
-### Get a quote for Cryptocurrencies
+### Get a Quote for Crypto Currencies
 
-Fetches a crypto quote.
+Fetches a crypto currency quote.
 
 ```ruby
 crypto = client.crypto('BTCUSDT')
@@ -333,6 +317,37 @@ crypto.high_dollar #'$3,590'
 ```
 
 See [#crypto](https://iexcloud.io/docs/api/#crypto) for detailed documentation or [crypto.rb](lib/iex/resources/crypto.rb) for returned fields.
+
+## Configuration
+
+You can configure client options globally or directly with a `IEX::Api::Client` instance.
+
+```ruby
+IEX::Api::Client.configure do |config|
+  config.user_agent = 'IEX Ruby Client/1.0.0'
+end
+```
+
+```ruby
+client = IEX::Api::Client.new(
+  publishable_token: 'token',
+  user_agent: 'IEX Ruby Client/1.0.0'
+)
+```
+
+The following settings are supported.
+
+setting             | description
+--------------------|------------
+user_agent          | User-agent, defaults to _IEX Ruby Client/version_.
+proxy               | Optional HTTP proxy.
+ca_path             | Optional SSL certificates path.
+ca_file             | Optional SSL certificates file.
+logger              | Optional `Logger` instance that logs HTTP requests.
+timeout             | Optional open/read timeout in seconds.
+open_timeout        | Optional connection open timeout in seconds.
+publishable_token   | IEX Cloud API publishable token.
+endpoint            | Defaults to `https://cloud.iexapis.com/v1`.
 
 ## Errors
 

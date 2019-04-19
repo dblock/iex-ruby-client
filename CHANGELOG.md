@@ -1,7 +1,7 @@
 ### 1.0.0 (Next)
 
-* [#46](https://github.com/dblock/iex-ruby-client/pull/46): Make client configurable - [@dblock](https://github.com/dblock).
-* [#42](https://github.com/dblock/iex-ruby-client/pull/42): Support for IEX cloud apis - [@bingxie](https://github.com/bingxie).
+* [#42](https://github.com/dblock/iex-ruby-client/pull/42): Migrated to the IEX Cloud API - [@bingxie](https://github.com/bingxie).
+* [#46](https://github.com/dblock/iex-ruby-client/pull/46): Made client configurable - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 0.4.4 (2018/12/27)
