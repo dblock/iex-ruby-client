@@ -28,6 +28,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
 - [Configuration](#configuration)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
+  - [PermissionDeniedError](#permissiondeniederror)
   - [ClientError](#clienterror)
 - [Contributing](#contributing)
 - [Copyright and License](#copyright-and-license)
@@ -354,6 +355,10 @@ endpoint            | Defaults to `https://cloud.iexapis.com/v1`.
 ### SymbolNotFound
 
 If a symbol cannot be found an [IEX::Errors::SymbolNotFound](lib/iex/errors/symbol_not_found_error.rb) exception is raised.
+
+### PermissionDeniedError
+
+All errors that return HTTP code 403 result in a [IEX::Errors::PermissionDeniedError](lib/iex/errors/permission_denied_error.rb) exception.
 
 ### ClientError
 

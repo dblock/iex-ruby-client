@@ -126,5 +126,13 @@ describe IEX::Api::Client do
         end
       end
     end
+    context 'without a token' do
+      let(:client) { described_class.new }
+      it 'results in an API key error', vcr: { cassette_name: 'client/access_denied' } do
+        expect do
+          client.get '/stock/msft/quote'
+        end.to raise_error IEX::Errors::PermissionDeniedError, /The API key provided is not valid./
+      end
+    end
   end
 end
