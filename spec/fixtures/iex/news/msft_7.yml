@@ -1,64 +1,86 @@
 ---
 http_interactions:
-- request:
-    method: get
-    uri: https://api.iextrading.com/1.0/stock/MSFT/news/last/7
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.14.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 26 Mar 2018 21:43:00 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '3659'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - ctoken=980a0840c30447e59a33d71867c00f08; Domain=.iextrading.com; Path=/; Expires=Tue,
-        27 Mar 2018 09:43:00 GMT; Secure
-      Content-Security-Policy:
-      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
-        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
-        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
-      X-Content-Security-Policy:
-      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
-        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
-        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
-      Frame-Options:
-      - deny
-      X-Frame-Options:
-      - deny
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=15768000
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, OPTIONS
-      Access-Control-Allow-Headers:
-      - Origin, X-Requested-With, Content-Type, Accept
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        W3siZGF0ZXRpbWUiOiIyMDE4LTAzLTI2VDE1OjA5OjUyLTA0OjAwIiwiaGVhZGxpbmUiOiJTbWFydHNoZWV0IGZpbGVzIGZvciAkMTAwTSBJUE8gd2l0aCBncm93aW5nIGxvc3NlcyIsInNvdXJjZSI6IlNlZWtpbmdBbHBoYSIsInVybCI6Imh0dHBzOi8vYXBpLmlleHRyYWRpbmcuY29tLzEuMC9zdG9jay9tc2Z0L2FydGljbGUvNzgxNTg5NzEwNzcwOTgwOCIsInN1bW1hcnkiOiIgICAgICBXb3JrIG1hbmFnZW1lbnQgU2FhUyBjb21wYW55IFNtYXJ0c2hlZXQgKFNNQVIpICBmaWxlcyAgZm9yIGFuIHVwIHRvICQxMDBNIElQTy4gICBNb3JlIG5ld3Mgb246IE1pY3Jvc29mdCBDb3Jwb3JhdGlvbiwgVGVjaCBzdG9ja3MgbmV3cywgSVBPcywgICAgIFJlYWQgbW9yZSDigKYgICAgICIsInJlbGF0ZWQiOiJBUFBTT0ZUVyxJUE8sTVNGVCxOQVNEQVEwMSxTT0YzMTE2NTEzNCxDb21wdXRpbmcgYW5kIEluZm9ybWF0aW9uIFRlY2hub2xvZ3kifSx7ImRhdGV0aW1lIjoiMjAxOC0wMy0yNlQxMzozNDo1NC0wNDowMCIsImhlYWRsaW5lIjoiUGl2b3RhbCBTb2Z0d2FyZSBGaWxlcyBGb3IgVS5TLiBJUE8iLCJzb3VyY2UiOiJTZWVraW5nQWxwaGEiLCJ1cmwiOiJodHRwczovL2FwaS5pZXh0cmFkaW5nLmNvbS8xLjAvc3RvY2svbXNmdC9hcnRpY2xlLzU1MDI1NTcyNDE3OTg4OTIiLCJzdW1tYXJ5IjoiICAgIFF1aWNrIFRha2UgICAgIFBpdm90YWwgU29mdHdhcmUgICggUFZUTCApIGludGVuZHMgdG8gcmFpc2UgJDEwMCBtaWxsaW9uIGluIGFuIElQTyBvZiBpdHMgQ2xhc3MgY29tbW9uIHN0b2NrLCBhY2NvcmRpbmcgdG8gYSByZWNlbnQgIHJlZ2lzdHJhdGlvbiBzdGF0ZW1lbnQgLiAgIFRoZSBmaXJtIGhhcyBkZXZlbG9wZWQgYSBjbG91ZC1uYXRpdmUgc3VpdGUgb2Ygc29mdHdhcmUgZm9yIGRldmVsb3BlcnMgYW5kIElUIG9wZXJhdGlvbnMgd2l0aGluIGVudGVycHJpc2VzIG9mIGFsbCBzaXrigKYiLCJyZWxhdGVkIjoiQU1aTixDb21wdXRlciBTb2Z0d2FyZSxHT09HLElCTSxJTlQzMTE2ODE0NCxNU0ZULE5BU0RBUTAxLE9OTDMxMTY4LE9SQ0wsU0FQLFNvZnR3YXJlLENvbXB1dGluZyBhbmQgSW5mb3JtYXRpb24gVGVjaG5vbG9neSJ9LHsiZGF0ZXRpbWUiOiIyMDE4LTAzLTI2VDA5OjM2OjU1LTA0OjAwIiwiaGVhZGxpbmUiOiJNb3JnYW4gU3RhbmxleSByYWlzZXMgTWljcm9zb2Z0IHRhcmdldCB0byAkMVQgbWFya2V0IGNhcCIsInNvdXJjZSI6IlNlZWtpbmdBbHBoYSIsInVybCI6Imh0dHBzOi8vYXBpLmlleHRyYWRpbmcuY29tLzEuMC9zdG9jay9tc2Z0L2FydGljbGUvNTk1ODcwMzk5MjQ4MDY0OSIsInN1bW1hcnkiOiIgICAgICBNb3JnYW4gU3RhbmxleSAgcmFpc2VzICBpdHMgTWljcm9zb2Z0IChOQVNEQVE6IE1TRlQgKSBwcmljZSB0YXJnZXQgZnJvbSAkMTEwIHRvICQxMzAsIGEgNDklIHVwc2lkZSB0byBGcmlkYXlzIGNsb3NlLCB3aGljaCB3b3VsZCBnaXZlIHRoZSBjb21wYW55IGEgJDFUIG1hcmtldCBjYXAgbmV4dCB5ZWFyLiAgIE1vcmUgbmV3cyBvbjogTWljcm9zb2Z0IENvcnBvcmF0aW9uLCBUZWNoIHN0b2NrcyBuZXdzLCBTdG9ja3Mgb24gdGhlIG1vdmUsICAgICBSZWFkIG1vcmUg4oCmICAgICAiLCJyZWxhdGVkIjoiQVBQU09GVFcsTVNGVCxOQVNEQVEwMSxTT0YzMTE2NTEzNCxDb21wdXRpbmcgYW5kIEluZm9ybWF0aW9uIFRlY2hub2xvZ3kifSx7ImRhdGV0aW1lIjoiMjAxOC0wMy0yNlQwOTowMDowMC0wNDowMCIsImhlYWRsaW5lIjoiTUVESUEgQUxFUlQ6IEFkb2JlIGFuZCBNaWNyb3NvZnQgRXh0ZW5kIEdsb2JhbCBQYXJ0bmVyc2hpcCBJbnRvIENoaW5hIiwic291cmNlIjoiQnVzaW5lc3MgV2lyZSIsInVybCI6Imh0dHBzOi8vYXBpLmlleHRyYWRpbmcuY29tLzEuMC9zdG9jay9tc2Z0L2FydGljbGUvNTMzOTA4NjM2NzQ5NzU3NSIsInN1bW1hcnkiOiIgICAgICBTdHJvbmcgTW9tZW50dW0gd2l0aCBMZWFkaW5nIEJyYW5kcywgQ29tcGFuaWVzIERlZXBlbiBFbnRlcnByaXNlIFBsYXRmb3JtIEludGVncmF0aW9uICAgICAgIEF0IEFkb2JlIFN1bW1pdCwgQWRvYmUgKE5hc2RhcTpBREJFKSBhbmQgIE1pY3Jvc29mdCBDb3JwLiAgKE5hc2RhcTpNU0ZUKSBhbm5vdW5jZWQgYSBzdGVwIGZvcndhcmQgaW4gdGhlaXIgZ2xvYmFsIHBhcnRuZXJzaGlwICggYW5ub3VuY2VkICBpbiBTZXB0ZW1iZXIgMjAxNikuIFRoZSBjb21wYW5pZXMgYXJlIGV4dGVuZGluZyB0aGVpciBwYXJ0bmXigKYiLCJyZWxhdGVkIjoiQURCRSxBUFBTT0ZUVyxBU0lBMDAwMSxBc2lhIFBhY2lmaWMsQ0hJTkEwMDEsQ29tcHV0ZXIgU29mdHdhcmUsQ29tcHV0ZXIsRGF0YSBXYXJlaG91c2luZyxFbGVjdHJvbmljcyxJbnRlcm5ldCxNU0ZULE5BU0RBUTAxLFNPRjMxMTY1MTMzLFNvZnR3YXJlLENvbXB1dGluZyBhbmQgSW5mb3JtYXRpb24gVGVjaG5vbG9neSJ9LHsiZGF0ZXRpbWUiOiIyMDE4LTAzLTI2VDA4OjUyOjAwLTA0OjAwIiwiaGVhZGxpbmUiOiJKUCBNb3JnYW4gd2FybnMgY2xpZW50cyBhYm91dCBvd25pbmcgdGVjaCBzdG9ja3MgaW4gdGhlIGZhY2Ugb2YgdGFyaWZmczogJ0xvY2sgcHJvZml0cyBpbiciLCJzb3VyY2UiOiJDTkJDIiwidXJsIjoiaHR0cHM6Ly9hcGkuaWV4dHJhZGluZy5jb20vMS4wL3N0b2NrL21zZnQvYXJ0aWNsZS83NzgzNDM5OTM2NTIxMDU2Iiwic3VtbWFyeSI6Ik5vIHN1bW1hcnkgYXZhaWxhYmxlLiIsInJlbGF0ZWQiOiJBTVpOLEZCLEdPT0dMLE1TRlQsTkZMWCJ9LHsiZGF0ZXRpbWUiOiIyMDE4LTAzLTI2VDA4OjQzOjAwLTA0OjAwIiwiaGVhZGxpbmUiOiJNaWNyb3NvZnQgc2hhcmVzIHN1cmdlIGFmdGVyIE1vcmdhbiBTdGFubGV5IHByZWRpY3RzIGl0IHdpbGwgcmVhY2ggJDEgdHJpbGxpb24gbWFya2V0IGNhcCBpbiBhIHllYXIiLCJzb3VyY2UiOiJDTkJDIiwidXJsIjoiaHR0cHM6Ly9hcGkuaWV4dHJhZGluZy5jb20vMS4wL3N0b2NrL21zZnQvYXJ0aWNsZS84OTk0MzAzNzg3NDU5MDA4Iiwic3VtbWFyeSI6Ik5vIHN1bW1hcnkgYXZhaWxhYmxlLiIsInJlbGF0ZWQiOiJBQVBMLEFNWk4sR09PR0wsTVNGVCJ9LHsiZGF0ZXRpbWUiOiIyMDE4LTAzLTI0VDE3OjM3OjExLTA0OjAwIiwiaGVhZGxpbmUiOiJDYW4gQmxhY2tCZXJyeSBGaW5hbGx5IE1vbmV0aXplIFNlY3VyaXR5PyIsInNvdXJjZSI6IlNlZWtpbmdBbHBoYSIsInVybCI6Imh0dHBzOi8vYXBpLmlleHRyYWRpbmcuY29tLzEuMC9zdG9jay9tc2Z0L2FydGljbGUvNDc5ODQyMDI1MTE1Mjc1NSIsInN1bW1hcnkiOiIgICAgQmxhY2tCZXJyeSBDRU8gSm9obiBDaGVuLiBTb3VyY2U6IFRoZSBHdWFyZGlhbiAgICBCbGFja0JlcnJ5ICggQkIgKSByZXBvcnRzIHF1YXJ0ZXJseSBlYXJuaW5ncyBvbiBNYXJjaCAyOHRoLiAgQW5hbHlzdHMgZXhwZWN0ICByZXZlbnVlIG9mICQyMTYuODEgbWlsbGlvbiBhbmQgZXBzIG9mICQwLjAwLiBUaGUgcmV2ZW51ZSBlc3RpbWF0ZSBpbXBsaWVzIGEgNCUgZGVjbGluZSBzZXF1ZW50aWFsbHkuIEludmVzdG9ycyBzaG91bGQgZm9jdXMgb24gdGhlIGZvbGxvd2luZyBrZXkgaXRlbXM6ICAgQ2FuIEJsYWNrQmXigKYiLCJyZWxhdGVkIjoiQkIsQkI6Q0EsRkIsRmluYW5jaWFsLElOVDMxMTY4MTQ0LE1TRlQsTkFTREFRMDEsT05MMzExNjgsUUNPTSxDb21wdXRpbmcgYW5kIEluZm9ybWF0aW9uIFRlY2hub2xvZ3ksVFNYVFNYMDEifV0=
-    http_version: 
-  recorded_at: Mon, 26 Mar 2018 21:43:00 GMT
+  - request:
+      method: get
+      uri: https://cloud.iexapis.com/v1/stock/MSFT/news/last/7?token=test-iex-api-publishable-token
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        User-Agent:
+          - Faraday v0.15.4
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Fri, 05 Apr 2019 03:05:18 GMT
+        Content-Type:
+          - application/json; charset=utf-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Set-Cookie:
+          - ctoken=da821ec3d2494ebcacee744948148d02; Max-Age=43200; Path=/; Expires=Fri,
+            05 Apr 2019 15:05:18 GMT
+        Content-Security-Policy:
+          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
+            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
+            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
+            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
+            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
+            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
+            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
+            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
+            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
+            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
+            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
+            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
+            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
+            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
+        X-Content-Security-Policy:
+          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
+            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
+            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
+            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
+            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
+            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
+            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
+            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
+            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
+            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
+            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
+            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
+            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
+            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
+        Frame-Options:
+          - SAMEORIGIN
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-Content-Type-Options:
+          - nosniff
+        Strict-Transport-Security:
+          - max-age=15768000
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Methods:
+          - GET, OPTIONS
+        Access-Control-Allow-Headers:
+          - Origin, X-Requested-With, Content-Type, Accept
+      body:
+        encoding: ASCII-8BIT
+        string: !binary |-
+          W3siZGF0ZXRpbWUiOjE1NTQ0MTIyNDgwMDAsImhlYWRsaW5lIjoiU3BvdGlmeSBqb2lucyBNaWNyb3NvZnQncyBYYm94IEdhbWUgQmFyIiwic291cmNlIjoiU2Vla2luZyBBbHBoYSIsInVybCI6Imh0dHBzOi8vY2xvdWQuaWV4YXBpcy5jb20vYmV0YS9uZXdzL2FydGljbGUvYjhhNmFlMTgtYWIxOS00MmU4LWIwNjYtZDlhOWRjMTExZjFmIiwic3VtbWFyeSI6Ik5vIHN1bW1hcnkgYXZhaWxhYmxlLiIsInJlbGF0ZWQiOiJNU0ZUIiwiaW1hZ2UiOiJodHRwczovL2Nsb3VkLmlleGFwaXMuY29tL2JldGEvbmV3cy9pbWFnZS9iOGE2YWUxOC1hYjE5LTQyZTgtYjA2Ni1kOWE5ZGMxMTFmMWYiLCJsYW5nIjoiZW4iLCJoYXNQYXl3YWxsIjpmYWxzZX0seyJkYXRldGltZSI6MTU1NDQwNjU4MjAwMCwiaGVhZGxpbmUiOiJNaWNyb3NvZnQgaW52ZXN0aWdhdGluZyBoYXJhc3NtZW50IGNsYWltcyIsInNvdXJjZSI6IlNlZWtpbmcgQWxwaGEiLCJ1cmwiOiJodHRwczovL2Nsb3VkLmlleGFwaXMuY29tL2JldGEvbmV3cy9hcnRpY2xlLzQ5ZTcyNGVhLTkxZDAtNGU4OC1hN2M2LTQ4NzI4MTViOWEzYyIsInN1bW1hcnkiOiJObyBzdW1tYXJ5IGF2YWlsYWJsZS4iLCJyZWxhdGVkIjoiTVNGVCIsImltYWdlIjoiaHR0cHM6Ly9jbG91ZC5pZXhhcGlzLmNvbS9iZXRhL25ld3MvaW1hZ2UvNDllNzI0ZWEtOTFkMC00ZTg4LWE3YzYtNDg3MjgxNWI5YTNjIiwibGFuZyI6ImVuIiwiaGFzUGF5d2FsbCI6ZmFsc2V9LHsiZGF0ZXRpbWUiOjE1NTQ0MDYxNzkwMDAsImhlYWRsaW5lIjoiTWljcm9zb2Z0IENFTyBqb2lucyBkaWFsb2d1ZSBhYm91dCBzZXh1YWwtaGFyYXNzbWVudCBjbGFpbXMgYWZ0ZXIgaW50ZXJuYWwgZW1haWwgZGlzY3Vzc2lvbiIsInNvdXJjZSI6IkNOQkMiLCJ1cmwiOiJodHRwczovL2Nsb3VkLmlleGFwaXMuY29tL2JldGEvbmV3cy9hcnRpY2xlLzkzYTFkYzgwLWU3Y2YtNDBjZS1iNjk1LWY1MWI5NDdlZmQzYyIsInN1bW1hcnkiOiJBIE1pY3Jvc29mdCBzcG9rZXNwZXJzb24gc2FpZCB0aGUgY29tcGFueSBoYWQgYSBnb29kIGRpYWxvZ3VlIGZvbGxvd2luZyBhbiBpbnRlcm5hbCBlbWFpbCBjaGFpbiBhYm91dCBob3cgd29tZW4gaGFkIGJlZW4gbWlzdHJlYXRlZCBhdCB0aGUgY29tcGFueS4iLCJyZWxhdGVkIjoiTVNGVCIsImltYWdlIjoiaHR0cHM6Ly9jbG91ZC5pZXhhcGlzLmNvbS9iZXRhL25ld3MvaW1hZ2UvOTNhMWRjODAtZTdjZi00MGNlLWI2OTUtZjUxYjk0N2VmZDNjIiwibGFuZyI6ImVuIiwiaGFzUGF5d2FsbCI6ZmFsc2V9LHsiZGF0ZXRpbWUiOjE1NTQzOTQ5MjQwMDAsImhlYWRsaW5lIjoiT25lIG1hbiB3aXRoIG1vcmUgdGhhbiAyMCwwMDAgdmlkZW8gZ2FtZXMgd2FzIGp1c3QgZGVjbGFyZWQgdGhlIHdvcmxkIHJlY29yZCBob2xkZXIgYnkgR3Vpbm5lc3Mg4oCUIHNlZSBoaXMgZnVsbCBjb2xsZWN0aW9uIHJpZ2h0IGhlcmUiLCJzb3VyY2UiOiJCdXNpbmVzcyBJbnNpZGVyIiwidXJsIjoiaHR0cHM6Ly9jbG91ZC5pZXhhcGlzLmNvbS9iZXRhL25ld3MvYXJ0aWNsZS81MWU0YjM2Ny0zYjVhLTQ1NzgtOWZmNi0wNDU3YjIwNjNkZWUiLCJzdW1tYXJ5IjoiQW50b25pbyBSb21lcm8gTW9udGVpcm8gaGFzIG1vcmUgdmlkZW8gZ2FtZXMgdGhhbiBhbnlvbmUgZWxzZSBpbiB0aGUgd29ybGQsIGFjY29yZGluZyB0byB0aGUgR3Vpbm5lc3MgV29ybGQgUmVjb3JkcyBncm91cC4gV2l0aCBtb3JlIHRoYW4gMjAsMDAwIGdhbWVzLCBNb250ZWlybyBoYXMgZnVsbCBjb2xsZWN0aW9ucyBvZiBlbnRpcmUgZ2FtZSBsaWJyYXJpZXMg4oCUIGluY2x1ZGluZyB0aGUgTmludGVuZG8gR2FtZUN1YmUsIFdpaSAsIGFuZCBtYW55IG1vcmUuIEdpdmVuIGhvdyBtYW55IGdhbWVzIE1vbnRlaXJvIGhhcywgaGUncyBnb3QgYW4gZWxhYm9yYXRlIHN0b3JhZ2Ugc3lzdGVtIHRoYXQgZGVtYW5kcyB0byBiZSBzZWVuLiBZb3UgZG9uJ3QgaGF2ZSBtb3JlIHZpZGVvIGdhbWVzIHRoYW4gQW50b25pbyBSb21lcm8gTW9udGVpcm8uIFRoYXQncyBiZWNhdXNlIE1vbnRlaXJvIGhvbGRzIHRoZSBHdWlubmVzcyBXb3JsZCBSZWNvcmQgZm9yIGxhcmdlc3QgY29sbGVjdGlvbiBvZiB2aWRlbyBnYW1lcyBpbiB0aGUgd29ybGQsIHdpdGggbW9yZSB0aGFuIDIwLDAwMCB0aXRsZXMgYWNyb3NzIGRlY2FkZXMgb2YgdmlkZW8gZ2FtZSBjb25zb2xlcy4gSGlzIGNvbGxlY3Rpb24gaXMgdW5iZWxpZXZhYmxlIHRvIGJlaG9sZCwgYW5kIHdlJ3ZlIGdhdGhlcmVkIGEgZmV3IGhpZ2hsaWdodHMgYmVsb3c6IFNFRSBBTFNPOiBNaWNyb3NvZnQgaXMgb24gdGhlIHZlcmdlIG9mIGFubm91bmNpbmcgYSBuZXcgWGJveCDigJQgaGVyZSBhcmUgNSBjcnVjaWFsIGNvbXBvbmVudHMgaXQgbmVlZHMgdG8gY29tcGV0ZSB3aXRoIFNvbnkncyBodWdlIGxlYWQgV2hhdCB5b3Ugc2VlIGhlcmUgaXMgd2hhdCBNb250ZWlybyBjYWxscyBhIFwiY29tcGxldGUgTm9ydGggQW1lcmljYW4gY29sbGVjdGlvblwiIG9mIFBsYXlTdGF0aW9uIDIgZ2FtZXMuIEluIGNhc2UgeW91J3JlIHdvbmRlcmluZywgdGhhdCdzIHNvbWV3aGVyZSBpbiB0aGUgcmVhbG0gb2YgMSw4MDAgZ2FtZXMgZm9yIFBsYXlTdGF0aW9uIDIgYWxvbmUuIiwicmVsYXRlZCI6Ik1TRlQiLCJpbWFnZSI6Imh0dHBzOi8vY2xvdWQuaWV4YXBpcy5jb20vYmV0YS9uZXdzL2ltYWdlLzUxZTRiMzY3LTNiNWEtNDU3OC05ZmY2LTA0NTdiMjA2M2RlZSIsImxhbmciOiJlbiIsImhhc1BheXdhbGwiOmZhbHNlfSx7ImRhdGV0aW1lIjoxNTU0MzkxNjYyMDAwLCJoZWFkbGluZSI6Ik1pY3Jvc29mdCBKb2lucyBUZWNoIFJhY2UgdG8gQ2xlYW4gVXAgU2hpcHBpbmcgV2l0aCBCaWcgRGF0YSIsInNvdXJjZSI6IkJsb29tYmVyZyIsInVybCI6Imh0dHBzOi8vY2xvdWQuaWV4YXBpcy5jb20vYmV0YS9uZXdzL2FydGljbGUvMjUyNDk2MGUtNDI3Mi00YmFiLThlYjMtNmQ2NjcxYTY4OWY5Iiwic3VtbWFyeSI6IkF0IG5vb24gZXZlcnkgZGF5IC0tIHdoZW4gdGhlIHN1biBpcyBkaXJlY3RseSBvdmVyaGVhZCAtLSB0aGUgd29ybGTigJlzIGZsZWV0IG9mIGNvbW1lcmNpYWwgbWFyaXRpbWUgc2hpcHMgcmVwb3J0IHRoZWlyIHBvc2l0aW9uLCBzcGVlZCBhbmQgd2VhdGhlciBjb25kaXRpb25zLiBJdOKAmXMgdGhlIHByaW1hcnkgd2F5IHNoaXBzIHRyYWNrIGhvdyBtdWNoIGZ1ZWwgdGhleeKAmXJlIGJ1cm5pbmcgYW5kIGhvdyB0byB0byB1c2UgbGVzcyBvZiBpdCwgYW5kIHRoZXnigJl2ZSBiZWVuIGRvaW5nIGl0IHRoaXMgd2F5IGZvciBhdCBsZWFzdCAyMDAgeWVhcnMuIiwicmVsYXRlZCI6Ik1TRlQiLCJpbWFnZSI6Imh0dHBzOi8vY2xvdWQuaWV4YXBpcy5jb20vYmV0YS9uZXdzL2ltYWdlLzI1MjQ5NjBlLTQyNzItNGJhYi04ZWIzLTZkNjY3MWE2ODlmOSIsImxhbmciOiJlbiIsImhhc1BheXdhbGwiOmZhbHNlfSx7ImRhdGV0aW1lIjoxNTU0MzY4ODIwMDAwLCJoZWFkbGluZSI6IkFrYW1haSBJbmtzIERlYWwgV2l0aCBNaWNyb3NvZnQgZm9yIGFuIFVuZGlzY2xvc2VkIEFtb3VudCIsInNvdXJjZSI6IlphY2tzIEludmVzdG1lbnQgUmVzZWFyY2giLCJ1cmwiOiJodHRwczovL2Nsb3VkLmlleGFwaXMuY29tL2JldGEvbmV3cy9hcnRpY2xlLzUyOWNmNjk3LWNlYmYtNGM5NC1hMmYwLTkxNDRhZmEyMzdkOSIsInN1bW1hcnkiOiJBa2FtYWkgKEFLQU0pIGlzIGJlbmVmaXRpbmcgZnJvbSBhIHJvYnVzdCBwZXJmb3JtYW5jZSBhdCBpdHMgY2xvdWQgc2VjdXJpdHkgYnVzaW5lc3MgcGx1cyBub3RhYmxlIGdyb3d0aCBpbiBNZWRpYSBhbmQgQ2FycmllciBEaXZpc2lvbi4iLCJyZWxhdGVkIjoiTVNGVCIsImltYWdlIjoiaHR0cHM6Ly9jbG91ZC5pZXhhcGlzLmNvbS9iZXRhL25ld3MvaW1hZ2UvNTI5Y2Y2OTctY2ViZi00Yzk0LWEyZjAtOTE0NGFmYTIzN2Q5IiwibGFuZyI6ImVuIiwiaGFzUGF5d2FsbCI6ZmFsc2V9LHsiZGF0ZXRpbWUiOjE1NTQzNDQxODYwMDAsImhlYWRsaW5lIjoiV2hlbiB0aGlzIGVCb29rIHN0b3JlIGNsb3NlcywgeW91ciBib29rcyBkaXNhcHBlYXIgdG9vIiwic291cmNlIjoiQkJDIiwidXJsIjoiaHR0cHM6Ly9jbG91ZC5pZXhhcGlzLmNvbS9iZXRhL25ld3MvYXJ0aWNsZS81ZjFlYWU0OC1mZTRiLTRmZDQtYmIzYS0wMDc5NDlkODIwZmMiLCJzdW1tYXJ5IjoiTWljcm9zb2Z0J3MgY2xvc3VyZSBvZiBpdHMgZUJvb2sgc3RvcmUgaXMgYSByZW1pbmRlciBvdXIgZGlnaXRhbCBcImJlbG9uZ2luZ3NcIiByYXJlbHkgYmVsb25nIHRvIHVzLiIsInJlbGF0ZWQiOiJNU0ZUIiwiaW1hZ2UiOiJodHRwczovL2Nsb3VkLmlleGFwaXMuY29tL2JldGEvbmV3cy9pbWFnZS81ZjFlYWU0OC1mZTRiLTRmZDQtYmIzYS0wMDc5NDlkODIwZmMiLCJsYW5nIjoiZW4iLCJoYXNQYXl3YWxsIjpmYWxzZX1d
+      http_version:
+    recorded_at: Fri, 05 Apr 2019 03:05:18 GMT
 recorded_with: VCR 4.0.0

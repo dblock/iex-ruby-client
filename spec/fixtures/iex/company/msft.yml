@@ -1,68 +1,90 @@
 ---
 http_interactions:
-- request:
-    method: get
-    uri: https://api.iextrading.com/1.0/stock/MSFT/company
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.14.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 26 Mar 2018 20:47:50 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '490'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - ctoken=a59dd70ac7f44bb1a19cebd4d5204e8d; Domain=.iextrading.com; Path=/; Expires=Tue,
-        27 Mar 2018 08:47:50 GMT; Secure
-      Content-Security-Policy:
-      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
-        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
-        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
-      X-Content-Security-Policy:
-      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
-        'unsafe-inline'; font-src data:; connect-src 'self' https://auth.iextrading.com
-        wss://iextrading.com wss://tops.iextrading.com; script-src 'self';
-      Frame-Options:
-      - deny
-      X-Frame-Options:
-      - deny
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=15768000
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, OPTIONS
-      Access-Control-Allow-Headers:
-      - Origin, X-Requested-With, Content-Type, Accept
-    body:
-      encoding: UTF-8
-      string: '{"symbol":"MSFT","companyName":"Microsoft Corporation","exchange":"Nasdaq
-        Global Select","industry":"Application Software","website":"http://www.microsoft.com","description":"Microsoft
-        Corp is a technology company. It develop, license, and support a wide range
-        of software products and services. Its business is organized into three segments:
-        Productivity and Business Processes, Intelligent Cloud, and More Personal
-        Computing.","CEO":"Satya Nadella","issueType":"cs","sector":"Technology"}'
-    http_version: 
-  recorded_at: Mon, 26 Mar 2018 20:47:50 GMT
+  - request:
+      method: get
+      uri: https://cloud.iexapis.com/v1/stock/MSFT/company?token=test-iex-api-publishable-token
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        User-Agent:
+          - Faraday v0.15.4
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Mon, 08 Apr 2019 11:36:56 GMT
+        Content-Type:
+          - application/json; charset=utf-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Set-Cookie:
+          - ctoken=1c8144616a17438aa6aab8df14113c7e; Max-Age=43200; Path=/; Expires=Mon,
+            08 Apr 2019 23:36:56 GMT
+        Content-Security-Policy:
+          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
+            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
+            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
+            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
+            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
+            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
+            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
+            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
+            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
+            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
+            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
+            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
+            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
+            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
+        X-Content-Security-Policy:
+          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
+            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
+            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
+            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
+            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
+            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
+            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
+            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
+            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
+            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
+            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
+            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
+            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
+            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
+        Frame-Options:
+          - SAMEORIGIN
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-Content-Type-Options:
+          - nosniff
+        Strict-Transport-Security:
+          - max-age=15768000
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Methods:
+          - GET, OPTIONS
+        Access-Control-Allow-Headers:
+          - Origin, X-Requested-With, Content-Type, Accept
+      body:
+        encoding: ASCII-8BIT
+        string:
+          '{"symbol":"MSFT","companyName":"Microsoft Corp.","exchange":"NASDAQ","industry":"Packaged
+          Software","website":"http://www.microsoft.com","description":"Develops, manufactures
+          and distributes software products","CEO":"Satya Nadella","securityName":"Microsoft
+          Corporation","issueType":"cs","sector":"Technology Services","employees":131000,"tags":["Technology
+          Services","Packaged Software"]}'
+      http_version:
+    recorded_at: Mon, 08 Apr 2019 11:36:56 GMT
 recorded_with: VCR 4.0.0

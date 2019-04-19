@@ -1,72 +1,91 @@
 ---
 http_interactions:
-- request:
-    method: get
-    uri: https://api.iextrading.com/1.0/stock/market/sector-performance
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.15.3
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Tue, 02 Oct 2018 02:22:27 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - ctoken=54432857e67f4d64b96fcfc7fe42f5e1; Domain=.iextrading.com; Path=/; Expires=Tue,
-        02 Oct 2018 14:22:27 GMT; Secure
-      Content-Security-Policy:
-      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
-        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
-        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
-        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
-        'self' 'unsafe-inline' 'unsafe-eval';
-      X-Content-Security-Policy:
-      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
-        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
-        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
-        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
-        'self' 'unsafe-inline' 'unsafe-eval';
-      Frame-Options:
-      - SAMEORIGIN
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=15768000
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, OPTIONS
-      Access-Control-Allow-Headers:
-      - Origin, X-Requested-With, Content-Type, Accept
-    body:
-      encoding: ASCII-8BIT
-      string: '[{"type":"sector","name":"Energy","performance":0.01386,"lastUpdated":1538424000406},{"type":"sector","name":"Materials","performance":0.01001,"lastUpdated":1538424000350},{"type":"sector","name":"Industrials","performance":0.0088,"lastUpdated":1538424000403},{"type":"sector","name":"Health
-        Care","performance":0.00494,"lastUpdated":1538424000381},{"type":"sector","name":"Technology","performance":0.00478,"lastUpdated":1538424000467},{"type":"sector","name":"Financials","performance":0.00399,"lastUpdated":1538424000489},{"type":"sector","name":"Consumer
-        Staples","performance":-0.00074,"lastUpdated":1538424000412},{"type":"sector","name":"Consumer
-        Discretionary","performance":-0.00307,"lastUpdated":1538424000351},{"type":"sector","name":"Utilities","performance":-0.00342,"lastUpdated":1538424000385},{"type":"sector","name":"Communication
-        Services","performance":-0.00408,"lastUpdated":1538424000372},{"type":"sector","name":"Real
-        Estate","performance":-0.00767,"lastUpdated":1538424000353}]'
-    http_version: 
-  recorded_at: Tue, 02 Oct 2018 02:22:27 GMT
+  - request:
+      method: get
+      uri: https://cloud.iexapis.com/v1/stock/market/sector-performance?token=test-iex-api-publishable-token
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        User-Agent:
+          - Faraday v0.15.4
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Fri, 05 Apr 2019 02:51:06 GMT
+        Content-Type:
+          - application/json; charset=utf-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Set-Cookie:
+          - ctoken=296548e3c86a41f1952d9ae0a35951c0; Max-Age=43200; Path=/; Expires=Fri,
+            05 Apr 2019 14:51:06 GMT
+        Content-Security-Policy:
+          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
+            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
+            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
+            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
+            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
+            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
+            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
+            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
+            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
+            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
+            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
+            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
+            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
+            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
+        X-Content-Security-Policy:
+          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
+            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
+            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
+            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
+            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
+            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
+            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
+            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
+            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
+            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
+            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
+            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
+            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
+            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
+        Frame-Options:
+          - SAMEORIGIN
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-Content-Type-Options:
+          - nosniff
+        Strict-Transport-Security:
+          - max-age=15768000
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Methods:
+          - GET, OPTIONS
+        Access-Control-Allow-Headers:
+          - Origin, X-Requested-With, Content-Type, Accept
+      body:
+        encoding: ASCII-8BIT
+        string:
+          '[{"type":"sector","name":"Materials","performance":0.01013,"lastUpdated":1554408000270},{"type":"sector","name":"Energy","performance":0.00835,"lastUpdated":1554408000403},{"type":"sector","name":"Consumer
+          Discretionary","performance":0.00811,"lastUpdated":1554408000340},{"type":"sector","name":"Industrials","performance":0.00616,"lastUpdated":1554408000292},{"type":"sector","name":"Financials","performance":0.00606,"lastUpdated":1554408000340},{"type":"sector","name":"Communication
+          Services","performance":0.00564,"lastUpdated":1554408000253},{"type":"sector","name":"Consumer
+          Staples","performance":0.00381,"lastUpdated":1554408000282},{"type":"sector","name":"Health
+          Care","performance":-0.00208,"lastUpdated":1554408000350},{"type":"sector","name":"Real
+          Estate","performance":-0.00302,"lastUpdated":1554408000255},{"type":"sector","name":"Utilities","performance":-0.00346,"lastUpdated":1554408000306},{"type":"sector","name":"Technology","performance":-0.00422,"lastUpdated":1554408000377}]'
+      http_version:
+    recorded_at: Fri, 05 Apr 2019 02:51:06 GMT
 recorded_with: VCR 4.0.0

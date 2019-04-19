@@ -6,7 +6,7 @@ module IEX
       end
 
       def self.connection(symbol)
-        IEX::Api.default_connection "#{symbol}/largest-trades"
+        IEX::Api.default_connection "stock/#{symbol}/largest-trades"
       end
     end
   end

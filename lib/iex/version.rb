@@ -1,3 +1,3 @@
 module IEX
-  VERSION = '0.4.5'.freeze
+  VERSION = '1.0.0'.freeze
 end

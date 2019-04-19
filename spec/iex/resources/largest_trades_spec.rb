@@ -6,10 +6,10 @@ describe IEX::Resources::LargestTrades do
       IEX::Resources::LargestTrades.get('aapl')
     end
     it 'retrieve largest trades' do
-      expect(subject.first.size).to eq 9_000
-      expect(subject.first.price).to eq 217.76
-      expect(subject.first.time).to eq 1_539_699_300_665
-      expect(subject.first.time_label).to eq '10:15:00'
+      expect(subject.first.size).to eq 18_400
+      expect(subject.first.price).to eq 195.82
+      expect(subject.first.time).to eq 1_554_403_101_504
+      expect(subject.first.time_label).to eq '14:38:21'
       expect(subject.first.venue).to eq('None')
       expect(subject.first.venue_name).to eq('Off Exchange')
     end

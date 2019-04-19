@@ -1,76 +1,94 @@
 ---
 http_interactions:
-- request:
-    method: get
-    uri: https://api.iextrading.com/1.0/stock/aapl/largest-trades
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.15.3
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Tue, 16 Oct 2018 15:01:59 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - ctoken=51f305337e614587a6da212572ca14f5; Domain=.iextrading.com; Path=/; Expires=Wed,
-        17 Oct 2018 03:01:59 GMT; Secure
-      Content-Security-Policy:
-      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
-        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
-        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
-        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
-        'self' 'unsafe-inline' 'unsafe-eval';
-      X-Content-Security-Policy:
-      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
-        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
-        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
-        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
-        'self' 'unsafe-inline' 'unsafe-eval';
-      Frame-Options:
-      - SAMEORIGIN
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=15768000
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, OPTIONS
-      Access-Control-Allow-Headers:
-      - Origin, X-Requested-With, Content-Type, Accept
-    body:
-      encoding: ASCII-8BIT
-      string: '[{"price":217.76,"size":9000,"time":1539699300665,"timeLabel":"10:15:00","venue":"None","venueName":"Off
-        Exchange"},{"price":217.36,"size":8171,"time":1539699439595,"timeLabel":"10:17:19","venue":"XNGS","venueName":"Nasdaq"},{"price":218.671,"size":7444,"time":1539697175918,"timeLabel":"09:39:35","venue":"None","venueName":"Off
-        Exchange"},{"price":218.09,"size":7220,"time":1539698909729,"timeLabel":"10:08:29","venue":"None","venueName":"Off
-        Exchange"},{"price":217.81,"size":6300,"time":1539699334482,"timeLabel":"10:15:34","venue":"None","venueName":"Off
-        Exchange"},{"price":218.7,"size":6000,"time":1539696843070,"timeLabel":"09:34:03","venue":"None","venueName":"Off
-        Exchange"},{"price":218.258,"size":6000,"time":1539696980111,"timeLabel":"09:36:20","venue":"None","venueName":"Off
-        Exchange"},{"price":218.62,"size":6000,"time":1539697154187,"timeLabel":"09:39:14","venue":"None","venueName":"Off
-        Exchange"},{"price":216.963,"size":6000,"time":1539700749730,"timeLabel":"10:39:09","venue":"None","venueName":"Off
-        Exchange"},{"price":216.87,"size":5986,"time":1539700719236,"timeLabel":"10:38:39","venue":"None","venueName":"Off
-        Exchange"}]'
-    http_version: 
-  recorded_at: Tue, 16 Oct 2018 15:01:59 GMT
+  - request:
+      method: get
+      uri: https://cloud.iexapis.com/v1/stock/aapl/largest-trades?token=test-iex-api-publishable-token
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        User-Agent:
+          - Faraday v0.15.4
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Fri, 05 Apr 2019 03:09:06 GMT
+        Content-Type:
+          - application/json; charset=utf-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Set-Cookie:
+          - ctoken=57e385afcadb4db7919e9565b61a8496; Max-Age=43200; Path=/; Expires=Fri,
+            05 Apr 2019 15:09:06 GMT
+        Content-Security-Policy:
+          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
+            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
+            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
+            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
+            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
+            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
+            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
+            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
+            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
+            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
+            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
+            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
+            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
+            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
+        X-Content-Security-Policy:
+          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
+            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
+            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
+            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
+            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
+            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
+            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
+            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
+            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
+            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
+            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
+            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
+            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
+            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
+        Frame-Options:
+          - SAMEORIGIN
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-Content-Type-Options:
+          - nosniff
+        Strict-Transport-Security:
+          - max-age=15768000
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Methods:
+          - GET, OPTIONS
+        Access-Control-Allow-Headers:
+          - Origin, X-Requested-With, Content-Type, Accept
+      body:
+        encoding: ASCII-8BIT
+        string:
+          '[{"price":195.82,"size":18400,"time":1554403101504,"timeLabel":"14:38:21","venue":"None","venueName":"Off
+          Exchange"},{"price":195.65,"size":17425,"time":1554402911513,"timeLabel":"14:35:11","venue":"EDGX","venueName":"Cboe
+          EDGX"},{"price":195.78,"size":16239,"time":1554386370632,"timeLabel":"09:59:30","venue":"None","venueName":"Off
+          Exchange"},{"price":195.71,"size":15000,"time":1554387662189,"timeLabel":"10:21:02","venue":"None","venueName":"Off
+          Exchange"},{"price":195.45,"size":14535,"time":1554407418067,"timeLabel":"15:50:18","venue":"XNGS","venueName":"Nasdaq"},{"price":195.5,"size":13836,"time":1554396175246,"timeLabel":"12:42:55","venue":"XNGS","venueName":"Nasdaq"},{"price":195.67,"size":12500,"time":1554396109390,"timeLabel":"12:41:49","venue":"None","venueName":"Off
+          Exchange"},{"price":195,"size":11240,"time":1554388349466,"timeLabel":"10:32:29","venue":"BATS","venueName":"Cboe
+          BZX"},{"price":195.9,"size":11071,"time":1554384911335,"timeLabel":"09:35:11","venue":"ARCX","venueName":"NYSE
+          Arca"},{"price":195,"size":10793,"time":1554388349468,"timeLabel":"10:32:29","venue":"None","venueName":"Off
+          Exchange"}]'
+      http_version:
+    recorded_at: Fri, 05 Apr 2019 03:09:06 GMT
 recorded_with: VCR 4.0.0

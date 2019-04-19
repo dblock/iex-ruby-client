@@ -8,14 +8,15 @@ describe IEX::Resources::Dividends do
       end
       let(:dividends) { subject.first }
       it 'retrieves dividends' do
-        expect(dividends.payment_date).to eq '2018-03-08'
-        expect(dividends.record_date).to eq '2018-02-15'
-        expect(dividends.declared_date).to eq '2017-11-29'
-        expect(dividends.amount_dollar).to eq '$0.42'
-        expect(dividends.flag).to eq ''
-        expect(dividends.type).to eq 'Dividend income'
-        expect(dividends.qualified).to eq 'Q'
-        expect(dividends.indicated).to eq ''
+        expect(dividends.ex_date).to eq '2019-05-15'
+        expect(dividends.payment_date).to eq '2019-06-13'
+        expect(dividends.record_date).to eq '2019-05-16'
+        expect(dividends.declared_date).to eq '2019-03-11'
+        expect(dividends.amount).to eq 0.46
+        expect(dividends.amount_dollar).to eq '$0.46'
+        expect(dividends.currency).to eq 'USD'
+        expect(dividends.description).to eq 'Microsoft Corp. Declares Quarterly Dividend of $0.46 Per Share'
+        expect(dividends.frequency).to eq 'Quarterly'
       end
     end
     context 'without range', vcr: { cassette_name: 'dividends/msft_default_range' } do
@@ -40,7 +41,7 @@ describe IEX::Resources::Dividends do
         IEX::Resources::Dividends.get('MSFT', '1y')
       end
       it 'retrieves dividends with range of 1 year' do
-        expect(subject.size).to eq 4
+        expect(subject.size).to eq 5
       end
     end
   end

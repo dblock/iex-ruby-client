@@ -2,7 +2,7 @@
 http_interactions:
   - request:
       method: get
-      uri: https://cloud.iexapis.com/v1/stock/MSFT/dividends?token=test-iex-api-publishable-token
+      uri: https://cloud.iexapis.com/v1/crypto/BTCUSDT/quote?token=test-iex-api-publishable-token
       body:
         encoding: US-ASCII
         string: ""
@@ -21,7 +21,7 @@ http_interactions:
         Server:
           - nginx
         Date:
-          - Mon, 08 Apr 2019 11:10:18 GMT
+          - Fri, 05 Apr 2019 03:12:28 GMT
         Content-Type:
           - application/json; charset=utf-8
         Transfer-Encoding:
@@ -29,8 +29,8 @@ http_interactions:
         Connection:
           - keep-alive
         Set-Cookie:
-          - ctoken=421b5afc15434d499655f4a66e436043; Max-Age=43200; Path=/; Expires=Mon,
-            08 Apr 2019 23:10:18 GMT
+          - ctoken=4ab558bc3a6549eeaec85abe8b048e70; Max-Age=43200; Path=/; Expires=Fri,
+            05 Apr 2019 15:12:28 GMT
         Content-Security-Policy:
           - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
             'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
@@ -80,9 +80,8 @@ http_interactions:
       body:
         encoding: ASCII-8BIT
         string:
-          '[{"exDate":"2019-05-15","paymentDate":"2019-06-13","recordDate":"2019-05-16","declaredDate":"2019-03-11","amount":0.46,"flag":"No
-          Change QoQ","currency":"USD","description":"Microsoft Corp. Declares Quarterly
-          Dividend of $0.46 Per Share","frequency":"Quarterly"}]'
+          '{"symbol":"BTCUSDT","companyName":"Bitcoin USD","primaryExchange":"crypto","sector":"cryptocurrency","calculationPrice":"realtime","open":3527.79,"openTime":1548082840296,"close":3522.05522498,"closeTime":1548169240296,"high":3590.51,"low":3434.85,"latestPrice":3563.22,"latestSource":"Real
+          time price","latestTime":"10:00:40 AM","latestUpdate":1548169240296,"latestVolume":28053.196533,"iexRealtimePrice":null,"iexRealtimeSize":null,"iexLastUpdated":null,"delayedPrice":null,"delayedPriceTime":null,"extendedPrice":null,"extendedChange":null,"extendedChangePercent":null,"extendedPriceTime":null,"previousClose":3527.79,"change":35.43,"changePercent":0.01004,"iexMarketPercent":null,"iexVolume":null,"avgTotalVolume":null,"iexBidPrice":null,"iexBidSize":null,"iexAskPrice":null,"iexAskSize":null,"marketCap":null,"peRatio":null,"week52High":null,"week52Low":null,"ytdChange":null,"bidPrice":3562.94,"bidSize":0.061728,"askPrice":3563.22,"askSize":0.134326}'
       http_version:
-    recorded_at: Mon, 08 Apr 2019 11:10:18 GMT
+    recorded_at: Fri, 05 Apr 2019 03:12:28 GMT
 recorded_with: VCR 4.0.0

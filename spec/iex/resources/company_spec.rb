@@ -8,13 +8,15 @@ describe IEX::Resources::Company do
     it 'retrieves company information' do
       expect(subject.symbol).to eq 'MSFT'
       expect(subject.ceo).to eq 'Satya Nadella'
-      expect(subject.company_name).to eq 'Microsoft Corporation'
-      expect(subject.description).to include 'Microsoft Corp is a technology company.'
-      expect(subject.exchange).to eq 'Nasdaq Global Select'
-      expect(subject.industry).to eq 'Application Software'
+      expect(subject.company_name).to eq 'Microsoft Corp.'
+      expect(subject.description).to include 'Develops, manufactures and distributes software products'
+      expect(subject.exchange).to eq 'NASDAQ'
+      expect(subject.industry).to eq 'Packaged Software'
       expect(subject.issue_type).to eq 'cs'
       expect(subject.website).to eq 'http://www.microsoft.com'
-      expect(subject.sector).to eq 'Technology'
+      expect(subject.sector).to eq 'Technology Services'
+      expect(subject.employees).to eq 131_000
+      expect(subject.security_name).to eq 'Microsoft Corporation'
     end
   end
   context 'invalid symbol', vcr: { cassette_name: 'company/invalid' } do

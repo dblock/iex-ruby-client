@@ -6,7 +6,7 @@ describe IEX::Resources::Price do
       IEX::Resources::Price.get('MSFT')
     end
     it 'retrieves a price' do
-      expect(subject).to eq 93.78
+      expect(subject).to eq 119.36
     end
   end
 

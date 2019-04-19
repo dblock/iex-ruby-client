@@ -1,17 +1,16 @@
-IEX Finance API
-===============
+# IEX Finance API
 
 [![Gem Version](https://badge.fury.io/rb/iex-ruby-client.svg)](https://badge.fury.io/rb/iex-ruby-client)
 [![Build Status](https://travis-ci.org/dblock/iex-ruby-client.svg?branch=master)](https://travis-ci.org/dblock/iex-ruby-client)
 
-A Ruby client for the [IEX Finance API](https://iextrading.com/developer).
-
+A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
 
 # Table of Contents
 
 - [Installation](#installation)
 - [Methods Available](#methods-available)
 - [Usage](#usage)
+  - [Set API token](#set-api-token)
   - [Get a Single Price](#get-a-single-price)
   - [Get a Quote](#get-a-quote)
   - [Get a OHLC (Open, High, Low, Close) price](#get-a-ohlc-open-high-low-close-price)
@@ -25,13 +24,12 @@ A Ruby client for the [IEX Finance API](https://iextrading.com/developer).
   - [Get Earnings](#get-earnings)
   - [Get Sector Performance](#get-sector-performance)
   - [Get Largest Trades](#get-largest-trades)
-  - [Get Cryptocurrencies](#get-cryptocurrencies)
+  - [Get a quote for Cryptocurrencies](#get-a-quote-for-cryptocurrencies)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
   - [ClientError](#clienterror)
 - [Contributing](#contributing)
 - [Copyright and License](#copyright-and-license)
-
 
 ## Installation
 
@@ -42,7 +40,6 @@ gem 'iex-ruby-client'
 ```
 
 Run `bundle install`.
-
 
 ## Methods Available
 
@@ -62,6 +59,10 @@ Run `bundle install`.
 
 ## Usage
 
+### Set API token
+
+To use this gem, set `IEX_API_PUBLISHABLE_TOKEN` environment variable to your IEX cloud API publishable token. You can find your token on [IEX Cloud Console](https://iexcloud.io/console/)
+
 ### Get a Single Price
 
 Fetches a single number, being the IEX real time price, the 15 minute delayed market price, or the previous close price.
@@ -70,7 +71,7 @@ Fetches a single number, being the IEX real time price, the 15 minute delayed ma
 IEX::Resources::Price.get('MSFT') # 93.78
 ```
 
-See [#price](https://iextrading.com/developer/docs/#price) for detailed documentation.
+See [#price](https://iexcloud.io/docs/api/#price) for detailed documentation.
 
 ### Get a Quote
 
@@ -85,11 +86,12 @@ quote.change_percent # 0.00418
 quote.change_percent_s # '+0.42%'
 ```
 
-See [#quote](https://iextrading.com/developer/docs/#quote) for detailed documentation or [quote.rb](lib/iex/resources/quote.rb) for returned fields.
+See [#quote](https://iexcloud.io/docs/api/#quote) for detailed documentation or [quote.rb](lib/iex/resources/quote.rb) for returned fields.
 
 ### Get a OHLC (Open, High, Low, Close) price
 
 Fetches a single stock OHLC price. Open and Close prices contain timestamp.
+
 ```ruby
 ohlc = IEX::Resources::OHLC.get('MSFT')
 
@@ -104,6 +106,7 @@ ohlc.low # '+0.42%'
 ### Get a market OHLC (Open, High, Low, Close) prices
 
 Fetches a hash market OHLC prices.
+
 ```ruby
 market = IEX::Resources::OHLC.market
 market['SPY'].close.price # 278.56
@@ -125,7 +128,7 @@ company.ceo # 'Satya Nadella'
 company.company_name # 'Microsoft Corporation'
 ```
 
-See [#company](https://iextrading.com/developer/docs/#company) for detailed documentation or [company.rb](lib/iex/resources/company.rb) for returned fields.
+See [#company](https://iexcloud.io/docs/api/#company) for detailed documentation or [company.rb](lib/iex/resources/company.rb) for returned fields.
 
 ### Get a Company Logo
 
@@ -137,7 +140,7 @@ logo = IEX::Resources::Logo.get('MSFT')
 logo.url # 'https://storage.googleapis.com/iex/api/logos/MSFT.png'
 ```
 
-See [#logo](https://iextrading.com/developer/docs/#logo) for detailed documentation or [logo.rb](lib/iex/resources/logo.rb) for returned fields.
+See [#logo](https://iexcloud.io/docs/api/#logo) for detailed documentation or [logo.rb](lib/iex/resources/logo.rb) for returned fields.
 
 ### Get Recent News
 
@@ -153,19 +156,13 @@ latest.headline # 'Smartsheet files for $100M IPO with growing losses'
 latest.url # 'https://...'
 ```
 
-Use `market` to get market-wide news.
-
-```ruby
-news = IEX::Resources::News.get(:market)
-```
-
 Retrieve a range between 1 and 50.
 
 ```ruby
 news = IEX::Resources::News.get('MSFT', 5)
 ```
 
-See [#news](https://iextrading.com/developer/docs/#news) for detailed documentation or [news.rb](lib/iex/resources/news.rb) for returned fields.
+See [#news](https://iexcloud.io/docs/api/#news) for detailed documentation or [news.rb](lib/iex/resources/news.rb) for returned fields.
 
 ### Get Chart
 
@@ -196,54 +193,20 @@ Fetches company's key stats for a symbol.
 ```ruby
 key_stats = IEX::Resources::KeyStats.get('MSFT')
 
-key_stats.symbol # MSFT
 key_stats.market_cap # 825814890000
 key_stats.market_cap_dollars # '$825,814,890,000'
-key_stats.beta # 1.261768
 key_stats.week_52_high # 111.15
 key_stats.week_52_high_dollar # '$111.15'
 key_stats.week_52_low # 71.28
 key_stats.week_52_low_dollar # '$71.28'
 key_stats.week_52_change_dollar # '$51.77'
-key_stats.short_interest # 47158592
-key_stats.short_date # '2018-07-13'
-key_stats.dividend_rate # 1.68
 key_stats.dividend_yield # 1.5617738
 key_stats.ex_dividend_date # '2018-08-15 00:00:00.0'
-key_stats.latest_eps # 2.11
-key_stats.latest_eps_date # '2018-06-30'
 key_stats.shares_outstanding # 7677000000
 key_stats.float # 7217387757
-key_stats.return_on_equity # 20.82
-key_stats.consensus_eps # 0.86
-key_stats.number_of_estimates # 14
-key_stats.eps_surprise_dollar # nil
-key_stats.eps_surprise_percent # 11.6279
-key_stats.eps_surprise_percent_s # '+1162.79%'
-key_stats.ebitda # 23558000000
-key_stats.revenue_dollar # '$53,456,000,000'
-key_stats.gross_profit # 34114000000
-key_stats.gross_profit_dollar # '$34,114,000,000'
-key_stats.cash_dollar # '$281,251,000,000'
 key_stats.ttm_eps # 3.51
-key_stats.revenue_per_share # 7
-key_stats.revenue_per_employee # 431097
-key_stats.pe_ratio_high # 0
-key_stats.pe_ratio_low # 0
-key_stats.return_on_assets # 6.46
-key_stats.return_on_capital # nil
-key_stats.profit_margin # 15.1
-key_stats.price_to_sales # 7.393182
-key_stats.price_to_sales_dollar # '$7.39'
-key_stats.price_to_book # 10.73
-key_stats.price_to_book_dollar # '$10.73'
 key_stats.day_200_moving_avg # 91.99065
 key_stats.day_50_moving_avg # 102.2528
-key_stats.institution_percent # 75.1
-key_stats.institution_percent_s # '+7510.00%'
-key_stats.insider_percent # nil
-key_stats.insider_percent_s # nil
-key_stats.short_ratio # 1.7330703
 key_stats.year_5_change_percent # 2.85141424991049
 key_stats.year_5_change_percent_s # '+285.14%'
 key_stats.year_2_change_percent # 0.9732002824884664
@@ -260,7 +223,8 @@ key_stats.month_1_change_percent_s # '+8.60%'
 key_stats.day_5_change_percent # -0.0010215453194652084
 key_stats.day_5_change_percent_s # '-0.10%'
 ```
-See [#key-stats](https://iextrading.com/developer/docs/#key-stats) for detailed documentation or [key_stats.rb](lib/iex/resources/key_stats.rb) for returned fields.
+
+See [#key-stats](https://iexcloud.io/docs/api/#key-stats) for detailed documentation or [key_stats.rb](lib/iex/resources/key_stats.rb) for returned fields.
 
 ### Get Dividends
 
@@ -273,14 +237,9 @@ dividends.payment_date # '2018-03-08'
 dividends.record_date # '2018-02-15'
 dividends.declared_date # '2017-11-29'
 dividends.amount # 0.42
-dividends.amount_dollar # '$0.42'
-dividends.flag # ''
-dividends.type # 'Dividend income'
-dividends.qualified # 'Q'
-dividends.indicated # ''
 ```
-See [#dividends](https://iextrading.com/developer/docs/#dividends) for detailed documentation or [dividends.rb](lib/iex/resources/dividends.rb) for returned fields.
 
+See [#dividends](https://iexcloud.io/docs/api/#dividends) for detailed documentation or [dividends.rb](lib/iex/resources/dividends.rb) for returned fields.
 
 ### Get Earnings
 
@@ -291,7 +250,6 @@ earnings = IEX::Resources::Earnings.get('MSFT')
 
 earnings.actual_eps # 1.13
 earnings.consensus_eps # 1.07
-earnings.estimated_eps # 1.07
 earnings.announce_time # 'AMC'
 earnings.number_of_estimates # 14
 earnings.eps_surprise_dollar # 0.06
@@ -301,12 +259,9 @@ earnings.fiscal_end_date # '2018-06-30'
 earnings.year_ago # 0.98
 earnings.year_ago_change_percent # 0.15306122448979584
 earnings.year_ago_change_percent_s # '+15.31%'
-earnings.estimated_change_percent # 0.09183673469387764
-earnings.estimated_change_percent_s # '+9.18%'
-earnings.symbol_id # 4563
 ```
-See [#earnings](https://iextrading.com/developer/docs/#earnings) for detailed documentation or [earnings.rb](lib/iex/resources/earnings.rb) for returned fields.
 
+See [#earnings](https://iexcloud.io/docs/api/#earnings) for detailed documentation or [earnings.rb](lib/iex/resources/earnings.rb) for returned fields.
 
 ### Get Sector Performance
 
@@ -320,7 +275,8 @@ sectors.name # Industrials
 sectors.performance # 0.00711
 sectors.last_updated # 1533672000437
 ```
-See [#sector-performance](https://iextrading.com/developer/docs/#sector-performance) for detailed documentation or [sectors.rb](lib/iex/resources/sectors.rb) for returned fields.
+
+See [#sector-performance](https://iexcloud.io/docs/api/#sector-performance) for detailed documentation or [sectors.rb](lib/iex/resources/sectors.rb) for returned fields.
 
 ### Get Largest Trades
 
@@ -336,70 +292,32 @@ trades.first.time_label # 11:51:30
 trades.first.venue # EDGX
 trades.first.venue_name # Cboe EDGX
 ```
-See [#largest-trades](https://iextrading.com/developer/docs/#largest-trades) for detailed documentation or [largest_trades.rb](lib/iex/resources/largest_trades.rb) for returned fields.
 
-### Get Cryptocurrencies
+See [#largest-trades](https://iexcloud.io/docs/api/#largest-trades) for detailed documentation or [largest_trades.rb](lib/iex/resources/largest_trades.rb) for returned fields.
 
-Fetches a list of cryptocurrencies' latest quotes and information.
+### Get a quote for Cryptocurrencies
 
+Fetches a crypto quote.
+
+```ruby
+crypto = IEX::Resources::Crypto.get('BTCUSDT')
+
+crypto.symbol #'BTCUSDT'
+crypto.company_name #'Bitcoin USD'
+crypto.primary_exchange #'crypto'
+crypto.sector #'cryptocurrency'
+crypto.calculation_price #'realtime'
+crypto.open #3527.79
+crypto.open_dollar #'$3,527'
+crypto.open_time #1_548_082_840_296
+crypto.close #3522.05522498
+crypto.close_dollar #'$3,522'
+crypto.close_time #1_548_169_240_296
+crypto.high #3590.51
+crypto.high_dollar #'$3,590'
 ```
-crypto = IEX::Resources::Crypto.get
 
-crypto.first.ask_price # 6617.99
-crypto.first.symbol # 'BTCUSDT'
-crypto.first.company_name # 'Bitcoin USD'
-crypto.first.primary_exchange # 'crypto'
-crypto.first.sector # 'cryptocurrency'
-crypto.first.calculation_price # 'realtime'
-crypto.first.open # 6645.76
-crypto.first.open_dollar # '$6,645'
-crypto.first.open_time # 1_538_360_540_423
-crypto.first.close # 6595.49934953
-crypto.first.close_dollar # '$6,595'
-crypto.first.close_time # 1_538_446_940_423
-crypto.first.high # 6663.1
-crypto.first.high_dollar # '$6,663'
-crypto.first.low # 6510
-crypto.first.low_dollar # '$6,510'
-crypto.first.latest_price # 6618.7
-crypto.first.latest_price_dollar # '$6,618'
-crypto.first.latest_source # 'Real time price'
-crypto.first.latest_time # '10:22:20 PM'
-crypto.first.latest_update # 1_538_446_940_423
-crypto.first.latest_volume # 20_027.36393
-crypto.first.latest_volume_dollar # '$20,027'
-crypto.first.iex_realtime_price # nil
-crypto.first.iex_realtime_size # nil
-crypto.first.iex_last_updated # nil
-crypto.first.delayed_price # nil
-crypto.first.delayed_price_time # nil
-crypto.first.extended_change # nil
-crypto.first.extended_change_percent # nil
-crypto.first.extended_price_time # nil
-crypto.first.previous_close # 6645.76
-crypto.first.previous_close_dollar # '$6,645'
-crypto.first.change # -27.06
-crypto.first.change_percent # -0.00407
-crypto.first.change_percent_s # '-0.41%'
-crypto.first.iex_market_percent # nil
-crypto.first.iex_volume # nil
-crypto.first.avg_total_volume # nil
-crypto.first.iex_bid_price # nil
-crypto.first.iex_bid_size # nil
-crypto.first.iex_ask_price # nil
-crypto.first.iex_ask_size # nil
-crypto.first.market_cap # nil
-crypto.first.pe_ratio # nil
-crypto.first.week52_high # nil
-crypto.first.week52_high_dollar # nil
-crypto.first.week52_low # nil
-crypto.first.week52_low_dollar # nil
-crypto.first.ytd_change # nil
-crypto.first.bid_price # 6613.16
-crypto.first.bid_size # 2.166213
-crypto.first.ask_price # 6617.99
-crypto.first.ask_size # 0.264944
-```
+See [#crypto](https://iexcloud.io/docs/api/#crypto) for detailed documentation or [crypto.rb](lib/iex/resources/crypto.rb) for returned fields.
 
 ## Errors
 
@@ -421,4 +339,4 @@ Copyright (c) 2018, [Daniel Doubrovkine](https://twitter.com/dblockdotorg) and [
 
 This project is licensed under the [MIT License](LICENSE.md).
 
-Data provided for free by [IEX](https://iextrading.com/developer), see [terms](https://iextrading.com/api-terms).
+Data provided for free by [IEX](https://iexcloud.io), see [terms](https://iexcloud.io/terms/).

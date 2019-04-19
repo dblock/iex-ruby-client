@@ -1,69 +1,91 @@
 ---
 http_interactions:
-- request:
-    method: get
-    uri: https://api.iextrading.com/1.0/stock/MSFT/dividends/6m
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.15.3
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Thu, 08 Nov 2018 15:42:15 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - ctoken=a960d585020d48c8a0a44ab8a7d3d5c4; Domain=.iextrading.com; Path=/; Expires=Fri,
-        09 Nov 2018 03:42:15 GMT; Secure
-      Content-Security-Policy:
-      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
-        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
-        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
-        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
-        'self' 'unsafe-inline' 'unsafe-eval';
-      X-Content-Security-Policy:
-      - default-src 'self'; child-src 'none'; object-src 'none'; style-src 'self'
-        'unsafe-inline'; font-src data:; frame-src 'self'; connect-src 'self' https://auth.iextrading.com
-        https://api.iextrading.com https://api.iextrading.com wss://iextrading.com
-        wss://tops.iextrading.com wss://api.iextrading.com wss://iextrading.com; script-src
-        'self' 'unsafe-inline' 'unsafe-eval';
-      Frame-Options:
-      - SAMEORIGIN
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=15768000
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Methods:
-      - GET, OPTIONS
-      Access-Control-Allow-Headers:
-      - Origin, X-Requested-With, Content-Type, Accept
-    body:
-      encoding: ASCII-8BIT
-      string: '[{"exDate":"2018-02-14","paymentDate":"2018-03-08","recordDate":"2018-02-15","declaredDate":"2017-11-29","amount":0.42,"flag":"","type":"Dividend
-        income","qualified":"Q","indicated":""},{"exDate":"2017-11-15","paymentDate":"2017-12-14","recordDate":"2017-11-16","declaredDate":"2017-09-19","amount":0.42,"flag":"","type":"Dividend
-        income","qualified":"Q","indicated":""}]'
-    http_version: 
-  recorded_at: Thu, 08 Nov 2018 15:42:15 GMT
+  - request:
+      method: get
+      uri: https://cloud.iexapis.com/v1/stock/MSFT/dividends/6m?token=test-iex-api-publishable-token
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        User-Agent:
+          - Faraday v0.15.4
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+        Accept:
+          - "*/*"
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Mon, 08 Apr 2019 11:10:17 GMT
+        Content-Type:
+          - application/json; charset=utf-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Set-Cookie:
+          - ctoken=c7c1ad766ece46b6a6bd31433d5ad9fb; Max-Age=43200; Path=/; Expires=Mon,
+            08 Apr 2019 23:10:06 GMT
+        Content-Security-Policy:
+          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
+            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
+            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
+            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
+            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
+            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
+            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
+            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
+            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
+            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
+            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
+            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
+            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
+            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
+        X-Content-Security-Policy:
+          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
+            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
+            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
+            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
+            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
+            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
+            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
+            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
+            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
+            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
+            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
+            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
+            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
+            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
+        Frame-Options:
+          - SAMEORIGIN
+        X-Frame-Options:
+          - SAMEORIGIN
+        X-Content-Type-Options:
+          - nosniff
+        Strict-Transport-Security:
+          - max-age=15768000
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Methods:
+          - GET, OPTIONS
+        Access-Control-Allow-Headers:
+          - Origin, X-Requested-With, Content-Type, Accept
+      body:
+        encoding: ASCII-8BIT
+        string:
+          '[{"exDate":"2019-05-15","paymentDate":"2019-06-13","recordDate":"2019-05-16","declaredDate":"2019-03-11","amount":0.46,"flag":"No
+          Change QoQ","currency":"USD","description":"Microsoft Corp. Declares Quarterly
+          Dividend of $0.46 Per Share","frequency":"Quarterly"},{"exDate":"2019-02-20","paymentDate":"2019-03-14","recordDate":"2019-02-21","declaredDate":"2018-11-28","amount":0.46,"flag":"No
+          Change QoQ","currency":"USD","description":"Microsoft Corp. Declares Quarterly
+          Dividend of $0.46 Per Share","frequency":"Quarterly"},{"exDate":"2018-11-14","paymentDate":"2018-12-13","recordDate":"2018-11-15","declaredDate":"2018-09-18","amount":0.46,"flag":"Increase","currency":"USD","description":"Microsoft
+          Corp. Hikes Quarterly Dividend 9.52%","frequency":"Quarterly"}]'
+      http_version:
+    recorded_at: Mon, 08 Apr 2019 11:10:17 GMT
 recorded_with: VCR 4.0.0
