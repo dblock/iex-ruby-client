@@ -6,5 +6,7 @@ require 'money_helper'
 
 require_relative 'iex/version'
 require_relative 'iex/errors'
+require_relative 'iex/logger'
+require_relative 'iex/cloud'
 require_relative 'iex/api'
 require_relative 'iex/resources'

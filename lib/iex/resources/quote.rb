@@ -1,5 +1,3 @@
-require_relative 'base'
-
 module IEX
   module Resources
     class Quote < Resource
@@ -52,12 +50,6 @@ module IEX
       property 'week_52_high', from: 'week52High' # adjusted 52 week high
       property 'week_52_low', from: 'week52Low' # adjusted 52 week low
       property 'ytd_change', from: 'ytdChange' # price change percentage from start of year to previous close
-
-      def self.get(stock_symbol)
-        Base.symbol(stock_symbol) do
-          new IEX::Api::Quote.get(stock_symbol)
-        end
-      end
     end
   end
 end
