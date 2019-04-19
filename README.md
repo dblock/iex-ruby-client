@@ -10,7 +10,8 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
 - [Installation](#installation)
 - [Methods Available](#methods-available)
 - [Usage](#usage)
-  - [Set API token](#set-api-token)
+  - [Get an API Token](#get-an-api-token)
+  - [Configure](#configure)
   - [Get a Single Price](#get-a-single-price)
   - [Get a Quote](#get-a-quote)
   - [Get a OHLC (Open, High, Low, Close) price](#get-a-ohlc-open-high-low-close-price)
@@ -59,16 +60,30 @@ Run `bundle install`.
 
 ## Usage
 
-### Set API token
+### Get an API Token
 
-Create an account on [IEX Cloud](https://iexcloud.io) and get a publishable token from the cloud console. Set the `IEX_API_PUBLISHABLE_TOKEN` environment variable to its value.
+Create an account on [IEX Cloud](https://iexcloud.io) and get a publishable token from the cloud console.
+
+### Configure
+
+```ruby
+IEX::Api.configure do |config|
+  config.publishable_token = 'token' # defaults to ENV['IEX_API_PUBLISHABLE_TOKEN']
+end
+```
+
+You can also configure an instance of a client directly.
+
+```ruby
+client = IEX::Api::Client.new(publishable_token: 'token')
+```
 
 ### Get a Single Price
 
 Fetches a single number, being the IEX real time price, the 15 minute delayed market price, or the previous close price.
 
 ```ruby
-IEX::Resources::Price.get('MSFT') # 93.78
+client.get('MSFT') # 93.78
 ```
 
 See [#price](https://iexcloud.io/docs/api/#price) for detailed documentation.
@@ -78,7 +93,7 @@ See [#price](https://iexcloud.io/docs/api/#price) for detailed documentation.
 Fetches a single stock quote.
 
 ```ruby
-quote = IEX::Resources::Quote.get('MSFT')
+quote = client.quote('MSFT')
 
 quote.latest_price # 90.165
 quote.change # 0.375
@@ -93,7 +108,7 @@ See [#quote](https://iexcloud.io/docs/api/#quote) for detailed documentation or 
 Fetches a single stock OHLC price. Open and Close prices contain timestamp.
 
 ```ruby
-ohlc = IEX::Resources::OHLC.get('MSFT')
+ohlc = client.ohlc.get('MSFT')
 
 ohlc.close.price # 90.165
 ohlc.close.time #
@@ -108,7 +123,7 @@ ohlc.low # '+0.42%'
 Fetches a hash market OHLC prices.
 
 ```ruby
-market = IEX::Resources::OHLC.market
+market = client.market
 market['SPY'].close.price # 278.56
 market['SPY'].close.time # 2018-06-11 23:00:00 +0300
 market['SPY'].open.price # 279.05
@@ -122,7 +137,7 @@ market['SPY'].low #
 Fetches company information for a symbol.
 
 ```ruby
-company = IEX::Resources::Company.get('MSFT')
+company = client.company('MSFT')
 
 company.ceo # 'Satya Nadella'
 company.company_name # 'Microsoft Corporation'
@@ -135,7 +150,7 @@ See [#company](https://iexcloud.io/docs/api/#company) for detailed documentation
 Fetches company logo for a symbol.
 
 ```ruby
-logo = IEX::Resources::Logo.get('MSFT')
+logo = client.logo('MSFT')
 
 logo.url # 'https://storage.googleapis.com/iex/api/logos/MSFT.png'
 ```
@@ -147,7 +162,7 @@ See [#logo](https://iexcloud.io/docs/api/#logo) for detailed documentation or [l
 Fetches news for a symbol.
 
 ```ruby
-news = IEX::Resources::News.get('MSFT')
+news = client.news('MSFT')
 
 news.size # 10
 
@@ -159,7 +174,7 @@ latest.url # 'https://...'
 Retrieve a range between 1 and 50.
 
 ```ruby
-news = IEX::Resources::News.get('MSFT', 5)
+news = client.news('MSFT', 5)
 ```
 
 See [#news](https://iexcloud.io/docs/api/#news) for detailed documentation or [news.rb](lib/iex/resources/news.rb) for returned fields.
@@ -169,7 +184,7 @@ See [#news](https://iexcloud.io/docs/api/#news) for detailed documentation or [n
 Fetches charts for a symbol.
 
 ```ruby
-chart = IEX::Resources::Chart.get('MSFT')
+chart = client.chart('MSFT')
 
 chart.size # 38510
 
@@ -181,9 +196,9 @@ first.high # 94.97
 You can specify a chart range and additional options.
 
 ```ruby
-IEX::Resources::Chart.get('MSFT', 'dynamic') # 1d or 1m data depending on the day or week and time of day
-IEX::Resources::Chart.get('MSFT', Date.new(2018, 3, 26)) # a specific date
-IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10) # every n-th data point
+client.chart('MSFT', 'dynamic') # 1d or 1m data depending on the day or week and time of day
+client.chart('MSFT', Date.new(2018, 3, 26)) # a specific date
+client.chart('MSFT', '1d', chart_interval: 10) # every n-th data point
 ```
 
 ### Get Key Stats
@@ -191,7 +206,7 @@ IEX::Resources::Chart.get('MSFT', '1d', chart_interval: 10) # every n-th data po
 Fetches company's key stats for a symbol.
 
 ```ruby
-key_stats = IEX::Resources::KeyStats.get('MSFT')
+key_stats = client.key_stats('MSFT')
 
 key_stats.market_cap # 825814890000
 key_stats.market_cap_dollars # '$825,814,890,000'
@@ -231,7 +246,7 @@ See [#key-stats](https://iexcloud.io/docs/api/#key-stats) for detailed documenta
 Fetches dividends for a symbol.
 
 ```ruby
-dividends = IEX::Resources::Dividends.get('MSFT', '6m') # Options are: 5y, 2y, 1y, ytd, 6m, 3m, 1m
+dividends = client.dividends('MSFT', '6m') # Options are: 5y, 2y, 1y, ytd, 6m, 3m, 1m
 
 dividends.payment_date # '2018-03-08'
 dividends.record_date # '2018-02-15'
@@ -246,7 +261,7 @@ See [#dividends](https://iexcloud.io/docs/api/#dividends) for detailed documenta
 Fetches earnings for a symbol.
 
 ```ruby
-earnings = IEX::Resources::Earnings.get('MSFT')
+earnings = client.earnings('MSFT')
 
 earnings.actual_eps # 1.13
 earnings.consensus_eps # 1.07
@@ -268,7 +283,7 @@ See [#earnings](https://iexcloud.io/docs/api/#earnings) for detailed documentati
 Fetches latest sector's performance.
 
 ```ruby
-sectors = IEX::Resources::Sectors.get('MARKET')
+sectors = client.sectors('MARKET')
 
 sectors.type # sectors
 sectors.name # Industrials
@@ -283,7 +298,7 @@ See [#sector-performance](https://iexcloud.io/docs/api/#sector-performance) for 
 Fetches largest trades in the day for a specific stock. Ordered by largest trade on the top.
 
 ```ruby
-trades = IEX::Resources::LargestTrades.get('aapl')
+trades = client.largest_trades('aapl')
 
 trades.first.price # 186.39
 trades.first.size # 10000 - refers to the number of shares negotiated in the day.
@@ -300,7 +315,7 @@ See [#largest-trades](https://iexcloud.io/docs/api/#largest-trades) for detailed
 Fetches a crypto quote.
 
 ```ruby
-crypto = IEX::Resources::Crypto.get('BTCUSDT')
+crypto = client.crypto('BTCUSDT')
 
 crypto.symbol #'BTCUSDT'
 crypto.company_name #'Bitcoin USD'
@@ -335,7 +350,7 @@ See [CONTRIBUTING](CONTRIBUTING.md).
 
 ## Copyright and License
 
-Copyright (c) 2018, [Daniel Doubrovkine](https://twitter.com/dblockdotorg) and [Contributors](CHANGELOG.md).
+Copyright (c) 2018-2019, [Daniel Doubrovkine](https://twitter.com/dblockdotorg) and [Contributors](CHANGELOG.md).
 
 This project is licensed under the [MIT License](LICENSE.md).
 

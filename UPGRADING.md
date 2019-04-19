@@ -5,7 +5,16 @@ Upgrading iex-ruby-client
 
 On June 1, 2019, IEX API has been sunset for all non-IEX data. IEX Cloud, a non-Exchange platform, continues to provide access to third-party data sources.
 
-Create an account and get a `publishable token` from [IEX Cloud Console](https://iexcloud.io). Set to environment variable `IEX_API_PUBLISHABLE_TOKEN`.
+Create an account and get a `publishable token` from [IEX Cloud Console](https://iexcloud.io). Set to environment variable `IEX_API_PUBLISHABLE_TOKEN` or configure the client as follows.
+
+```ruby
+client = IEX::Api::Client.new(publishable_token: 'token')
+
+# before
+# IEX::Resources::Price.get('MSFT')
+
+client.price('MSFT')
+```
 
 #### API Changes
 
@@ -35,7 +44,7 @@ Create an account and get a `publishable token` from [IEX Cloud Console](https:/
 * Added a new api to get a quote for Cryptocurrency.
 
 ```ruby
-crypto = IEX::Resources::Crypto.get('BTCUSDT')
+crypto = client.crypto('BTCUSDT')
 ```
 
 ### Upgrading to >= 0.4.0

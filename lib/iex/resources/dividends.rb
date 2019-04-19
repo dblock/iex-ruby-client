@@ -1,5 +1,3 @@
-require_relative 'base'
-
 module IEX
   module Resources
     class Dividends < Resource
@@ -16,15 +14,7 @@ module IEX
       def initialize(data)
         super
         # TODO: require Hashie >= 2.5.8, see https://github.com/intridea/hashie/pull/457
-        self['amount_dollar'] = Base.to_dollar(amount: amount, ignore_cents: false)
-      end
-
-      def self.get(stock_symbol, range = nil)
-        Base.symbol(stock_symbol) do
-          IEX::Api::Dividends.get(stock_symbol, range).map do |data|
-            new data
-          end
-        end
+        self['amount_dollar'] = Resource.to_dollar(amount: amount, ignore_cents: false)
       end
     end
   end

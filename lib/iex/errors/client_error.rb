@@ -5,7 +5,7 @@ module IEX
 
       def initialize(response)
         @response = response
-        super JSON.parse(response[:body])['error']
+        super response[:body]['error']
       end
     end
   end
