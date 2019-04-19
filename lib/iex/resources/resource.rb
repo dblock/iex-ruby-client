@@ -6,6 +6,7 @@ module IEX
       def self.float_to_percentage(float_number)
         return unless float_number.is_a? Numeric
         return '+0.00%' if float_number.zero?
+
         [
           float_number > 0 ? '+' : '',
           format('%.2f', float_number * 100),

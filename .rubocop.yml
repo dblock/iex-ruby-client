@@ -9,4 +9,10 @@ Naming/FileName:
   Exclude:
     - 'lib/iex-ruby-client.rb'
 
+Style/Documentation:
+  Enabled: false
+
+Metrics:
+  Enabled: false
+
 inherit_from: .rubocop_todo.yml

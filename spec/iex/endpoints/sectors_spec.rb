@@ -1,4 +1,3 @@
-
 require 'spec_helper'
 
 describe IEX::Resources::Sectors do
