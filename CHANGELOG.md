@@ -1,3 +1,7 @@
+### 1.0.1 (Next)
+
+* Your contribution here.
+
 ### 1.0.0 (2019/04/23)
 
 * [#42](https://github.com/dblock/iex-ruby-client/pull/42): Migrated to the IEX Cloud API - [@bingxie](https://github.com/bingxie).
