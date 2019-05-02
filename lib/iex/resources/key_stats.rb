@@ -24,6 +24,7 @@ module IEX
       property 'year_1_change_percent', from: 'year1ChangePercent'
       property 'year_1_change_percent_s', from: 'year1ChangePercent', with: ->(v) { Resource.float_to_percentage(v) }
       property 'ytd_change_percent', from: 'ytdChangePercent'
+      property 'ytd_change_percent_s', from: 'ytdChangePercent', with: ->(v) { Resource.float_to_percentage(v) }
       property 'month_6_change_percent', from: 'month6ChangePercent'
       property 'month_6_change_percent_s', from: 'month6ChangePercent', with: ->(v) { Resource.float_to_percentage(v) }
       property 'month_3_change_percent', from: 'month3ChangePercent'
@@ -32,6 +33,17 @@ module IEX
       property 'month_1_change_percent_s', from: 'month1ChangePercent', with: ->(v) { Resource.float_to_percentage(v) }
       property 'day_5_change_percent', from: 'day5ChangePercent'
       property 'day_5_change_percent_s', from: 'day5ChangePercent', with: ->(v) { Resource.float_to_percentage(v) }
+      property 'employees'
+      property 'avg_10_volume', from: 'avg10Volume'
+      property 'avg_30_volume', from: 'avg30Volume'
+      property 'ttm_dividend_rate', from: 'ttmDividendRate'
+      property 'max_change_percent', from: 'maxChangePercent'
+      property 'day_30_change_percent', from: 'day30ChangePercent'
+      property 'day_30_change_percent_s', from: 'day30ChangePercent', with: ->(v) { Resource.float_to_percentage(v) }
+      property 'next_dividend_date', from: 'nextDividendDate'
+      property 'next_earnings_date', from: 'nextEarningsDate'
+      property 'pe_ratio', from: 'peRatio'
+      property 'beta'
 
       def initialize(data = {})
         super

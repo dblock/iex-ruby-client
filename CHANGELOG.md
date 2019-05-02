@@ -1,6 +1,7 @@
 ### 1.0.1 (Next)
 
 * Your contribution here.
+* [#50](https://github.com/dblock/iex-ruby-client/pull/50): Add missing properties for key stats API - [@bingxie](https://github.com/bingxie).
 
 ### 1.0.0 (2019/04/23)
 
