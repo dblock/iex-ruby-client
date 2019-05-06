@@ -7,12 +7,12 @@ http_interactions:
         encoding: US-ASCII
         string: ""
       headers:
+        Accept:
+          - application/json; charset=utf-8
         User-Agent:
-          - Faraday v0.15.4
+          - IEX Ruby Client/1.0.1
         Accept-Encoding:
           - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-        Accept:
-          - "*/*"
     response:
       status:
         code: 200
@@ -21,7 +21,7 @@ http_interactions:
         Server:
           - nginx
         Date:
-          - Fri, 05 Apr 2019 11:12:06 GMT
+          - Thu, 02 May 2019 12:12:04 GMT
         Content-Type:
           - application/json; charset=utf-8
         Transfer-Encoding:
@@ -29,42 +29,10 @@ http_interactions:
         Connection:
           - keep-alive
         Set-Cookie:
-          - ctoken=d97d88c8b53e4d2a8bb9f9dd1d48984f; Max-Age=43200; Path=/; Expires=Fri,
-            05 Apr 2019 23:12:06 GMT
-        Content-Security-Policy:
-          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
-            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
-            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
-            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
-            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
-            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
-            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
-            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
-            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
-            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
-            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
-            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
-            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
-            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
-        X-Content-Security-Policy:
-          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
-            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
-            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
-            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
-            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
-            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
-            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
-            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
-            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
-            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
-            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
-            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
-            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
-            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
-        Frame-Options:
-          - SAMEORIGIN
-        X-Frame-Options:
-          - SAMEORIGIN
+          - ctoken=8df9fdfb440744638edd9bfdc8e0d27b; Max-Age=43200; Path=/; Expires=Fri,
+            03 May 2019 00:12:04 GMT
+        Iexcloud-Messages-Used:
+          - "5"
         X-Content-Type-Options:
           - nosniff
         Strict-Transport-Security:
@@ -80,8 +48,8 @@ http_interactions:
       body:
         encoding: ASCII-8BIT
         string:
-          '{"week52change":0.292055,"week52high":120.82,"week52low":89.48,"marketcap":915754985600,"employees":131000,"day200MovingAvg":108.04,"day50MovingAvg":111.56,"float":7541169096,"avg10Volume":23716223.6,"avg30Volume":26552395.97,"ttmEPS":4.35,"ttmDividendRate":1.76,"companyName":"Microsoft
-          Corp.","sharesOutstanding":7672210000,"maxChangePercent":3.901848,"year5ChangePercent":1.998995,"year2ChangePercent":0.820622,"year1ChangePercent":0.292055,"ytdChangePercent":0.18038,"month6ChangePercent":0.064479,"month3ChangePercent":0.169508,"month1ChangePercent":0.068577,"day30ChangePercent":0.075606,"day5ChangePercent":0.01204,"nextDividendRate":null,"nextDividendDate":"2019-05-15","dividendYield":0.014745308310991957,"nextEarningsDate":"2019-04-25","exDividendDate":"2019-05-15","peRatio":27.44}'
+          '{"week52change":0.371641,"week52high":136.04,"week52low":95.92,"marketcap":990869169557,"employees":133074,"day200MovingAvg":112.43,"day50MovingAvg":121,"float":7694414092,"avg10Volume":25160156.2,"avg30Volume":23123700.13,"ttmEPS":4.66,"ttmDividendRate":1.8,"companyName":"Microsoft
+          Corp.","sharesOutstanding":7849945172,"maxChangePercent":4.355607,"year5ChangePercent":2.32987,"year2ChangePercent":0.84983,"year1ChangePercent":0.383503,"ytdChangePercent":0.270151,"month6ChangePercent":0.208977,"month3ChangePercent":0.212188,"month1ChangePercent":0.076335,"day30ChangePercent":0.089589,"day5ChangePercent":-0.010013,"nextDividendDate":"2019-05-21","dividendYield":0.014087248841960684,"nextEarningsDate":"2019-07-29","exDividendDate":"2019-05-24","peRatio":29.47,"beta":1.4135449089973444}'
       http_version:
-    recorded_at: Fri, 05 Apr 2019 11:12:06 GMT
+    recorded_at: Thu, 02 May 2019 12:12:04 GMT
 recorded_with: VCR 4.0.0

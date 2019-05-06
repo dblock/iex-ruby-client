@@ -68,7 +68,7 @@ client = IEX::Api::Client.new(publishable_token: 'token')
 Fetches a single number, being the IEX real time price, the 15 minute delayed market price, or the previous close price.
 
 ```ruby
-client.get('MSFT') # 93.78
+client.price('MSFT') # 93.78
 ```
 
 See [#price](https://iexcloud.io/docs/api/#price) for detailed documentation.
@@ -193,35 +193,48 @@ Fetches company's key stats for a symbol.
 ```ruby
 key_stats = client.key_stats('MSFT')
 
-key_stats.market_cap # 825814890000
-key_stats.market_cap_dollars # '$825,814,890,000'
-key_stats.week_52_high # 111.15
-key_stats.week_52_high_dollar # '$111.15'
-key_stats.week_52_low # 71.28
-key_stats.week_52_low_dollar # '$71.28'
-key_stats.week_52_change_dollar # '$51.77'
-key_stats.dividend_yield # 1.5617738
-key_stats.ex_dividend_date # '2018-08-15 00:00:00.0'
-key_stats.shares_outstanding # 7677000000
-key_stats.float # 7217387757
-key_stats.ttm_eps # 3.51
-key_stats.day_200_moving_avg # 91.99065
-key_stats.day_50_moving_avg # 102.2528
-key_stats.year_5_change_percent # 2.85141424991049
-key_stats.year_5_change_percent_s # '+285.14%'
-key_stats.year_2_change_percent # 0.9732002824884664
-key_stats.year_2_change_percent_s # '+97.32%'
-key_stats.year_1_change_percent # 0.5200287133805482
-key_stats.year_1_change_percent_s # '+52.00%'
-key_stats.ytd_change_percent # 0.2628699562098638
-key_stats.month_6_change_percent # 0.23345097958275707
-key_stats.month_6_change_percent_s # '+23.35%'
-key_stats.month_3_change_percent # 0.14846686026648437
-key_stats.month_3_change_percent_s # '+14.85%'
-key_stats.month_1_change_percent # 0.08601716304896513
-key_stats.month_1_change_percent_s # '+8.60%'
-key_stats.day_5_change_percent # -0.0010215453194652084
-key_stats.day_5_change_percent_s # '-0.10%'
+key_stats.week_52_change_dollar # "$0.37"
+key_stats.week_52_high # 136.04
+key_stats.week_52_high_dollar # "$136.04"
+key_stats.week_52_low # 95.92,
+key_stats.week_52_low_dollar # "$95.92"
+key_stats.market_cap # 990869169557
+key_stats.market_cap_dollars # "$990,869,169,557"
+key_stats.employees # 133074
+key_stats.day_200_moving_avg # 112.43
+key_stats.day_50_moving_avg # 121
+key_stats.float # 7694414092
+key_stats.avg_10_volume # 25160156.2
+key_stats.avg_30_volume # 23123700.13
+key_stats.ttm_eps # 4.66
+key_stats.ttm_dividend_rate # 1.8
+key_stats.company_name # "Microsoft Corp."
+key_stats.shares_outstanding # 7849945172
+key_stats.max_change_percent # 4.355607
+key_stats.year_5_change_percent # 2.32987
+key_stats.year_5_change_percent_s # "+232.99%"
+key_stats.year_2_change_percent # 0.84983
+key_stats.year_2_change_percent_s # "+84.98%"
+key_stats.year_1_change_percent # 0.383503
+key_stats.year_1_change_percent_s # "+38.35%"
+key_stats.ytd_change_percent # 0.270151
+key_stats.ytd_change_percent_s # "+27.02%"
+key_stats.month_6_change_percent # 0.208977
+key_stats.month_6_change_percent_s # "+20.90%"
+key_stats.month_3_change_percent # 0.212188
+key_stats.month_3_change_percent_s # "+21.22%"
+key_stats.month_1_change_percent # 0.076335
+key_stats.month_1_change_percent_s # "+7.63%"
+key_stats.day_30_change_percent # 0.089589
+key_stats.day_30_change_percent_s # "+8.96%"
+key_stats.day_5_change_percent # -0.010013
+key_stats.day_5_change_percent_s # "-1.00%"
+key_stats.next_dividend_date # "2019-05-21"
+key_stats.dividend_yield # 0.014087248841960684
+key_stats.next_earnings_date # "2019-07-29"
+key_stats.ex_dividend_date # "2019-05-24"
+key_stats.pe_ratio # 29.47
+key_stats.beta # 1.4135449089973444
 ```
 
 See [#key-stats](https://iexcloud.io/docs/api/#key-stats) for detailed documentation or [key_stats.rb](lib/iex/resources/key_stats.rb) for returned fields.
