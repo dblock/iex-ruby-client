@@ -1,0 +1,11 @@
+version = 1
+
+test_patterns = ["spec/**"]
+
+[[analyzers]]
+name = "ruby"
+enabled = true
+
+[[transformers]]
+name = "rubocop"
+enabled = true

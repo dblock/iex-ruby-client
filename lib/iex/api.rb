@@ -1,3 +1,4 @@
+require_relative 'endpoints/advanced_stats'
 require_relative 'endpoints/chart'
 require_relative 'endpoints/company'
 require_relative 'endpoints/dividends'

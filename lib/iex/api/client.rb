@@ -1,6 +1,7 @@
 module IEX
   module Api
     class Client
+      include Endpoints::AdvancedStats
       include Endpoints::Chart
       include Endpoints::Company
       include Endpoints::Crypto
