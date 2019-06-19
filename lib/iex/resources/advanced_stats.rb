@@ -74,7 +74,7 @@ module IEX
       property 'pe_low', from: 'peLow'
  
       def initialize(data = {})
-        super
+
       end
     end
   end
