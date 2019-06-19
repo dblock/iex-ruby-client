@@ -332,58 +332,43 @@ crypto.high_dollar #'$3,590'
 
 See [#crypto](https://iexcloud.io/docs/api/#crypto) for detailed documentation or [crypto.rb](lib/iex/resources/crypto.rb) for returned fields.
 
-### Get Key Stats
+### Get Advanced Stats
 
 Fetches company's advanced stats for a symbol.
 
 ```ruby
 advanced_stats = client.advanced_stats('MSFT')
 
-advanced_stats.week_52_change_dollar # "$0.37"
-advanced_stats.week_52_high # 136.04
-advanced_stats.week_52_high_dollar # "$136.04"
-advanced_stats.week_52_low # 95.92,
-advanced_stats.week_52_low_dollar # "$95.92"
-advanced_stats.market_cap # 990869169557
-advanced_stats.market_cap_dollars # "$990,869,169,557"
-advanced_stats.employees # 133074
-advanced_stats.day_200_moving_avg # 112.43
-advanced_stats.day_50_moving_avg # 121
-advanced_stats.float # 7694414092
-advanced_stats.avg_10_volume # 25160156.2
-advanced_stats.avg_30_volume # 23123700.13
-advanced_stats.ttm_eps # 4.66
-advanced_stats.ttm_dividend_rate # 1.8
-advanced_stats.company_name # "Microsoft Corp."
-advanced_stats.shares_outstanding # 7849945172
-advanced_stats.max_change_percent # 4.355607
-advanced_stats.year_5_change_percent # 2.32987
-advanced_stats.year_5_change_percent_s # "+232.99%"
-advanced_stats.year_2_change_percent # 0.84983
-advanced_stats.year_2_change_percent_s # "+84.98%"
-advanced_stats.year_1_change_percent # 0.383503
-advanced_stats.year_1_change_percent_s # "+38.35%"
-advanced_stats.ytd_change_percent # 0.270151
-advanced_stats.ytd_change_percent_s # "+27.02%"
-advanced_stats.month_6_change_percent # 0.208977
-advanced_stats.month_6_change_percent_s # "+20.90%"
-advanced_stats.month_3_change_percent # 0.212188
-advanced_stats.month_3_change_percent_s # "+21.22%"
-advanced_stats.month_1_change_percent # 0.076335
-advanced_stats.month_1_change_percent_s # "+7.63%"
-advanced_stats.day_30_change_percent # 0.089589
-advanced_stats.day_30_change_percent_s # "+8.96%"
-advanced_stats.day_5_change_percent # -0.010013
-advanced_stats.day_5_change_percent_s # "-1.00%"
-advanced_stats.next_dividend_date # "2019-05-21"
-advanced_stats.dividend_yield # 0.014087248841960684
-advanced_stats.next_earnings_date # "2019-07-29"
-advanced_stats.ex_dividend_date # "2019-05-24"
-advanced_stats.pe_ratio # 29.47
-advanced_stats.beta # 1.4135449089973444
+advanced_stats.totalCash # 133768000000
+advanced_stats.total_cash_dollars # '$133,768,000,000'
+advanced_stats.currentDebt # 5573000000
+advanced_stats.current_debt_dollars # '$5,573,000,000'
+advanced_stats.revenue # 110175000000
+advanced_stats.revenue_dollars # '$110,175,000,000'
+advanced_stats.grossProfit # 71205000000
+advanced_stats.gross_profit_dollar # '$71,205,000,000'
+advanced_stats.totalRevenue # 110175000000
+advanced_stats.total_revenue_dollar # '$110,175,000,000'
+advanced_stats.EBITDA # 44827000000
+advanced_stats.revenuePerShare # 0.07
+advanced_stats.revenue_per_share_dollars # '$0.07'
+advanced_stats.revenuePerEmployee # 841030.53
+advanced_stats.revenue_per_employee_dollar # '$841,030.53'
+advanced_stats.debtToEquity # 1.06
+advanced_stats.profitMargin # 0.15040617199909234
+advanced_stats.enterpriseValue # 969829932000
+advanced_stats.enterprise_value_dollar # '$969,829,932,000'
+advanced_stats.enterpriseValueToRevenue # 8.8
+advanced_stats.priceToSales # 9.22
+advanced_stats.price_to_sales_dollar # '$9.22'
+advanced_stats.priceToBook # 12.237463695930751
+advanced_stats.forwardPERatio # 28.84
+advanced_stats.pegRatio # 1.46
+advanced_stats.peHigh # 29.729490022172953
+advanced_stats.peLow # 20.83370288248337
 ```
 
-See [#advanced-stats](https://iexcloud.io/docs/api/#advanced-stats) for detailed documentation or [key_stats.rb](lib/iex/resources/key_stats.rb) for returned fields.
+See [#advanced-stats](https://iexcloud.io/docs/api/#advanced-stats) for detailed documentation or [advanced_stats.rb](lib/iex/resources/advanced_stats.rb) for returned fields.
 
 ## Configuration
 
