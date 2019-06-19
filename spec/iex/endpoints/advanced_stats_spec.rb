@@ -42,9 +42,9 @@ describe IEX::Resources::AdvancedStats do
       expect(subject.avg_30_volume).to be 25_394_106.67
       expect(subject.max_change_percent).to eq 4.262834
       expect(subject.year_5_change_percent).to be 2.250476
-      expect(subject.year_5_change_percent_s).to eq '+225.04%'
+      expect(subject.year_5_change_percent_s).to eq '+225.05%'
       expect(subject.year_2_change_percent).to eq 0.858863
-      expect(subject.year_2_change_percent_s).to eq '+85.88%'
+      expect(subject.year_2_change_percent_s).to eq '+85.89%'
       expect(subject.year_1_change_percent).to eq 0.312222
       expect(subject.year_1_change_percent_s).to eq '+31.22%'
       expect(subject.ytd_change_percent).to eq 0.311313
@@ -54,41 +54,41 @@ describe IEX::Resources::AdvancedStats do
       expect(subject.month_3_change_percent).to eq 0.175219
       expect(subject.month_3_change_percent_s).to eq '+17.52%'
       expect(subject.month_1_change_percent).to eq 0.07499
-      expect(subject.month_1_change_percent_s).to eq '+7.49%'
-      expect(subject.day_5_change_percent).to eq(0.076648)
+      expect(subject.month_1_change_percent_s).to eq '+7.50%'
+      expect(subject.day_5_change_percent).to eq 0.076648
       expect(subject.day_5_change_percent_s).to eq '+7.66%'
       expect(subject.day_30_change_percent).to eq 0.021808
       expect(subject.day_30_change_percent_s).to eq '+2.18%'
     end
     
     it 'advanced stats' do 
-      expect(subject.totalCash).to eq 133768000000
+      expect(subject.total_cash).to eq 133768000000
       expect(subject.total_cash_dollars).to eq '$133,768,000,000'
-      expect(subject.currentDebt).to eq 5573000000
+      expect(subject.current_debt).to eq 5573000000
       expect(subject.current_debt_dollars).to eq '$5,573,000,000'
       expect(subject.revenue).to eq 110175000000
       expect(subject.revenue_dollars).to eq '$110,175,000,000'
-      expect(subject.grossProfit).to eq 71205000000
+      expect(subject.gross_profit).to eq 71205000000
       expect(subject.gross_profit_dollar).to eq '$71,205,000,000'
-      expect(subject.totalRevenue).to eq 110175000000
+      expect(subject.total_revenue).to eq 110175000000
       expect(subject.total_revenue_dollar).to eq '$110,175,000,000'
-      expect(subject.EBITDA).to eq 44827000000
-      expect(subject.revenuePerShare).to eq 0.07
-      expect(subject.revenue_per_share_dollars).to eq '$0.07'
-      expect(subject.revenuePerEmployee).to eq 841030.53
-      expect(subject.revenue_per_employee_dollar).to eq '$841,030.53'
-      expect(subject.debtToEquity).to eq 1.06
-      expect(subject.profitMargin).to eq 0.15040617199909234
-      expect(subject.enterpriseValue).to eq 969829932000
+      expect(subject.ebitda).to eq 44827000000
+      expect(subject.revenue_per_share).to eq 0.07
+      expect(subject.revenue_per_share_dollars).to eq '$0'
+      expect(subject.revenue_per_employee).to eq 841030.53
+      expect(subject.revenue_per_employee_dollar).to eq '$841,030'
+      expect(subject.debt_to_equity).to eq 1.06
+      expect(subject.profit_margin).to eq 0.15040617199909234
+      expect(subject.enterprise_value).to eq 969829932000
       expect(subject.enterprise_value_dollar).to eq '$969,829,932,000'
-      expect(subject.enterpriseValueToRevenue).to eq 8.8
-      expect(subject.priceToSales).to eq 9.22
-      expect(subject.price_to_sales_dollar).to eq '$9.22'
-      expect(subject.priceToBook).to eq 12.237463695930751
-      expect(subject.forwardPERatio).to eq 28.84
-      expect(subject.pegRatio).to eq 1.46
-      expect(subject.peHigh).to eq 29.729490022172953
-      expect(subject.peLow).to eq 20.83370288248337
+      expect(subject.enterprise_value_to_revenue).to eq 8.8
+      expect(subject.price_to_sales).to eq 9.22
+      expect(subject.price_to_sales_dollar).to eq '$9'
+      expect(subject.price_to_book).to eq 12.237463695930751
+      expect(subject.forward_pe_ratio).to eq 28.84
+      expect(subject.peg_ratio).to eq 1.46
+      expect(subject.pe_high).to eq '29.729490022172953'
+      expect(subject.pe_low).to eq '20.83370288248337'
     end
   end
 

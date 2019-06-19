@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloud.iexapis.com/v1/stock/INVALID/advanced-stats?token=test-iex-api-publishable-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - IEX Ruby Client/1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 19 Jun 2019 19:05:36 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=d47ffd51a6654ea788ecb5ac34ff1e3b; Max-Age=43200; Path=/; Expires=Thu,
+        20 Jun 2019 07:05:36 GMT
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: ASCII-8BIT
+      string: Unknown symbol
+    http_version: 
+  recorded_at: Wed, 19 Jun 2019 19:05:36 GMT
+- request:
+    method: get
+    uri: https://cloud.iexapis.com/v1/stock/INVALID/advanced-stats?token=pk_7c131cc2187b4c5583fc16816b5cf05e
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - IEX Ruby Client/1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 19 Jun 2019 19:12:31 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=ee6408f3ed3c4197915ffb467056f06f; Max-Age=43200; Path=/; Expires=Thu,
+        20 Jun 2019 07:12:31 GMT
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: ASCII-8BIT
+      string: Unknown symbol
+    http_version: 
+  recorded_at: Wed, 19 Jun 2019 19:12:31 GMT
+recorded_with: VCR 5.0.0
