@@ -25,6 +25,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get Sector Performance](#get-sector-performance)
   - [Get Largest Trades](#get-largest-trades)
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
+  - [Get Advanced Stats](#get-advanced-stats)
 - [Configuration](#configuration)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
