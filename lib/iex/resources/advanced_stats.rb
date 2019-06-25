@@ -72,7 +72,6 @@ module IEX
       property 'beta'
       property 'pe_high', from: 'peHigh'
       property 'pe_low', from: 'peLow'
-
     end
   end
 end
