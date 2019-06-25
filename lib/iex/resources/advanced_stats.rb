@@ -72,10 +72,7 @@ module IEX
       property 'beta'
       property 'pe_high', from: 'peHigh'
       property 'pe_low', from: 'peLow'
- 
-      def initialize(data = {})
 
-      end
     end
   end
 end
