@@ -47,20 +47,24 @@ Run `bundle install`.
 
 ### Get an API Token
 
-Create an account on [IEX Cloud](https://iexcloud.io) and get a publishable token from the cloud console.
+Create an account on [IEX Cloud](https://iexcloud.io) and get a publishable token from the IEX cloud console. You should use a sandbox token and endpoint for testing.
 
 ### Configure
 
 ```ruby
 IEX::Api.configure do |config|
   config.publishable_token = 'token' # defaults to ENV['IEX_API_PUBLISHABLE_TOKEN']
+  config.endpoint = 'https://sandbox.iexapis.com/v1' # defaults to 'https://cloud.iexapis.com/v1'
 end
 ```
 
 You can also configure an instance of a client directly.
 
 ```ruby
-client = IEX::Api::Client.new(publishable_token: 'token')
+client = IEX::Api::Client.new(
+  publishable_token: 'token',
+  endpoint: 'https://sandbox.iexapis.com/v1'
+)
 ```
 
 ### Get a Single Price
