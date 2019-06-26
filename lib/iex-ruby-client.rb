@@ -3,6 +3,7 @@ require 'faraday_middleware'
 require 'faraday_middleware/response_middleware'
 require 'hashie'
 require 'money_helper'
+require 'date'
 
 require_relative 'iex/version'
 require_relative 'iex/errors'

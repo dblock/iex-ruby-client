@@ -48,20 +48,24 @@ Run `bundle install`.
 
 ### Get an API Token
 
-Create an account on [IEX Cloud](https://iexcloud.io) and get a publishable token from the cloud console.
+Create an account on [IEX Cloud](https://iexcloud.io) and get a publishable token from the IEX cloud console. You should use a sandbox token and endpoint for testing.
 
 ### Configure
 
 ```ruby
 IEX::Api.configure do |config|
   config.publishable_token = 'token' # defaults to ENV['IEX_API_PUBLISHABLE_TOKEN']
+  config.endpoint = 'https://sandbox.iexapis.com/v1' # defaults to 'https://cloud.iexapis.com/v1'
 end
 ```
 
 You can also configure an instance of a client directly.
 
 ```ruby
-client = IEX::Api::Client.new(publishable_token: 'token')
+client = IEX::Api::Client.new(
+  publishable_token: 'token',
+  endpoint: 'https://sandbox.iexapis.com/v1'
+)
 ```
 
 ### Get a Single Price
@@ -185,6 +189,19 @@ You can specify a chart range and additional options.
 client.chart('MSFT', 'dynamic') # 1d or 1m data depending on the day or week and time of day
 client.chart('MSFT', Date.new(2018, 3, 26)) # a specific date
 client.chart('MSFT', '1d', chart_interval: 10) # every n-th data point
+```
+
+Note that calling the chart API weighs more than 1 IEX message (you pay more than 1 call).
+
+```
+# 1 message per minute capped at 50 messages to intraday_prices
+client.chart('MSFT', '1d')
+
+# 2x22 trading days = 44 messages to historical_close_prices
+client.chart('MSFT', '1m', chart_close_only: true)
+
+# 2x251 trading days = 502 messages to historical_close_prices
+client.chart('MSFT', '1y', chart_close_only: true)
 ```
 
 ### Get Key Stats
@@ -377,14 +394,15 @@ You can configure client options globally or directly with a `IEX::Api::Client` 
 
 ```ruby
 IEX::Api::Client.configure do |config|
-  config.user_agent = 'IEX Ruby Client/1.0.0'
+  config.publishable_token = ENV['IEX_API_PUBLISHABLE_TOKEN']
+  config.endpoint = 'https://sandbox.iexapis.com/v1' # use sandbox environment
 end
 ```
 
 ```ruby
 client = IEX::Api::Client.new(
-  publishable_token: 'token',
-  user_agent: 'IEX Ruby Client/1.0.0'
+  publishable_token: ENV['IEX_API_PUBLISHABLE_TOKEN'],
+  endpoint: 'https://sandbox.iexapis.com/v1'
 )
 ```
 
