@@ -1,3 +1,7 @@
+### 1.1.1 (Next)
+
+* Your contribution here.
+
 ### 1.1.0 (2019/07/08)
 
 * [#55](https://github.com/dblock/iex-ruby-client/pull/55): Add `income` statement API and add `tags` to the `company` - [@bingxie](https://github.com/bingxie).
