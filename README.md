@@ -216,7 +216,7 @@ key_stats.week_52_high_dollar # "$136.04"
 key_stats.week_52_low # 95.92,
 key_stats.week_52_low_dollar # "$95.92"
 key_stats.market_cap # 990869169557
-key_stats.market_cap_dollars # "$990,869,169,557"
+key_stats.market_cap_dollar # "$990,869,169,557"
 key_stats.employees # 133074
 key_stats.day_200_moving_avg # 112.43
 key_stats.day_50_moving_avg # 121

@@ -10,7 +10,7 @@ describe IEX::Resources::KeyStats do
     it 'retrieves a keyStats' do
       expect(subject.company_name).to eq 'Microsoft Corp.'
       expect(subject.market_cap).to eq 990_869_169_557
-      expect(subject.market_cap_dollars).to eq '$990,869,169,557'
+      expect(subject.market_cap_dollar).to eq '$990,869,169,557'
       expect(subject.employees).to eq 133_074
     end
 
