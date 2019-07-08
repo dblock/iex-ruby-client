@@ -1,0 +1,53 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: https://cloud.iexapis.com/v1/stock/MSFT/income?token=test-iex-api-publishable-token
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Accept:
+          - application/json; charset=utf-8
+        User-Agent:
+          - IEX Ruby Client/1.0.1
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Mon, 08 Jul 2019 04:53:26 GMT
+        Content-Type:
+          - application/json; charset=utf-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Set-Cookie:
+          - ctoken=153fb65c56854cf995c8112a5cd5f554; Max-Age=43200; Path=/; Expires=Mon,
+            08 Jul 2019 16:53:26 GMT
+        Iexcloud-Messages-Used:
+          - "1000"
+        X-Content-Type-Options:
+          - nosniff
+        Strict-Transport-Security:
+          - max-age=15768000
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Methods:
+          - GET, OPTIONS
+        Access-Control-Allow-Headers:
+          - Origin, X-Requested-With, Content-Type, Accept
+      body:
+        encoding: ASCII-8BIT
+        string: '{"symbol":"MSFT","income":[{"reportDate":"2019-03-31","totalRevenue":30505000000,"costOfRevenue":10170000000,"grossProfit":20335000000,"researchAndDevelopment":4316000000,"sellingGeneralAndAdmin":5744000000,"operatingExpense":20230000000,"operatingIncome":10275000000,"otherIncomeExpenseNet":211000000,"ebit":10275000000,"interestIncome":671000000,"pretaxIncome":10486000000,"incomeTax":1677000000,"minorityInterest":0,"netIncome":8809000000,"netIncomeBasic":8809000000}]}'
+      http_version:
+    recorded_at: Mon, 08 Jul 2019 04:53:26 GMT
+recorded_with: VCR 4.0.0

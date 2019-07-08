@@ -16,12 +16,12 @@ module IEX
       property 'latest_source', from: 'latestSource' # the source of latestPrice - IEX real time price, 15 minute delayed price, Close or Previous close
       property 'latest_time', from: 'latestTime' # human readable time of the latestPrice
       property 'latest_update', from: 'latestUpdate' # the update time of latestPrice in milliseconds since midnight Jan 1, 1970
-      property 'latest_update_t', from: 'latestUpdate', with: ->(v) { v && v > 0 ? Time.at(v / 1000) : nil } # the update time of latestPrice
+      property 'latest_update_t', from: 'latestUpdate', with: ->(v) { v&.positive? ? Time.at(v / 1000) : nil } # the update time of latestPrice
       property 'latest_volume', from: 'latestVolume' # the total market volume of the stock
       property 'iex_realtime_price', from: 'iexRealtimePrice' # last sale price of the stock on IEX
       property 'iex_realtime_size', from: 'iexRealtimeSize' # last sale size of the stock on IEX
       property 'iex_last_updated', from: 'iexLastUpdated' # last update time of the data in milliseconds since midnight Jan 1, 1970 UTC or -1 or 0; if the value is -1 or 0, IEX has not quoted the symbol in the trading day
-      property 'iex_last_updated_t', from: 'iexLastUpdated', with: ->(v) { v && v > 0 ? Time.at(v / 1000) : nil } # last update time of the data
+      property 'iex_last_updated_t', from: 'iexLastUpdated', with: ->(v) { v&.positive? ? Time.at(v / 1000) : nil } # last update time of the data
       property 'delayed_price', from: 'delayedPrice' # 15 minute delayed market price
       property 'delayed_price_time', from: 'delayedPriceTime' # time of the delayed market price
       property 'extended_price', from: 'extendedPrice' # ?
@@ -32,7 +32,7 @@ module IEX
       property 'change_percent_s', from: 'changePercent', with: lambda { |v|
         if v
           [
-            v > 0 ? '+' : '',
+            v.positive? ? '+' : '',
             format('%.2f', v * 100),
             '%'
           ].join

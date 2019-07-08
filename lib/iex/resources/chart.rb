@@ -18,7 +18,7 @@ module IEX
         property 'change_percent', from: 'changePercent'
         property 'change_percent_s', from: 'changePercent', with: lambda { |v|
           [
-            v > 0 ? '+' : '',
+            v.positive? ? '+' : '',
             format('%.2f', v),
             '%'
           ].join

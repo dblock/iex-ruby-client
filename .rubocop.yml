@@ -2,12 +2,15 @@ AllCops:
   Exclude:
     - vendor/**/*
 
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
 Naming/MethodName:
   Enabled: false
 
 Naming/FileName:
   Exclude:
-    - 'lib/iex-ruby-client.rb'
+    - "lib/iex-ruby-client.rb"
 
 Style/Documentation:
   Enabled: false

@@ -22,6 +22,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get Key Stats](#get-key-stats)
   - [Get Dividends](#get-dividends)
   - [Get Earnings](#get-earnings)
+  - [Get Income Statement](#get-income-statement)
   - [Get Sector Performance](#get-sector-performance)
   - [Get Largest Trades](#get-largest-trades)
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
@@ -216,7 +217,7 @@ key_stats.week_52_high_dollar # "$136.04"
 key_stats.week_52_low # 95.92,
 key_stats.week_52_low_dollar # "$95.92"
 key_stats.market_cap # 990869169557
-key_stats.market_cap_dollars # "$990,869,169,557"
+key_stats.market_cap_dollar # "$990,869,169,557"
 key_stats.employees # 133074
 key_stats.day_200_moving_avg # 112.43
 key_stats.day_50_moving_avg # 121
@@ -292,6 +293,25 @@ earnings.year_ago_change_percent_s # '+15.31%'
 ```
 
 See [#earnings](https://iexcloud.io/docs/api/#earnings) for detailed documentation or [earnings.rb](lib/iex/resources/earnings.rb) for returned fields.
+
+### Get Income Statement
+
+Fetches income statement for a symbol.
+
+```ruby
+income = client.income('MSFT')
+
+income.report_date # '2019-03-31'
+income.total_revenue # 30_505_000_000
+income.total_revenue_dollar # '$30,505,000,000'
+income.cost_of_revenue # 10_170_000_000
+income.cost_of_revenue_dollar # '$10,170,000,000'
+income.gross_profit # 20_335_000_000
+income.gross_profit_dollar # '$20,335,000,000'
+...
+```
+
+See [#income-statement](https://iexcloud.io/docs/api/#income-statement) for detailed documentation or [income.rb](lib/iex/resources/income.rb) for returned fields.
 
 ### Get Sector Performance
 

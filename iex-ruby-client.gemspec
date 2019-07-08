@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'money_helper'
   s.add_development_dependency 'rake', '~> 10'
   s.add_development_dependency 'rspec'
-  s.add_development_dependency 'rubocop', '0.67.2'
+  s.add_development_dependency 'rubocop', '0.72.0'
   s.add_development_dependency 'vcr'
   s.add_development_dependency 'webmock'
 end

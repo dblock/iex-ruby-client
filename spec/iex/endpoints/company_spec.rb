@@ -19,6 +19,7 @@ describe IEX::Resources::Company do
       expect(subject.sector).to eq 'Technology Services'
       expect(subject.employees).to eq 131_000
       expect(subject.security_name).to eq 'Microsoft Corporation'
+      expect(subject.tags).to eq ['Technology Services', 'Packaged Software']
     end
   end
   context 'invalid symbol', vcr: { cassette_name: 'company/invalid' } do

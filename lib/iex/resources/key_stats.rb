@@ -3,7 +3,7 @@ module IEX
     class KeyStats < Resource
       property 'company_name', from: 'companyName'
       property 'market_cap', from: 'marketcap'
-      property 'market_cap_dollars', from: 'marketcap', with: ->(v) { Resource.to_dollar(amount: v) }
+      property 'market_cap_dollar', from: 'marketcap', with: ->(v) { Resource.to_dollar(amount: v) }
       property 'week_52_high', from: 'week52high'
       property 'week_52_high_dollar', from: 'week52high', with: ->(v) { Resource.to_dollar(amount: v, ignore_cents: false) }
       property 'week_52_low', from: 'week52low'

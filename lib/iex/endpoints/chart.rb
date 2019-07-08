@@ -10,11 +10,10 @@ module IEX
         ].compact.join('/')
 
         params = {}
-        if options
-          options.each_pair do |k, v|
-            k = k.to_s.split('_').map(&:capitalize).join.sub(/^[A-Z]/, &:downcase)
-            params[k.to_sym] = v
-          end
+
+        options&.each_pair do |k, v|
+          k = k.to_s.split('_').map(&:capitalize).join.sub(/^[A-Z]/, &:downcase)
+          params[k.to_sym] = v
         end
 
         response = get(url, params)
