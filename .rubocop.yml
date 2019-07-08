@@ -7,7 +7,7 @@ Naming/MethodName:
 
 Naming/FileName:
   Exclude:
-    - 'lib/iex-ruby-client.rb'
+    - "lib/iex-ruby-client.rb"
 
 Style/Documentation:
   Enabled: false
