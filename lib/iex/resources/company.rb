@@ -12,6 +12,7 @@ module IEX
       property 'issue_type', from: 'issueType' # common issue type of the stock
       property 'sector'
       property 'employees'
+      property 'tags'
     end
   end
 end
