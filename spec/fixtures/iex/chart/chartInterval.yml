@@ -1,124 +1,91 @@
 ---
 http_interactions:
-  - request:
-      method: get
-      uri: https://cloud.iexapis.com/v1/stock/MSFT/chart/1d?chartInterval=10&token=test-iex-api-publishable-token
-      body:
-        encoding: US-ASCII
-        string: ""
-      headers:
-        User-Agent:
-          - Faraday v0.15.4
-        Accept-Encoding:
-          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-        Accept:
-          - "*/*"
-    response:
-      status:
-        code: 200
-        message: OK
-      headers:
-        Server:
-          - nginx
-        Date:
-          - Mon, 08 Apr 2019 11:43:26 GMT
-        Content-Type:
-          - application/json; charset=utf-8
-        Transfer-Encoding:
-          - chunked
-        Connection:
-          - keep-alive
-        Set-Cookie:
-          - ctoken=5a0b2ba03c434d9f937e7e79eb0367e6; Max-Age=43200; Path=/; Expires=Mon,
-            08 Apr 2019 23:43:26 GMT
-        Content-Security-Policy:
-          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
-            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
-            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
-            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
-            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
-            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
-            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
-            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
-            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
-            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
-            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
-            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
-            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
-            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
-        X-Content-Security-Policy:
-          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
-            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
-            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
-            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
-            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
-            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
-            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
-            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
-            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
-            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
-            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
-            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
-            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
-            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
-        Frame-Options:
-          - SAMEORIGIN
-        X-Frame-Options:
-          - SAMEORIGIN
-        X-Content-Type-Options:
-          - nosniff
-        Strict-Transport-Security:
-          - max-age=15768000
-        Access-Control-Allow-Origin:
-          - "*"
-        Access-Control-Allow-Credentials:
-          - "true"
-        Access-Control-Allow-Methods:
-          - GET, OPTIONS
-        Access-Control-Allow-Headers:
-          - Origin, X-Requested-With, Content-Type, Accept
-      body:
-        encoding: ASCII-8BIT
-        string:
-          '[{"date":"20190405","minute":"09:30","label":"09:30 AM","high":119.67,"low":119.43,"average":119.538,"volume":2240,"notional":267765,"numberOfTrades":20,"marketHigh":119.68,"marketLow":119.37,"marketAverage":119.427,"marketVolume":528840,"marketNotional":63157601.9807,"marketNumberOfTrades":699,"open":119.43,"close":119.66,"marketOpen":119.39,"marketClose":119.65,"changeOverTime":0,"marketChangeOverTime":0},{"date":"20190405","minute":"09:40","label":"09:40
-          AM","high":119.9,"low":119.75,"average":119.846,"volume":228,"notional":27324.88,"numberOfTrades":6,"marketHigh":119.97,"marketLow":119.725,"marketAverage":119.823,"marketVolume":77216,"marketNotional":9252259.3501,"marketNumberOfTrades":422,"open":119.9,"close":119.75,"marketOpen":119.945,"marketClose":119.739,"changeOverTime":0.002576586524787155,"marketChangeOverTime":0.003315833103067033},{"date":"20190405","minute":"09:50","label":"09:50
-          AM","high":120,"low":119.94,"average":119.955,"volume":805,"notional":96563.63,"numberOfTrades":10,"marketHigh":120.02,"marketLow":119.915,"marketAverage":119.967,"marketVolume":47601,"marketNotional":5710549.6766,"marketNumberOfTrades":255,"open":120,"close":119.94,"marketOpen":120,"marketClose":119.95,"changeOverTime":0.0034884304572604663,"marketChangeOverTime":0.004521590595091495},{"date":"20190405","minute":"10:00","label":"10
-          AM","high":120,"low":119.95,"average":119.99,"volume":203,"notional":24357.89,"numberOfTrades":4,"marketHigh":120,"marketLow":119.95,"marketAverage":119.982,"marketVolume":36942,"marketNotional":4432379.8668,"marketNumberOfTrades":237,"open":119.95,"close":119.99,"marketOpen":119.95,"marketClose":119.99,"changeOverTime":0.0037812243805316987,"marketChangeOverTime":0.004647190333844043},{"date":"20190405","minute":"10:10","label":"10:10
-          AM","high":120.18,"low":120.07,"average":120.131,"volume":1701,"notional":204342.34,"numberOfTrades":13,"marketHigh":120.19,"marketLow":120.06,"marketAverage":120.127,"marketVolume":38325,"marketNotional":4603883.576,"marketNumberOfTrades":216,"open":120.155,"close":120.085,"marketOpen":120.155,"marketClose":120.08,"changeOverTime":0.004960765614281681,"marketChangeOverTime":0.005861321141785263},{"date":"20190405","minute":"10:20","label":"10:20
-          AM","high":120.15,"low":120.115,"average":120.127,"volume":300,"notional":36038,"numberOfTrades":2,"marketHigh":120.15,"marketLow":120.07,"marketAverage":120.115,"marketVolume":25935,"marketNotional":3115194.3624,"marketNumberOfTrades":149,"open":120.115,"close":120.15,"marketOpen":120.07,"marketClose":120.11,"changeOverTime":0.004927303451622067,"marketChangeOverTime":0.005760841350783225},{"date":"20190405","minute":"10:30","label":"10:30
-          AM","high":120.06,"low":119.98,"average":120.015,"volume":800,"notional":96012.275,"numberOfTrades":7,"marketHigh":120.065,"marketLow":119.97,"marketAverage":120.016,"marketVolume":43411,"marketNotional":5209994.0506,"marketNumberOfTrades":205,"open":119.99,"close":119.98,"marketOpen":119.98,"marketClose":120.01,"changeOverTime":0.003990362897154076,"marketChangeOverTime":0.004931883075016526},{"date":"20190405","minute":"10:40","label":"10:40
-          AM","high":120,"low":119.91,"average":119.979,"volume":4307,"notional":516750.36,"numberOfTrades":25,"marketHigh":120,"marketLow":119.9,"marketAverage":119.946,"marketVolume":50495,"marketNotional":6056676.0187,"marketNumberOfTrades":271,"open":119.985,"close":119.945,"marketOpen":119.96,"marketClose":119.945,"changeOverTime":0.0036892034332179097,"marketChangeOverTime":0.004345750960837928},{"date":"20190405","minute":"10:50","label":"10:50
-          AM","high":119.825,"low":119.8,"average":119.808,"volume":600,"notional":71885,"numberOfTrades":4,"marketHigh":119.84,"marketLow":119.78,"marketAverage":119.812,"marketVolume":13913,"marketNotional":1666948.3415,"marketNumberOfTrades":75,"open":119.805,"close":119.825,"marketOpen":119.78,"marketClose":119.82,"changeOverTime":0.002258695979521242,"marketChangeOverTime":0.0032237266279818706},{"date":"20190405","minute":"11:00","label":"11
-          AM","high":119.88,"low":119.74,"average":119.791,"volume":1373,"notional":164472.94,"numberOfTrades":19,"marketHigh":119.91,"marketLow":119.739,"marketAverage":119.804,"marketVolume":52235,"marketNotional":6257973.5266,"marketNumberOfTrades":320,"open":119.88,"close":119.745,"marketOpen":119.88,"marketClose":119.76,"changeOverTime":0.0021164817882179734,"marketChangeOverTime":0.0031567401006472183},{"date":"20190405","minute":"11:10","label":"11:10
-          AM","high":119.705,"low":119.685,"average":119.695,"volume":300,"notional":35908.485,"numberOfTrades":4,"marketHigh":119.73,"marketLow":119.68,"marketAverage":119.699,"marketVolume":19621,"marketNotional":2348615.1925,"marketNumberOfTrades":96,"open":119.705,"close":119.695,"marketOpen":119.72,"marketClose":119.73,"changeOverTime":0.0013133898843881986,"marketChangeOverTime":0.0022775419293793813},{"date":"20190405","minute":"11:20","label":"11:20
-          AM","high":119.81,"low":119.77,"average":119.788,"volume":1142,"notional":136798.5,"numberOfTrades":12,"marketHigh":119.82,"marketLow":119.76,"marketAverage":119.789,"marketVolume":33426,"marketNotional":4004062.4649,"marketNumberOfTrades":181,"open":119.81,"close":119.78,"marketOpen":119.81,"marketClose":119.79,"changeOverTime":0.0020913851662232932,"marketChangeOverTime":0.00303114036189467},{"date":"20190405","minute":"11:30","label":"11:30
-          AM","high":119.975,"low":119.95,"average":119.955,"volume":1334,"notional":160019.86,"numberOfTrades":15,"marketHigh":119.98,"marketLow":119.945,"marketAverage":119.957,"marketVolume":28930,"marketNotional":3470354.276,"marketNumberOfTrades":171,"open":119.975,"close":119.97,"marketOpen":119.98,"marketClose":119.955,"changeOverTime":0.0034884304572604663,"marketChangeOverTime":0.00443785743592309},{"date":"20190405","minute":"11:40","label":"11:40
-          AM","high":119.975,"low":119.94,"average":119.965,"volume":824,"notional":98851.08,"numberOfTrades":13,"marketHigh":119.975,"marketLow":119.94,"marketAverage":119.959,"marketVolume":27480,"marketNotional":3296467.729,"marketNumberOfTrades":145,"open":119.965,"close":119.94,"marketOpen":119.96,"marketClose":119.945,"changeOverTime":0.0035720858639094405,"marketChangeOverTime":0.004454604067756843},{"date":"20190405","minute":"11:50","label":"11:50
-          AM","high":119.925,"low":119.88,"average":119.921,"volume":1526,"notional":182999.16,"numberOfTrades":7,"marketHigh":119.95,"marketLow":119.87,"marketAverage":119.913,"marketVolume":32156,"marketNotional":3855912.1147,"marketNumberOfTrades":191,"open":119.92,"close":119.88,"marketOpen":119.92,"marketClose":119.95,"changeOverTime":0.0032040020746541666,"marketChangeOverTime":0.004069431535582322},{"date":"20190405","minute":"12:00","label":"12
-          PM","high":119.88,"low":119.87,"average":119.874,"volume":577,"notional":69167.49,"numberOfTrades":6,"marketHigh":119.89,"marketLow":119.85,"marketAverage":119.875,"marketVolume":10848,"marketNotional":1300409.1236,"marketNumberOfTrades":76,"open":119.87,"close":119.875,"marketOpen":119.87,"marketClose":119.85,"changeOverTime":0.0028108216634040936,"marketChangeOverTime":0.003751245530742573},{"date":"20190405","minute":"12:10","label":"12:10
-          PM","high":120,"low":119.975,"average":119.988,"volume":814,"notional":97670.28,"numberOfTrades":10,"marketHigh":120,"marketLow":119.97,"marketAverage":119.985,"marketVolume":8130,"marketNotional":975475.19,"marketNumberOfTrades":62,"open":119.995,"close":119.98,"marketOpen":120,"marketClose":119.98,"changeOverTime":0.0037644932992019512,"marketChangeOverTime":0.004672310281594553},{"date":"20190405","minute":"12:20","label":"12:20
-          PM","high":119.995,"low":119.975,"average":119.987,"volume":400,"notional":47995,"numberOfTrades":5,"marketHigh":120,"marketLow":119.97,"marketAverage":119.986,"marketVolume":16078,"marketNotional":1929129.8712,"marketNumberOfTrades":100,"open":119.975,"close":119.99,"marketOpen":119.98,"marketClose":119.99,"changeOverTime":0.003756127758537018,"marketChangeOverTime":0.004680683597511429},{"date":"20190405","minute":"12:30","label":"12:30
-          PM","high":119.985,"low":119.965,"average":119.975,"volume":203,"notional":24354.93,"numberOfTrades":4,"marketHigh":119.99,"marketLow":119.96,"marketAverage":119.978,"marketVolume":9911,"marketNotional":1189105.7007,"marketNumberOfTrades":65,"open":119.98,"close":119.985,"marketOpen":119.99,"marketClose":119.98,"changeOverTime":0.0036557412705582964,"marketChangeOverTime":0.004613697070176658},{"date":"20190405","minute":"12:40","label":"12:40
-          PM","high":119.825,"low":119.795,"average":119.822,"volume":222,"notional":26600.39,"numberOfTrades":5,"marketHigh":119.84,"marketLow":119.79,"marketAverage":119.814,"marketVolume":12844,"marketNotional":1538890.2278,"marketNumberOfTrades":95,"open":119.795,"close":119.81,"marketOpen":119.81,"marketClose":119.806,"changeOverTime":0.0023758135488297113,"marketChangeOverTime":0.0032404732598155044},{"date":"20190405","minute":"12:50","label":"12:50
-          PM","high":119.85,"low":119.825,"average":119.838,"volume":511,"notional":61237.35,"numberOfTrades":5,"marketHigh":119.85,"marketLow":119.82,"marketAverage":119.84,"marketVolume":14583,"marketNotional":1747620.1856,"marketNumberOfTrades":71,"open":119.85,"close":119.825,"marketOpen":119.84,"marketClose":119.83,"changeOverTime":0.002509662199467928,"marketChangeOverTime":0.0034581794736533336},{"date":"20190405","minute":"13:00","label":"1
-          PM","high":119.81,"low":119.755,"average":119.774,"volume":436,"notional":52221.415,"numberOfTrades":12,"marketHigh":119.82,"marketLow":119.75,"marketAverage":119.781,"marketVolume":16724,"marketNotional":2003226.6447,"marketNumberOfTrades":95,"open":119.765,"close":119.795,"marketOpen":119.775,"marketClose":119.8,"changeOverTime":0.001974267596914824,"marketChangeOverTime":0.002964153834560017},{"date":"20190405","minute":"13:10","label":"1:10
-          PM","high":119.845,"low":119.83,"average":119.837,"volume":209,"notional":25046.025,"numberOfTrades":6,"marketHigh":119.85,"marketLow":119.82,"marketAverage":119.835,"marketVolume":7769,"marketNotional":930996.3128,"marketNumberOfTrades":48,"open":119.83,"close":119.835,"marketOpen":119.83,"marketClose":119.835,"changeOverTime":0.0025012966588031137,"marketChangeOverTime":0.0034163128940690717},{"date":"20190405","minute":"13:20","label":"1:20
-          PM","high":119.77,"low":119.74,"average":119.754,"volume":879,"notional":105263.46,"numberOfTrades":9,"marketHigh":119.78,"marketLow":119.73,"marketAverage":119.747,"marketVolume":25213,"marketNotional":3019172.7887,"marketNumberOfTrades":179,"open":119.765,"close":119.74,"marketOpen":119.78,"marketClose":119.74,"changeOverTime":0.0018069567836169937,"marketChangeOverTime":0.0026794610933875353},{"date":"20190405","minute":"13:30","label":"1:30
-          PM","high":119.785,"low":119.78,"average":119.782,"volume":300,"notional":35934.5,"numberOfTrades":3,"marketHigh":119.79,"marketLow":119.77,"marketAverage":119.781,"marketVolume":6837,"marketNotional":818941.6951,"marketNumberOfTrades":45,"open":119.78,"close":119.785,"marketOpen":119.78,"marketClose":119.782,"changeOverTime":0.002041191922233932,"marketChangeOverTime":0.002964153834560017},{"date":"20190405","minute":"13:40","label":"1:40
-          PM","high":119.72,"low":119.685,"average":119.695,"volume":142,"notional":16996.72,"numberOfTrades":3,"marketHigh":119.72,"marketLow":119.675,"marketAverage":119.703,"marketVolume":12101,"marketNotional":1448525.194,"marketNumberOfTrades":84,"open":119.685,"close":119.72,"marketOpen":119.705,"marketClose":119.71,"changeOverTime":0.0013133898843881986,"marketChangeOverTime":0.002311035193046767},{"date":"20190405","minute":"13:50","label":"1:50
-          PM","high":119.81,"low":119.81,"average":119.81,"volume":1,"notional":119.81,"numberOfTrades":1,"marketHigh":119.819,"marketLow":119.8,"marketAverage":119.807,"marketVolume":4269,"marketNotional":511455.3838,"marketNumberOfTrades":25,"open":119.81,"close":119.81,"marketOpen":119.805,"marketClose":119.81,"changeOverTime":0.0022754270608509896,"marketChangeOverTime":0.0031818600483977276},{"date":"20190405","minute":"14:00","label":"2
-          PM","high":119.745,"low":119.745,"average":119.745,"volume":100,"notional":11974.5,"numberOfTrades":1,"marketHigh":119.75,"marketLow":119.695,"marketAverage":119.718,"marketVolume":21476,"marketNotional":2571055.5374,"marketNumberOfTrades":177,"open":119.745,"close":119.745,"marketOpen":119.73,"marketClose":119.7,"changeOverTime":0.0017316669176329522,"marketChangeOverTime":0.0024366349317993152},{"date":"20190405","minute":"14:10","label":"2:10
-          PM","high":119.75,"low":119.75,"average":119.75,"volume":80,"notional":9580,"numberOfTrades":1,"marketHigh":119.76,"marketLow":119.73,"marketAverage":119.745,"marketVolume":5581,"marketNotional":668295.8569,"marketNumberOfTrades":44,"open":119.75,"close":119.75,"marketOpen":119.755,"marketClose":119.75,"changeOverTime":0.0017734946209573802,"marketChangeOverTime":0.002662714461553902},{"date":"20190405","minute":"14:20","label":"2:20
-          PM","high":null,"low":null,"average":null,"volume":0,"notional":0,"numberOfTrades":0,"marketHigh":119.618,"marketLow":119.58,"marketAverage":119.591,"marketVolume":19323,"marketNotional":2310850.0886,"marketNumberOfTrades":117,"open":null,"close":null,"marketOpen":119.618,"marketClose":119.59,"changeOverTime":null,"marketChangeOverTime":0.0013732238103610344},{"date":"20190405","minute":"14:30","label":"2:30
-          PM","high":119.595,"low":119.585,"average":119.59,"volume":240,"notional":28701.6,"numberOfTrades":3,"marketHigh":119.6,"marketLow":119.56,"marketAverage":119.588,"marketVolume":22776,"marketNotional":2723737.8881,"marketNumberOfTrades":72,"open":119.585,"close":119.595,"marketOpen":119.575,"marketClose":119.595,"changeOverTime":0.00043500811457450106,"marketChangeOverTime":0.0013481038626105247},{"date":"20190405","minute":"14:40","label":"2:40
-          PM","high":119.6,"low":119.575,"average":119.588,"volume":517,"notional":61827.25,"numberOfTrades":4,"marketHigh":119.6,"marketLow":119.575,"marketAverage":119.59,"marketVolume":14159,"marketNotional":1693276.8301,"marketNumberOfTrades":98,"open":119.575,"close":119.585,"marketOpen":119.6,"marketClose":119.58,"changeOverTime":0.00041827703324463485,"marketChangeOverTime":0.001364850494444277},{"date":"20190405","minute":"14:50","label":"2:50
-          PM","high":119.585,"low":119.585,"average":119.585,"volume":100,"notional":11958.5,"numberOfTrades":1,"marketHigh":119.61,"marketLow":119.575,"marketAverage":119.598,"marketVolume":17192,"marketNotional":2056133.3222,"marketNumberOfTrades":58,"open":119.585,"close":119.585,"marketOpen":119.6,"marketClose":119.581,"changeOverTime":0.00039318041124995436,"marketChangeOverTime":0.0014318370217789298},{"date":"20190405","minute":"15:00","label":"3
-          PM","high":119.7,"low":119.69,"average":119.693,"volume":19,"notional":2274.16,"numberOfTrades":2,"marketHigh":119.711,"marketLow":119.675,"marketAverage":119.693,"marketVolume":15089,"marketNotional":1806052.0779,"marketNumberOfTrades":63,"open":119.69,"close":119.7,"marketOpen":119.68,"marketClose":119.695,"changeOverTime":0.0012966588030584511,"marketChangeOverTime":0.002227302033878362},{"date":"20190405","minute":"15:10","label":"3:10
-          PM","high":119.78,"low":119.78,"average":119.78,"volume":3,"notional":359.34,"numberOfTrades":1,"marketHigh":119.8,"marketLow":119.77,"marketAverage":119.79,"marketVolume":20627,"marketNotional":2470900.0607,"marketNumberOfTrades":124,"open":119.78,"close":119.78,"marketOpen":119.8,"marketClose":119.78,"changeOverTime":0.002024460840904185,"marketChangeOverTime":0.0030395136778115462},{"date":"20190405","minute":"15:20","label":"3:20
-          PM","high":119.795,"low":119.77,"average":119.778,"volume":307,"notional":36771.89,"numberOfTrades":4,"marketHigh":119.81,"marketLow":119.76,"marketAverage":119.786,"marketVolume":32789,"marketNotional":3927675.7421,"marketNumberOfTrades":229,"open":119.795,"close":119.77,"marketOpen":119.765,"marketClose":119.775,"changeOverTime":0.0020077297595744374,"marketChangeOverTime":0.0030060204141441602},{"date":"20190405","minute":"15:30","label":"3:30
-          PM","high":119.96,"low":119.935,"average":119.954,"volume":672,"notional":80609.465,"numberOfTrades":8,"marketHigh":119.98,"marketLow":119.933,"marketAverage":119.956,"marketVolume":25516,"marketNotional":3060788.0172,"marketNumberOfTrades":147,"open":119.935,"close":119.955,"marketOpen":119.94,"marketClose":119.96,"changeOverTime":0.003480064916595533,"marketChangeOverTime":0.004429484120006333},{"date":"20190405","minute":"15:40","label":"3:40
-          PM","high":119.95,"low":119.9,"average":119.926,"volume":962,"notional":115368.66,"numberOfTrades":12,"marketHigh":119.96,"marketLow":119.89,"marketAverage":119.92,"marketVolume":35881,"marketNotional":4302861.658,"marketNumberOfTrades":245,"open":119.94,"close":119.93,"marketOpen":119.935,"marketClose":119.92,"changeOverTime":0.0032458297779785947,"marketChangeOverTime":0.004128044747000218},{"date":"20190405","minute":"15:50","label":"3:50
-          PM","high":119.925,"low":119.845,"average":119.876,"volume":1909,"notional":228843.145,"numberOfTrades":23,"marketHigh":119.93,"marketLow":119.83,"marketAverage":119.882,"marketVolume":52566,"marketNotional":6301732.346,"marketNumberOfTrades":301,"open":119.925,"close":119.85,"marketOpen":119.93,"marketClose":119.85,"changeOverTime":0.00282755274473396,"marketChangeOverTime":0.0038098587421604687}]'
-      http_version:
-    recorded_at: Mon, 08 Apr 2019 11:43:26 GMT
-recorded_with: VCR 4.0.0
+- request:
+    method: get
+    uri: https://cloud.iexapis.com/v1/stock/MSFT/chart/1d?chartInterval=10&token=test-iex-api-publishable-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - IEX Ruby Client/1.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 10 Aug 2019 15:56:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=69243165720540008ee521b557f61752; Max-Age=43200; Path=/; Expires=Sun,
+        11 Aug 2019 03:56:36 GMT
+      Iexcloud-Messages-Used:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"date":"2019-08-09","minute":"09:30","label":"09:30 AM","high":138.72,"low":138.5,"open":138.72,"close":138.68,"average":138.632,"volume":3673,"notional":509195.675,"numberOfTrades":23},{"date":"2019-08-09","minute":"09:40","label":"09:40
+        AM","high":139.055,"low":138.95,"open":139.01,"close":139,"average":139.001,"volume":2303,"notional":320120.44,"numberOfTrades":22},{"date":"2019-08-09","minute":"09:50","label":"09:50
+        AM","high":137.96,"low":137.88,"open":137.92,"close":137.89,"average":137.924,"volume":800,"notional":110339.5,"numberOfTrades":8},{"date":"2019-08-09","minute":"10:00","label":"10
+        AM","high":137.605,"low":137.495,"open":137.585,"close":137.51,"average":137.558,"volume":3740,"notional":514468.05,"numberOfTrades":32},{"date":"2019-08-09","minute":"10:10","label":"10:10
+        AM","high":137.655,"low":137.38,"open":137.38,"close":137.51,"average":137.507,"volume":1171,"notional":161020.8,"numberOfTrades":15},{"date":"2019-08-09","minute":"10:20","label":"10:20
+        AM","high":137.66,"low":137.46,"open":137.46,"close":137.635,"average":137.598,"volume":611,"notional":84072.625,"numberOfTrades":8},{"date":"2019-08-09","minute":"10:30","label":"10:30
+        AM","high":137.74,"low":137.57,"open":137.6,"close":137.74,"average":137.643,"volume":1420,"notional":195453,"numberOfTrades":14},{"date":"2019-08-09","minute":"10:40","label":"10:40
+        AM","high":137.395,"low":137.32,"open":137.39,"close":137.335,"average":137.347,"volume":2028,"notional":278540.665,"numberOfTrades":12},{"date":"2019-08-09","minute":"10:50","label":"10:50
+        AM","high":137.61,"low":137.4,"open":137.4,"close":137.565,"average":137.554,"volume":594,"notional":81706.99,"numberOfTrades":8},{"date":"2019-08-09","minute":"11:00","label":"11
+        AM","high":137.81,"low":137.735,"open":137.775,"close":137.76,"average":137.778,"volume":1200,"notional":165333.5,"numberOfTrades":7},{"date":"2019-08-09","minute":"11:10","label":"11:10
+        AM","high":137.485,"low":137.32,"open":137.32,"close":137.485,"average":137.427,"volume":1101,"notional":151307.37,"numberOfTrades":9},{"date":"2019-08-09","minute":"11:20","label":"11:20
+        AM","high":137.41,"low":137.38,"open":137.41,"close":137.38,"average":137.381,"volume":106,"notional":14562.44,"numberOfTrades":4},{"date":"2019-08-09","minute":"11:30","label":"11:30
+        AM","high":136.905,"low":136.7,"open":136.7,"close":136.905,"average":136.836,"volume":1424,"notional":194854.9,"numberOfTrades":12},{"date":"2019-08-09","minute":"11:40","label":"11:40
+        AM","high":136.73,"low":136.73,"open":136.73,"close":136.73,"average":136.73,"volume":100,"notional":13673,"numberOfTrades":1},{"date":"2019-08-09","minute":"11:50","label":"11:50
+        AM","high":137.17,"low":137.08,"open":137.08,"close":137.15,"average":137.107,"volume":258,"notional":35373.72,"numberOfTrades":4},{"date":"2019-08-09","minute":"12:00","label":"12
+        PM","high":136.72,"low":136.72,"open":136.72,"close":136.72,"average":136.72,"volume":20,"notional":2734.4,"numberOfTrades":1},{"date":"2019-08-09","minute":"12:10","label":"12:10
+        PM","high":136.975,"low":136.9,"open":136.91,"close":136.9,"average":136.922,"volume":1101,"notional":150751.41,"numberOfTrades":6},{"date":"2019-08-09","minute":"12:20","label":"12:20
+        PM","high":136.595,"low":136.57,"open":136.59,"close":136.595,"average":136.584,"volume":400,"notional":54633.5,"numberOfTrades":4},{"date":"2019-08-09","minute":"12:30","label":"12:30
+        PM","high":136.76,"low":136.685,"open":136.76,"close":136.725,"average":136.737,"volume":1198,"notional":163810.46,"numberOfTrades":11},{"date":"2019-08-09","minute":"12:40","label":"12:40
+        PM","high":136.885,"low":136.785,"open":136.88,"close":136.885,"average":136.835,"volume":1540,"notional":210725.4,"numberOfTrades":11},{"date":"2019-08-09","minute":"12:50","label":"12:50
+        PM","high":137.06,"low":137.015,"open":137.055,"close":137.035,"average":137.043,"volume":900,"notional":123339,"numberOfTrades":9},{"date":"2019-08-09","minute":"13:00","label":"1
+        PM","high":137.53,"low":137.4,"open":137.4,"close":137.47,"average":137.49,"volume":715,"notional":98305.52,"numberOfTrades":9},{"date":"2019-08-09","minute":"13:10","label":"1:10
+        PM","high":137.575,"low":137.47,"open":137.515,"close":137.545,"average":137.52,"volume":303,"notional":41668.555,"numberOfTrades":7},{"date":"2019-08-09","minute":"13:20","label":"1:20
+        PM","high":137.965,"low":137.79,"open":137.79,"close":137.955,"average":137.901,"volume":614,"notional":84671.455,"numberOfTrades":14},{"date":"2019-08-09","minute":"13:30","label":"1:30
+        PM","high":138.25,"low":138.095,"open":138.095,"close":138.25,"average":138.19,"volume":500,"notional":69094.77,"numberOfTrades":7},{"date":"2019-08-09","minute":"13:40","label":"1:40
+        PM","high":138.29,"low":138.175,"open":138.175,"close":138.29,"average":138.28,"volume":260,"notional":35952.685,"numberOfTrades":7},{"date":"2019-08-09","minute":"13:50","label":"1:50
+        PM","high":138.195,"low":138.13,"open":138.195,"close":138.13,"average":138.174,"volume":600,"notional":82904.5,"numberOfTrades":3},{"date":"2019-08-09","minute":"14:00","label":"2
+        PM","high":138.015,"low":137.94,"open":137.995,"close":137.94,"average":137.971,"volume":384,"notional":52980.935,"numberOfTrades":10},{"date":"2019-08-09","minute":"14:10","label":"2:10
+        PM","high":138.05,"low":137.975,"open":138.05,"close":137.975,"average":138.028,"volume":600,"notional":82816.5,"numberOfTrades":6},{"date":"2019-08-09","minute":"14:20","label":"2:20
+        PM","high":138.04,"low":137.965,"open":138.04,"close":137.965,"average":137.974,"volume":1100,"notional":151771.905,"numberOfTrades":4},{"date":"2019-08-09","minute":"14:30","label":"2:30
+        PM","high":138.29,"low":138.17,"open":138.175,"close":138.28,"average":138.25,"volume":608,"notional":84056.02,"numberOfTrades":12},{"date":"2019-08-09","minute":"14:40","label":"2:40
+        PM","high":138.125,"low":138.1,"open":138.1,"close":138.12,"average":138.114,"volume":402,"notional":55521.725,"numberOfTrades":6},{"date":"2019-08-09","minute":"14:50","label":"2:50
+        PM","high":138.06,"low":138.01,"open":138.035,"close":138.045,"average":138.046,"volume":800,"notional":110437,"numberOfTrades":5},{"date":"2019-08-09","minute":"15:00","label":"3
+        PM","high":138.05,"low":138,"open":138.03,"close":138.05,"average":138.025,"volume":417,"notional":57556.3,"numberOfTrades":7},{"date":"2019-08-09","minute":"15:10","label":"3:10
+        PM","high":138.455,"low":138.395,"open":138.4,"close":138.43,"average":138.435,"volume":302,"notional":41807.53,"numberOfTrades":6},{"date":"2019-08-09","minute":"15:20","label":"3:20
+        PM","high":138.3,"low":138.275,"open":138.275,"close":138.275,"average":138.286,"volume":500,"notional":69143.19,"numberOfTrades":9},{"date":"2019-08-09","minute":"15:30","label":"3:30
+        PM","high":138.365,"low":138.29,"open":138.345,"close":138.365,"average":138.338,"volume":724,"notional":100156.59,"numberOfTrades":9},{"date":"2019-08-09","minute":"15:40","label":"3:40
+        PM","high":138.46,"low":138.395,"open":138.46,"close":138.4,"average":138.44,"volume":1405,"notional":194507.95,"numberOfTrades":17},{"date":"2019-08-09","minute":"15:50","label":"3:50
+        PM","high":138.195,"low":138.1,"open":138.13,"close":138.1,"average":138.143,"volume":1282,"notional":177099.895,"numberOfTrades":14}]'
+    http_version:
+  recorded_at: Sat, 10 Aug 2019 15:56:36 GMT
+recorded_with: VCR 5.0.0
