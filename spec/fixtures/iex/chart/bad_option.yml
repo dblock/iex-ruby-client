@@ -1,83 +1,49 @@
 ---
 http_interactions:
-  - request:
-      method: get
-      uri: https://cloud.iexapis.com/v1/stock/MSFT/chart/1d?badOption=option&chartInterval=10&token=test-iex-api-publishable-token
-      body:
-        encoding: US-ASCII
-        string: ""
-      headers:
-        User-Agent:
-          - Faraday v0.15.4
-        Accept-Encoding:
-          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-        Accept:
-          - "*/*"
-    response:
-      status:
-        code: 400
-        message: Bad Request
-      headers:
-        Server:
-          - nginx
-        Date:
-          - Mon, 08 Apr 2019 11:43:29 GMT
-        Content-Type:
-          - application/json; charset=utf-8
-        Content-Length:
-          - "40"
-        Connection:
-          - keep-alive
-        Set-Cookie:
-          - ctoken=a08e3f3e367c48de8ab5e3887a46027f; Max-Age=43200; Path=/; Expires=Mon,
-            08 Apr 2019 23:43:29 GMT
-        Content-Security-Policy:
-          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
-            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
-            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
-            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
-            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
-            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
-            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
-            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
-            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
-            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
-            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
-            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
-            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
-            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
-        X-Content-Security-Policy:
-          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
-            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
-            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
-            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
-            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
-            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
-            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
-            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
-            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
-            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
-            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
-            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
-            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
-            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
-        Frame-Options:
-          - SAMEORIGIN
-        X-Frame-Options:
-          - SAMEORIGIN
-        Strict-Transport-Security:
-          - max-age=15768000
-        Access-Control-Allow-Origin:
-          - "*"
-        Access-Control-Allow-Credentials:
-          - "true"
-        Access-Control-Allow-Methods:
-          - GET, OPTIONS
-        Access-Control-Allow-Headers:
-          - Origin, X-Requested-With, Content-Type, Accept
-      body:
-        encoding: UTF-8
-        string: '{"error":"\"badOption\" is not allowed"}'
-      http_version:
-    recorded_at: Mon, 08 Apr 2019 11:43:29 GMT
-recorded_with: VCR 4.0.0
+- request:
+    method: get
+    uri: https://cloud.iexapis.com/v1/stock/MSFT/chart/1d?badOption=option&chartInterval=10&token=test-iex-api-publishable-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - IEX Ruby Client/1.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 10 Aug 2019 15:56:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '40'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=df01e82c783c4075864ac94115551f6f; Max-Age=43200; Path=/; Expires=Sun,
+        11 Aug 2019 03:56:38 GMT
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: UTF-8
+      string: '{"error":"\"badOption\" is not allowed"}'
+    http_version:
+  recorded_at: Sat, 10 Aug 2019 15:56:38 GMT
+recorded_with: VCR 5.0.0

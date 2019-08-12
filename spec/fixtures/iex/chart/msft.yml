@@ -1,109 +1,76 @@
 ---
 http_interactions:
-  - request:
-      method: get
-      uri: https://cloud.iexapis.com/v1/stock/MSFT/chart?token=test-iex-api-publishable-token
-      body:
-        encoding: US-ASCII
-        string: ""
-      headers:
-        User-Agent:
-          - Faraday v0.15.4
-        Accept-Encoding:
-          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-        Accept:
-          - "*/*"
-    response:
-      status:
-        code: 200
-        message: OK
-      headers:
-        Server:
-          - nginx
-        Date:
-          - Mon, 08 Apr 2019 11:43:23 GMT
-        Content-Type:
-          - application/json; charset=utf-8
-        Transfer-Encoding:
-          - chunked
-        Connection:
-          - keep-alive
-        Set-Cookie:
-          - ctoken=ec78cac959d1450894d0541dafd14e13; Max-Age=43200; Path=/; Expires=Mon,
-            08 Apr 2019 23:43:23 GMT
-        Content-Security-Policy:
-          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
-            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
-            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
-            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
-            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
-            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
-            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
-            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
-            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
-            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
-            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
-            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
-            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
-            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
-        X-Content-Security-Policy:
-          - "default-src 'self'; child-src 'none'; object-src 'self'; style-src
-            'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self'
-            https://js.intercomcdn.com/fonts/ https://fonts.gstatic.com; frame-src 'self'
-            https://portal.productboard.com/ https://js.stripe.com/; img-src 'self'
-            data: https://*.intercomcdn.com/ https://static.intercomassets.com/ https://www.google-analytics.com
-            https://downloads.intercomcdn.com/; connect-src 'self' https://auth.iexcloud.io
-            https://api.iexcloud.io https://api.iexcloud.io https://cloud.iexapis.com
-            wss://iexcloud.io wss://tops.iexcloud.io wss://api.iexcloud.io wss://iexcloud.io
-            https://api-iam.intercom.io/messenger/ https://nexus-websocket-a.intercom.io/
-            https://nexus-websocket-b.intercom.io/ wss://nexus-websocket-a.intercom.io/
-            wss://nexus-websocket-b.intercom.io/ https://www.google-analytics.com; script-src
-            'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/api.js
-            https://www.google-analytics.com https://js.stripe.com/v3/ https://widget.intercom.io/widget/lhos563b
-            https://js.intercomcdn.com/ https://www.googletagmanager.com;"
-        Frame-Options:
-          - SAMEORIGIN
-        X-Frame-Options:
-          - SAMEORIGIN
-        X-Content-Type-Options:
-          - nosniff
-        Strict-Transport-Security:
-          - max-age=15768000
-        Access-Control-Allow-Origin:
-          - "*"
-        Access-Control-Allow-Credentials:
-          - "true"
-        Access-Control-Allow-Methods:
-          - GET, OPTIONS
-        Access-Control-Allow-Headers:
-          - Origin, X-Requested-With, Content-Type, Accept
-      body:
-        encoding: ASCII-8BIT
-        string:
-          '[{"date":"2019-03-06","open":111.87,"close":111.75,"high":112.66,"low":111.43,"volume":17686996,"uOpen":111.87,"uClose":111.75,"uHigh":112.66,"uLow":111.43,"uVolume":17686996,"change":0,"changePercent":0,"label":"Mar
-          6","changeOverTime":0},{"date":"2019-03-07","open":111.4,"close":110.39,"high":111.55,"low":109.86,"volume":25338954,"uOpen":111.4,"uClose":110.39,"uHigh":111.55,"uLow":109.86,"uVolume":25338954,"change":-1.36,"changePercent":-1.217,"label":"Mar
-          7","changeOverTime":-0.01217},{"date":"2019-03-08","open":109.16,"close":110.51,"high":110.71,"low":108.8,"volume":22818430,"uOpen":109.16,"uClose":110.51,"uHigh":110.71,"uLow":108.8,"uVolume":22818430,"change":0.12,"changePercent":0.1087,"label":"Mar
-          8","changeOverTime":-0.011096},{"date":"2019-03-11","open":110.99,"close":112.83,"high":112.95,"low":110.98,"volume":26491618,"uOpen":110.99,"uClose":112.83,"uHigh":112.95,"uLow":110.98,"uVolume":26491618,"change":2.32,"changePercent":2.0994,"label":"Mar
-          11","changeOverTime":0.009664},{"date":"2019-03-12","open":112.82,"close":113.62,"high":113.99,"low":112.65,"volume":26132717,"uOpen":112.82,"uClose":113.62,"uHigh":113.99,"uLow":112.65,"uVolume":26132717,"change":0.79,"changePercent":0.7002,"label":"Mar
-          12","changeOverTime":0.016734},{"date":"2019-03-13","open":114.13,"close":114.5,"high":115,"low":113.78,"volume":35513771,"uOpen":114.13,"uClose":114.5,"uHigh":115,"uLow":113.78,"uVolume":35513771,"change":0.88,"changePercent":0.7745,"label":"Mar
-          13","changeOverTime":0.024609},{"date":"2019-03-14","open":114.54,"close":114.59,"high":115.2,"low":114.33,"volume":30763367,"uOpen":114.54,"uClose":114.59,"uHigh":115.2,"uLow":114.33,"uVolume":30763367,"change":0.09,"changePercent":0.0786,"label":"Mar
-          14","changeOverTime":0.025414},{"date":"2019-03-15","open":115.34,"close":115.91,"high":117.25,"low":114.59,"volume":54630661,"uOpen":115.34,"uClose":115.91,"uHigh":117.25,"uLow":114.59,"uVolume":54630661,"change":1.32,"changePercent":1.1519,"label":"Mar
-          15","changeOverTime":0.037226},{"date":"2019-03-18","open":116.17,"close":117.57,"high":117.61,"low":116.05,"volume":31207596,"uOpen":116.17,"uClose":117.57,"uHigh":117.61,"uLow":116.05,"uVolume":31207596,"change":1.66,"changePercent":1.4321,"label":"Mar
-          18","changeOverTime":0.052081},{"date":"2019-03-19","open":118.09,"close":117.65,"high":118.44,"low":116.99,"volume":37588697,"uOpen":118.09,"uClose":117.65,"uHigh":118.44,"uLow":116.99,"uVolume":37588697,"change":0.08,"changePercent":0.068,"label":"Mar
-          19","changeOverTime":0.052796},{"date":"2019-03-20","open":117.39,"close":117.52,"high":118.75,"low":116.71,"volume":28113343,"uOpen":117.39,"uClose":117.52,"uHigh":118.75,"uLow":116.71,"uVolume":28113343,"change":-0.13,"changePercent":-0.1105,"label":"Mar
-          20","changeOverTime":0.051633},{"date":"2019-03-21","open":117.14,"close":120.22,"high":120.82,"low":117.09,"volume":29854446,"uOpen":117.14,"uClose":120.22,"uHigh":120.82,"uLow":117.09,"uVolume":29854446,"change":2.7,"changePercent":2.2975,"label":"Mar
-          21","changeOverTime":0.075794},{"date":"2019-03-22","open":119.5,"close":117.05,"high":119.59,"low":117.04,"volume":33624528,"uOpen":119.5,"uClose":117.05,"uHigh":119.59,"uLow":117.04,"uVolume":33624528,"change":-3.17,"changePercent":-2.6368,"label":"Mar
-          22","changeOverTime":0.047427},{"date":"2019-03-25","open":116.56,"close":117.66,"high":118.01,"low":116.32,"volume":27067117,"uOpen":116.56,"uClose":117.66,"uHigh":118.01,"uLow":116.32,"uVolume":27067117,"change":0.61,"changePercent":0.5211,"label":"Mar
-          25","changeOverTime":0.052886},{"date":"2019-03-26","open":118.62,"close":117.91,"high":118.7,"low":116.85,"volume":26097665,"uOpen":118.62,"uClose":117.91,"uHigh":118.7,"uLow":116.85,"uVolume":26097665,"change":0.25,"changePercent":0.2125,"label":"Mar
-          26","changeOverTime":0.055123},{"date":"2019-03-27","open":117.88,"close":116.77,"high":118.21,"low":115.52,"volume":22733427,"uOpen":117.88,"uClose":116.77,"uHigh":118.21,"uLow":115.52,"uVolume":22733427,"change":-1.14,"changePercent":-0.9668,"label":"Mar
-          27","changeOverTime":0.044922},{"date":"2019-03-28","open":117.44,"close":116.93,"high":117.58,"low":116.13,"volume":18334755,"uOpen":117.44,"uClose":116.93,"uHigh":117.58,"uLow":116.13,"uVolume":18334755,"change":0.16,"changePercent":0.137,"label":"Mar
-          28","changeOverTime":0.046353},{"date":"2019-03-29","open":118.07,"close":117.94,"high":118.32,"low":116.96,"volume":25399752,"uOpen":118.07,"uClose":117.94,"uHigh":118.32,"uLow":116.96,"uVolume":25399752,"change":1.01,"changePercent":0.8638,"label":"Mar
-          29","changeOverTime":0.055391},{"date":"2019-04-01","open":118.95,"close":119.02,"high":119.11,"low":118.1,"volume":22789103,"uOpen":118.95,"uClose":119.02,"uHigh":119.11,"uLow":118.1,"uVolume":22789103,"change":1.08,"changePercent":0.9157,"label":"Apr
-          1","changeOverTime":0.065056},{"date":"2019-04-02","open":119.06,"close":119.19,"high":119.48,"low":118.52,"volume":18142297,"uOpen":119.06,"uClose":119.19,"uHigh":119.48,"uLow":118.52,"uVolume":18142297,"change":0.17,"changePercent":0.1428,"label":"Apr
-          2","changeOverTime":0.066577},{"date":"2019-04-03","open":119.86,"close":119.97,"high":120.43,"low":119.15,"volume":22860744,"uOpen":119.86,"uClose":119.97,"uHigh":120.43,"uLow":119.15,"uVolume":22860744,"change":0.78,"changePercent":0.6544,"label":"Apr
-          3","changeOverTime":0.073557},{"date":"2019-04-04","open":120.1,"close":119.36,"high":120.23,"low":118.38,"volume":20112848,"uOpen":120.1,"uClose":119.36,"uHigh":120.23,"uLow":118.38,"uVolume":20112848,"change":-0.61,"changePercent":-0.5085,"label":"Apr
-          4","changeOverTime":0.068098},{"date":"2019-04-05","open":119.39,"close":119.89,"high":120.23,"low":119.37,"volume":15826245,"uOpen":119.39,"uClose":119.89,"uHigh":120.23,"uLow":119.37,"uVolume":15826245,"change":0.53,"changePercent":0.444,"label":"Apr
-          5","changeOverTime":0.072841}]'
-      http_version:
-    recorded_at: Mon, 08 Apr 2019 11:43:23 GMT
-recorded_with: VCR 4.0.0
+- request:
+    method: get
+    uri: https://cloud.iexapis.com/v1/stock/MSFT/chart?token=test-iex-api-publishable-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - IEX Ruby Client/1.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 10 Aug 2019 15:56:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=0595b3b4441d4f178ddab8118fb03f5c; Max-Age=43200; Path=/; Expires=Sun,
+        11 Aug 2019 03:56:34 GMT
+      Iexcloud-Messages-Used:
+      - '230'
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"date":"2019-07-10","open":137.13,"close":137.85,"high":138.58,"low":137.02,"volume":24204362,"uOpen":137.13,"uClose":137.85,"uHigh":138.58,"uLow":137.02,"uVolume":24204362,"change":0,"changePercent":0,"label":"Jul
+        10","changeOverTime":0},{"date":"2019-07-11","open":138.2,"close":138.4,"high":139.22,"low":137.87,"volume":22327942,"uOpen":138.2,"uClose":138.4,"uHigh":139.22,"uLow":137.87,"uVolume":22327942,"change":0.55,"changePercent":0.399,"label":"Jul
+        11","changeOverTime":0.00399},{"date":"2019-07-12","open":138.85,"close":138.9,"high":139.13,"low":138,"volume":18936832,"uOpen":138.85,"uClose":138.9,"uHigh":139.13,"uLow":138,"uVolume":18936832,"change":0.5,"changePercent":0.3613,"label":"Jul
+        12","changeOverTime":0.007617},{"date":"2019-07-15","open":139.44,"close":138.9,"high":139.54,"low":138.46,"volume":16651457,"uOpen":139.44,"uClose":138.9,"uHigh":139.54,"uLow":138.46,"uVolume":16651457,"change":0,"changePercent":0,"label":"Jul
+        15","changeOverTime":0.007617},{"date":"2019-07-16","open":138.96,"close":137.08,"high":139.05,"low":136.52,"volume":22726128,"uOpen":138.96,"uClose":137.08,"uHigh":139.05,"uLow":136.52,"uVolume":22726128,"change":-1.82,"changePercent":-1.3103,"label":"Jul
+        16","changeOverTime":-0.005586},{"date":"2019-07-17","open":137.7,"close":136.27,"high":137.93,"low":136.22,"volume":20210956,"uOpen":137.7,"uClose":136.27,"uHigh":137.93,"uLow":136.22,"uVolume":20210956,"change":-0.81,"changePercent":-0.5909,"label":"Jul
+        17","changeOverTime":-0.011462},{"date":"2019-07-18","open":135.55,"close":136.42,"high":136.62,"low":134.67,"volume":30808707,"uOpen":135.55,"uClose":136.42,"uHigh":136.62,"uLow":134.67,"uVolume":30808707,"change":0.15,"changePercent":0.1101,"label":"Jul
+        18","changeOverTime":-0.010374},{"date":"2019-07-19","open":140.22,"close":136.62,"high":140.67,"low":136.45,"volume":48992364,"uOpen":140.22,"uClose":136.62,"uHigh":140.67,"uLow":136.45,"uVolume":48992364,"change":0.2,"changePercent":0.1466,"label":"Jul
+        19","changeOverTime":-0.008923},{"date":"2019-07-22","open":137.41,"close":138.43,"high":139.19,"low":137.33,"volume":25080760,"uOpen":137.41,"uClose":138.43,"uHigh":139.19,"uLow":137.33,"uVolume":25080760,"change":1.81,"changePercent":1.3248,"label":"Jul
+        22","changeOverTime":0.004207},{"date":"2019-07-23","open":139.76,"close":139.29,"high":139.99,"low":138.03,"volume":18034589,"uOpen":139.76,"uClose":139.29,"uHigh":139.99,"uLow":138.03,"uVolume":18034589,"change":0.86,"changePercent":0.6213,"label":"Jul
+        23","changeOverTime":0.010446},{"date":"2019-07-24","open":138.9,"close":140.72,"high":140.74,"low":138.85,"volume":20738275,"uOpen":138.9,"uClose":140.72,"uHigh":140.74,"uLow":138.85,"uVolume":20738275,"change":1.43,"changePercent":1.0266,"label":"Jul
+        24","changeOverTime":0.02082},{"date":"2019-07-25","open":140.43,"close":140.19,"high":140.61,"low":139.32,"volume":18356883,"uOpen":140.43,"uClose":140.19,"uHigh":140.61,"uLow":139.32,"uVolume":18356883,"change":-0.53,"changePercent":-0.3766,"label":"Jul
+        25","changeOverTime":0.016975},{"date":"2019-07-26","open":140.37,"close":141.34,"high":141.67,"low":140.3,"volume":19037600,"uOpen":140.37,"uClose":141.34,"uHigh":141.67,"uLow":140.3,"uVolume":19037600,"change":1.15,"changePercent":0.8203,"label":"Jul
+        26","changeOverTime":0.025317},{"date":"2019-07-29","open":141.5,"close":141.03,"high":141.51,"low":139.36,"volume":16605870,"uOpen":141.5,"uClose":141.03,"uHigh":141.51,"uLow":139.36,"uVolume":16605870,"change":-0.31,"changePercent":-0.2193,"label":"Jul
+        29","changeOverTime":0.023069},{"date":"2019-07-30","open":140.14,"close":140.35,"high":141.21,"low":139.8,"volume":16846528,"uOpen":140.14,"uClose":140.35,"uHigh":141.21,"uLow":139.8,"uVolume":16846528,"change":-0.68,"changePercent":-0.4822,"label":"Jul
+        30","changeOverTime":0.018136},{"date":"2019-07-31","open":140.33,"close":136.27,"high":140.49,"low":135.08,"volume":38598786,"uOpen":140.33,"uClose":136.27,"uHigh":140.49,"uLow":135.08,"uVolume":38598786,"change":-4.08,"changePercent":-2.907,"label":"Jul
+        31","changeOverTime":-0.011462},{"date":"2019-08-01","open":137,"close":138.06,"high":140.93,"low":136.93,"volume":40557502,"uOpen":137,"uClose":138.06,"uHigh":140.93,"uLow":136.93,"uVolume":40557502,"change":1.79,"changePercent":1.3136,"label":"Aug
+        1","changeOverTime":0.001523},{"date":"2019-08-02","open":138.09,"close":136.9,"high":138.32,"low":135.26,"volume":30791624,"uOpen":138.09,"uClose":136.9,"uHigh":138.32,"uLow":135.26,"uVolume":30791624,"change":-1.16,"changePercent":-0.8402,"label":"Aug
+        2","changeOverTime":-0.006892},{"date":"2019-08-05","open":133.3,"close":132.21,"high":133.92,"low":130.78,"volume":42749551,"uOpen":133.3,"uClose":132.21,"uHigh":133.92,"uLow":130.78,"uVolume":42749551,"change":-4.69,"changePercent":-3.4259,"label":"Aug
+        5","changeOverTime":-0.040914},{"date":"2019-08-06","open":133.8,"close":134.69,"high":135.68,"low":133.21,"volume":32696651,"uOpen":133.8,"uClose":134.69,"uHigh":135.68,"uLow":133.21,"uVolume":32696651,"change":2.48,"changePercent":1.8758,"label":"Aug
+        6","changeOverTime":-0.022923},{"date":"2019-08-07","open":133.79,"close":135.28,"high":135.65,"low":131.82,"volume":33414539,"uOpen":133.79,"uClose":135.28,"uHigh":135.65,"uLow":131.82,"uVolume":33414539,"change":0.59,"changePercent":0.438,"label":"Aug
+        7","changeOverTime":-0.018643},{"date":"2019-08-08","open":136.6,"close":138.89,"high":138.99,"low":135.93,"volume":27496508,"uOpen":136.6,"uClose":138.89,"uHigh":138.99,"uLow":135.93,"uVolume":27496508,"change":3.61,"changePercent":2.6685,"label":"Aug
+        8","changeOverTime":0.007544},{"date":"2019-08-09","open":138.61,"close":137.71,"high":139.38,"low":136.46,"volume":23466701,"uOpen":138.61,"uClose":137.71,"uHigh":139.38,"uLow":136.46,"uVolume":23466701,"change":-1.18,"changePercent":-0.8496,"label":"Aug
+        9","changeOverTime":-0.001016}]'
+    http_version:
+  recorded_at: Sat, 10 Aug 2019 15:56:34 GMT
+recorded_with: VCR 5.0.0

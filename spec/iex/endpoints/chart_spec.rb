@@ -12,11 +12,11 @@ describe IEX::Resources::Chart do
     it 'retrieves a default chart' do
       expect(subject.count).to eq 23
       expect(first).to be_a IEX::Resources::Chart::Default
-      expect(first.label).to eq 'Mar 6'
+      expect(first.label).to eq 'Jul 10'
       expect(first.change_percent_s).to eq '0.00%'
-      expect(first.close).to eq 111.75
-      expect(first.date).to eq Date.new(2019, 3, 6)
-      expect(last.label).to eq 'Apr 5'
+      expect(first.close).to eq 137.85
+      expect(first.date).to eq Date.new(2019, 7, 10)
+      expect(last.label).to eq 'Aug 9'
     end
   end
 
@@ -30,8 +30,8 @@ describe IEX::Resources::Chart do
       expect(subject.count).to eq 390
       expect(first).to be_a IEX::Resources::Chart::OneDay
       expect(first.label).to eq '09:30 AM'
-      expect(first.high).to eq 119.67
-      expect(first.low).to eq 119.43
+      expect(first.high).to eq 138.72
+      expect(first.low).to eq 138.5
       expect(first.minute).to eq '09:30'
     end
   end
@@ -67,7 +67,7 @@ describe IEX::Resources::Chart do
     it 'retrieves a 1m chart from' do
       expect(subject.count).to eq 23
       expect(first).to be_a IEX::Resources::Chart::Default
-      expect(first.date).to eq Date.new(2019, 3, 6)
+      expect(first.date).to eq Date.new(2019, 7, 10)
     end
   end
 

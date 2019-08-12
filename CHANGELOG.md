@@ -1,6 +1,7 @@
 ### 1.1.1 (Next)
 
 * Your contribution here.
+* [#57](https://github.com/dblock/iex-ruby-client/pull/57): Update properties for chart api endpoint - [@brunjo](https://github.com/brunjo).
 
 ### 1.1.0 (2019/07/08)
 
