@@ -1,8 +1,10 @@
+require_relative 'error'
+
 module IEX
   module Errors
-    class SymbolNotFoundError < StandardError
-      attr_reader :symbol
+    class SymbolNotFoundError < Error
       attr_reader :response
+      attr_reader :symbol
 
       def initialize(symbol, response)
         @response = response

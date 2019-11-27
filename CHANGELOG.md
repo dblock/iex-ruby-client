@@ -2,6 +2,7 @@
 
 * Your contribution here.
 * [#57](https://github.com/dblock/iex-ruby-client/pull/57): Update properties for chart api endpoint - [@brunjo](https://github.com/brunjo).
+* [#58](https://github.com/dblock/iex-ruby-client/pull/58): Add search endpoint - [@pmn4](https://github.com/pmn4).
 
 ### 1.1.0 (2019/07/08)
 

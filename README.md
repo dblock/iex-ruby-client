@@ -26,6 +26,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get Sector Performance](#get-sector-performance)
   - [Get Largest Trades](#get-largest-trades)
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
+  - [Search](#search)
 - [Configuration](#configuration)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
@@ -368,6 +369,21 @@ crypto.high_dollar #'$3,590'
 ```
 
 See [#crypto](https://iexcloud.io/docs/api/#crypto) for detailed documentation or [crypto.rb](lib/iex/resources/crypto.rb) for returned fields.
+
+### Search
+
+Searches for companies*
+
+``` Ruby
+results = client.search('msft')
+
+results.first.company_name # 'Microsoft'
+```
+
+See [#search](https://iexcloud.io/docs/api/#search) for detailed documentation.
+
+* - IEX documentation suggests this endpoint will one day return more than just
+Companies.
 
 ## Configuration
 
