@@ -48,6 +48,15 @@ describe IEX::Resources::Income do
     end
   end
 
+  context 'no result', vcr: { cassette_name: 'income/nsrgy' } do
+    subject do
+      client.income('nsrgy')
+    end
+    it 'returns empty array' do
+      expect(subject).to eq []
+    end
+  end
+
   context 'invalid symbol', vcr: { cassette_name: 'income/invalid' } do
     subject do
       client.income('INVALID')
