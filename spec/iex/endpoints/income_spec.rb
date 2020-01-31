@@ -50,7 +50,7 @@ describe IEX::Resources::Income do
 
   context 'invalid symbol', vcr: { cassette_name: 'income/invalid' } do
     subject do
-      client.earnings('INVALID')
+      client.income('INVALID')
     end
     it 'fails with SymbolNotFoundError' do
       expect { subject }.to raise_error IEX::Errors::SymbolNotFoundError, 'Symbol INVALID Not Found'
