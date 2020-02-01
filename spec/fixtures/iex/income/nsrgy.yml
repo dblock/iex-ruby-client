@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://cloud.iexapis.com/v1/stock/INVALID/income?token=test-iex-api-publishable-token
+    uri: https://cloud.iexapis.com/v1/stock/nsrgy/income?token=test-iex-api-publishable-token
     body:
       encoding: US-ASCII
       string: ''
@@ -15,22 +15,28 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 200
+      message: OK
     headers:
       Server:
       - nginx
       Date:
-      - Fri, 31 Jan 2020 23:27:10 GMT
+      - Fri, 31 Jan 2020 23:24:06 GMT
       Content-Type:
-      - text/html; charset=utf-8
-      Transfer-Encoding:
-      - chunked
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
       Connection:
       - keep-alive
       Set-Cookie:
-      - ctoken=8a37f605f30c430cbacbe804d3c9816f; Max-Age=43200; Path=/; Expires=Sat,
-        01 Feb 2020 11:27:10 GMT
+      - ctoken=89c0198f95cf496092454e8c8afc0d4a; Max-Age=43200; Path=/; Expires=Sat,
+        01 Feb 2020 11:24:06 GMT
+      Iexcloud-Messages-Used:
+      - '0'
+      Iexcloud-Premium-Messages-Used:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
       Strict-Transport-Security:
       - max-age=15768000
       Access-Control-Allow-Origin:
@@ -42,8 +48,8 @@ http_interactions:
       Access-Control-Allow-Headers:
       - Origin, X-Requested-With, Content-Type, Accept
     body:
-      encoding: ASCII-8BIT
-      string: Unknown symbol
+      encoding: UTF-8
+      string: "{}"
     http_version:
-  recorded_at: Fri, 31 Jan 2020 23:27:10 GMT
+  recorded_at: Fri, 31 Jan 2020 23:24:06 GMT
 recorded_with: VCR 5.0.0

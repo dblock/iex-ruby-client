@@ -2,7 +2,7 @@ module IEX
   module Endpoints
     module Income
       def income(symbol, options = {})
-        get("stock/#{symbol}/income", options)['income'].map do |data|
+        (get("stock/#{symbol}/income", options)['income'] || []).map do |data|
           IEX::Resources::Income.new(data)
         end
       rescue Faraday::ResourceNotFound => e
