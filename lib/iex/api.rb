@@ -10,6 +10,7 @@ require_relative 'endpoints/news'
 require_relative 'endpoints/ohlc'
 require_relative 'endpoints/price'
 require_relative 'endpoints/quote'
+require_relative 'endpoints/search'
 require_relative 'endpoints/sectors'
 require_relative 'endpoints/crypto'
 

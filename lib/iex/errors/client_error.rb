@@ -1,6 +1,8 @@
+require_relative 'error'
+
 module IEX
   module Errors
-    class ClientError < StandardError
+    class ClientError < Error
       attr_reader :response
 
       def initialize(response)

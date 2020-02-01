@@ -14,6 +14,7 @@ module IEX
       include Endpoints::Ohlc
       include Endpoints::Price
       include Endpoints::Quote
+      include Endpoints::Search
       include Endpoints::Sectors
 
       include Cloud::Connection
