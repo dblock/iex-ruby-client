@@ -12,10 +12,10 @@ module IEX
 
         options[:headers] = {}
         options[:headers]['Accept'] = 'application/json; charset=utf-8'
+        options[:headers]['Content-Type'] = 'application/json; charset=utf-8'
         options[:headers]['User-Agent'] = user_agent if user_agent
         options[:proxy] = proxy if proxy
         options[:ssl] = { ca_path: ca_path, ca_file: ca_file } if ca_path || ca_file
-        options[:params] = { token: publishable_token } if publishable_token
 
         request_options = {}
         request_options[:timeout] = timeout if timeout

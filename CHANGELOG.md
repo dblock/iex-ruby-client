@@ -1,6 +1,7 @@
 ### 1.1.1 (Next)
 
 * Your contribution here.
+* [#63](https://github.com/dblock/iex-ruby-client/pull/63): Allow direct API calls with support for secret_token - [@bguban](https://github.com/bguban).
 * [#61](https://github.com/dblock/iex-ruby-client/pull/61): Fix income endpoint if the api returns no result - [@brunjo](https://github.com/brunjo).
 * [#57](https://github.com/dblock/iex-ruby-client/pull/57): Update properties for chart api endpoint - [@brunjo](https://github.com/brunjo).
 

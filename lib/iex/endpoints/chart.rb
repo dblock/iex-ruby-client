@@ -16,7 +16,7 @@ module IEX
           params[k.to_sym] = v
         end
 
-        response = get(url, params)
+        response = get(url, { token: publishable_token }.merge(params))
 
         if range && range.to_s == 'dynamic'
           range = response['range']

@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cloud.iexapis.com/v1/ref-data/isin
+    body:
+      encoding: UTF-8
+      string: '{"isin":["US0378331005"],"token":"test-iex-api-secret-token"}'
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - IEX Ruby Client/1.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 26 Feb 2020 20:04:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=6b0870d7654f4742a9458a86f537ae8b; Max-Age=43200; Path=/; Expires=Thu,
+        27 Feb 2020 08:04:36 GMT
+      Iexcloud-Messages-Used:
+      - '100'
+      Iexcloud-Premium-Messages-Used:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"symbol":"AAPL","region":"US","exchange":"NAS","iexId":"IEX_4D48333344362D52"},{"symbol":"APC-GY","region":"DE","exchange":"ETR","iexId":"IEX_464D46474C312D52"}]'
+    http_version: null
+  recorded_at: Wed, 26 Feb 2020 20:04:36 GMT
+recorded_with: VCR 5.1.0

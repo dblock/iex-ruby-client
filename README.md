@@ -26,6 +26,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get Sector Performance](#get-sector-performance)
   - [Get Largest Trades](#get-largest-trades)
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
+  - [Other Requests](#other-requests)
 - [Configuration](#configuration)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
@@ -54,7 +55,8 @@ Create an account on [IEX Cloud](https://iexcloud.io) and get a publishable toke
 
 ```ruby
 IEX::Api.configure do |config|
-  config.publishable_token = 'token' # defaults to ENV['IEX_API_PUBLISHABLE_TOKEN']
+  config.publishable_token = 'publishable_token' # defaults to ENV['IEX_API_PUBLISHABLE_TOKEN']
+  config.secret_token = 'secret_token' # defaults to ENV['IEX_API_SECRET_TOKEN']
   config.endpoint = 'https://sandbox.iexapis.com/v1' # defaults to 'https://cloud.iexapis.com/v1'
 end
 ```
@@ -63,7 +65,8 @@ You can also configure an instance of a client directly.
 
 ```ruby
 client = IEX::Api::Client.new(
-  publishable_token: 'token',
+  publishable_token: 'publishable_token',
+  secret_token: 'secret_token',
   endpoint: 'https://sandbox.iexapis.com/v1'
 )
 ```
@@ -368,6 +371,15 @@ crypto.high_dollar #'$3,590'
 ```
 
 See [#crypto](https://iexcloud.io/docs/api/#crypto) for detailed documentation or [crypto.rb](lib/iex/resources/crypto.rb) for returned fields.
+
+### Other Requests
+
+Public endpoints that aren't yet supported by the client can be called using `client.get`, `client.post`, `client.put` 
+and `client.delete` methods. Pass the required token explicitly:
+
+```ruby
+client.post('ref-data/isin', isin: ['US0378331005'], token: 'secret_token') # [{'exchange' => 'NAS', ..., 'symbol' => 'AAPL'}, {'exchange' => 'ETR', ..., 'symbol' => 'APC-GY']
+```
 
 ## Configuration
 

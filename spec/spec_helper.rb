@@ -10,3 +10,4 @@ Dir[File.join(File.dirname(__FILE__), 'support', '**/*.rb')].each do |file|
 end
 
 ENV['IEX_API_PUBLISHABLE_TOKEN'] ||= 'test-iex-api-publishable-token'
+ENV['IEX_API_SECRET_TOKEN'] ||= 'test-iex-api-secret-token'
