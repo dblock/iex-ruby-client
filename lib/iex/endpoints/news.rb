@@ -8,7 +8,7 @@ module IEX
           'news',
           range ? 'last' : nil,
           range
-        ].compact.join('/'), options).map do |data|
+        ].compact.join('/'), { token: publishable_token }.merge(options)).map do |data|
           IEX::Resources::News.new(data)
         end
       rescue Faraday::ResourceNotFound => e

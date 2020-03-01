@@ -130,7 +130,7 @@ describe IEX::Api::Client do
       let(:client) { described_class.new }
       it 'results in an API key error', vcr: { cassette_name: 'client/access_denied' } do
         expect do
-          client.get '/stock/msft/quote'
+          client.get '/stock/msft/quote', token: client.publishable_token
         end.to raise_error IEX::Errors::PermissionDeniedError, /The API key provided is not valid./
       end
     end

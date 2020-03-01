@@ -6,7 +6,7 @@ module IEX
           'stock',
           symbol,
           'sector-performance'
-        ].compact.join('/'), options).map do |data|
+        ].compact.join('/'), { token: publishable_token }.merge(options)).map do |data|
           IEX::Resources::Sectors.new(data)
         end
       rescue Faraday::ResourceNotFound => e

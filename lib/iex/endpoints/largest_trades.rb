@@ -2,7 +2,7 @@ module IEX
   module Endpoints
     module LargestTrades
       def largest_trades(symbol, options = {})
-        get("stock/#{symbol}/largest-trades", options).map do |data|
+        get("stock/#{symbol}/largest-trades", { token: publishable_token }.merge(options)).map do |data|
           IEX::Resources::LargestTrades.new(data)
         end
       rescue Faraday::ResourceNotFound => e
