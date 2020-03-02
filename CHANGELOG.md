@@ -1,3 +1,7 @@
+### 1.1.2 (Next)
+
+* Your contribution here.
+
 ### 1.1.1 (2020/03/02)
 
 * [#63](https://github.com/dblock/iex-ruby-client/pull/63): Allow direct API calls with support for secret_token - [@bguban](https://github.com/bguban).
