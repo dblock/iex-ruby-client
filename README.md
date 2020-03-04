@@ -26,6 +26,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get Sector Performance](#get-sector-performance)
   - [Get Largest Trades](#get-largest-trades)
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
+  - [ISIN Mapping](#isin-mapping)
   - [Other Requests](#other-requests)
 - [Configuration](#configuration)
 - [Errors](#errors)
@@ -371,6 +372,27 @@ crypto.high_dollar #'$3,590'
 ```
 
 See [#crypto](https://iexcloud.io/docs/api/#crypto) for detailed documentation or [crypto.rb](lib/iex/resources/crypto.rb) for returned fields.
+
+### ISIN Mapping
+
+Converts ISIN to IEX Cloud symbols.
+
+```ruby
+symbols = client.ref_data_isin(['US0378331005'])
+
+symbols.first.exchange # NAS
+symbols.first.iex_id # IEX_4D48333344362D52
+symbols.first.region # US
+symbols.first.symbol # AAPL
+```
+
+You can use `mapped: true` option to receive symbols grouped by their ISINs.
+
+```ruby
+client.ref_data_isin(['US0378331005', 'US5949181045'], mapped: true) # {'US0378331005' => [...], 'US5949181045' => [...]}
+```
+
+See [#ISIN Mapping](https://iexcloud.io/docs/api/#isin-mapping) for detailed documentation or [isin_mapping.rb](lib/iex/resources/isin_mapping.rb) for returned fields.
 
 ### Other Requests
 
