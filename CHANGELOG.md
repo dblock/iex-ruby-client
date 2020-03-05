@@ -1,6 +1,7 @@
 ### 1.1.2 (Next)
 
 * Your contribution here.
+* [#64](https://github.com/dblock/iex-ruby-client/pull/64): Add ref_data_isin - [@bguban](https://github.com/bguban).
 
 ### 1.1.1 (2020/03/02)
 
