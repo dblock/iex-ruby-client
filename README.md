@@ -27,6 +27,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get Largest Trades](#get-largest-trades)
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
   - [ISIN Mapping](#isin-mapping)
+  - [Get List](#get-list)
   - [Other Requests](#other-requests)
 - [Configuration](#configuration)
 - [Errors](#errors)
@@ -393,6 +394,16 @@ client.ref_data_isin(['US0378331005', 'US5949181045'], mapped: true) # {'US03783
 ```
 
 See [#ISIN Mapping](https://iexcloud.io/docs/api/#isin-mapping) for detailed documentation or [isin_mapping.rb](lib/iex/resources/isin_mapping.rb) for returned fields.
+
+### Get List
+
+Returns an array of quotes for the top 10 symbols in a specified list.
+
+```ruby
+client.stock_market_list(:mostactive) # [{symbol: 'AAPL', ...}, {...}]
+```
+
+See [#list](https://iexcloud.io/docs/api/#list) for detailed documentation or [quote.rb](lib/iex/resources/quote.rb) for returned fields.
 
 ### Other Requests
 

@@ -13,6 +13,7 @@ require_relative 'endpoints/quote'
 require_relative 'endpoints/sectors'
 require_relative 'endpoints/crypto'
 require_relative 'endpoints/ref_data'
+require_relative 'endpoints/stock_market'
 
 require_relative 'api/config'
 require_relative 'api/client'

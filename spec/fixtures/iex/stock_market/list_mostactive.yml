@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloud.iexapis.com/v1/stock/market/list/mostactive?token=test-iex-api-publishable-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - IEX Ruby Client/1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 04 Mar 2020 13:00:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=82c15565434a4dada8483b258390943b; Max-Age=43200; Path=/; Expires=Thu,
+        05 Mar 2020 01:00:24 GMT
+      Iexcloud-Messages-Used:
+      - '20'
+      Iexcloud-Premium-Messages-Used:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"symbol":"AMD","companyName":"Advanced Micro Devices, Inc.","primaryExchange":"NASDAQ","calculationPrice":"close","open":null,"openTime":null,"close":null,"closeTime":null,"high":null,"low":null,"latestPrice":46.75,"latestSource":"Close","latestTime":"March
+        3, 2020","latestUpdate":1583269200736,"latestVolume":null,"iexRealtimePrice":0,"iexRealtimeSize":0,"iexLastUpdated":0,"delayedPrice":null,"delayedPriceTime":null,"oddLotDelayedPrice":null,"oddLotDelayedPriceTime":null,"extendedPrice":null,"extendedChange":null,"extendedChangePercent":null,"extendedPriceTime":null,"previousClose":47.46,"previousVolume":102324726,"change":-0.71,"changePercent":-0.01496,"volume":null,"iexMarketPercent":null,"iexVolume":0,"avgTotalVolume":69781992,"iexBidPrice":0,"iexBidSize":0,"iexAskPrice":0,"iexAskSize":0,"marketCap":54681605000,"peRatio":152.73,"week52High":59.27,"week52Low":21.04,"ytdChange":-0.062822,"lastTradeTime":1583269200603,"isUSMarketOpen":false},{"symbol":"BAC","companyName":"Bank
+        of America Corp.","primaryExchange":"New York Stock Exchange","calculationPrice":"close","open":null,"openTime":null,"close":null,"closeTime":null,"high":null,"low":null,"latestPrice":27.75,"latestSource":"Close","latestTime":"March
+        3, 2020","latestUpdate":1583269208334,"latestVolume":null,"iexRealtimePrice":0,"iexRealtimeSize":0,"iexLastUpdated":0,"delayedPrice":null,"delayedPriceTime":null,"oddLotDelayedPrice":null,"oddLotDelayedPriceTime":null,"extendedPrice":null,"extendedChange":null,"extendedChangePercent":null,"extendedPriceTime":null,"previousClose":29.37,"previousVolume":147776301,"change":-1.62,"changePercent":-0.05516,"volume":null,"iexMarketPercent":null,"iexVolume":0,"avgTotalVolume":59385616,"iexBidPrice":0,"iexBidSize":0,"iexAskPrice":0,"iexAskSize":0,"marketCap":242216707500,"peRatio":10.03,"week52High":35.72,"week52Low":26.21,"ytdChange":-0.27654,"lastTradeTime":1583269208300,"isUSMarketOpen":false},{"symbol":"INO","companyName":"Inovio
+        Pharmaceuticals, Inc.","primaryExchange":"NASDAQ","calculationPrice":"close","open":null,"openTime":null,"close":null,"closeTime":null,"high":null,"low":null,"latestPrice":7.45,"latestSource":"Close","latestTime":"March
+        3, 2020","latestUpdate":1583269200743,"latestVolume":null,"iexRealtimePrice":0,"iexRealtimeSize":0,"iexLastUpdated":0,"delayedPrice":null,"delayedPriceTime":null,"oddLotDelayedPrice":null,"oddLotDelayedPriceTime":null,"extendedPrice":null,"extendedChange":null,"extendedChangePercent":null,"extendedPriceTime":null,"previousClose":4.39,"previousVolume":16179954,"change":3.06,"changePercent":0.69704,"volume":null,"iexMarketPercent":null,"iexVolume":0,"avgTotalVolume":18795754,"iexBidPrice":0,"iexBidSize":0,"iexAskPrice":0,"iexAskSize":0,"marketCap":755139450,"peRatio":-6.32,"week52High":7.48,"week52Low":1.92,"ytdChange":2.017912,"lastTradeTime":1583269200378,"isUSMarketOpen":false},{"symbol":"GE","companyName":"General
+        Electric Co.","primaryExchange":"New York Stock Exchange","calculationPrice":"close","open":null,"openTime":null,"close":null,"closeTime":null,"high":null,"low":null,"latestPrice":10.88,"latestSource":"Close","latestTime":"March
+        3, 2020","latestUpdate":1583269204858,"latestVolume":null,"iexRealtimePrice":0,"iexRealtimeSize":0,"iexLastUpdated":0,"delayedPrice":null,"delayedPriceTime":null,"oddLotDelayedPrice":null,"oddLotDelayedPriceTime":null,"extendedPrice":null,"extendedChange":null,"extendedChangePercent":null,"extendedPriceTime":null,"previousClose":11.21,"previousVolume":124802207,"change":-0.33,"changePercent":-0.02944,"volume":null,"iexMarketPercent":null,"iexVolume":0,"avgTotalVolume":71758664,"iexBidPrice":0,"iexBidSize":0,"iexAskPrice":0,"iexAskSize":0,"marketCap":95093702400,"peRatio":143.16,"week52High":13.26,"week52Low":7.65,"ytdChange":-0.117453,"lastTradeTime":1583269204815,"isUSMarketOpen":false},{"symbol":"F","companyName":"Ford
+        Motor Co.","primaryExchange":"New York Stock Exchange","calculationPrice":"close","open":null,"openTime":null,"close":null,"closeTime":null,"high":null,"low":null,"latestPrice":6.97,"latestSource":"Close","latestTime":"March
+        3, 2020","latestUpdate":1583269470045,"latestVolume":null,"iexRealtimePrice":0,"iexRealtimeSize":0,"iexLastUpdated":0,"delayedPrice":null,"delayedPriceTime":null,"oddLotDelayedPrice":null,"oddLotDelayedPriceTime":null,"extendedPrice":null,"extendedChange":null,"extendedChangePercent":null,"extendedPriceTime":null,"previousClose":7.2,"previousVolume":96766032,"change":-0.23,"changePercent":-0.03194,"volume":null,"iexMarketPercent":null,"iexVolume":0,"avgTotalVolume":79183546,"iexBidPrice":0,"iexBidSize":0,"iexAskPrice":0,"iexAskSize":0,"marketCap":27636398500,"peRatio":237.88,"week52High":10.56,"week52Low":6.67,"ytdChange":-0.29202500000000003,"lastTradeTime":1583269200123,"isUSMarketOpen":false},{"symbol":"AAPL","companyName":"Apple,
+        Inc.","primaryExchange":"NASDAQ","calculationPrice":"close","open":null,"openTime":null,"close":null,"closeTime":null,"high":null,"low":null,"latestPrice":289.32,"latestSource":"Close","latestTime":"March
+        3, 2020","latestUpdate":1583269200249,"latestVolume":null,"iexRealtimePrice":0,"iexRealtimeSize":0,"iexLastUpdated":0,"delayedPrice":null,"delayedPriceTime":null,"oddLotDelayedPrice":null,"oddLotDelayedPriceTime":null,"extendedPrice":null,"extendedChange":null,"extendedChangePercent":null,"extendedPriceTime":null,"previousClose":298.81,"previousVolume":85349339,"change":-9.49,"changePercent":-0.03176,"volume":null,"iexMarketPercent":null,"iexVolume":0,"avgTotalVolume":41771302,"iexBidPrice":0,"iexBidSize":0,"iexAskPrice":0,"iexAskSize":0,"marketCap":1265913873600,"peRatio":22.68,"week52High":327.85,"week52Low":169.5,"ytdChange":-0.06848399999999999,"lastTradeTime":1583269200389,"isUSMarketOpen":false},{"symbol":"MSFT","companyName":"Microsoft
+        Corp.","primaryExchange":"NASDAQ","calculationPrice":"close","open":null,"openTime":null,"close":null,"closeTime":null,"high":null,"low":null,"latestPrice":164.51,"latestSource":"Close","latestTime":"March
+        3, 2020","latestUpdate":1583269200720,"latestVolume":null,"iexRealtimePrice":0,"iexRealtimeSize":0,"iexLastUpdated":0,"delayedPrice":null,"delayedPriceTime":null,"oddLotDelayedPrice":null,"oddLotDelayedPriceTime":null,"extendedPrice":null,"extendedChange":null,"extendedChangePercent":null,"extendedPriceTime":null,"previousClose":172.79,"previousVolume":71030810,"change":-8.28,"changePercent":-0.04792,"volume":null,"iexMarketPercent":null,"iexVolume":0,"avgTotalVolume":43623452,"iexBidPrice":0,"iexBidSize":0,"iexAskPrice":0,"iexAskSize":0,"marketCap":1251271285500,"peRatio":28.37,"week52High":190.7,"week52Low":108.8,"ytdChange":-0.023700999999999996,"lastTradeTime":1583269200282,"isUSMarketOpen":false},{"symbol":"T","companyName":"AT&T,
+        Inc.","primaryExchange":"New York Stock Exchange","calculationPrice":"close","open":null,"openTime":null,"close":null,"closeTime":null,"high":null,"low":null,"latestPrice":36.3,"latestSource":"Close","latestTime":"March
+        3, 2020","latestUpdate":1583269431180,"latestVolume":null,"iexRealtimePrice":0,"iexRealtimeSize":0,"iexLastUpdated":0,"delayedPrice":null,"delayedPriceTime":null,"oddLotDelayedPrice":null,"oddLotDelayedPriceTime":null,"extendedPrice":null,"extendedChange":null,"extendedChangePercent":null,"extendedPriceTime":null,"previousClose":37.18,"previousVolume":68432790,"change":-0.88,"changePercent":-0.02367,"volume":null,"iexMarketPercent":null,"iexVolume":0,"avgTotalVolume":39604055,"iexBidPrice":0,"iexBidSize":0,"iexAskPrice":0,"iexAskSize":0,"marketCap":260375544000,"peRatio":19.09,"week52High":39.7,"week52Low":29.67,"ytdChange":-0.089548,"lastTradeTime":1583269199998,"isUSMarketOpen":false},{"symbol":"XOM","companyName":"Exxon
+        Mobil Corp.","primaryExchange":"New York Stock Exchange","calculationPrice":"close","open":null,"openTime":null,"close":null,"closeTime":null,"high":null,"low":null,"latestPrice":51.3,"latestSource":"Close","latestTime":"March
+        3, 2020","latestUpdate":1583269428549,"latestVolume":null,"iexRealtimePrice":0,"iexRealtimeSize":0,"iexLastUpdated":0,"delayedPrice":null,"delayedPriceTime":null,"oddLotDelayedPrice":null,"oddLotDelayedPriceTime":null,"extendedPrice":null,"extendedChange":null,"extendedChangePercent":null,"extendedPriceTime":null,"previousClose":53.88,"previousVolume":38127634,"change":-2.58,"changePercent":-0.04788,"volume":null,"iexMarketPercent":null,"iexVolume":0,"avgTotalVolume":24981447,"iexBidPrice":0,"iexBidSize":0,"iexAskPrice":0,"iexAskSize":0,"marketCap":217111347000,"peRatio":15.29,"week52High":83.49,"week52Low":48.01,"ytdChange":-0.324326,"lastTradeTime":1583269199431,"isUSMarketOpen":false},{"symbol":"INTC","companyName":"Intel
+        Corp.","primaryExchange":"NASDAQ","calculationPrice":"close","open":null,"openTime":null,"close":null,"closeTime":null,"high":null,"low":null,"latestPrice":55.97,"latestSource":"Close","latestTime":"March
+        3, 2020","latestUpdate":1583269200750,"latestVolume":null,"iexRealtimePrice":0,"iexRealtimeSize":0,"iexLastUpdated":0,"delayedPrice":null,"delayedPriceTime":null,"oddLotDelayedPrice":null,"oddLotDelayedPriceTime":null,"extendedPrice":null,"extendedChange":null,"extendedChangePercent":null,"extendedPriceTime":null,"previousClose":58.18,"previousVolume":43140304,"change":-2.21,"changePercent":-0.03799,"volume":null,"iexMarketPercent":null,"iexVolume":0,"avgTotalVolume":28110407,"iexBidPrice":0,"iexBidSize":0,"iexAskPrice":0,"iexAskSize":0,"marketCap":239383690000,"peRatio":11.7,"week52High":69.29,"week52Low":42.86,"ytdChange":-0.118036,"lastTradeTime":1583269200602,"isUSMarketOpen":false}]'
+    http_version: null
+  recorded_at: Wed, 04 Mar 2020 13:00:24 GMT
+recorded_with: VCR 5.1.0

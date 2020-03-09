@@ -16,6 +16,7 @@ module IEX
       include Endpoints::Quote
       include Endpoints::Sectors
       include Endpoints::RefData
+      include Endpoints::StockMarket
 
       include Cloud::Connection
       include Cloud::Request
