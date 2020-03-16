@@ -19,6 +19,7 @@ describe IEX::Resources::KeyStats do
       expect(subject.week_52_high_dollar).to eq '$136.04'
       expect(subject.week_52_low).to eq 95.92
       expect(subject.week_52_low_dollar).to eq '$95.92'
+      expect(subject.week_52_change).to eq 0.371641
       expect(subject.week_52_change_dollar).to eq '$0.37'
     end
 
