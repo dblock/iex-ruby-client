@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.email = 'dblock@dblock.org'
   s.platform = Gem::Platform::RUBY
   s.required_rubygems_version = '>= 1.3.6'
+  s.required_ruby_version = '>= 2.3.0'
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- spec/*`.split("\n")
   s.require_paths = ['lib']

@@ -1,6 +1,7 @@
 ### 1.1.2 (Next)
 
 * Your contribution here.
+* [#67](https://github.com/dblock/iex-ruby-client/pull/67): Add required ruby version to gemspec - [@wdperson](https://github.com/wdperson).
 * [#66](https://github.com/dblock/iex-ruby-client/pull/66): Fix: KeyStats#week_52_change always returns nil - [@brunjo](https://github.com/brunjo).
 * [#65](https://github.com/dblock/iex-ruby-client/pull/65): Add stock_market_list - [@bguban](https://github.com/bguban).
 * [#64](https://github.com/dblock/iex-ruby-client/pull/64): Add ref_data_isin - [@bguban](https://github.com/bguban).
