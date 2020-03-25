@@ -1,3 +1,7 @@
+### 1.1.3 (Next)
+
+* Your contribution here.
+
 ### 1.1.2 (2020/03/25)
 
 * [#68](https://github.com/dblock/iex-ruby-client/pull/68): Fix ref_data_isin request with wrong isin - [@bguban](https://github.com/bguban).
