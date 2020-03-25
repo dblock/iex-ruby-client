@@ -1,6 +1,5 @@
-### 1.1.2 (Next)
+### 1.1.2 (2020/03/25)
 
-* Your contribution here.
 * [#68](https://github.com/dblock/iex-ruby-client/pull/68): Fix ref_data_isin request with wrong isin - [@bguban](https://github.com/bguban).
 * [#67](https://github.com/dblock/iex-ruby-client/pull/67): Add required ruby version to gemspec - [@wdperson](https://github.com/wdperson).
 * [#66](https://github.com/dblock/iex-ruby-client/pull/66): Fix: KeyStats#week_52_change always returns nil - [@brunjo](https://github.com/brunjo).
