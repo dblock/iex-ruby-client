@@ -27,6 +27,14 @@ describe IEX::Api::Client do
         expect(subject['US5949181045'][1]).to eq('exchange' => 'ETR', 'iex_id' => 'IEX_4C42583859482D52', 'region' => 'DE', 'symbol' => 'MSF-GY')
         expect(subject['US5949181045'][2]).to eq('exchange' => 'BRU', 'iex_id' => 'IEX_5833345950432D52', 'region' => 'BE', 'symbol' => 'MSF-BB')
       end
+
+      context 'with wrong ISIN', vcr: { cassette_name: 'ref-data/wrong_isin_mapped' } do
+        subject { client.ref_data_isin(%w[WRONG12345], mapped: true) }
+
+        it 'returns nil value for given ISIN' do
+          expect(subject).to eq('WRONG12345' => nil)
+        end
+      end
     end
   end
 end
