@@ -6,7 +6,7 @@ module IEX
 
         if response.is_a?(Hash) # mapped option was set
           response.transform_values do |rows|
-            rows.map { |row| IEX::Resources::Symbol.new(row) }
+            rows&.map { |row| IEX::Resources::Symbol.new(row) }
           end
         else
           response.map { |row| IEX::Resources::Symbol.new(row) }
