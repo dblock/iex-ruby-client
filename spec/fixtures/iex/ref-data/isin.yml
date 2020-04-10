@@ -1,18 +1,18 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://cloud.iexapis.com/v1/ref-data/isin
+    method: get
+    uri: https://cloud.iexapis.com/v1/ref-data/isin?isin=US0378331005&token=test-iex-api-publishable-token
     body:
-      encoding: UTF-8
-      string: '{"isin":["US0378331005"],"token":"test-iex-api-publishable-token"}'
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept:
       - application/json; charset=utf-8
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - IEX Ruby Client/1.1.1
+      - IEX Ruby Client/1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 26 Feb 2020 20:04:36 GMT
+      - Fri, 10 Apr 2020 15:17:33 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -31,8 +31,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - ctoken=6b0870d7654f4742a9458a86f537ae8b; Max-Age=43200; Path=/; Expires=Thu,
-        27 Feb 2020 08:04:36 GMT
+      - ctoken=b1f966fa60964069a7d948021e2c2149; Max-Age=43200; Path=/; Expires=Sat,
+        11 Apr 2020 03:17:32 GMT
       Iexcloud-Messages-Used:
       - '100'
       Iexcloud-Premium-Messages-Used:
@@ -53,5 +53,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '[{"symbol":"AAPL","region":"US","exchange":"NAS","iexId":"IEX_4D48333344362D52"},{"symbol":"APC-GY","region":"DE","exchange":"ETR","iexId":"IEX_464D46474C312D52"}]'
     http_version: null
-  recorded_at: Wed, 26 Feb 2020 20:04:36 GMT
+  recorded_at: Fri, 10 Apr 2020 15:17:33 GMT
 recorded_with: VCR 5.1.0

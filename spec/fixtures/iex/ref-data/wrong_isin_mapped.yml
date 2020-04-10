@@ -1,18 +1,18 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://cloud.iexapis.com/v1/ref-data/isin
+    method: get
+    uri: https://cloud.iexapis.com/v1/ref-data/isin?isin=WRONG12345&mapped=true&token=test-iex-api-publishable-token
     body:
-      encoding: UTF-8
-      string: '{"token":"test-iex-api-publishable-token","isin":["WRONG12345"],"mapped":true}'
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept:
       - application/json; charset=utf-8
       Content-Type:
       - application/json; charset=utf-8
       User-Agent:
-      - IEX Ruby Client/1.1.2
+      - IEX Ruby Client/1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 25 Mar 2020 10:15:28 GMT
+      - Fri, 10 Apr 2020 15:17:34 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -31,8 +31,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - ctoken=9ddb19d57dea471f9855bacdb85a96a5; Max-Age=43200; Path=/; Expires=Wed,
-        25 Mar 2020 22:15:28 GMT
+      - ctoken=84910330e5ea4058969d0af364c32947; Max-Age=43200; Path=/; Expires=Sat,
+        11 Apr 2020 03:17:34 GMT
       Iexcloud-Messages-Used:
       - '100'
       Iexcloud-Premium-Messages-Used:
@@ -53,5 +53,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"WRONG12345":null}'
     http_version: null
-  recorded_at: Wed, 25 Mar 2020 10:15:28 GMT
+  recorded_at: Fri, 10 Apr 2020 15:17:34 GMT
 recorded_with: VCR 5.1.0
