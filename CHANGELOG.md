@@ -1,6 +1,7 @@
 ### 1.1.3 (Next)
 
 * Your contribution here.
+* [#69](https://github.com/dblock/iex-ruby-client/pull/69): Fixed ref_data_isin request - [@bguban](https://github.com/bguban).
 
 ### 1.1.2 (2020/03/25)
 
