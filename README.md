@@ -383,6 +383,9 @@ Converts ISIN to IEX Cloud symbols.
 ```ruby
 symbols = client.ref_data_isin(['US0378331005'])
 
+# You can also pass single elements as string:
+# symbols = client.ref_data_isin('US0378331005')
+
 symbols.first.exchange # NAS
 symbols.first.iex_id # IEX_4D48333344362D52
 symbols.first.region # US

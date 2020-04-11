@@ -36,6 +36,15 @@ describe IEX::Api::Client do
         end
       end
     end
+
+    context 'graciously handle parameter as string', vcr: { cassette_name: 'ref-data/isin' } do
+      subject { client.ref_data_isin('US0378331005') }
+
+      it 'converts ISIN from string to Array and do not errors out' do
+        expect { subject }.not_to raise_error
+        expect(subject.count).to eq(2)
+      end
+    end
   end
 
   describe '#ref_data_symbols', vcr: { cassette_name: 'ref-data/symbols' } do
