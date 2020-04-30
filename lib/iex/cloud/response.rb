@@ -5,7 +5,7 @@ module IEX
         def on_complete(env)
           case env[:status]
           when 404
-            raise Faraday::Error::ResourceNotFound, response_values(env)
+            raise Faraday::ResourceNotFound, response_values(env)
           when 403
             raise IEX::Errors::PermissionDeniedError, response_values(env)
           when ClientErrorStatuses
