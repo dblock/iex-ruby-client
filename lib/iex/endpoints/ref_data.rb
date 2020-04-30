@@ -12,6 +12,11 @@ module IEX
           response.map { |row| IEX::Resources::Symbol.new(row) }
         end
       end
+
+      def ref_data_symbols(options = {})
+        response = get('ref-data/symbols', { token: publishable_token }.merge(options))
+        response.map { |row| IEX::Resources::Symbols.new(row) }
+      end
     end
   end
 end
