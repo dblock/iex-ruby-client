@@ -51,7 +51,7 @@ describe IEX::Api::Client do
         expect(subject.symbol).to eq 'A'
         expect(subject.exchange).to eq 'NYS'
         expect(subject.name).to eq 'Agilent Technologies Inc.'
-        expect(subject.date).to eq '2020-04-30'
+        expect(subject.date).to eq Date.parse('2020-04-30')
         expect(subject.is_enabled).to eq true
         expect(subject.type).to eq 'cs'
         expect(subject.region).to eq 'US'
