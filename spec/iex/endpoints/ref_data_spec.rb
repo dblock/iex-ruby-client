@@ -41,19 +41,25 @@ describe IEX::Api::Client do
   describe '#ref_data_symbols', vcr: { cassette_name: 'ref-data/symbols' } do
     subject { client.ref_data_symbols }
 
-    it 'retrieves symbols' do
+    it 'retrieves all symbols' do
       expect(subject.count).to eq 8808
-      expect(subject.first.symbol).to eq 'A'
-      expect(subject.first.exchange).to eq 'NYS'
-      expect(subject.first.name).to eq 'Agilent Technologies Inc.'
-      expect(subject.first.date).to eq '2020-04-30'
-      expect(subject.first.is_enabled).to eq true
-      expect(subject.first.type).to eq 'cs'
-      expect(subject.first.region).to eq 'US'
-      expect(subject.first.currency).to eq 'USD'
-      expect(subject.first.iex_id).to eq 'IEX_46574843354B2D52'
-      expect(subject.first.figi).to eq 'BBG000C2V3D6'
-      expect(subject.first.cik).to eq '1090872'
+    end
+
+    context 'first symbol' do
+      subject { client.ref_data_symbols.first }
+      it 'retrieves a symbol data' do
+        expect(subject.symbol).to eq 'A'
+        expect(subject.exchange).to eq 'NYS'
+        expect(subject.name).to eq 'Agilent Technologies Inc.'
+        expect(subject.date).to eq '2020-04-30'
+        expect(subject.is_enabled).to eq true
+        expect(subject.type).to eq 'cs'
+        expect(subject.region).to eq 'US'
+        expect(subject.currency).to eq 'USD'
+        expect(subject.iex_id).to eq 'IEX_46574843354B2D52'
+        expect(subject.figi).to eq 'BBG000C2V3D6'
+        expect(subject.cik).to eq '1090872'
+      end
     end
   end
 end

@@ -403,11 +403,11 @@ Returns an array of symbols
 ```ruby
 symbols = client.ref_data_symbols()
 
-symbols.first.exchange # NAS
-symbols.first.iex_id # IEX_46574843354B2D52
-symbols.first.region # US
-symbols.first.symbol # A
-
+symbol = symbols.first
+symbol.exchange # NAS
+symbol.iex_id # IEX_46574843354B2D52
+symbol.region # US
+symbol.symbol # A
 ```
 
 See [#symbols](https://iexcloud.io/docs/api/#symbols) for detailed documentation or [symbols.rb](lib/iex/resources/symbols.rb) for returned fields.
