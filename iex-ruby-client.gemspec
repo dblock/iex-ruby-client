@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.homepage = 'http://github.com/dblock/iex-ruby-client'
   s.licenses = ['MIT']
   s.summary = 'IEX Finance API Ruby client with support for retrieving stock quotes.'
-  s.add_dependency 'faraday', '>= 0.9'
+  s.add_dependency 'faraday', '>= 0.17'
   s.add_dependency 'faraday_middleware'
   s.add_dependency 'hashie'
   s.add_dependency 'money_helper'

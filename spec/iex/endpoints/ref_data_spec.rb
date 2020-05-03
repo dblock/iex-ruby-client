@@ -37,4 +37,30 @@ describe IEX::Api::Client do
       end
     end
   end
+
+  describe '#ref_data_symbols', vcr: { cassette_name: 'ref-data/symbols' } do
+    subject { client.ref_data_symbols }
+
+    it 'retrieves all symbols' do
+      expect(subject.count).to eq 8808
+    end
+
+    context 'first symbol' do
+      subject { client.ref_data_symbols.first }
+      it 'retrieves a symbol data' do
+        expect(subject.symbol).to eq 'A'
+        expect(subject.exchange).to eq 'NYS'
+        expect(subject.name).to eq 'Agilent Technologies Inc.'
+        expect(subject.date).to eq Date.parse('2020-04-30')
+        expect(subject.enabled).to eq true
+        expect(subject.enabled?).to eq true
+        expect(subject.type).to eq 'cs'
+        expect(subject.region).to eq 'US'
+        expect(subject.currency).to eq 'USD'
+        expect(subject.iex_id).to eq 'IEX_46574843354B2D52'
+        expect(subject.figi).to eq 'BBG000C2V3D6'
+        expect(subject.cik).to eq '1090872'
+      end
+    end
+  end
 end

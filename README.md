@@ -27,6 +27,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get Largest Trades](#get-largest-trades)
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
   - [ISIN Mapping](#isin-mapping)
+  - [Get Symbols](#get-symbols)
   - [Get List](#get-list)
   - [Other Requests](#other-requests)
 - [Configuration](#configuration)
@@ -394,6 +395,22 @@ client.ref_data_isin(['US0378331005', 'US5949181045'], mapped: true) # {'US03783
 ```
 
 See [#ISIN Mapping](https://iexcloud.io/docs/api/#isin-mapping) for detailed documentation or [isin_mapping.rb](lib/iex/resources/isin_mapping.rb) for returned fields.
+
+### Get Symbols
+
+Returns an array of symbols
+
+```ruby
+symbols = client.ref_data_symbols()
+
+symbol = symbols.first
+symbol.exchange # NAS
+symbol.iex_id # IEX_46574843354B2D52
+symbol.region # US
+symbol.symbol # A
+```
+
+See [#symbols](https://iexcloud.io/docs/api/#symbols) for detailed documentation or [symbols.rb](lib/iex/resources/symbols.rb) for returned fields.
 
 ### Get List
 
