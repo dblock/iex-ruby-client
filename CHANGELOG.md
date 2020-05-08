@@ -1,31 +1,32 @@
 ### 1.1.3 (Next)
 
 * Your contribution here.
-* [#71](https://github.com/dblock/iex-ruby-client/pull/71): Add symbols resource - [@ryosuke-endo](https://github.com/ryosuke-endo).
-* [#69](https://github.com/dblock/iex-ruby-client/pull/69): Fixed ref_data_isin request - [@bguban](https://github.com/bguban).
+* [#71](https://github.com/dblock/iex-ruby-client/pull/71): Added `symbols` resource - [@ryosuke-endo](https://github.com/ryosuke-endo).
+* [#69](https://github.com/dblock/iex-ruby-client/pull/69): Fixed `ref_data_isin` request - [@bguban](https://github.com/bguban).
+* [#72](https://github.com/dblock/iex-ruby-client/pull/72): Cache `Faraday::Connection` for persistent adapters - [@dblock](https://github.com/dblock).
 
 ### 1.1.2 (2020/03/25)
 
-* [#68](https://github.com/dblock/iex-ruby-client/pull/68): Fix ref_data_isin request with wrong isin - [@bguban](https://github.com/bguban).
-* [#67](https://github.com/dblock/iex-ruby-client/pull/67): Add required ruby version to gemspec - [@wdperson](https://github.com/wdperson).
-* [#66](https://github.com/dblock/iex-ruby-client/pull/66): Fix: KeyStats#week_52_change always returns nil - [@brunjo](https://github.com/brunjo).
-* [#65](https://github.com/dblock/iex-ruby-client/pull/65): Add stock_market_list - [@bguban](https://github.com/bguban).
-* [#64](https://github.com/dblock/iex-ruby-client/pull/64): Add ref_data_isin - [@bguban](https://github.com/bguban).
+* [#68](https://github.com/dblock/iex-ruby-client/pull/68): Fixed `ref_data_isin` request with wrong isin - [@bguban](https://github.com/bguban).
+* [#67](https://github.com/dblock/iex-ruby-client/pull/67): Added required ruby version to gemspec - [@wdperson](https://github.com/wdperson).
+* [#66](https://github.com/dblock/iex-ruby-client/pull/66): Fixed `KeyStats#week_52_change always` returns nil - [@brunjo](https://github.com/brunjo).
+* [#65](https://github.com/dblock/iex-ruby-client/pull/65): Added `stock_market_list` - [@bguban](https://github.com/bguban).
+* [#64](https://github.com/dblock/iex-ruby-client/pull/64): Added `ref_data_isin` - [@bguban](https://github.com/bguban).
 
 ### 1.1.1 (2020/03/02)
 
 * [#63](https://github.com/dblock/iex-ruby-client/pull/63): Allow direct API calls with support for secret_token - [@bguban](https://github.com/bguban).
-* [#61](https://github.com/dblock/iex-ruby-client/pull/61): Fix income endpoint if the api returns no result - [@brunjo](https://github.com/brunjo).
-* [#57](https://github.com/dblock/iex-ruby-client/pull/57): Update properties for chart api endpoint - [@brunjo](https://github.com/brunjo).
+* [#61](https://github.com/dblock/iex-ruby-client/pull/61): Fixed income endpoint if the api returns no result - [@brunjo](https://github.com/brunjo).
+* [#57](https://github.com/dblock/iex-ruby-client/pull/57): Updated properties for chart api endpoint - [@brunjo](https://github.com/brunjo).
 
 ### 1.1.0 (2019/07/08)
 
-* [#55](https://github.com/dblock/iex-ruby-client/pull/55): Add `income` statement API and add `tags` to the `company` - [@bingxie](https://github.com/bingxie).
+* [#55](https://github.com/dblock/iex-ruby-client/pull/55): Added `income` statement API and add `tags` to the `company` - [@bingxie](https://github.com/bingxie).
 
 ### 1.0.1 (2019/07/08)
 
-* [#50](https://github.com/dblock/iex-ruby-client/pull/50): Add missing properties for key stats API - [@bingxie](https://github.com/bingxie).
-* Fix: `uninitialized constant IEX::Endpoints::Chart::Date (NameError)` - [@dblock](https://github.com/dblock).
+* [#50](https://github.com/dblock/iex-ruby-client/pull/50): Added missing properties for key stats API - [@bingxie](https://github.com/bingxie).
+* Fixed `uninitialized constant IEX::Endpoints::Chart::Date (NameError)` - [@dblock](https://github.com/dblock).
 
 ### 1.0.0 (2019/04/23)
 
@@ -35,9 +36,9 @@
 ### 0.4.4 (2018/12/27)
 
 * [#39](https://github.com/dblock/iex-ruby-client/pull/39): Remove default range and use iextrading default range 1m instead in `IEX::Api::Dividends` - [@ildarkayumov](https://github.com/ildarkayumov).
-* [#37](https://github.com/dblock/iex-ruby-client/pull/37): Add `IEX::Resource::Crypto` - [@rodolfobandeira](https://github.com/rodolfobandeira).
-* [#34](https://github.com/dblock/iex-ruby-client/pull/34): Add `IEX::Resource::LargestTrades` - [@gil27](https://github.com/gil27).
-* [#32](https://github.com/dblock/iex-ruby-client/pull/32): Add `IEX::Resource::Sectors` - [@gil27](https://github.com/gil27).
+* [#37](https://github.com/dblock/iex-ruby-client/pull/37): Added `IEX::Resource::Crypto` - [@rodolfobandeira](https://github.com/rodolfobandeira).
+* [#34](https://github.com/dblock/iex-ruby-client/pull/34): Added `IEX::Resource::LargestTrades` - [@gil27](https://github.com/gil27).
+* [#32](https://github.com/dblock/iex-ruby-client/pull/32): Added `IEX::Resource::Sectors` - [@gil27](https://github.com/gil27).
 
 ### 0.4.3 (2018/08/18)
 
@@ -45,7 +46,7 @@
 
 ### 0.4.2 (2018/08/14)
 
-* [#24](https://github.com/dblock/iex-ruby-client/pull/24): Add danger-toc and danger-changelog - [@rodolfobandeira](https://github.com/rodolfobandeira).
+* [#24](https://github.com/dblock/iex-ruby-client/pull/24): Added danger-toc and danger-changelog - [@rodolfobandeira](https://github.com/rodolfobandeira).
 * [#21](https://github.com/dblock/iex-ruby-client/pull/21): Added `IEX::Resources::Dividends` - [@rodolfobandeira](https://github.com/rodolfobandeira).
 
 ### 0.4.1 (2018/08/07)
@@ -64,18 +65,18 @@
 
 ### 0.3.2 (2018/05/26)
 
-* Fix: undefined method > for nil:NilClass error - [@dblock](https://github.com/dblock).
+* Fixed undefined method > for nil:NilClass error - [@dblock](https://github.com/dblock).
 
 ### 0.3.1 (2018/05/23)
 
-* [#3](https://github.com/dblock/iex-ruby-client/issues/3): Fix: do not error on undefined properties - [@dblock](https://github.com/dblock).
+* [#3](https://github.com/dblock/iex-ruby-client/issues/3): Fixed do not error on undefined properties - [@dblock](https://github.com/dblock).
 
 ### 0.3.0 (2018/05/22)
 
 * Added `IEX::Resources::Chart#get` - [@dblock](https://github.com/dblock).
 * Added `IEX::Resources::News#get` - [@dblock](https://github.com/dblock).
 * Added `IEX::Resources::Price#get` - [@dblock](https://github.com/dblock).
-* Fix: added `IEX::Resources::Quote#extendedPrice` and `IEX::Resources::Quote#extendedPriceTime` - [@dblock](https://github.com/dblock).
+* Fixed added `IEX::Resources::Quote#extendedPrice` and `IEX::Resources::Quote#extendedPriceTime` - [@dblock](https://github.com/dblock).
 
 ### 0.2.0 (2018/03/26)
 
