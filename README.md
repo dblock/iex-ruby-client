@@ -54,6 +54,8 @@ Run `bundle install`.
 
 Create an account on [IEX Cloud](https://iexcloud.io) and get a publishable token from the IEX cloud console. You should use a sandbox token and endpoint for testing.
 
+_Note that data in the [IEX sandbox environment](https://intercom.help/iexcloud/en/articles/2915433-testing-with-the-iex-cloud-sandbox) is scrambled. Therefore elements such as company and people names, descriptions, tags, and website URLs don't render any coherent data._
+
 ### Configure
 
 ```ruby
@@ -424,7 +426,7 @@ See [#list](https://iexcloud.io/docs/api/#list) for detailed documentation or [q
 
 ### Other Requests
 
-Public endpoints that aren't yet supported by the client can be called using `client.get`, `client.post`, `client.put` 
+Public endpoints that aren't yet supported by the client can be called using `client.get`, `client.post`, `client.put`
 and `client.delete` methods. Pass the required token explicitly:
 
 ```ruby
