@@ -31,6 +31,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get List](#get-list)
   - [Other Requests](#other-requests)
 - [Configuration](#configuration)
+- [Sandbox Environment](#sandbox-environment)
 - [Errors](#errors)
   - [SymbolNotFound](#symbolnotfound)
   - [PermissionDeniedError](#permissiondeniederror)
@@ -52,9 +53,7 @@ Run `bundle install`.
 
 ### Get an API Token
 
-Create an account on [IEX Cloud](https://iexcloud.io) and get a publishable token from the IEX cloud console. You should use a sandbox token and endpoint for testing.
-
-_Note that data in the [IEX sandbox environment](https://intercom.help/iexcloud/en/articles/2915433-testing-with-the-iex-cloud-sandbox) is scrambled. Therefore elements such as company and people names, descriptions, tags, and website URLs don't render any coherent data._
+Create an account on [IEX Cloud](https://iexcloud.io) and get a publishable token from the IEX cloud console.
 
 ### Configure
 
@@ -62,7 +61,7 @@ _Note that data in the [IEX sandbox environment](https://intercom.help/iexcloud/
 IEX::Api.configure do |config|
   config.publishable_token = 'publishable_token' # defaults to ENV['IEX_API_PUBLISHABLE_TOKEN']
   config.secret_token = 'secret_token' # defaults to ENV['IEX_API_SECRET_TOKEN']
-  config.endpoint = 'https://sandbox.iexapis.com/v1' # defaults to 'https://cloud.iexapis.com/v1'
+  config.endpoint = 'https://cloud.iexapis.com/v1' # use 'https://sandbox.iexapis.com/v1' for Sandbox
 end
 ```
 
@@ -72,7 +71,7 @@ You can also configure an instance of a client directly.
 client = IEX::Api::Client.new(
   publishable_token: 'publishable_token',
   secret_token: 'secret_token',
-  endpoint: 'https://sandbox.iexapis.com/v1'
+  endpoint: 'https://cloud.iexapis.com/v1'
 )
 ```
 
@@ -447,7 +446,7 @@ end
 ```ruby
 client = IEX::Api::Client.new(
   publishable_token: ENV['IEX_API_PUBLISHABLE_TOKEN'],
-  endpoint: 'https://sandbox.iexapis.com/v1'
+  endpoint: 'https://cloud.iexapis.com/v1'
 )
 ```
 
@@ -464,6 +463,14 @@ timeout             | Optional open/read timeout in seconds.
 open_timeout        | Optional connection open timeout in seconds.
 publishable_token   | IEX Cloud API publishable token.
 endpoint            | Defaults to `https://cloud.iexapis.com/v1`.
+
+## Sandbox Environment
+
+IEX recommends you use a sandbox token and endpoint for testing.
+
+However, please note that data in the IEX sandbox environment is scrambled. Therefore elements such as company and people names, descriptions, tags, and website URLs don't render any coherent data.
+
+See [IEX sandbox environment](https://intercom.help/iexcloud/en/articles/2915433-testing-with-the-iex-cloud-sandbox) for more information.
 
 ## Errors
 
