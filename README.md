@@ -105,7 +105,7 @@ See [#quote](https://iexcloud.io/docs/api/#quote) for detailed documentation or 
 Fetches a single stock OHLC price. Open and Close prices contain timestamp.
 
 ```ruby
-ohlc = client.ohlc.get('MSFT')
+ohlc = client.ohlc('MSFT')
 
 ohlc.close.price # 90.165
 ohlc.close.time #
