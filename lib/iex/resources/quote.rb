@@ -30,7 +30,7 @@ module IEX
         if v
           [
             v.positive? ? '+' : '',
-            format('%.2f', (v * 100).round),
+            format('%.2f', v * 100),
             '%'
           ].join
         end
