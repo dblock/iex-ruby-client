@@ -24,8 +24,18 @@ module IEX
       property 'iex_last_updated_t', from: 'iexLastUpdated', with: ->(v) { v&.positive? ? Time.at(v / 1000) : nil } # last update time of the data
       property 'delayed_price', from: 'delayedPrice' # 15 minute delayed market price
       property 'delayed_price_time', from: 'delayedPriceTime' # time of the delayed market price
-      property 'extended_price', from: 'extendedPrice' # ?
-      property 'extended_price_time', from: 'extendedPriceTime' # ?
+      property 'extended_price', from: 'extendedPrice' # the pre market and post market price
+      property 'extended_change_percent', from: 'extendedChangePercent' # price change percent between extended_price and latest_price
+      property 'extended_change_percent_s', from: 'extendedChangePercent', with: lambda { |v|
+        if v
+          [
+            v.positive? ? '+' : '',
+            format('%.2f', v * 100),
+            '%'
+          ].join
+        end
+      } # change in percent as a String with a leading + or - sign
+      property 'extended_price_time', from: 'extendedPriceTime' # the last update time of extended_price
       property 'previous_close', from: 'previousClose' # adjusted close price of the last trading day of the stock
       property 'change' # change in value, calculated using calculation_price from previous_close
       property 'change_percent', from: 'changePercent' # change in percent, calculated using calculation_price from previous_close

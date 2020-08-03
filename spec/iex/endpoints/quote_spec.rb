@@ -18,6 +18,8 @@ describe IEX::Resources::Quote do
       expect(subject.week_52_low).to eq 87.73
       expect(subject.change_percent).to eq(-0.00508)
       expect(subject.change_percent_s).to eq '-0.51%'
+      expect(subject.extended_change_percent).to eq(-0.00008)
+      expect(subject.extended_change_percent_s).to eq '-0.01%'
     end
     it 'coerces times' do
       expect(subject.latest_update).to eq 1_554_408_000_193
