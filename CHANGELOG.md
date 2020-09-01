@@ -1,6 +1,5 @@
-### 1.1.3 (Next)
+### 1.2.0 (2020/09/01)
 
-* Your contribution here.
 * [#78](https://github.com/dblock/iex-ruby-client/pull/78): Added `Quote#extended_change_percent` and `Quote#extended_change_percent_s` properties to Quote - [@reddavis](https://github.com/reddavis).
 * [#71](https://github.com/dblock/iex-ruby-client/pull/71): Added `symbols` resource - [@ryosuke-endo](https://github.com/ryosuke-endo).
 * [#69](https://github.com/dblock/iex-ruby-client/pull/69): Fixed `ref_data_isin` request - [@bguban](https://github.com/bguban).
