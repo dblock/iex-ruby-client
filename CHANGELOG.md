@@ -1,3 +1,7 @@
+### 1.2.1 (Next)
+
+* Your contribution here.
+
 ### 1.2.0 (2020/09/01)
 
 * [#78](https://github.com/dblock/iex-ruby-client/pull/78): Added `Quote#extended_change_percent` and `Quote#extended_change_percent_s` properties to Quote - [@reddavis](https://github.com/reddavis).
