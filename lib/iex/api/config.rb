@@ -14,6 +14,7 @@ module IEX
         endpoint
         publishable_token
         secret_token
+        referer
       ].freeze
 
       attr_accessor(*Config::ATTRIBUTES)
@@ -29,6 +30,7 @@ module IEX
         self.logger = nil
         self.timeout = nil
         self.open_timeout = nil
+        self.referer = nil
       end
     end
 

@@ -463,6 +463,7 @@ timeout             | Optional open/read timeout in seconds.
 open_timeout        | Optional connection open timeout in seconds.
 publishable_token   | IEX Cloud API publishable token.
 endpoint            | Defaults to `https://cloud.iexapis.com/v1`.
+referer             | Optional string for HTTP `Referer` header, enables token domain management.
 
 ## Sandbox Environment
 
