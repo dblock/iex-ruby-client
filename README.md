@@ -468,7 +468,7 @@ endpoint            | Defaults to `https://cloud.iexapis.com/v1`.
 
 IEX recommends you use a sandbox token and endpoint for testing.
 
-However, please note that data in the IEX sandbox environment is scrambled. Therefore elements such as company and people names, descriptions, tags, and website URLs don't render any coherent data.
+However, please note that data in the IEX sandbox environment is scrambled. Therefore elements such as company and people names, descriptions, tags, and website URLs don't render any coherent data. In addition, results, such as closing market prices and dividend yield, are not accurate and vary on every call.
 
 See [IEX sandbox environment](https://intercom.help/iexcloud/en/articles/2915433-testing-with-the-iex-cloud-sandbox) for more information.
 
