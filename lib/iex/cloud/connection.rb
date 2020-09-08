@@ -15,6 +15,7 @@ module IEX
           options[:headers]['Accept'] = 'application/json; charset=utf-8'
           options[:headers]['Content-Type'] = 'application/json; charset=utf-8'
           options[:headers]['User-Agent'] = user_agent if user_agent
+          options[:headers]['Referer'] = referer if referer
           options[:proxy] = proxy if proxy
           options[:ssl] = { ca_path: ca_path, ca_file: ca_file } if ca_path || ca_file
 

@@ -1,5 +1,6 @@
 ### 1.2.1 (Next)
 
+* [#82](https://github.com/dblock/iex-ruby-client/pull/82): Added `config.referer` to set HTTP `Referer` header. This enables IEX's "Manage domains" domain locking for tokens - [@agrberg](https://github.com/agrberg).
 * Your contribution here.
 
 ### 1.2.0 (2020/09/01)
