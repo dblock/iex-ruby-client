@@ -1,7 +1,7 @@
 ### 1.2.1 (Next)
 
 * [#82](https://github.com/dblock/iex-ruby-client/pull/82): Added `config.referer` to set HTTP `Referer` header. This enables IEX's "Manage domains" domain locking for tokens - [@agrberg](https://github.com/agrberg).
-* [#70](https://github.com/dblock/iex-ruby-client/pull/70): Add type safe cast when ref_data_isin parameter is string - [@rodolfobandeira](https://github.com/rodolfobandeira).
+* [#70](https://github.com/dblock/iex-ruby-client/pull/70): Added support for `ref_data_isin` taking a single `String` parameter - [@rodolfobandeira](https://github.com/rodolfobandeira).
 * Your contribution here.
 
 ### 1.2.0 (2020/09/01)
@@ -10,7 +10,6 @@
 * [#71](https://github.com/dblock/iex-ruby-client/pull/71): Added `symbols` resource - [@ryosuke-endo](https://github.com/ryosuke-endo).
 * [#69](https://github.com/dblock/iex-ruby-client/pull/69): Fixed `ref_data_isin` request - [@bguban](https://github.com/bguban).
 * [#72](https://github.com/dblock/iex-ruby-client/pull/72): Cache `Faraday::Connection` for persistent adapters - [@dblock](https://github.com/dblock).
-* [#69](https://github.com/dblock/iex-ruby-client/pull/69): Fixed ref_data_isin request - [@bguban](https://github.com/bguban).
 
 ### 1.1.2 (2020/03/25)
 
