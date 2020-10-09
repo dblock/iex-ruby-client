@@ -378,16 +378,23 @@ See [#crypto](https://iexcloud.io/docs/api/#crypto) for detailed documentation o
 
 ### ISIN Mapping
 
-Converts ISIN to IEX Cloud symbols.
+Convert ISIN to IEX Cloud symbols.
 
 ```ruby
-symbols = client.ref_data_isin(['US0378331005'])
+symbols = client.ref_data_isin('US0378331005')
 
 symbols.first.exchange # NAS
 symbols.first.iex_id # IEX_4D48333344362D52
 symbols.first.region # US
 symbols.first.symbol # AAPL
 ```
+
+The API also lets you convert multiple ISINs to IEX Cloud symbols.
+
+```ruby
+symbols = client.ref_data_isin(['US0378331005', 'US0378331006'])
+```
+
 
 You can use `mapped: true` option to receive symbols grouped by their ISINs.
 
