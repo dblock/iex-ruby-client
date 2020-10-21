@@ -3,6 +3,7 @@
 * [#82](https://github.com/dblock/iex-ruby-client/pull/82): Added `config.referer` to set HTTP `Referer` header. This enables IEX's "Manage domains" domain locking for tokens - [@agrberg](https://github.com/agrberg).
 * [#70](https://github.com/dblock/iex-ruby-client/pull/70): Added support for `ref_data_isin` taking a single `String` parameter - [@rodolfobandeira](https://github.com/rodolfobandeira).
 * [#84](https://github.com/dblock/iex-ruby-client/pull/84): Added support for Advanced Stats API - [@FanaHOVA](https://github.com/fanahova).
+* Your contribution here.
 
 ### 1.2.0 (2020/09/01)
 
