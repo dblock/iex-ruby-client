@@ -33,7 +33,7 @@ module IEX
       property 'week_52_high_date', from: 'week52highDate'
       property 'week_52_low_date', from: 'week52lowDate'
       property 'beta'
- 
+
       def initialize(data = {})
         super
       end
