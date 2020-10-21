@@ -2,12 +2,12 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..'))
 
 require 'rubygems'
 require 'rspec'
+require 'dotenv'
 
 require 'iex-ruby-client'
 
-Dir[File.join(File.dirname(__FILE__), 'support', '**/*.rb')].each do |file|
+Dir[File.join(File.dirname(__FILE__), 'support', '**/*.rb')].sort.each do |file|
   require file
 end
 
-ENV['IEX_API_PUBLISHABLE_TOKEN'] ||= 'test-iex-api-publishable-token'
-ENV['IEX_API_SECRET_TOKEN'] ||= 'test-iex-api-secret-token'
+Dotenv.load('.env', '.env.sample')

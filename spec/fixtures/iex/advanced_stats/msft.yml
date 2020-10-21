@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloud.iexapis.com/v1/stock/MSFT/advanced-stats?token=test-iex-api-publishable-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - IEX Ruby Client/1.2.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 20 Oct 2020 23:57:04 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=767762d0898c40be8baf5aaf659ee42b; Max-Age=43200; Path=/; Expires=Wed,
+        21 Oct 2020 11:57:04 GMT
+      Iexcloud-Messages-Used:
+      - '3005'
+      Iexcloud-Premium-Messages-Used:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Request-Source
+    body:
+      encoding: ASCII-8BIT
+      string: '{"week52change":0.533539,"week52high":232.86,"week52low":132.52,"marketcap":1621141983000,"employees":163000,"day200MovingAvg":187.72,"day50MovingAvg":212.09,"float":7454581741,"avg10Volume":26989991,"avg30Volume":31404571.1,"ttmEPS":5.8207,"ttmDividendRate":2.04,"companyName":"Microsoft
+        Corp.","sharesOutstanding":7567650000,"maxChangePercent":7.1248,"year5ChangePercent":3.3093,"year2ChangePercent":1.0108,"year1ChangePercent":0.572482,"ytdChangePercent":0.367576,"month6ChangePercent":0.229899,"month3ChangePercent":0.082709,"month1ChangePercent":0.082549,"day30ChangePercent":0.025251,"day5ChangePercent":-0.007859,"nextDividendDate":"2020-11-18","dividendYield":0.009522920362244423,"nextEarningsDate":"2020-10-27","exDividendDate":"2020-08-19","peRatio":36.88,"beta":1.1472751624864646,"totalCash":136527000000,"currentDebt":5905000000,"revenue":143015000000,"grossProfit":96937000000,"totalRevenue":143015000000,"EBITDA":65259000000,"revenuePerShare":18.9,"revenuePerEmployee":877392.64,"debtToEquity":0.69,"profitMargin":0.3096248645247002,"enterpriseValue":1607892999000,"enterpriseValueToRevenue":11.24,"priceToSales":11.62,"priceToBook":13.703188252299162,"forwardPERatio":null,"pegRatio":5.6,"peHigh":40.49739130434783,"peLow":23.046956521739133,"week52highDate":"2020-09-02","week52lowDate":"2020-03-23","putCallRatio":0.36251766583920975}'
+  recorded_at: Tue, 20 Oct 2020 23:57:04 GMT
+recorded_with: VCR 6.0.0
