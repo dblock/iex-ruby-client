@@ -110,6 +110,23 @@ describe IEX::Api::Client do
         it 'creates a connection with a logger' do
           expect(client.send(:connection).builder.handlers).to include ::Faraday::Response::Logger
         end
+        context 'when configuring the logger' do
+          let(:logger) do
+            {
+              instance: Logger.new(STDOUT),
+              options: { foo: 'bar' },
+              proc: proc { |logger| logger.filter(/foo/, 'bar') }
+            }
+          end
+          it 'creates a connection with a configured logger' do
+            handler = client.send(:connection).builder.handlers.find { |h| h == ::Faraday::Response::Logger }
+            instance, options = handler.instance_variable_get(:@args)
+            proc = handler.instance_variable_get(:@block)
+            expect(instance).to eq(logger[:instance])
+            expect(options).to eq(logger[:options])
+            expect(proc).to eq(logger[:proc])
+          end
+        end
       end
     end
     context 'timeout options' do
