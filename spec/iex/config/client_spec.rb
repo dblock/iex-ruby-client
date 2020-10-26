@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe IEX::Api::Config do
+describe IEX::Api::Config::Client do
   before do
     IEX::Api.config.reset!
   end

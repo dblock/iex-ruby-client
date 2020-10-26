@@ -22,12 +22,15 @@ module IEX
       include Cloud::Connection
       include Cloud::Request
 
-      include Config
+      include Config::Client
+
+      attr_reader :logger
 
       def initialize(options = {})
-        Config::ATTRIBUTES.each do |key|
+        Config::Client::ATTRIBUTES.each do |key|
           send("#{key}=", options[key] || IEX::Api.config.send(key))
         end
+        @logger = Config::Logger.dup
       end
     end
   end
