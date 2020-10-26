@@ -466,7 +466,7 @@ user_agent          | User-agent, defaults to _IEX Ruby Client/version_.
 proxy               | Optional HTTP proxy.
 ca_path             | Optional SSL certificates path.
 ca_file             | Optional SSL certificates file.
-logger              | Optional `Logger` instance or hash to logs HTTP requests.
+logger              | Optional `Logger` instance or logger configuration to log HTTP requests.
 timeout             | Optional open/read timeout in seconds.
 open_timeout        | Optional connection open timeout in seconds.
 publishable_token   | IEX Cloud API publishable token.
@@ -475,15 +475,13 @@ referer             | Optional string for HTTP `Referer` header, enables token d
 
 ### Logging
 
-Faraday will not log HTTP requests by default. In order to do this you can either provide a `logger` instance or configuration Hash to `IEX::Api::Client`. A configuration hash allows you to supply the `instance`, `options`, and configuration `proc` to [Faraday](https://lostisland.github.io/faraday/middleware/logger#include-and-exclude-headersbodies).
+Faraday will not log HTTP requests by default. In order to do this you can either provide a `logger` instance or configuration attributes to `IEX::Api::Client`. Configuration allows you to supply the `instance`, `options`, and `proc` to [Faraday](https://lostisland.github.io/faraday/middleware/logger#include-and-exclude-headersbodies).
 
 ```ruby
 IEX::Api::Client.configure do |config|
-  config.logger = {
-    instance: Logger.new(STDOUT),
-    options: { bodies: true },
-    proc: proc { |logger| logger.filter(/T?[sp]k_\w+/i, '[REMOVED]') }
-  }
+  config.logger.instance = Logger.new(STDOUT)
+  config.logger.options = { bodies: true }
+  config.logger.proc = proc { |logger| logger.filter(/T?[sp]k_\w+/i, '[REMOVED]') }
 end
 ```
 

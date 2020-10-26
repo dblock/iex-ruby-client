@@ -7,7 +7,6 @@ module IEX
         ca_file
         ca_path
         endpoint
-        logger
         open_timeout
         proxy
         publishable_token
@@ -20,6 +19,8 @@ module IEX
       attr_accessor(*Config::ATTRIBUTES)
 
       def reset!
+        logger.reset!
+
         self.ca_file = defined?(OpenSSL) ? OpenSSL::X509::DEFAULT_CERT_FILE : nil
         self.ca_path = defined?(OpenSSL) ? OpenSSL::X509::DEFAULT_CERT_DIR : nil
         self.endpoint = 'https://cloud.iexapis.com/v1'
@@ -27,11 +28,18 @@ module IEX
         self.secret_token = ENV['IEX_API_SECRET_TOKEN']
         self.user_agent = "IEX Ruby Client/#{IEX::VERSION}"
 
-        self.logger = nil
         self.open_timeout = nil
         self.proxy = nil
         self.referer = nil
         self.timeout = nil
+      end
+
+      def logger
+        block_given? ? yield(LoggerConfig) : LoggerConfig
+      end
+
+      def logger=(instance)
+        logger.instance = instance
       end
     end
 

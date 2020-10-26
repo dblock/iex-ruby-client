@@ -22,6 +22,10 @@ describe IEX::Api::Client do
         second = client.send(:connection)
         expect(first).to equal second
       end
+      it 'sets a nil logger' do
+        expect(client.logger.instance).to be_nil
+        expect(client.send(:connection).builder.handlers).not_to include(::Faraday::Response::Logger)
+      end
       (IEX::Api::Config::ATTRIBUTES - [:logger]).each do |key|
         it "sets #{key}" do
           expect(client.send(key)).to eq IEX::Api::Config.send(key)
@@ -98,33 +102,33 @@ describe IEX::Api::Client do
     end
     context 'logger option' do
       let(:logger) { Logger.new(STDOUT) }
-      before do
-        IEX::Api.configure do |config|
-          config.logger = logger
+      context 'when assigning an instance' do
+        before do
+          IEX::Api.configure do |config|
+            config.logger = logger
+          end
+        end
+        context '#initialize' do
+          it 'sets logger' do
+            expect(client.logger.instance).to eq logger
+          end
+          it 'creates a connection with a logger' do
+            expect(client.send(:connection).builder.handlers).to include ::Faraday::Response::Logger
+          end
         end
       end
-      context '#initialize' do
-        it 'sets logger' do
-          expect(client.logger).to eq logger
-        end
-        it 'creates a connection with a logger' do
-          expect(client.send(:connection).builder.handlers).to include ::Faraday::Response::Logger
-        end
-        context 'when configuring the logger' do
-          let(:logger) do
-            {
-              instance: Logger.new(STDOUT),
-              options: { foo: 'bar' },
-              proc: proc { |logger| logger.filter(/foo/, 'bar') }
-            }
+      context 'when assigning a configuration' do
+        before do
+          IEX::Api.configure do |config|
+            config.logger.instance = logger
           end
-          it 'creates a connection with a configured logger' do
-            handler = client.send(:connection).builder.handlers.find { |h| h == ::Faraday::Response::Logger }
-            instance, options = handler.instance_variable_get(:@args)
-            proc = handler.instance_variable_get(:@block)
-            expect(instance).to eq(logger[:instance])
-            expect(options).to eq(logger[:options])
-            expect(proc).to eq(logger[:proc])
+        end
+        context '#initialize' do
+          it 'sets logger' do
+            expect(client.logger.instance).to eq logger
+          end
+          it 'creates a connection with a logger' do
+            expect(client.send(:connection).builder.handlers).to include ::Faraday::Response::Logger
           end
         end
       end

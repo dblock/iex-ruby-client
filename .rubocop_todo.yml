@@ -19,3 +19,4 @@ Style/AsciiComments:
 Style/ModuleFunction:
   Exclude:
     - 'lib/iex/api/config.rb'
+    - 'lib/iex/api/logger_config.rb'
