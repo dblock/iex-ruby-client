@@ -4,6 +4,7 @@
 * [#70](https://github.com/dblock/iex-ruby-client/pull/70): Added support for `ref_data_isin` taking a single `String` parameter - [@rodolfobandeira](https://github.com/rodolfobandeira).
 * [#84](https://github.com/dblock/iex-ruby-client/pull/84): Added support for Advanced Stats API - [@FanaHOVA](https://github.com/fanahova).
 * [#86](https://github.com/dblock/iex-ruby-client/issues/86): Added advanced logger configuration to `config.logger`. Now a hash with keys `:instance, :options, and :proc` can be passed and used directly with Faraday - [@agrberg](https://github.com/agrberg).
+* [#88](https://github.com/dblock/iex-ruby-client/pull/88): Updated logger configuration to work like `Config` class and allow attribute and block based configuration - [@agrberg](https://github.com/agrberg).
 * Your contribution here.
 
 ### 1.2.0 (2020/09/01)

@@ -30,13 +30,7 @@ module IEX
             connection.use ::Faraday::Request::UrlEncoded
             connection.use ::IEX::Cloud::Response::RaiseError
             connection.use ::FaradayMiddleware::ParseJson, content_type: /\bjson$/
-            if logger
-              if logger.is_a?(Hash)
-                connection.response :logger, logger[:instance], logger[:options] || {}, &logger[:proc]
-              else
-                connection.response :logger, logger
-              end
-            end
+            connection.response(:logger, logger.instance, logger.options, &logger.proc) if logger.instance
             connection.adapter ::Faraday.default_adapter
           end
         end

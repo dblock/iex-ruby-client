@@ -3,6 +3,7 @@ require 'spec_helper'
 describe IEX::Api::Client do
   before do
     IEX::Api.config.reset!
+    IEX::Api.logger.reset!
   end
   context 'with defaults' do
     let(:client) { described_class.new }
@@ -14,7 +15,7 @@ describe IEX::Api::Client do
         expect(client.user_agent).to eq "IEX Ruby Client/#{IEX::VERSION}"
       end
       it 'sets user-agent' do
-        expect(client.user_agent).to eq IEX::Api::Config.user_agent
+        expect(client.user_agent).to eq IEX::Api::Config::Client.user_agent
         expect(client.user_agent).to include IEX::VERSION
       end
       it 'caches the Faraday connection to allow persistent adapters' do
@@ -22,20 +23,24 @@ describe IEX::Api::Client do
         second = client.send(:connection)
         expect(first).to equal second
       end
-      (IEX::Api::Config::ATTRIBUTES - [:logger]).each do |key|
+      it 'sets a nil logger' do
+        expect(client.logger.instance).to be_nil
+        expect(client.send(:connection).builder.handlers).not_to include(::Faraday::Response::Logger)
+      end
+      IEX::Api::Config::Client::ATTRIBUTES.each do |key|
         it "sets #{key}" do
-          expect(client.send(key)).to eq IEX::Api::Config.send(key)
+          expect(client.send(key)).to eq IEX::Api::Config::Client.send(key)
         end
       end
     end
   end
   context 'with custom settings' do
     context '#initialize' do
-      IEX::Api::Config::ATTRIBUTES.each do |key|
+      IEX::Api::Config::Client::ATTRIBUTES.each do |key|
         context key.to_s do
           let(:client) { described_class.new(key => 'custom') }
           it "sets #{key}" do
-            expect(client.send(key)).to_not eq IEX::Api::Config.send(key)
+            expect(client.send(key)).to_not eq IEX::Api::Config::Client.send(key)
             expect(client.send(key)).to eq 'custom'
           end
         end
@@ -98,37 +103,48 @@ describe IEX::Api::Client do
     end
     context 'logger option' do
       let(:logger) { Logger.new(STDOUT) }
-      before do
-        IEX::Api.configure do |config|
-          config.logger = logger
+
+      after { IEX::Api.logger.reset! }
+
+      context 'when assigning an instance' do
+        before { IEX::Api.logger = logger }
+
+        context '#initialize' do
+          it 'sets logger' do
+            expect(client.logger.instance).to eq(logger)
+          end
+          it 'creates a connection with a logger' do
+            expect(client.send(:connection).builder.handlers).to include ::Faraday::Response::Logger
+          end
         end
       end
-      context '#initialize' do
-        it 'sets logger' do
-          expect(client.logger).to eq logger
-        end
-        it 'creates a connection with a logger' do
-          expect(client.send(:connection).builder.handlers).to include ::Faraday::Response::Logger
-        end
-        context 'when configuring the logger' do
-          let(:logger) do
-            {
-              instance: Logger.new(STDOUT),
-              options: { foo: 'bar' },
-              proc: proc { |logger| logger.filter(/foo/, 'bar') }
-            }
+
+      context 'when assigning a configuration' do
+        let(:opts) { { bodies: true } }
+        let(:proc_arg) { proc {} }
+
+        before do
+          IEX::Api.logger do |log_config|
+            log_config.instance = logger
+            log_config.options = opts
+            log_config.proc = proc_arg
           end
-          it 'creates a connection with a configured logger' do
-            handler = client.send(:connection).builder.handlers.find { |h| h == ::Faraday::Response::Logger }
-            instance, options = handler.instance_variable_get(:@args)
-            proc = handler.instance_variable_get(:@block)
-            expect(instance).to eq(logger[:instance])
-            expect(options).to eq(logger[:options])
-            expect(proc).to eq(logger[:proc])
+        end
+
+        context '#initialize' do
+          it 'sets logger' do
+            expect(client.logger.instance).to eq logger
+            expect(client.logger.options).to eq opts
+            expect(client.logger.proc).to eq proc_arg
+          end
+
+          it 'creates a connection with a logger' do
+            expect(client.send(:connection).builder.handlers).to include ::Faraday::Response::Logger
           end
         end
       end
     end
+
     context 'timeout options' do
       before do
         IEX::Api.configure do |config|

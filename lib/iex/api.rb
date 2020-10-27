@@ -16,5 +16,6 @@ require_relative 'endpoints/crypto'
 require_relative 'endpoints/ref_data'
 require_relative 'endpoints/stock_market'
 
-require_relative 'api/config'
+require_relative 'api/config/client'
+require_relative 'api/config/logger'
 require_relative 'api/client'

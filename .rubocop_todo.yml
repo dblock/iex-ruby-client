@@ -18,4 +18,5 @@ Style/AsciiComments:
 # SupportedStyles: module_function, extend_self
 Style/ModuleFunction:
   Exclude:
-    - 'lib/iex/api/config.rb'
+    - 'lib/iex/api/config/client.rb'
+    - 'lib/iex/api/config/logger.rb'
