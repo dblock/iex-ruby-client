@@ -16,6 +16,8 @@ module IEX
         ].freeze
 
         class << self
+          include Config::Logger::Accessor
+
           attr_accessor(*ATTRIBUTES)
 
           def reset!
@@ -32,16 +34,16 @@ module IEX
             self.timeout = nil
           end
         end
-      end
-    end
 
-    class << self
-      def configure
-        block_given? ? yield(Config::Client) : Config::Client
-      end
+        module Accessor
+          def configure
+            block_given? ? yield(Config::Client) : Config::Client
+          end
 
-      def config
-        Config::Client
+          def config
+            Config::Client
+          end
+        end
       end
     end
   end

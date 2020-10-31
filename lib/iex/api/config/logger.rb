@@ -17,16 +17,16 @@ module IEX
             self.proc = nil
           end
         end
-      end
-    end
 
-    class << self
-      def logger
-        block_given? ? yield(Config::Logger) : Config::Logger
-      end
+        module Accessor
+          def logger
+            block_given? ? yield(Config::Logger) : Config::Logger
+          end
 
-      def logger=(instance)
-        logger.instance = instance
+          def logger=(instance)
+            logger.instance = instance
+          end
+        end
       end
     end
   end

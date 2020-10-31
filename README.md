@@ -445,7 +445,7 @@ client.post('ref-data/isin', isin: ['US0378331005'], token: 'secret_token') # [{
 You can configure client options globally or directly with a `IEX::Api::Client` instance.
 
 ```ruby
-IEX::Api::Client.configure do |config|
+IEX::Api.configure do |config|
   config.publishable_token = ENV['IEX_API_PUBLISHABLE_TOKEN']
   config.endpoint = 'https://sandbox.iexapis.com/v1' # use sandbox environment
 end
@@ -478,11 +478,23 @@ referer             | Optional string for HTTP `Referer` header, enables token d
 Faraday will not log HTTP requests by default. In order to do this you can either provide a `logger` instance or configuration attributes to `IEX::Api::Client`. Configuration allows you to supply the `instance`, `options`, and `proc` to [Faraday](https://lostisland.github.io/faraday/middleware/logger#include-and-exclude-headersbodies).
 
 ```ruby
-IEX::Api::Client.configure do |config|
-  config.logger.instance = Logger.new(STDOUT)
+logger_instance = Logger.new(STDOUT)
+
+IEX::Api.configure do |config|
+  config.logger.instance = logger_instance
   config.logger.options = { bodies: true }
   config.logger.proc = proc { |logger| logger.filter(/T?[sp]k_\w+/i, '[REMOVED]') }
 end
+# or
+IEX::Api.logger do |logger|
+  logger.instance = logger_instance
+  logger.options = …
+  logger.proc = …
+end
+# or
+IEX::Api.logger = logger_instance
+# or
+IEX::Api::Client.new(logger: logger_instance)
 ```
 
 ## Sandbox Environment

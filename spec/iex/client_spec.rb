@@ -120,6 +120,26 @@ describe IEX::Api::Client do
               expect(client.send(:connection).builder.handlers).to include ::Faraday::Response::Logger
             end
           end
+
+          context 'when assigning through `configure.logger`' do
+            it 'sets the logger' do
+              IEX::Api.configure.logger = logger
+              expect(client.logger.instance).to eq(logger)
+            end
+          end
+
+          context 'when passing in at initialization' do
+            it 'sets the logger' do
+              client = described_class.new(logger: logger)
+              expect(client.logger.instance).to eq(logger)
+            end
+
+            it 'can overwrite a set logger' do
+              IEX::Api.logger = logger
+              client = described_class.new(logger: nil)
+              expect(client.logger.instance).to be_nil
+            end
+          end
         end
       end
 
