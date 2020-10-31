@@ -1,4 +1,4 @@
-### 1.2.1 (Next)
+### 1.3.0 (2020/10/31)
 
 * [#82](https://github.com/dblock/iex-ruby-client/pull/82): Added `config.referer` to set HTTP `Referer` header. This enables IEX's "Manage domains" domain locking for tokens - [@agrberg](https://github.com/agrberg).
 * [#70](https://github.com/dblock/iex-ruby-client/pull/70): Added support for `ref_data_isin` taking a single `String` parameter - [@rodolfobandeira](https://github.com/rodolfobandeira).
@@ -6,7 +6,6 @@
 * [#86](https://github.com/dblock/iex-ruby-client/issues/86): Added advanced logger configuration to `config.logger`. Now a hash with keys `:instance, :options, and :proc` can be passed and used directly with Faraday - [@agrberg](https://github.com/agrberg).
 * [#88](https://github.com/dblock/iex-ruby-client/pull/88): Updated logger configuration to work like `Config` class and allow attribute and block based configuration - [@agrberg](https://github.com/agrberg).
 * [#89](https://github.com/dblock/iex-ruby-client/pull/89): Backfill breaking `Config#logger` setting change from [#88](https://github.com/dblock/iex-ruby-client/pull/88) - [@agrberg](https://github.com/agrberg).
-* Your contribution here.
 
 ### 1.2.0 (2020/09/01)
 
