@@ -2,20 +2,20 @@ module IEX
   module Api
     module Config
       module Logger
-        extend self
-
         ATTRIBUTES = %i[
           instance
           options
           proc
         ].freeze
 
-        attr_accessor(*ATTRIBUTES)
+        class << self
+          attr_accessor(*ATTRIBUTES)
 
-        def reset!
-          self.instance = nil
-          self.options = {}
-          self.proc = nil
+          def reset!
+            self.instance = nil
+            self.options = {}
+            self.proc = nil
+          end
         end
       end
     end

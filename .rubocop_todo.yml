@@ -11,12 +11,3 @@
 Style/AsciiComments:
   Exclude:
     - 'lib/iex/resources/quote.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, Autocorrect.
-# SupportedStyles: module_function, extend_self
-Style/ModuleFunction:
-  Exclude:
-    - 'lib/iex/api/config/client.rb'
-    - 'lib/iex/api/config/logger.rb'

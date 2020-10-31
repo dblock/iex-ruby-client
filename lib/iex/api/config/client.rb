@@ -2,8 +2,6 @@ module IEX
   module Api
     module Config
       module Client
-        extend self
-
         ATTRIBUTES = %i[
           ca_file
           ca_path
@@ -17,20 +15,22 @@ module IEX
           user_agent
         ].freeze
 
-        attr_accessor(*ATTRIBUTES)
+        class << self
+          attr_accessor(*ATTRIBUTES)
 
-        def reset!
-          self.ca_file = defined?(OpenSSL) ? OpenSSL::X509::DEFAULT_CERT_FILE : nil
-          self.ca_path = defined?(OpenSSL) ? OpenSSL::X509::DEFAULT_CERT_DIR : nil
-          self.endpoint = 'https://cloud.iexapis.com/v1'
-          self.publishable_token = ENV['IEX_API_PUBLISHABLE_TOKEN']
-          self.secret_token = ENV['IEX_API_SECRET_TOKEN']
-          self.user_agent = "IEX Ruby Client/#{IEX::VERSION}"
+          def reset!
+            self.ca_file = defined?(OpenSSL) ? OpenSSL::X509::DEFAULT_CERT_FILE : nil
+            self.ca_path = defined?(OpenSSL) ? OpenSSL::X509::DEFAULT_CERT_DIR : nil
+            self.endpoint = 'https://cloud.iexapis.com/v1'
+            self.publishable_token = ENV['IEX_API_PUBLISHABLE_TOKEN']
+            self.secret_token = ENV['IEX_API_SECRET_TOKEN']
+            self.user_agent = "IEX Ruby Client/#{IEX::VERSION}"
 
-          self.open_timeout = nil
-          self.proxy = nil
-          self.referer = nil
-          self.timeout = nil
+            self.open_timeout = nil
+            self.proxy = nil
+            self.referer = nil
+            self.timeout = nil
+          end
         end
       end
     end

@@ -183,6 +183,10 @@ describe IEX::Api::Client do
         IEX::Api.configure { |config| config.user_agent = 'custom/user-agent-2' }
         expect(described_class.new.user_agent).not_to eq(pre_config_client.user_agent)
       end
+
+      it 'should not allow the client to reset' do
+        expect { client.reset! }.to raise_error(NoMethodError)
+      end
     end
 
     context 'without a token' do

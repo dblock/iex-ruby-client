@@ -22,7 +22,7 @@ module IEX
       include Cloud::Connection
       include Cloud::Request
 
-      include Config::Client
+      attr_accessor(*Config::Client::ATTRIBUTES)
 
       attr_reader :logger
 
