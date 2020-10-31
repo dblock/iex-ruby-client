@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe IEX::Api::Config::Logger do
-  before { IEX::Api.logger.reset! }
   after { IEX::Api.logger.reset! }
 
   describe '#defaults' do
