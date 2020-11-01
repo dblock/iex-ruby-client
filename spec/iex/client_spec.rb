@@ -101,20 +101,44 @@ describe IEX::Api::Client do
         end
       end
     end
+
     context 'logger option' do
       let(:logger) { Logger.new(STDOUT) }
 
       after { IEX::Api.logger.reset! }
 
       context 'when assigning an instance' do
-        before { IEX::Api.logger = logger }
-
         context '#initialize' do
-          it 'sets logger' do
-            expect(client.logger.instance).to eq(logger)
+          context 'when directly assigning `logger`' do
+            before { IEX::Api.logger = logger }
+
+            it 'sets logger' do
+              expect(client.logger.instance).to eq(logger)
+            end
+
+            it 'creates a connection with a logger' do
+              expect(client.send(:connection).builder.handlers).to include ::Faraday::Response::Logger
+            end
           end
-          it 'creates a connection with a logger' do
-            expect(client.send(:connection).builder.handlers).to include ::Faraday::Response::Logger
+
+          context 'when assigning through `configure.logger`' do
+            it 'sets the logger' do
+              IEX::Api.configure.logger = logger
+              expect(client.logger.instance).to eq(logger)
+            end
+          end
+
+          context 'when passing in at initialization' do
+            it 'sets the logger' do
+              client = described_class.new(logger: logger)
+              expect(client.logger.instance).to eq(logger)
+            end
+
+            it 'can overwrite a set logger' do
+              IEX::Api.logger = logger
+              client = described_class.new(logger: nil)
+              expect(client.logger.instance).to be_nil
+            end
           end
         end
       end
@@ -164,6 +188,27 @@ describe IEX::Api::Client do
         end
       end
     end
+
+    context 'when resetting/changing configuration' do
+      before do
+        IEX::Api.configure { |config| config.user_agent = 'custom/user-agent' }
+      end
+
+      it 'does not reset the client' do
+        expect { IEX::Api.config.reset! }.not_to change(client, :user_agent).from('custom/user-agent')
+      end
+
+      it 'effects the next client' do
+        pre_config_client = described_class.new
+        IEX::Api.configure { |config| config.user_agent = 'custom/user-agent-2' }
+        expect(described_class.new.user_agent).not_to eq(pre_config_client.user_agent)
+      end
+
+      it 'should not allow the client to reset' do
+        expect { client.reset! }.to raise_error(NoMethodError)
+      end
+    end
+
     context 'without a token' do
       let(:client) { described_class.new }
       it 'results in an API key error', vcr: { cassette_name: 'client/access_denied' } do

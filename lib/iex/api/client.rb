@@ -1,5 +1,8 @@
 module IEX
   module Api
+    extend Config::Client::Accessor
+    extend Config::Logger::Accessor
+
     class Client
       include Endpoints::AdvancedStats
       include Endpoints::Chart
@@ -22,7 +25,7 @@ module IEX
       include Cloud::Connection
       include Cloud::Request
 
-      include Config::Client
+      attr_accessor(*Config::Client::ATTRIBUTES)
 
       attr_reader :logger
 
@@ -31,6 +34,7 @@ module IEX
           send("#{key}=", options[key] || IEX::Api.config.send(key))
         end
         @logger = Config::Logger.dup
+        @logger.instance = options[:logger] if options.key?(:logger)
       end
     end
   end
