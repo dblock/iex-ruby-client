@@ -1,5 +1,6 @@
 ### 1.3.1 (Next)
 * Your contribution here.
+* [#91](https://github.com/dblock/iex-ruby-client/pull/91): Added support for Balance Sheet API endpoint - [@tylerhaugen-stanley](https://github.com/tylerhaugen-stanley).
 
 ### 1.3.0 (2020/10/31)
 
