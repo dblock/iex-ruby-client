@@ -307,6 +307,8 @@ advanced_stats.week_52_low_date # "2019-01-03
 advanced_stats.beta # 1.4661365583766115
 ```
 
+See [#advanced-stats](https://iexcloud.io/docs/api/#advanced-stats) for detailed documentation or [advanced_stats.rb](lib/iex/resources/advanced_stats.rb) for returned fields.
+
 ### Get Dividends
 
 Fetches dividends for a symbol.
