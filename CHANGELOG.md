@@ -1,6 +1,6 @@
 ### 1.3.1 (Next)
 * Your contribution here.
-* [#90](https://github.com/dblock/iex-ruby-client/pull/90): Added documentation for advanced stats and removed `avg_30_Volume` from advanced stats since it is found in key stats- [@tylerhaugen-stanley](https://github.com/tylerhaugen-stanley).
+* [#90](https://github.com/dblock/iex-ruby-client/pull/90): Added documentation for advanced stats and removed `avg_30_Volume` from advanced stats since it is found in key stats - [@tylerhaugen-stanley](https://github.com/tylerhaugen-stanley).
 
 ### 1.3.0 (2020/10/31)
 
