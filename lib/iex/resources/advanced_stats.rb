@@ -28,7 +28,6 @@ module IEX
       property 'forward_pe_ratio', from: 'forwardPERatio'
       property 'pe_high', from: 'peHigh'
       property 'pe_low', from: 'peLow'
-      property 'avg_30_volume', from: 'avg30Volume'
       property 'peg_ratio', from: 'pegRatio'
       property 'week_52_high_date', from: 'week52highDate'
       property 'week_52_low_date', from: 'week52lowDate'
