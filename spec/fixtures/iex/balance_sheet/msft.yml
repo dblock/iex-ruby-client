@@ -1,0 +1,53 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: https://cloud.iexapis.com/v1/stock/MSFT/balance-sheet?token=test-iex-api-publishable-token
+      body:
+        encoding: US-ASCII
+        string: ""
+      headers:
+        Accept:
+          - application/json; charset=utf-8
+        User-Agent:
+          - IEX Ruby Client/1.0.1
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Mon, 08 Jul 2019 04:53:26 GMT
+        Content-Type:
+          - application/json; charset=utf-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Set-Cookie:
+          - ctoken=153fb65c56854cf995c8112a5cd5f554; Max-Age=43200; Path=/; Expires=Mon,
+            08 Jul 2019 16:53:26 GMT
+        Iexcloud-Messages-Used:
+          - "1000"
+        X-Content-Type-Options:
+          - nosniff
+        Strict-Transport-Security:
+          - max-age=15768000
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Allow-Credentials:
+          - "true"
+        Access-Control-Allow-Methods:
+          - GET, OPTIONS
+        Access-Control-Allow-Headers:
+          - Origin, X-Requested-With, Content-Type, Accept
+      body:
+        encoding: ASCII-8BIT
+        string: '{"symbol":"MSFT","balancesheet":[{"reportDate":"2017-03-31","fiscalDate":"2017-03-31","currency":"USD","currentCash":25913000000,"shortTermInvestments":40388000000,"receivables":23186000000,"inventory":3956000000,"otherCurrentAssets":12087000000,"currentAssets":131339000000,"longTermInvestments":170799000000,"propertyPlantEquipment":41304000000,"goodwill":null,"intangibleAssets":null,"otherAssets":22283000000,"totalAssets":365725000000,"accountsPayable":55888000000,"currentLongTermDebt":8784000000,"otherCurrentLiabilities":40230000000,"totalCurrentLiabilities":116866000000,"longTermDebt":93735000000,"otherLiabilities":4268000000,"minorityInterest":0,"totalLiabilities":258578000000,"commonStock":40201000000,"retainedEarnings":70400000000,"treasuryStock":null,"capitalSurplus":null,"shareholderEquity":107147000000,"netTangibleAssets":107147000000}]}'
+      http_version:
+    recorded_at: Mon, 08 Jul 2019 04:53:26 GMT
+recorded_with: VCR 4.0.0

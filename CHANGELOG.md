@@ -1,5 +1,6 @@
 ### 1.3.1 (Next)
 * Your contribution here.
+* Added support for Balance Sheet API endpoint - [@tylerhaugen-stanley](https://github.com/tylerhaugen-stanley).
 
 ### 1.3.0 (2020/10/31)
 
