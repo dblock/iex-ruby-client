@@ -305,7 +305,7 @@ See [#earnings](https://iexcloud.io/docs/api/#earnings) for detailed documentati
 
 ### Get Income Statement
 
-Fetches income statement for a symbol.
+Fetches income statements for a symbol.
 
 ```ruby
 income_statements = client.income('MSFT')
@@ -325,9 +325,8 @@ income.gross_profit_dollar # '$20,335,000,000'
 See [#income-statement](https://iexcloud.io/docs/api/#income-statement) for detailed documentation or [income.rb](lib/iex/resources/income.rb) for returned fields.
 
 ### Get Balance Sheet
-TODO Shouldn't this return multiple balance sheets??? Mention annual and quarter options??
 
-Fetches balance sheet for a symbol.
+Fetches balance sheets for a symbol.
 
 ```ruby
 balance_sheets = client.balance_sheet('MSFT')
