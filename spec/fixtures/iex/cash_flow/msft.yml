@@ -1,0 +1,56 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: https://cloud.iexapis.com/v1/stock/MSFT/cash-flow?token=test-iex-api-publishable-token
+      body:
+        encoding: US-ASCII
+        string: ''
+      headers:
+        Accept:
+          - application/json; charset=utf-8
+        Content-Type:
+          - application/json; charset=utf-8
+        User-Agent:
+          - IEX Ruby Client/1.2.1
+        Accept-Encoding:
+          - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Server:
+          - nginx
+        Date:
+          - Tue, 20 Oct 2020 23:57:04 GMT
+        Content-Type:
+          - application/json; charset=utf-8
+        Transfer-Encoding:
+          - chunked
+        Connection:
+          - keep-alive
+        Set-Cookie:
+          - ctoken=767762d0898c40be8baf5aaf659ee42b; Max-Age=43200; Path=/; Expires=Wed,
+            21 Oct 2020 11:57:04 GMT
+        Iexcloud-Messages-Used:
+          - '3005'
+        Iexcloud-Premium-Messages-Used:
+          - '0'
+        X-Content-Type-Options:
+          - nosniff
+        Strict-Transport-Security:
+          - max-age=15768000
+        Access-Control-Allow-Origin:
+          - "*"
+        Access-Control-Allow-Credentials:
+          - 'true'
+        Access-Control-Allow-Methods:
+          - GET, OPTIONS
+        Access-Control-Allow-Headers:
+          - Origin, X-Requested-With, Content-Type, Accept, Request-Source
+      body:
+        encoding: ASCII-8BIT
+        string: '{"symbol":"MSFT","cashflow":[{"reportDate":"2018-09-30","fiscalDate":"2018-09-30","currency":"USD","netIncome":14125000000,"depreciation":2754000000,"changesInReceivables":-9082000000,"changesInInventories":1942000000,"cashChange":-6058000000,"cashFlow":19523000000,"capitalExpenditures":-3041000000,"investments":-926000000,"investingActivityOther":1566000000,"totalInvestingCashFlows":-3001000000,"dividendsPaid":-3530000000,"netBorrowings":-27000000,"otherFinancingCashFlows":-260000000,"cashFlowFinancing":-22580000000,"exchangeRateEffect":null}]}'
+    recorded_at: Tue, 20 Oct 2020 23:57:04 GMT
+recorded_with: VCR 6.0.0

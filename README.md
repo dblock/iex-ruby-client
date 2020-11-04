@@ -321,6 +321,27 @@ income.gross_profit_dollar # '$20,335,000,000'
 
 See [#income-statement](https://iexcloud.io/docs/api/#income-statement) for detailed documentation or [income.rb](lib/iex/resources/income.rb) for returned fields.
 
+### Get Income Statement
+
+Fetches cash flow statements for a symbol.
+
+```ruby
+cash_flow_statements = client.cash_flow('MSFT')
+
+# Multiple cash flow statements are returned with 1 API call.
+cash_flow = cash_flow_statements.first
+cash_flow.report_date # '2018-09-30'
+cash_flow.fiscal_date # '2018-09-30'
+cash_flow.currency # 'USD'
+cash_flow.net_income # 14_125_000_000
+cash_flow.net_income_dollar # '$14,125,000,000'
+cash_flow.depreciation # 2_754_000_000
+cash_flow.depreciation_dollar # '$2,754,000,000'
+...
+```
+
+See [#cash-flow](https://iexcloud.io/docs/api/#cash-flow) for detailed documentation or [cash_flow.rb](lib/iex/resources/cash_flow.rb) for returned fields.
+
 ### Get Sector Performance
 
 Fetches latest sector's performance.
