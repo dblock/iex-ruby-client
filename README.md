@@ -23,6 +23,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get Dividends](#get-dividends)
   - [Get Earnings](#get-earnings)
   - [Get Income Statement](#get-income-statement)
+  - [Get Cash Flow Statement](#get-cash-flow-statement)
   - [Get Sector Performance](#get-sector-performance)
   - [Get Largest Trades](#get-largest-trades)
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
@@ -321,7 +322,7 @@ income.gross_profit_dollar # '$20,335,000,000'
 
 See [#income-statement](https://iexcloud.io/docs/api/#income-statement) for detailed documentation or [income.rb](lib/iex/resources/income.rb) for returned fields.
 
-### Get Income Statement
+### Get Cash Flow Statement
 
 Fetches cash flow statements for a symbol.
 
