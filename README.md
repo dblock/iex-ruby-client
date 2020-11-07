@@ -304,6 +304,7 @@ advanced_stats.peg_ratio # 2.19
 advanced_stats.week_52_high_date # "2019-11-19"
 advanced_stats.week_52_low_date # "2019-01-03
 advanced_stats.beta # 1.4661365583766115
+advanced_stats.put_call_ratio # 0.6780362005229779
 ```
 
 See [#advanced-stats](https://iexcloud.io/docs/api/#advanced-stats) for detailed documentation or [advanced_stats.rb](lib/iex/resources/advanced_stats.rb) for returned fields.
