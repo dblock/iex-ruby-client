@@ -15,7 +15,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get a Quote](#get-a-quote)
   - [Get a OHLC (Open, High, Low, Close) price](#get-a-ohlc-open-high-low-close-price)
   - [Get a Market OHLC (Open, High, Low, Close) prices](#get-a-market-ohlc-open-high-low-close-prices)
-  - [Get Historial Prices](#get-historial-prices)
+  - [Get Historical Prices](#get-historial-prices)
   - [Get Company Information](#get-company-information)
   - [Get a Company Logo](#get-a-company-logo)
   - [Get Recent News](#get-recent-news)
