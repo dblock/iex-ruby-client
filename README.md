@@ -310,6 +310,8 @@ Fetches income statement for a symbol.
 income = client.income('MSFT')
 
 income.report_date # '2019-03-31'
+income.fiscal_date # '2019-03-31'
+income.currency # 'USD'
 income.total_revenue # 30_505_000_000
 income.total_revenue_dollar # '$30,505,000,000'
 income.cost_of_revenue # 10_170_000_000

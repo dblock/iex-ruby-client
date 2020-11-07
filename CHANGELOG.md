@@ -1,5 +1,6 @@
 ### 1.3.1 (Next)
 * Your contribution here.
+* [#93](https://github.com/dblock/iex-ruby-client/pull/93): Added `fiscal_date` and `currency` to income statements - [@tylerhaugen-stanley](https://github.com/tylerhaugen-stanley).
 
 ### 1.3.0 (2020/10/31)
 
