@@ -21,6 +21,7 @@ module IEX
       property 'property_plant_equipment', from: 'propertyPlantEquipment'
       property 'property_plant_equipment_dollar', from: 'propertyPlantEquipment', with: ->(v) { to_dollar(amount: v) }
       property 'goodwill'
+      property 'goodwill_dollar', from: 'goodwill', with: ->(v) { to_dollar(amount: v) }
       property 'intangible_assets', from: 'intangibleAssets'
       property 'intangible_assets_dollar', from: 'intangibleAssets', with: ->(v) { to_dollar(amount: v) }
       property 'other_assets', from: 'otherAssets'
