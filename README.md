@@ -300,7 +300,6 @@ advanced_stats.price_to_book # 8.805916432564608
 advanced_stats.forward_pe_ratio # 18.14
 advanced_stats.pe_high # 22.61
 advanced_stats.pe_low # 11.98
-advanced_stats.avg_30_volume # 
 advanced_stats.peg_ratio # 2.19
 advanced_stats.week_52_high_date # "2019-11-19"
 advanced_stats.week_52_low_date # "2019-01-03
