@@ -137,7 +137,7 @@ Fetches a list of historical prices.
 
 This is a complicated endpoint as there is a lot of granularity over the time period of data returned. See below for a variety of ways to request data, NOTE: this is _NOT_ as exhaustive list. 
 ```ruby
-historial_prices = client.historical_prices('MSFT') # 23 days of data
+historial_prices = client.historical_prices('MSFT') # One month of data
 historial_prices = client.historical_prices('MSFT', {range: 'max'}) # All data up to 15 years
 historial_prices = client.historical_prices('MSFT', {range: 'ytd'}) # Year to date data
 historial_prices = client.historical_prices('MSFT', {range: '5y'}) # 5 years of data
@@ -150,7 +150,7 @@ historial_prices = client.historical_prices('MSFT', {range: 'date', date: '2020-
 
 Once you have the data over the preferred time period, you can access the following fields
 ```ruby
-historial_prices = client.historical_prices('MSFT') # 23 days of data
+historial_prices = client.historical_prices('MSFT') # One month of data
 
 historial_price = historial_prices.first
 historical_price.date # 2020-10-07
