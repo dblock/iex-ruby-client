@@ -39,6 +39,7 @@ describe IEX::Resources::AdvancedStats do
       expect(subject.week_52_high_date).to eq '2020-09-02'
       expect(subject.pe_low).to eq 23.046956521739133
       expect(subject.week_52_low_date).to eq '2020-03-23'
+      expect(subject.put_call_ratio).to eq 0.36251766583920975
     end
   end
 
