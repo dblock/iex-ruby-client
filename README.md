@@ -24,6 +24,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get Dividends](#get-dividends)
   - [Get Earnings](#get-earnings)
   - [Get Income Statement](#get-income-statement)
+  - [Get Balance Sheet](#get-balance-sheet)
   - [Get Sector Performance](#get-sector-performance)
   - [Get Largest Trades](#get-largest-trades)
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
@@ -348,11 +349,13 @@ See [#earnings](https://iexcloud.io/docs/api/#earnings) for detailed documentati
 
 ### Get Income Statement
 
-Fetches income statement for a symbol.
+Fetches income statements for a symbol.
 
 ```ruby
-income = client.income('MSFT')
+income_statements = client.income('MSFT')
 
+# Multiple income statements are returned with 1 API call.
+income = income_statements.first
 income.report_date # '2019-03-31'
 income.total_revenue # 30_505_000_000
 income.total_revenue_dollar # '$30,505,000,000'
@@ -364,6 +367,27 @@ income.gross_profit_dollar # '$20,335,000,000'
 ```
 
 See [#income-statement](https://iexcloud.io/docs/api/#income-statement) for detailed documentation or [income.rb](lib/iex/resources/income.rb) for returned fields.
+
+### Get Balance Sheet
+
+Fetches balance sheets for a symbol.
+
+```ruby
+balance_sheets = client.balance_sheet('MSFT')
+
+# Multiple balance sheets are returned with 1 API call.
+balance_sheet = balance_sheets.first
+balance_sheet.report_date # '2017-03-31'
+balance_sheet.fiscal_date # '2017-03-31'
+balance_sheet.currency # 'USD'
+balance_sheet.current_cash # 25_913_000_000
+balance_sheet.current_cash_dollar # '$25,913,000,000'
+balance_sheet.short_term_investments # 40_388_000_000
+balance_sheet.short_term_investments_dollar # '$40,388,000,000'
+...
+```
+
+See [#balance-sheet](https://iexcloud.io/docs/api/#balance-sheet) for detailed documentation or [balance_sheet.rb](lib/iex/resources/balance_sheet.rb) for returned fields.
 
 ### Get Sector Performance
 
