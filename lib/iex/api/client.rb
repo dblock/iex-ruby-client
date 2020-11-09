@@ -5,6 +5,7 @@ module IEX
 
     class Client
       include Endpoints::AdvancedStats
+      include Endpoints::BalanceSheet
       include Endpoints::CashFlow
       include Endpoints::Chart
       include Endpoints::Company
