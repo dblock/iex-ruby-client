@@ -1,5 +1,6 @@
 require_relative 'endpoints/advanced_stats'
 require_relative 'endpoints/balance_sheet'
+require_relative 'endpoints/cash_flow'
 require_relative 'endpoints/chart'
 require_relative 'endpoints/company'
 require_relative 'endpoints/dividends'
