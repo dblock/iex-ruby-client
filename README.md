@@ -21,9 +21,12 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get Recent News](#get-recent-news)
   - [Get Chart](#get-chart)
   - [Get Key Stats](#get-key-stats)
+  - [Get Advanced Stats](#get-advanced-stats)
   - [Get Dividends](#get-dividends)
   - [Get Earnings](#get-earnings)
   - [Get Income Statement](#get-income-statement)
+  - [Get Balance Sheet](#get-balance-sheet)
+  - [Get Cash Flow Statement](#get-cash-flow-statement)
   - [Get Sector Performance](#get-sector-performance)
   - [Get Largest Trades](#get-largest-trades)
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
@@ -303,6 +306,49 @@ key_stats.beta # 1.4135449089973444
 
 See [#key-stats](https://iexcloud.io/docs/api/#key-stats) for detailed documentation or [key_stats.rb](lib/iex/resources/key_stats.rb) for returned fields.
 
+### Get Advanced Stats
+
+Fetches company's advanced stats for a symbol
+
+```ruby
+advanced_stats = client.advanced_stats('MSFT')
+
+advanced_stats.total_cash # 66301000000
+advanced_stats.total_cash_dollars # "$66,301,000,000"
+advanced_stats.current_debt # 20748000000
+advanced_stats.current_debt_dollars # "$2,074,8000,000"
+advanced_stats.revenue # 265809000000
+advanced_stats.revenue_dollars # "$265,809,000,000"
+advanced_stats.gross_profit # 101983000000 
+advanced_stats.gross_profit_dollar # "$101,983,000,000"
+advanced_stats.total_revenue # 265809000000
+advanced_stats.total_revenue_dollar # "$265,809,000,000"
+advanced_stats.ebitda # 80342000000
+advanced_stats.ebitda_dollar # "$80,342,000,000"
+advanced_stats.revenue_per_share # 0.02
+advanced_stats.revenue_per_share_dollar # "$0.02"
+advanced_stats.revenue_per_employee # 2013704.55
+advanced_stats.revenue_per_employee_dollar # "$2,013,704.55"
+advanced_stats.debt_to_equity # 1.07
+advanced_stats.profit_margin # 22.396157
+advanced_stats.enterprise_value # 1022460690000
+advanced_stats.enterprise_value_dollar # "$1,022,460,690,000"
+advanced_stats.enterprise_value_to_revenue # 3.85
+advanced_stats.price_to_sales # 3.49
+advanced_stats.price_to_sales_dollar # "$3.49"
+advanced_stats.price_to_book # 8.805916432564608
+advanced_stats.forward_pe_ratio # 18.14
+advanced_stats.pe_high # 22.61
+advanced_stats.pe_low # 11.98
+advanced_stats.peg_ratio # 2.19
+advanced_stats.week_52_high_date # "2019-11-19"
+advanced_stats.week_52_low_date # "2019-01-03
+advanced_stats.beta # 1.4661365583766115
+advanced_stats.put_call_ratio # 0.6780362005229779
+```
+
+See [#advanced-stats](https://iexcloud.io/docs/api/#advanced-stats) for detailed documentation or [advanced_stats.rb](lib/iex/resources/advanced_stats.rb) for returned fields.
+
 ### Get Dividends
 
 Fetches dividends for a symbol.
@@ -342,12 +388,16 @@ See [#earnings](https://iexcloud.io/docs/api/#earnings) for detailed documentati
 
 ### Get Income Statement
 
-Fetches income statement for a symbol.
+Fetches income statements for a symbol.
 
 ```ruby
-income = client.income('MSFT')
+income_statements = client.income('MSFT')
 
+# Multiple income statements are returned with 1 API call.
+income = income_statements.first
 income.report_date # '2019-03-31'
+income.fiscal_date # '2019-03-31'
+income.currency # 'USD'
 income.total_revenue # 30_505_000_000
 income.total_revenue_dollar # '$30,505,000,000'
 income.cost_of_revenue # 10_170_000_000
@@ -358,6 +408,48 @@ income.gross_profit_dollar # '$20,335,000,000'
 ```
 
 See [#income-statement](https://iexcloud.io/docs/api/#income-statement) for detailed documentation or [income.rb](lib/iex/resources/income.rb) for returned fields.
+
+### Get Balance Sheet
+
+Fetches balance sheets for a symbol.
+
+```ruby
+balance_sheets = client.balance_sheet('MSFT')
+
+# Multiple balance sheets are returned with 1 API call.
+balance_sheet = balance_sheets.first
+balance_sheet.report_date # '2017-03-31'
+balance_sheet.fiscal_date # '2017-03-31'
+balance_sheet.currency # 'USD'
+balance_sheet.current_cash # 25_913_000_000
+balance_sheet.current_cash_dollar # '$25,913,000,000'
+balance_sheet.short_term_investments # 40_388_000_000
+balance_sheet.short_term_investments_dollar # '$40,388,000,000'
+...
+```
+
+See [#balance-sheet](https://iexcloud.io/docs/api/#balance-sheet) for detailed documentation or [balance_sheet.rb](lib/iex/resources/balance_sheet.rb) for returned fields.
+
+### Get Cash Flow Statement
+
+Fetches cash flow statements for a symbol.
+
+```ruby
+cash_flow_statements = client.cash_flow('MSFT')
+
+# Multiple cash flow statements are returned with 1 API call.
+cash_flow = cash_flow_statements.first
+cash_flow.report_date # '2018-09-30'
+cash_flow.fiscal_date # '2018-09-30'
+cash_flow.currency # 'USD'
+cash_flow.net_income # 14_125_000_000
+cash_flow.net_income_dollar # '$14,125,000,000'
+cash_flow.depreciation # 2_754_000_000
+cash_flow.depreciation_dollar # '$2,754,000,000'
+...
+```
+
+See [#cash-flow](https://iexcloud.io/docs/api/#cash-flow) for detailed documentation or [cash_flow.rb](lib/iex/resources/cash_flow.rb) for returned fields.
 
 ### Get Sector Performance
 
