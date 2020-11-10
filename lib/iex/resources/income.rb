@@ -2,6 +2,8 @@ module IEX
   module Resources
     class Income < Resource
       property 'report_date', from: 'reportDate'
+      property 'fiscal_date', from: 'fiscalDate'
+      property 'currency'
       property 'total_revenue', from: 'totalRevenue'
       property 'total_revenue_dollar', from: 'totalRevenue', with: ->(v) { to_dollar(amount: v) }
       property 'cost_of_revenue', from: 'costOfRevenue'
