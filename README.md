@@ -138,6 +138,16 @@ market['SPY'].low #
 
 Fetches a list of historical prices.
 
+There are currently a few limitations of this endpoint compared to the official IEX one.
+
+Options for `range` include:
+`max, ytd, 5y, 2y, 1y, 6m, 3m, 1m, 5d, date`
+
+NOTE: If you use the `date` value for the range parameter, you _must_ include the `chartByDay: 'true'` query param or an `ArgumentError` will be raised.
+
+`Query params` supported include:
+`chartByDay`
+
 This is a complicated endpoint as there is a lot of granularity over the time period of data returned. See below for a variety of ways to request data, NOTE: this is _NOT_ as exhaustive list. 
 ```ruby
 historial_prices = client.historical_prices('MSFT') # One month of data
@@ -146,8 +156,7 @@ historial_prices = client.historical_prices('MSFT', {range: 'ytd'}) # Year to da
 historial_prices = client.historical_prices('MSFT', {range: '5y'}) # 5 years of data
 historial_prices = client.historical_prices('MSFT', {range: '6m'}) # 6 months of data
 historial_prices = client.historical_prices('MSFT', {range: '5d'}) # 5 days of data
-historial_prices = client.historical_prices('MSFT', {range: 'date', date: '2020-09-30'}) # Minute-by-minute data for the entire day.
-historial_prices = client.historical_prices('MSFT', {range: 'date', date: '2020-09-30', chartByDate: 'true'}) # One day of data
+historial_prices = client.historical_prices('MSFT', {range: 'date', date: '2020-09-30', chartByDay: 'true'}) # One day of data
 ...
 ```
 

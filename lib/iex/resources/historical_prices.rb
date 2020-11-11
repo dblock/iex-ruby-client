@@ -22,10 +22,10 @@ module IEX
       property 'u_volume', from: 'uVolume'
       property 'change'
       property 'change_percent', from: 'changePercent'
-      property 'change_percent_s', from: 'changePercent', with: ->(v) { float_to_percentage(v) }
+      property 'change_percent_s', from: 'changePercent', with: ->(v) { percentage_to_string(v) }
       property 'label'
       property 'change_over_time', from: 'changeOverTime'
-      property 'change_over_time_s', from: 'changeOverTime', with: ->(v) { float_to_percentage(v) }
+      property 'change_over_time_s', from: 'changeOverTime', with: ->(v) { percentage_to_string(v) }
     end
   end
 end
