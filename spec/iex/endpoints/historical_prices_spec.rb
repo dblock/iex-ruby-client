@@ -77,9 +77,45 @@ describe IEX::Resources::HistorialPrices do
         end
       end
 
-      context 'with a range provided for a specific date and chartByDay param',
+      context 'with a range provided for a specific date (passed as a Date object) and chartByDay param',
               vcr: { cassette_name: 'historical_prices/msft_date_and_chart_by_day' } do
         options = { range: 'date', date: Date.parse('2020-11-10'), chartByDay: 'true' }
+        subject { client.historical_prices('MSFT', options) }
+        let(:historical_price) { subject.first }
+
+        it 'retrieves historical prices' do
+          expect(subject.size).to eq 1
+          expect(historical_price.date).to eq '2020-11-10'
+          expect(historical_price.open).to eq 214.50
+          expect(historical_price.open_dollar).to eq '$214.50'
+          expect(historical_price.close).to eq 211.01
+          expect(historical_price.close_dollar).to eq '$211.01'
+          expect(historical_price.high).to eq 216.50
+          expect(historical_price.high_dollar).to eq '$216.50'
+          expect(historical_price.low).to eq 209.72
+          expect(historical_price.low_dollar).to eq '$209.72'
+          expect(historical_price.volume).to eq 44_045_120
+          expect(historical_price.u_open).to eq 214.50
+          expect(historical_price.u_open_dollar).to eq '$214.50'
+          expect(historical_price.u_close).to eq 211.01
+          expect(historical_price.u_close_dollar).to eq '$211.01'
+          expect(historical_price.u_low).to eq 209.72
+          expect(historical_price.u_low_dollar).to eq '$209.72'
+          expect(historical_price.u_high).to eq 216.50
+          expect(historical_price.u_high_dollar).to eq '$216.50'
+          expect(historical_price.u_volume).to eq 44_045_120
+          expect(historical_price.change).to eq(-7.38)
+          expect(historical_price.change_percent).to eq(-3.3793)
+          expect(historical_price.change_percent_s).to eq '-3.38%'
+          expect(historical_price.label).to eq 'Nov 10'
+          expect(historical_price.change_over_time).to eq(-0.033793)
+          expect(historical_price.change_over_time_s).to eq '-0.03%'
+        end
+      end
+
+      context 'with a range provided for a specific date (passed as a string) and chartByDay param',
+              vcr: { cassette_name: 'historical_prices/msft_date_and_chart_by_day' } do
+        options = { range: 'date', date: '20201110', chartByDay: 'true' }
         subject { client.historical_prices('MSFT', options) }
         let(:historical_price) { subject.first }
 
@@ -131,14 +167,6 @@ describe IEX::Resources::HistorialPrices do
         end
       end
 
-      context "with a range as 'date' but without date as a Date object" do
-        subject { client.historical_prices('MSFT', range: 'date', date: '2020-11-10') }
-
-        it 'fails with ArgumentError' do
-          expect { subject }.to raise_error ArgumentError
-        end
-      end
-
       context "with a range as 'date' but without chartByDay query param" do
         subject { client.historical_prices('MSFT', range: 'date', date: Date.parse('2020-11-10')) }
 
@@ -147,6 +175,14 @@ describe IEX::Resources::HistorialPrices do
         end
       end
 
+      context "with a range as 'date' but without date as a Date object that is incorrectly formatted",
+              vcr: { cassette_name: 'historical_prices/invalid_date' } do
+        subject { client.historical_prices('MSFT', range: 'date', date: '2020-11-10', chartByDay: 'true') }
+
+        it 'fails with ArgumentError' do
+          expect { subject }.to raise_error IEX::Errors::ClientError
+        end
+      end
     end
   end
 

@@ -4,15 +4,16 @@ module IEX
       def historical_prices(symbol, options = {})
         if options[:range] == 'date'
           raise ArgumentError unless options[:date].present?
-          raise ArgumentError, 'Date param must be a Date object' unless options[:date].class == Date
           raise ArgumentError unless options[:chartByDay].present?
         end
 
         options = options.dup
+        # Historical prices IEX endpoint expects dates passed in a specific format - YYYYMMDD
+        options[:date] = options[:date].strftime('%Y%m%d') if options[:date].is_a?(Date)
+
         path = "stock/#{symbol}/chart"
         path += "/#{options[:range]}" if options.key?(:range)
-        # IEX needs dates passed in a specific format - YYYYMMDD
-        path += "/#{options[:date].strftime('%Y%m%d')}" if options[:range] == 'date'
+        path += "/#{options[:date]}" if options[:range] == 'date'
 
         # We only want options to include query params at this point, remove :range and :date
         options.delete(:range)

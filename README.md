@@ -143,9 +143,11 @@ There are currently a few limitations of this endpoint compared to the official 
 Options for `range` include:
 `max, ytd, 5y, 2y, 1y, 6m, 3m, 1m, 5d, date`
 
-NOTE: If you use the `date` value for the range parameter:
- * You _must_ pass a Date object or an `ArgumentError` will be raised.
- * You _must_ include the `chartByDay: 'true'` query param or an `ArgumentError` will be raised.
+NOTE: If you use the `date` value for the `range` parameter:
+ * The options _must_ include a date entry, `{date: ...}`
+ * The date value _must_ be either a Date object, or a string formatted as `YYYYMMDD`. Anything else will result in an `IEX::Errors::ClientError`.
+ * The options _must_ include `chartByDay: 'true'` or an `ArgumentError` will be raised.
+ * See below for examples.
 
 `Query params` supported include:
 `chartByDay`
@@ -158,7 +160,8 @@ historial_prices = client.historical_prices('MSFT', {range: 'ytd'}) # Year to da
 historial_prices = client.historical_prices('MSFT', {range: '5y'}) # 5 years of data
 historial_prices = client.historical_prices('MSFT', {range: '6m'}) # 6 months of data
 historial_prices = client.historical_prices('MSFT', {range: '5d'}) # 5 days of data
-historial_prices = client.historical_prices('MSFT', {range: 'date', date: Date.parse('2020-09-30'), chartByDay: 'true'}) # One day of data
+historial_prices = client.historical_prices('MSFT', {range: 'date', date: '20200930', chartByDay: 'true'}) # One day of data
+historial_prices = client.historical_prices('MSFT', {range: 'date', date: Date.parse('2020-09-30)', chartByDay: 'true'}) # One day of data
 ...
 ```
 
