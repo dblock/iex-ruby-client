@@ -4,6 +4,7 @@
 * [#91](https://github.com/dblock/iex-ruby-client/pull/91): Added support for Balance Sheet API endpoint - [@tylerhaugen-stanley](https://github.com/tylerhaugen-stanley).
 * [#92](https://github.com/dblock/iex-ruby-client/pull/92): Added support for Cash Flow Statements API endpoint - [@tylerhaugen-stanley](https://github.com/tylerhaugen-stanley).
 * [#93](https://github.com/dblock/iex-ruby-client/pull/93): Added `fiscal_date` and `currency` to income statements - [@tylerhaugen-stanley](https://github.com/tylerhaugen-stanley).
+* [#94](https://github.com/dblock/iex-ruby-client/pull/94): Added `historical_prices` API endpoint - [@tylerhaugen-stanley](https://github.com/tylerhaugen-stanley).
 
 ### 1.3.0 (2020/10/31)
 

@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloud.iexapis.com/v1/stock/MSFT/chart/5d?token=test-iex-api-publishable-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - IEX Ruby Client/1.3.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 11 Nov 2020 14:09:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=95520aaad32643e9b294d472a4d74762; Max-Age=43200; Path=/; Expires=Thu,
+        12 Nov 2020 02:09:28 GMT
+      Iexcloud-Messages-Used:
+      - '50'
+      Iexcloud-Premium-Messages-Used:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Request-Source
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"date":"2020-11-04","open":214.02,"close":216.39,"high":218.32,"low":212.42,"volume":42311777,"uOpen":214.02,"uClose":216.39,"uHigh":218.32,"uLow":212.42,"uVolume":42311777,"change":0,"changePercent":0,"label":"Nov
+        4","changeOverTime":0},{"date":"2020-11-05","open":222.04,"close":223.29,"high":224.12,"low":221.15,"volume":36080137,"uOpen":222.04,"uClose":223.29,"uHigh":224.12,"uLow":221.15,"uVolume":36080137,"change":6.9,"changePercent":3.1887,"label":"Nov
+        5","changeOverTime":0.031887},{"date":"2020-11-06","open":222.26,"close":223.72,"high":224.36,"low":218.03,"volume":25231895,"uOpen":222.26,"uClose":223.72,"uHigh":224.36,"uLow":218.03,"uVolume":25231895,"change":0.43,"changePercent":0.1926,"label":"Nov
+        6","changeOverTime":0.033874},{"date":"2020-11-09","open":224.44,"close":218.39,"high":228.12,"low":217.88,"volume":44394950,"uOpen":224.44,"uClose":218.39,"uHigh":228.12,"uLow":217.88,"uVolume":44394950,"change":-5.33,"changePercent":-2.3824,"label":"Nov
+        9","changeOverTime":0.009243},{"date":"2020-11-10","open":214.5,"close":211.01,"high":216.5,"low":209.72,"volume":44045120,"uOpen":214.5,"uClose":211.01,"uHigh":216.5,"uLow":209.72,"uVolume":44045120,"change":-7.38,"changePercent":-3.3793,"label":"Nov
+        10","changeOverTime":-0.024863}]'
+  recorded_at: Wed, 11 Nov 2020 14:09:28 GMT
+recorded_with: VCR 6.0.0
