@@ -15,7 +15,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get a Quote](#get-a-quote)
   - [Get a OHLC (Open, High, Low, Close) price](#get-a-ohlc-open-high-low-close-price)
   - [Get a Market OHLC (Open, High, Low, Close) prices](#get-a-market-ohlc-open-high-low-close-prices)
-  - [Get Historical Prices](#get-historial-prices)
+  - [Get Historical Prices](#get-historical-prices)
   - [Get Company Information](#get-company-information)
   - [Get a Company Logo](#get-a-company-logo)
   - [Get Recent News](#get-recent-news)
@@ -143,7 +143,9 @@ There are currently a few limitations of this endpoint compared to the official 
 Options for `range` include:
 `max, ytd, 5y, 2y, 1y, 6m, 3m, 1m, 5d, date`
 
-NOTE: If you use the `date` value for the range parameter, you _must_ include the `chartByDay: 'true'` query param or an `ArgumentError` will be raised.
+NOTE: If you use the `date` value for the range parameter:
+ * You _must_ pass a Date object or an `ArgumentError` will be raised.
+ * You _must_ include the `chartByDay: 'true'` query param or an `ArgumentError` will be raised.
 
 `Query params` supported include:
 `chartByDay`
@@ -156,7 +158,7 @@ historial_prices = client.historical_prices('MSFT', {range: 'ytd'}) # Year to da
 historial_prices = client.historical_prices('MSFT', {range: '5y'}) # 5 years of data
 historial_prices = client.historical_prices('MSFT', {range: '6m'}) # 6 months of data
 historial_prices = client.historical_prices('MSFT', {range: '5d'}) # 5 days of data
-historial_prices = client.historical_prices('MSFT', {range: 'date', date: '2020-09-30', chartByDay: 'true'}) # One day of data
+historial_prices = client.historical_prices('MSFT', {range: 'date', date: Date.parse('2020-09-30'), chartByDay: 'true'}) # One day of data
 ...
 ```
 

@@ -79,7 +79,7 @@ describe IEX::Resources::HistorialPrices do
 
       context 'with a range provided for a specific date and chartByDay param',
               vcr: { cassette_name: 'historical_prices/msft_date_and_chart_by_day' } do
-        options = { range: 'date', date: '2020-11-10', chartByDay: 'true' }
+        options = { range: 'date', date: Date.parse('2020-11-10'), chartByDay: 'true' }
         subject { client.historical_prices('MSFT', options) }
         let(:historical_price) { subject.first }
 
@@ -131,7 +131,7 @@ describe IEX::Resources::HistorialPrices do
         end
       end
 
-      context "with a range as 'date' but without chartByDay query param" do
+      context "with a range as 'date' but without date as a Date object" do
         subject { client.historical_prices('MSFT', range: 'date', date: '2020-11-10') }
 
         it 'fails with ArgumentError' do
@@ -139,14 +139,14 @@ describe IEX::Resources::HistorialPrices do
         end
       end
 
-      context "with a range as 'date' but with an invalid date param",
-              vcr: { cassette_name: 'historical_prices/invalid_date' } do
-        subject { client.historical_prices('MSFT', range: 'date', date: 'invalid', chartByDay: 'true') }
+      context "with a range as 'date' but without chartByDay query param" do
+        subject { client.historical_prices('MSFT', range: 'date', date: Date.parse('2020-11-10')) }
 
-        it 'fails with ClientError' do
-          expect { subject }.to raise_error IEX::Errors::ClientError
+        it 'fails with ArgumentError' do
+          expect { subject }.to raise_error ArgumentError
         end
       end
+
     end
   end
 
