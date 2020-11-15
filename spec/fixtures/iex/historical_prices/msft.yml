@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloud.iexapis.com/v1/stock/MSFT/chart?token=test-iex-api-publishable-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - IEX Ruby Client/1.3.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 07 Nov 2020 23:11:00 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=4539f7faf3d04f8abd91eea7da545e6b; Max-Age=43200; Path=/; Expires=Sun,
+        08 Nov 2020 11:11:00 GMT
+      Iexcloud-Messages-Used:
+      - '230'
+      Iexcloud-Premium-Messages-Used:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Request-Source
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"date":"2020-10-07","open":207.06,"close":209.83,"high":210.11,"low":206.72,"volume":25681054,"uOpen":207.06,"uClose":209.83,"uHigh":210.11,"uLow":206.72,"uVolume":25681054,"change":0,"changePercent":0,"label":"Oct
+        7","changeOverTime":0},{"date":"2020-10-08","open":210.51,"close":210.58,"high":211.19,"low":208.32,"volume":19925837,"uOpen":210.51,"uClose":210.58,"uHigh":211.19,"uLow":208.32,"uVolume":19925837,"change":0.75,"changePercent":0.3574,"label":"Oct
+        8","changeOverTime":0.003574},{"date":"2020-10-09","open":211.23,"close":215.81,"high":215.86,"low":211.23,"volume":26458047,"uOpen":211.23,"uClose":215.81,"uHigh":215.86,"uLow":211.23,"uVolume":26458047,"change":5.23,"changePercent":2.4836,"label":"Oct
+        9","changeOverTime":0.028499},{"date":"2020-10-12","open":218.79,"close":221.4,"high":223.86,"low":216.81,"volume":40461368,"uOpen":218.79,"uClose":221.4,"uHigh":223.86,"uLow":216.81,"uVolume":40461368,"change":5.59,"changePercent":2.5902,"label":"Oct
+        12","changeOverTime":0.05514},{"date":"2020-10-13","open":222.72,"close":222.86,"high":225.21,"low":220.43,"volume":28950843,"uOpen":222.72,"uClose":222.86,"uHigh":225.21,"uLow":220.43,"uVolume":28950843,"change":1.46,"changePercent":0.6594,"label":"Oct
+        13","changeOverTime":0.062098},{"date":"2020-10-14","open":223,"close":220.86,"high":224.22,"low":219.13,"volume":23451713,"uOpen":223,"uClose":220.86,"uHigh":224.22,"uLow":219.13,"uVolume":23451713,"change":-2,"changePercent":-0.8974,"label":"Oct
+        14","changeOverTime":0.052566},{"date":"2020-10-15","open":217.1,"close":219.66,"high":220.36,"low":216.01,"volume":22733064,"uOpen":217.1,"uClose":219.66,"uHigh":220.36,"uLow":216.01,"uVolume":22733064,"change":-1.2,"changePercent":-0.5433,"label":"Oct
+        15","changeOverTime":0.046847},{"date":"2020-10-16","open":220.15,"close":219.66,"high":222.29,"low":219.32,"volume":26057882,"uOpen":220.15,"uClose":219.66,"uHigh":222.29,"uLow":219.32,"uVolume":26057882,"change":0,"changePercent":0,"label":"Oct
+        16","changeOverTime":0.046847},{"date":"2020-10-19","open":220.42,"close":214.22,"high":222.3,"low":213.72,"volume":27625841,"uOpen":220.42,"uClose":214.22,"uHigh":222.3,"uLow":213.72,"uVolume":27625841,"change":-5.44,"changePercent":-2.4766,"label":"Oct
+        19","changeOverTime":0.020922},{"date":"2020-10-20","open":215.8,"close":214.65,"high":217.37,"low":213.09,"volume":22753511,"uOpen":215.8,"uClose":214.65,"uHigh":217.37,"uLow":213.09,"uVolume":22753511,"change":0.43,"changePercent":0.2007,"label":"Oct
+        20","changeOverTime":0.022971},{"date":"2020-10-21","open":213.12,"close":214.8,"high":216.92,"low":213.12,"volume":22724906,"uOpen":213.12,"uClose":214.8,"uHigh":216.92,"uLow":213.12,"uVolume":22724906,"change":0.15,"changePercent":0.0699,"label":"Oct
+        21","changeOverTime":0.023686},{"date":"2020-10-22","open":213.93,"close":214.89,"high":216.06,"low":211.7,"volume":22351450,"uOpen":213.93,"uClose":214.89,"uHigh":216.06,"uLow":211.7,"uVolume":22351450,"change":0.09,"changePercent":0.0419,"label":"Oct
+        22","changeOverTime":0.024115},{"date":"2020-10-23","open":215.03,"close":216.23,"high":216.28,"low":213.16,"volume":18879608,"uOpen":215.03,"uClose":216.23,"uHigh":216.28,"uLow":213.16,"uVolume":18879608,"change":1.34,"changePercent":0.6236,"label":"Oct
+        23","changeOverTime":0.030501},{"date":"2020-10-26","open":213.85,"close":210.08,"high":216.34,"low":208.1,"volume":37111561,"uOpen":213.85,"uClose":210.08,"uHigh":216.34,"uLow":208.1,"uVolume":37111561,"change":-6.15,"changePercent":-2.8442,"label":"Oct
+        26","changeOverTime":0.001191},{"date":"2020-10-27","open":211.59,"close":213.25,"high":214.67,"low":210.33,"volume":36700325,"uOpen":211.59,"uClose":213.25,"uHigh":214.67,"uLow":210.33,"uVolume":36700325,"change":3.17,"changePercent":1.5089,"label":"Oct
+        27","changeOverTime":0.016299},{"date":"2020-10-28","open":207.67,"close":202.68,"high":208.84,"low":202.1,"volume":51195593,"uOpen":207.67,"uClose":202.68,"uHigh":208.84,"uLow":202.1,"uVolume":51195593,"change":-10.57,"changePercent":-4.9566,"label":"Oct
+        28","changeOverTime":-0.034075},{"date":"2020-10-29","open":204.07,"close":204.72,"high":207.36,"low":203.37,"volume":31432563,"uOpen":204.07,"uClose":204.72,"uHigh":207.36,"uLow":203.37,"uVolume":31432563,"change":2.04,"changePercent":1.0065,"label":"Oct
+        29","changeOverTime":-0.024353},{"date":"2020-10-30","open":203.5,"close":202.47,"high":204.29,"low":199.62,"volume":36980111,"uOpen":203.5,"uClose":202.47,"uHigh":204.29,"uLow":199.62,"uVolume":36980111,"change":-2.25,"changePercent":-1.0991,"label":"Oct
+        30","changeOverTime":-0.035076},{"date":"2020-11-02","open":204.29,"close":202.33,"high":205.28,"low":200.12,"volume":30842163,"uOpen":204.29,"uClose":202.33,"uHigh":205.28,"uLow":200.12,"uVolume":30842163,"change":-0.14,"changePercent":-0.0691,"label":"Nov
+        2","changeOverTime":-0.035743},{"date":"2020-11-03","open":203.89,"close":206.43,"high":208.12,"low":203.12,"volume":27512030,"uOpen":203.89,"uClose":206.43,"uHigh":208.12,"uLow":203.12,"uVolume":27512030,"change":4.1,"changePercent":2.0264,"label":"Nov
+        3","changeOverTime":-0.016204},{"date":"2020-11-04","open":214.02,"close":216.39,"high":218.32,"low":212.42,"volume":42311777,"uOpen":214.02,"uClose":216.39,"uHigh":218.32,"uLow":212.42,"uVolume":42311777,"change":9.96,"changePercent":4.8249,"label":"Nov
+        4","changeOverTime":0.031263},{"date":"2020-11-05","open":222.04,"close":223.29,"high":224.12,"low":221.15,"volume":36080137,"uOpen":222.04,"uClose":223.29,"uHigh":224.12,"uLow":221.15,"uVolume":36080137,"change":6.9,"changePercent":3.1887,"label":"Nov
+        5","changeOverTime":0.064147},{"date":"2020-11-06","open":222.26,"close":223.72,"high":224.36,"low":218.03,"volume":25231895,"uOpen":222.26,"uClose":223.72,"uHigh":224.36,"uLow":218.03,"uVolume":25231895,"change":0.43,"changePercent":0.1926,"label":"Nov
+        6","changeOverTime":0.066196}]'
+  recorded_at: Sat, 07 Nov 2020 23:11:00 GMT
+recorded_with: VCR 6.0.0

@@ -15,6 +15,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get a Quote](#get-a-quote)
   - [Get a OHLC (Open, High, Low, Close) price](#get-a-ohlc-open-high-low-close-price)
   - [Get a Market OHLC (Open, High, Low, Close) prices](#get-a-market-ohlc-open-high-low-close-prices)
+  - [Get Historical Prices](#get-historical-prices)
   - [Get Company Information](#get-company-information)
   - [Get a Company Logo](#get-a-company-logo)
   - [Get Recent News](#get-recent-news)
@@ -24,6 +25,8 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get Dividends](#get-dividends)
   - [Get Earnings](#get-earnings)
   - [Get Income Statement](#get-income-statement)
+  - [Get Balance Sheet](#get-balance-sheet)
+  - [Get Cash Flow Statement](#get-cash-flow-statement)
   - [Get Sector Performance](#get-sector-performance)
   - [Get Largest Trades](#get-largest-trades)
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
@@ -130,6 +133,57 @@ market['SPY'].open.time # 2018-06-12 16:30:00 +0300
 market['SPY'].high #
 market['SPY'].low #
 ```
+
+### Get Historical Prices
+
+Fetches a list of historical prices.
+
+There are currently a few limitations of this endpoint compared to the official IEX one.
+
+Options for `range` include:
+`max, ytd, 5y, 2y, 1y, 6m, 3m, 1m, 5d, date`
+
+NOTE: If you use the `date` value for the `range` parameter:
+ * The options _must_ include a date entry, `{date: ...}`
+ * The date value _must_ be either a Date object, or a string formatted as `YYYYMMDD`. Anything else will result in an `IEX::Errors::ClientError`.
+ * The options _must_ include `chartByDay: 'true'` or an `ArgumentError` will be raised.
+ * See below for examples.
+
+`Query params` supported include:
+`chartByDay`
+
+This is a complicated endpoint as there is a lot of granularity over the time period of data returned. See below for a variety of ways to request data, NOTE: this is _NOT_ as exhaustive list. 
+```ruby
+historial_prices = client.historical_prices('MSFT') # One month of data
+historial_prices = client.historical_prices('MSFT', {range: 'max'}) # All data up to 15 years
+historial_prices = client.historical_prices('MSFT', {range: 'ytd'}) # Year to date data
+historial_prices = client.historical_prices('MSFT', {range: '5y'}) # 5 years of data
+historial_prices = client.historical_prices('MSFT', {range: '6m'}) # 6 months of data
+historial_prices = client.historical_prices('MSFT', {range: '5d'}) # 5 days of data
+historial_prices = client.historical_prices('MSFT', {range: 'date', date: '20200930', chartByDay: 'true'}) # One day of data
+historial_prices = client.historical_prices('MSFT', {range: 'date', date: Date.parse('2020-09-30)', chartByDay: 'true'}) # One day of data
+...
+```
+
+Once you have the data over the preferred time period, you can access the following fields
+```ruby
+historial_prices = client.historical_prices('MSFT') # One month of data
+
+historial_price = historial_prices.first
+historical_price.date # 2020-10-07
+historical_price.open #207.06
+historical_price.open_dollar # '$207.06'
+historical_price.close # 209.83
+historical_price.close_dollar # '$209.83'
+historical_price.high # 210.11
+historical_price.high_dollar # '$210.11'
+historical_price.low # 206.72
+historical_price.low_dollar # '$206.72'
+historical_price.volume # 25681054
+...
+```
+
+There are a lot of options here so I would recommend viewing the official IEX documentation [#historical-prices](https://iexcloud.io/docs/api/#historical-prices) or [historical_prices.rb](lib/iex/resources/historical_prices.rb) for returned fields.
 
 ### Get Company Information
 
@@ -349,12 +403,16 @@ See [#earnings](https://iexcloud.io/docs/api/#earnings) for detailed documentati
 
 ### Get Income Statement
 
-Fetches income statement for a symbol.
+Fetches income statements for a symbol.
 
 ```ruby
-income = client.income('MSFT')
+income_statements = client.income('MSFT')
 
+# Multiple income statements are returned with 1 API call.
+income = income_statements.first
 income.report_date # '2019-03-31'
+income.fiscal_date # '2019-03-31'
+income.currency # 'USD'
 income.total_revenue # 30_505_000_000
 income.total_revenue_dollar # '$30,505,000,000'
 income.cost_of_revenue # 10_170_000_000
@@ -365,6 +423,48 @@ income.gross_profit_dollar # '$20,335,000,000'
 ```
 
 See [#income-statement](https://iexcloud.io/docs/api/#income-statement) for detailed documentation or [income.rb](lib/iex/resources/income.rb) for returned fields.
+
+### Get Balance Sheet
+
+Fetches balance sheets for a symbol.
+
+```ruby
+balance_sheets = client.balance_sheet('MSFT')
+
+# Multiple balance sheets are returned with 1 API call.
+balance_sheet = balance_sheets.first
+balance_sheet.report_date # '2017-03-31'
+balance_sheet.fiscal_date # '2017-03-31'
+balance_sheet.currency # 'USD'
+balance_sheet.current_cash # 25_913_000_000
+balance_sheet.current_cash_dollar # '$25,913,000,000'
+balance_sheet.short_term_investments # 40_388_000_000
+balance_sheet.short_term_investments_dollar # '$40,388,000,000'
+...
+```
+
+See [#balance-sheet](https://iexcloud.io/docs/api/#balance-sheet) for detailed documentation or [balance_sheet.rb](lib/iex/resources/balance_sheet.rb) for returned fields.
+
+### Get Cash Flow Statement
+
+Fetches cash flow statements for a symbol.
+
+```ruby
+cash_flow_statements = client.cash_flow('MSFT')
+
+# Multiple cash flow statements are returned with 1 API call.
+cash_flow = cash_flow_statements.first
+cash_flow.report_date # '2018-09-30'
+cash_flow.fiscal_date # '2018-09-30'
+cash_flow.currency # 'USD'
+cash_flow.net_income # 14_125_000_000
+cash_flow.net_income_dollar # '$14,125,000,000'
+cash_flow.depreciation # 2_754_000_000
+cash_flow.depreciation_dollar # '$2,754,000,000'
+...
+```
+
+See [#cash-flow](https://iexcloud.io/docs/api/#cash-flow) for detailed documentation or [cash_flow.rb](lib/iex/resources/cash_flow.rb) for returned fields.
 
 ### Get Sector Performance
 

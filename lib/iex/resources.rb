@@ -1,10 +1,13 @@
 require_relative 'resources/resource'
 
 require_relative 'resources/advanced_stats'
+require_relative 'resources/balance_sheet'
+require_relative 'resources/cash_flow'
 require_relative 'resources/chart'
 require_relative 'resources/company'
 require_relative 'resources/dividends'
 require_relative 'resources/earnings'
+require_relative 'resources/historical_prices'
 require_relative 'resources/income'
 require_relative 'resources/key_stats'
 require_relative 'resources/largest_trades'

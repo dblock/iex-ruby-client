@@ -5,11 +5,14 @@ module IEX
 
     class Client
       include Endpoints::AdvancedStats
+      include Endpoints::BalanceSheet
+      include Endpoints::CashFlow
       include Endpoints::Chart
       include Endpoints::Company
       include Endpoints::Crypto
       include Endpoints::Dividends
       include Endpoints::Earnings
+      include Endpoints::HistoricalPrices
       include Endpoints::Income
       include Endpoints::KeyStats
       include Endpoints::LargestTrades
