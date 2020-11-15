@@ -44,9 +44,9 @@ describe IEX::Resources::AdvancedStats do
 
     it 'retrieves a keyStats' do
       expect(subject.company_name).to eq 'Microsoft Corp.'
-      expect(subject.market_cap).to eq 1621141983000
+      expect(subject.market_cap).to eq 1_621_141_983_000
       expect(subject.market_cap_dollar).to eq '$1,621,141,983,000'
-      expect(subject.employees).to eq 163000
+      expect(subject.employees).to eq 163_000
     end
 
     it 'weekly stats' do
@@ -62,8 +62,8 @@ describe IEX::Resources::AdvancedStats do
       expect(subject.ttm_dividend_rate).to eq 2.04
       expect(subject.dividend_yield).to eq 0.009522920362244423
       expect(subject.ex_dividend_date).to eq '2020-08-19'
-      expect(subject.shares_outstanding).to eq 7567650000
-      expect(subject.float).to eq 7454581741
+      expect(subject.shares_outstanding).to eq 7_567_650_000
+      expect(subject.float).to eq 7_454_581_741
       expect(subject.ttm_eps).to eq 5.8207
       expect(subject.next_dividend_date).to eq '2020-11-18'
       expect(subject.next_earnings_date).to eq '2020-10-27'
@@ -74,8 +74,8 @@ describe IEX::Resources::AdvancedStats do
     end
 
     it 'changes stats' do
-      expect(subject.avg_10_volume).to be 26989991
-      expect(subject.avg_30_volume).to be 31404571.1
+      expect(subject.avg_10_volume).to be 26_989_991
+      expect(subject.avg_30_volume).to be 31_404_571.1
       expect(subject.max_change_percent).to eq 7.1248
       expect(subject.year_5_change_percent).to be 3.3093
       expect(subject.year_5_change_percent_s).to eq '+330.93%'
