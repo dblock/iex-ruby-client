@@ -161,7 +161,7 @@ historial_prices = client.historical_prices('MSFT', {range: '5y'}) # 5 years of 
 historial_prices = client.historical_prices('MSFT', {range: '6m'}) # 6 months of data
 historial_prices = client.historical_prices('MSFT', {range: '5d'}) # 5 days of data
 historial_prices = client.historical_prices('MSFT', {range: 'date', date: '20200930', chartByDay: 'true'}) # One day of data
-historial_prices = client.historical_prices('MSFT', {range: 'date', date: Date.parse('2020-09-30)', chartByDay: 'true'}) # One day of data
+historial_prices = client.historical_prices('MSFT', {range: 'date', date: Date.parse('2020-09-30'), chartByDay: 'true'}) # One day of data
 ...
 ```
 
