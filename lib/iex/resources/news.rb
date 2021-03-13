@@ -6,6 +6,7 @@ module IEX
       property 'source'
       property 'url'
       property 'summary'
+      property 'image'
       property 'related', transform_with: ->(v) { v.split(',') if v.is_a?(String) }
     end
   end
