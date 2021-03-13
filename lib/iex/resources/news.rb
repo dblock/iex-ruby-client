@@ -8,6 +8,7 @@ module IEX
       property 'summary'
       property 'image'
       property 'related', transform_with: ->(v) { v.split(',') if v.is_a?(String) }
+      property 'paywalled', from: 'hasPaywall'
     end
   end
 end
