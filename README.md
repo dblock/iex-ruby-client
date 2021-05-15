@@ -32,6 +32,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
   - [ISIN Mapping](#isin-mapping)
   - [Get Symbols](#get-symbols)
+  - [Get Symbols for an Exchange](#get-symbols-for-an-exchange)
   - [Get List](#get-list)
   - [Other Requests](#other-requests)
 - [Configuration](#configuration)
@@ -144,15 +145,17 @@ Options for `range` include:
 `max, ytd, 5y, 2y, 1y, 6m, 3m, 1m, 5d, date`
 
 NOTE: If you use the `date` value for the `range` parameter:
- * The options _must_ include a date entry, `{date: ...}`
- * The date value _must_ be either a Date object, or a string formatted as `YYYYMMDD`. Anything else will result in an `IEX::Errors::ClientError`.
- * The options _must_ include `chartByDay: 'true'` or an `ArgumentError` will be raised.
- * See below for examples.
+
+- The options _must_ include a date entry, `{date: ...}`
+- The date value _must_ be either a Date object, or a string formatted as `YYYYMMDD`. Anything else will result in an `IEX::Errors::ClientError`.
+- The options _must_ include `chartByDay: 'true'` or an `ArgumentError` will be raised.
+- See below for examples.
 
 `Query params` supported include:
 `chartByDay`
 
-This is a complicated endpoint as there is a lot of granularity over the time period of data returned. See below for a variety of ways to request data, NOTE: this is _NOT_ as exhaustive list. 
+This is a complicated endpoint as there is a lot of granularity over the time period of data returned. See below for a variety of ways to request data, NOTE: this is _NOT_ as exhaustive list.
+
 ```ruby
 historial_prices = client.historical_prices('MSFT') # One month of data
 historial_prices = client.historical_prices('MSFT', {range: 'max'}) # All data up to 15 years
@@ -166,6 +169,7 @@ historial_prices = client.historical_prices('MSFT', {range: 'date', date: Date.p
 ```
 
 Once you have the data over the preferred time period, you can access the following fields
+
 ```ruby
 historial_prices = client.historical_prices('MSFT') # One month of data
 
@@ -333,7 +337,7 @@ advanced_stats.current_debt # 20748000000
 advanced_stats.current_debt_dollars # "$2,074,8000,000"
 advanced_stats.revenue # 265809000000
 advanced_stats.revenue_dollars # "$265,809,000,000"
-advanced_stats.gross_profit # 101983000000 
+advanced_stats.gross_profit # 101983000000
 advanced_stats.gross_profit_dollar # "$101,983,000,000"
 advanced_stats.total_revenue # 265809000000
 advanced_stats.total_revenue_dollar # "$265,809,000,000"
@@ -541,7 +545,6 @@ The API also lets you convert multiple ISINs to IEX Cloud symbols.
 symbols = client.ref_data_isin(['US0378331005', 'US0378331006'])
 ```
 
-
 You can use `mapped: true` option to receive symbols grouped by their ISINs.
 
 ```ruby
@@ -565,6 +568,22 @@ symbol.symbol # A
 ```
 
 See [#symbols](https://iexcloud.io/docs/api/#symbols) for detailed documentation or [symbols.rb](lib/iex/resources/symbols.rb) for returned fields.
+
+### Get Symbols for an Exchange
+
+Returns an array of symbols for a given exchange
+
+```ruby
+symbols = client.ref_data_symbols_for_exchange('TSX')
+
+symbol = symbols.first
+symbol.exchange # TSX
+symbol.iex_id # IEX_4656374258322D52
+symbol.region # CA
+symbol.symbol # A-CV
+```
+
+See [#international-symbols](https://iexcloud.io/docs/api/#international-symbols).
 
 ### Get List
 
@@ -605,18 +624,18 @@ client = IEX::Api::Client.new(
 
 The following settings are supported.
 
-setting             | description
---------------------|------------
-user_agent          | User-agent, defaults to _IEX Ruby Client/version_.
-proxy               | Optional HTTP proxy.
-ca_path             | Optional SSL certificates path.
-ca_file             | Optional SSL certificates file.
-logger              | Optional `Logger` instance or logger configuration to log HTTP requests.
-timeout             | Optional open/read timeout in seconds.
-open_timeout        | Optional connection open timeout in seconds.
-publishable_token   | IEX Cloud API publishable token.
-endpoint            | Defaults to `https://cloud.iexapis.com/v1`.
-referer             | Optional string for HTTP `Referer` header, enables token domain management.
+| setting           | description                                                                 |
+| ----------------- | --------------------------------------------------------------------------- |
+| user_agent        | User-agent, defaults to _IEX Ruby Client/version_.                          |
+| proxy             | Optional HTTP proxy.                                                        |
+| ca_path           | Optional SSL certificates path.                                             |
+| ca_file           | Optional SSL certificates file.                                             |
+| logger            | Optional `Logger` instance or logger configuration to log HTTP requests.    |
+| timeout           | Optional open/read timeout in seconds.                                      |
+| open_timeout      | Optional connection open timeout in seconds.                                |
+| publishable_token | IEX Cloud API publishable token.                                            |
+| endpoint          | Defaults to `https://cloud.iexapis.com/v1`.                                 |
+| referer           | Optional string for HTTP `Referer` header, enables token domain management. |
 
 ### Logging
 

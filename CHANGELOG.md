@@ -1,5 +1,6 @@
 ### 1.4.1 (Next)
 * Your contribution here.
+* [#103](https://github.com/dblock/iex-ruby-client/pull/103): Added support for fetching symbols for an exchange - [@mathu97](https://github.com/mathu97).
 * [#99](https://github.com/dblock/iex-ruby-client/pull/99): Added `image` and `paywalled` to news - [@reddavis](https://github.com/reddavis).
 * [#100](https://github.com/dblock/iex-ruby-client/pull/100): Added `language` to news - [@reddavis](https://github.com/reddavis).
 
