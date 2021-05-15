@@ -32,6 +32,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
   - [ISIN Mapping](#isin-mapping)
   - [Get Symbols](#get-symbols)
+  - [Get Symbols for an exchange](#get-symbols-for-an-exchange)
   - [Get List](#get-list)
   - [Other Requests](#other-requests)
 - [Configuration](#configuration)
@@ -568,18 +569,18 @@ symbol.symbol # A
 
 See [#symbols](https://iexcloud.io/docs/api/#symbols) for detailed documentation or [symbols.rb](lib/iex/resources/symbols.rb) for returned fields.
 
-### Get Symbols from an exchange
+### Get Symbols for an Exchange
 
-Returns an array of symbols from the given exchange
+Returns an array of symbols for a given exchange
 
 ```ruby
 symbols = client.ref_data_symbols_for_exchange('TSX')
 
 symbol = symbols.first
-symbol.exchange
-symbol.iex_id
-symbol.region
-symbol.symbol
+symbol.exchange # TSX
+symbol.iex_id # IEX_4656374258322D52
+symbol.region # CA
+symbol.symbol # A-CV
 ```
 
 See [#international-symbols](https://iexcloud.io/docs/api/#international-symbols).
