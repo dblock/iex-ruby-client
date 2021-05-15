@@ -87,24 +87,24 @@ describe IEX::Api::Client do
     subject { client.ref_data_symbols_for_exchange('TSX') }
 
     it 'retrieves all symbols' do
-      expect(subject.count).to eq 8808
+      expect(subject.count).to eq 1869
     end
 
     context 'first symbol' do
       subject { client.ref_data_symbols_for_exchange('TSX').first }
       it 'retrieves a symbol data' do
-        expect(subject.symbol).to eq 'A'
-        expect(subject.exchange).to eq 'NYS'
-        expect(subject.name).to eq 'Agilent Technologies Inc.'
-        expect(subject.date).to eq Date.parse('2020-04-30')
+        expect(subject.symbol).to eq 'A-CV'
+        expect(subject.exchange).to eq 'TSX'
+        expect(subject.name).to eq 'Armor Minerals Inc'
+        expect(subject.date).to eq Date.parse('2021-05-14')
         expect(subject.enabled).to eq true
         expect(subject.enabled?).to eq true
         expect(subject.type).to eq 'cs'
-        expect(subject.region).to eq 'US'
-        expect(subject.currency).to eq 'USD'
-        expect(subject.iex_id).to eq 'IEX_46574843354B2D52'
-        expect(subject.figi).to eq 'BBG000C2V3D6'
-        expect(subject.cik).to eq '1090872'
+        expect(subject.region).to eq 'CA'
+        expect(subject.currency).to eq 'CAD'
+        expect(subject.iex_id).to eq 'IEX_4656374258322D52'
+        expect(subject.figi).to eq 'BBG000V98LH2'
+        expect(subject.cik).to eq '0001682145'
       end
     end
   end
