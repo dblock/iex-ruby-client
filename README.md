@@ -32,7 +32,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Get a Quote for Crypto Currencies](#get-a-quote-for-crypto-currencies)
   - [ISIN Mapping](#isin-mapping)
   - [Get Symbols](#get-symbols)
-  - [Get Symbols for an exchange](#get-symbols-for-an-exchange)
+  - [Get Symbols for an Exchange](#get-symbols-for-an-exchange)
   - [Get List](#get-list)
   - [Other Requests](#other-requests)
 - [Configuration](#configuration)
