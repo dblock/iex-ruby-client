@@ -157,23 +157,23 @@ NOTE: If you use the `date` value for the `range` parameter:
 This is a complicated endpoint as there is a lot of granularity over the time period of data returned. See below for a variety of ways to request data, NOTE: this is _NOT_ as exhaustive list.
 
 ```ruby
-historial_prices = client.historical_prices('MSFT') # One month of data
-historial_prices = client.historical_prices('MSFT', {range: 'max'}) # All data up to 15 years
-historial_prices = client.historical_prices('MSFT', {range: 'ytd'}) # Year to date data
-historial_prices = client.historical_prices('MSFT', {range: '5y'}) # 5 years of data
-historial_prices = client.historical_prices('MSFT', {range: '6m'}) # 6 months of data
-historial_prices = client.historical_prices('MSFT', {range: '5d'}) # 5 days of data
-historial_prices = client.historical_prices('MSFT', {range: 'date', date: '20200930', chartByDay: 'true'}) # One day of data
-historial_prices = client.historical_prices('MSFT', {range: 'date', date: Date.parse('2020-09-30'), chartByDay: 'true'}) # One day of data
+historical_prices = client.historical_prices('MSFT') # One month of data
+historical_prices = client.historical_prices('MSFT', {range: 'max'}) # All data up to 15 years
+historical_prices = client.historical_prices('MSFT', {range: 'ytd'}) # Year to date data
+historical_prices = client.historical_prices('MSFT', {range: '5y'}) # 5 years of data
+historical_prices = client.historical_prices('MSFT', {range: '6m'}) # 6 months of data
+historical_prices = client.historical_prices('MSFT', {range: '5d'}) # 5 days of data
+historical_prices = client.historical_prices('MSFT', {range: 'date', date: '20200930', chartByDay: 'true'}) # One day of data
+historical_prices = client.historical_prices('MSFT', {range: 'date', date: Date.parse('2020-09-30'), chartByDay: 'true'}) # One day of data
 ...
 ```
 
 Once you have the data over the preferred time period, you can access the following fields
 
 ```ruby
-historial_prices = client.historical_prices('MSFT') # One month of data
+historical_prices = client.historical_prices('MSFT') # One month of data
 
-historial_price = historial_prices.first
+historical_price = historical_prices.first
 historical_price.date # 2020-10-07
 historical_price.open #207.06
 historical_price.open_dollar # '$207.06'
