@@ -556,7 +556,7 @@ See [#ISIN Mapping](https://iexcloud.io/docs/api/#isin-mapping) for detailed doc
 
 ### Get Symbols
 
-Returns an array of symbols
+Returns an array of symbols.
 
 ```ruby
 symbols = client.ref_data_symbols()
@@ -572,7 +572,7 @@ See [#symbols](https://iexcloud.io/docs/api/#symbols) for detailed documentation
 
 ### Get Symbols for an Exchange
 
-Returns an array of symbols for a given exchange
+Returns an array of symbols for a given exchange.
 
 ```ruby
 symbols = client.ref_data_symbols_for_exchange('TSX')
@@ -584,11 +584,11 @@ symbol.region # CA
 symbol.symbol # A-CV
 ```
 
-See [#international-symbols](https://iexcloud.io/docs/api/#international-symbols).
+See [#international-symbols](https://iexcloud.io/docs/api/#international-symbols) for returned fields.
 
 ### Get Latest Foreign Exchange Rates
 
-Returns an array of foreign exchange rates for a given list of symbols
+Returns an array of foreign exchange rates for a given list of symbols.
 
 ```ruby
 rates = client.fx_latest(['USDCAD', 'USDGBP', 'USDJPY'])
@@ -599,7 +599,7 @@ rate.rate # 1.25674
 rate.timestamp # 1627045829863
 ```
 
-See [#latest-currency-rates](https://iexcloud.io/docs/api/#latest-currency-rates).
+See [#latest-currency-rates](https://iexcloud.io/docs/api/#latest-currency-rates) for returned fields.
 
 ### Get List
 
