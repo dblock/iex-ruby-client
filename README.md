@@ -596,7 +596,7 @@ rates = client.fx_latest(['USDCAD', 'USDGBP', 'USDJPY'])
 rate = rates.first
 rate.symbol # USDCAD
 rate.rate # 1.25674
-rate.timestamp # 1627045829863
+rate.timestamp # <Date: 2021-07-23 ((2459419j,0s,0n),+0s,2299161j)>
 ```
 
 See [#latest-currency-rates](https://iexcloud.io/docs/api/#latest-currency-rates) for returned fields.
