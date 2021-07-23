@@ -599,6 +599,8 @@ rate.rate # 1.25674
 rate.timestamp # 1627045829863
 ```
 
+See [#latest-currency-rates](https://iexcloud.io/docs/api/#latest-currency-rates).
+
 ### Get List
 
 Returns an array of quotes for the top 10 symbols in a specified list.
