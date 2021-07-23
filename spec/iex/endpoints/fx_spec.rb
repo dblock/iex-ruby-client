@@ -28,7 +28,7 @@ describe IEX::Endpoints::FX do
     subject do
       client.fx_latest(%w[INVALID])
     end
-    it 'fails with SymbolNotFoundError' do
+    it 'fails with InvalidSymbolsList' do
       expect { subject }.to raise_error IEX::Errors::InvalidSymbolsList, 'Invalid symbol list: INVALID'
     end
   end
