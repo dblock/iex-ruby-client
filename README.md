@@ -33,6 +33,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [ISIN Mapping](#isin-mapping)
   - [Get Symbols](#get-symbols)
   - [Get Symbols for an Exchange](#get-symbols-for-an-exchange)
+  - [Get Latest Foreign Exchange Rates](#get-latest-foreign-exchange-rates)
   - [Get List](#get-list)
   - [Other Requests](#other-requests)
 - [Configuration](#configuration)
@@ -584,6 +585,19 @@ symbol.symbol # A-CV
 ```
 
 See [#international-symbols](https://iexcloud.io/docs/api/#international-symbols).
+
+### Get Latest Foreign Exchange Rates
+
+Returns an array of foreign exchange rates for a given list of symbols
+
+```ruby
+rates = client.fx_latest(['USDCAD', 'USDGBP', 'USDJPY'])
+
+rate = rates.first
+rate.symbol # USDCAD
+rate.rate # 1.25674
+rate.timestamp # 1627045829863
+```
 
 ### Get List
 
