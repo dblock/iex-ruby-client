@@ -12,6 +12,7 @@ module IEX
       include Endpoints::Crypto
       include Endpoints::Dividends
       include Endpoints::Earnings
+      include Endpoints::FX
       include Endpoints::HistoricalPrices
       include Endpoints::Income
       include Endpoints::KeyStats
