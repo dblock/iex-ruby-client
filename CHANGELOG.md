@@ -1,5 +1,6 @@
 ### 1.4.2 (Next)
 * [#105](https://github.com/dblock/iex-ruby-client/pull/105): Added support for fetching latest foreign exchange rates - [@mathu97](https://github.com/mathu97).
+* [#106](https://github.com/dblock/iex-ruby-client/pull/106): Added support for fetching a single key stat with `key_stat(symbol, stat)` endpoint - [@agrberg](https://github.com/agrberg).
 * [#107](https://github.com/dblock/iex-ruby-client/pull/107): Added `./script/console` for ease of local development - [@agrberg](https://github.com/agrberg).
 * Your contribution here.
 
