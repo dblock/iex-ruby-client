@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloud.iexapis.com/v1/stock/VTI/stats/INVALID?token=test-iex-api-publishable-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - IEX Ruby Client/1.4.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 13 Aug 2021 17:45:21 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=f9f32af4b36f4a1bac8e9b2ff9018275; Max-Age=43200; Path=/; Expires=Sat,
+        14 Aug 2021 05:45:21 GMT
+      Iexcloud-Messages-Used:
+      - '6'
+      Iexcloud-Credits-Used:
+      - '6'
+      Iexcloud-Premium-Messages-Used:
+      - '0'
+      Iexcloud-Premium-Credits-Used:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Request-Source
+    body:
+      encoding: ASCII-8BIT
+      string: '{"companyName":"Vanguard Group, Inc.","marketcap":260737447690,"week52high":230.02,"week52low":160.5,"week52highSplitAdjustOnly":230.02,"week52lowSplitAdjustOnly":162.85,"week52change":0.3645993202513256,"sharesOutstanding":1133542508,"float":0,"avg10Volume":2888645,"avg30Volume":3320395,"day200MovingAvg":213.89,"day50MovingAvg":225.73,"employees":0,"ttmEPS":0,"ttmDividendRate":2.788769375400175,"dividendYield":0.012124029977394032,"nextDividendDate":"","exDividendDate":"2021-06-24","nextEarningsDate":"","peRatio":0,"beta":1.0132372909433216,"maxChangePercent":3.578068183401369,"year5ChangePercent":1.249480952953752,"year2ChangePercent":0.6180018710916342,"year1ChangePercent":0.3635630717574918,"ytdChangePercent":0.1893429658290111,"month6ChangePercent":0.1156861042707178,"month3ChangePercent":0.10073637646122013,"month1ChangePercent":0.015496004591408763,"day30ChangePercent":0.021176470588235352,"day5ChangePercent":0.006255741720985197}'
+  recorded_at: Fri, 13 Aug 2021 17:45:21 GMT
+recorded_with: VCR 6.0.0
