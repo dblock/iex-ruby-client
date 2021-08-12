@@ -323,6 +323,12 @@ key_stats.pe_ratio # 29.47
 key_stats.beta # 1.4135449089973444
 ```
 
+You can also fetch a single stat for a symbol. **Note** that IEX uses `lowerCamelCase` for the names of the stats.
+
+```ruby
+client.key_stat('VTI', 'dividendYield') # 0.01271760965303361
+```
+
 See [#key-stats](https://iexcloud.io/docs/api/#key-stats) for detailed documentation or [key_stats.rb](lib/iex/resources/key_stats.rb) for returned fields.
 
 ### Get Advanced Stats
