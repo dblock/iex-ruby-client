@@ -1,5 +1,6 @@
 ### 1.4.2 (Next)
 * [#105](https://github.com/dblock/iex-ruby-client/pull/105): Added support for fetching latest foreign exchange rates - [@mathu97](https://github.com/mathu97).
+* [#107](https://github.com/dblock/iex-ruby-client/pull/107): Added `./script/console` for ease of local development - [@agrberg](https://github.com/agrberg).
 * Your contribution here.
 
 ### 1.4.1 (2021/05/15)
