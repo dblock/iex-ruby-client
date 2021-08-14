@@ -1,4 +1,5 @@
-require_relative 'errors/symbol_not_found_error'
-require_relative 'errors/invalid_symbols_list'
 require_relative 'errors/client_error'
+require_relative 'errors/invalid_symbols_list'
 require_relative 'errors/permission_denied_error'
+require_relative 'errors/stat_not_found_error'
+require_relative 'errors/symbol_not_found_error'

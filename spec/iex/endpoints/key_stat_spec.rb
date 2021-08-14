@@ -25,9 +25,19 @@ describe IEX::Endpoints::KeyStat do
   context 'invalid stat', vcr: { cassette_name: 'key_stat/invalid_stat' } do
     subject { client.key_stat(symbol, 'INVALID') }
 
-    it 'returns a hash of the API response' do
-      expect(subject).to be_a(Hash)
-      expect(subject).to have_key(stat)
+    it 'fails with StatNotFoundError' do
+      expect { subject }.to raise_error IEX::Errors::StatNotFoundError, 'Stat INVALID Not Found'
+    end
+
+    it 'keeps the API response so it can be used if caught' do
+      response = begin
+                   subject
+                 rescue IEX::Errors::StatNotFoundError => e
+                   e.response
+                 end
+
+      expect(response).to be_a(Hash)
+      expect(response).to have_key(stat)
     end
   end
 end
