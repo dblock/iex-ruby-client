@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH << './lib'
+
+require 'dotenv/load'
+require 'iex-ruby-client'
+require 'irb'
+
+IRB.start
