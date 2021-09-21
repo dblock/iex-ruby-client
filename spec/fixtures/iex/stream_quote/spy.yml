@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloud-sse.iexapis.com/v1/stocksUS5Second?symbols=SPY&token=test-iex-api-secret-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      Content-Type:
+      - application/json; charset=utf-8
+      User-Agent:
+      - IEX Ruby Client/1.5.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Sep 2021 20:29:16 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - ctoken=609af7a37a89493e802c2218673c7783; Max-Age=43200; Path=/; Expires=Wed,
+        22 Sep 2021 08:29:16 GMT
+      Iexcloud-Messages-Used:
+      - '2'
+      Iexcloud-Credits-Used:
+      - '2'
+      Iexcloud-Premium-Messages-Used:
+      - '0'
+      Iexcloud-Premium-Credits-Used:
+      - '0'
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Request-Source
+    body:
+      encoding: ASCII-8BIT
+      string: "data: [{\"avgTotalVolume\":68745683,\"calculationPrice\":\"close\",\"change\":-0.41,\"changePercent\":-0.00094,\"close\":433.63,\"closeSource\":\"official\",\"closeTime\":1632254400206,\"companyName\":\"SSgA Active Trust - S&P 500 ETF TRUST ETF\",\"currency\":\"USD\",\"delayedPrice\":433.72,\"delayedPriceTime\":1632254399904,\"extendedChange\":-0.9,\"extendedChangePercent\":-0.00208,\"extendedPrice\":432.73,\"extendedPriceTime\":1632256104619,\"high\":437.91,\"highSource\":\"15 minute delayed price\",\"highTime\":1632254404318,\"iexAskPrice\":432.81,\"iexAskSize\":500,\"iexBidPrice\":432.76,\"iexBidSize\":500,\"iexClose\":433.63,\"iexCloseTime\":1632254398127,\"iexLastUpdated\":1632256104619,\"iexMarketPercent\":0.013629911270082975,\"iexOpen\":432.73,\"iexOpenTime\":1632256104619,\"iexRealtimePrice\":432.73,\"iexRealtimeSize\":1,\"iexVolume\":1244956,\"lastTradeTime\":1632254418262,\"latestPrice\":433.63,\"latestSource\":\"Close\",\"latestTime\":\"September 21, 2021\",\"latestUpdate\":1632254400206,\"latestVolume\":91339993,\"low\":433.07,\"lowSource\":\"15 minute delayed price\",\"lowTime\":1632236056745,\"marketCap\":397369859400,\"oddLotDelayedPrice\":433.67,\"oddLotDelayedPriceTime\":1632254396989,\"open\":436.63,\"openTime\":1632231000366,\"openSource\":\"official\",\"peRatio\":null,\"previousClose\":434.04,\"previousVolume\":166445534,\"primaryExchange\":\"NYSE ARCA\",\"symbol\":\"SPY\",\"volume\":91339993,\"week52High\":452.6,\"week52Low\":315.36,\"ytdChange\":0.1713227149749243,\"isUSMarketOpen\":false}]\r\n\r\n"
+    http_version:
+  recorded_at: Tue, 21 Sep 2021 20:29:16 GMT
+recorded_with: VCR 5.1.0
