@@ -107,6 +107,21 @@ quote.change_percent_s # '+0.42%'
 
 See [#quote](https://iexcloud.io/docs/api/#quote) for detailed documentation or [quote.rb](lib/iex/resources/quote.rb) for returned fields.
 
+### Stream quotes
+
+Streams quotes in real-time.
+
+`interval` option lets you limit amount of updates. Possible values: `1Second 5Second 1Minute`
+
+```ruby
+client.stream_quote(['SPY', 'MSFT'], interval: '5Second') do |quote|
+  quote.latest_price # 90.165
+  quote.symbol # 'MSFT'
+end
+```
+
+See [#streaming-data](https://iexcloud.io/docs/api/#streaming-data) for detailed documentation or [quote.rb](lib/iex/resources/quote.rb) for returned fields.
+
 ### Get a OHLC (Open, High, Low, Close) price
 
 Fetches a single stock OHLC price. Open and Close prices contain timestamp.

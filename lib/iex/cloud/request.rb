@@ -8,8 +8,8 @@ module IEX
       end
 
       def get_stream(path, options = {})
-        buffer = ""
-        event_parser = Proc.new do |chunk|
+        buffer = ''
+        event_parser = proc do |chunk|
           events = (buffer + chunk).lines(STREAM_EVENT_DELIMITER)
           buffer = events.last.end_with?(STREAM_EVENT_DELIMITER) ? '' : events.delete_at(-1)
           events.each do |event|
@@ -17,7 +17,11 @@ module IEX
           end
         end
 
-        request(:get, path, { endpoint: sse_endpoint, request: { on_data: event_parser } }.merge(options))
+        options = {
+          endpoint: endpoint.gsub('://cloud.', '://cloud-sse.'),
+          request: { on_data: event_parser }
+        }.merge(options)
+        request(:get, path, options)
       end
 
       def post(path, options = {})
@@ -35,6 +39,7 @@ module IEX
       private
 
       def request(method, path, options)
+        options = options.dup
         path = [options.delete(:endpoint) || endpoint, path].join('/')
         response = connection.send(method) do |request|
           request.options.merge!(options.delete(:request)) if options.key?(:request)

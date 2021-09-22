@@ -48,12 +48,15 @@ describe IEX::Resources::Quote do
         quotes << quote
       end
 
-      quotes.first
+      quotes
     end
 
+    let(:quote) { subject.last }
+
     it 'retrieves a quote', vcr: { cassette_name: 'stream_quote/spy' } do
-      expect(subject.symbol).to eq('SPY')
-      expect(subject.close).to eq(433.63)
+      expect(subject.size).to eq(2)
+      expect(quote.symbol).to eq('SPY')
+      expect(quote.close).to eq(433.63)
     end
   end
 end
