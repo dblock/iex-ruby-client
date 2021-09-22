@@ -1,5 +1,6 @@
 ### 1.5.1 (Next)
 * Your contribution here.
+* [#108](https://github.com/dblock/iex-ruby-client/pull/108): Added support for quote streaming endpoint - [@bguban](https://github.com/bguban).
 
 ### 1.5.0 (2021/08/15)
 * [#105](https://github.com/dblock/iex-ruby-client/pull/105): Added support for fetching latest foreign exchange rates - [@mathu97](https://github.com/mathu97).
