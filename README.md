@@ -13,6 +13,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [Configure](#configure)
   - [Get a Single Price](#get-a-single-price)
   - [Get a Quote](#get-a-quote)
+  - [Stream quotes](#stream-quotes)
   - [Get a OHLC (Open, High, Low, Close) price](#get-a-ohlc-open-high-low-close-price)
   - [Get a Market OHLC (Open, High, Low, Close) prices](#get-a-market-ohlc-open-high-low-close-prices)
   - [Get Historical Prices](#get-historical-prices)
