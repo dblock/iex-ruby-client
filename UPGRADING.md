@@ -1,6 +1,14 @@
 Upgrading iex-ruby-client
 =========================
 
+### Upgrading to >= 1.5.1
+
+[#110](https://github.com/dblock/iex-ruby-client/pull/110) drops the dependency on `money_helper` in favor of using the `money` library directly.
+
+Previously the `money_helper` library set `Money.locale_backend = :currency` globally. The default is `I18n` which looks up the thousands separator and decimal marker. Depending on your project you may need to set this value if you use `Money#format` without the `thousands_separator` or `decimal_mark` options. You are less likely to require this in a Rails project.
+
+This represents a change in the `money` library's method of handling defaults and is similar to the deprecation warning the library provides until you set `Money.rounding_mode=`.
+
 ### Upgrading to >= 1.0.0
 
 On June 1, 2019, IEX API has been sunset for all non-IEX data. IEX Cloud, a non-Exchange platform, continues to provide access to third-party data sources and requires a token. When upgrading to 1.0.0, create an account and get a `publishable token` from [IEX Cloud Console](https://iexcloud.io).
