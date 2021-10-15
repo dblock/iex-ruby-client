@@ -26,8 +26,12 @@ module IEX
         ].join
       end
 
-      def self.to_dollar(amount:, ignore_cents: true)
-        MoneyHelper.money_to_text(amount, 'USD', nil, no_cents: ignore_cents)
+      def self.to_dollar(amount:, with_currency: false, ignore_cents: true)
+        return nil unless amount
+
+        MoneyHelper.money_to_text(amount * 100, currency: 'USD',
+                                                with_currency: with_currency,
+                                                money_format: { no_cents: ignore_cents })
       end
     end
   end
