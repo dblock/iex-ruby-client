@@ -1,4 +1,5 @@
 ### 1.5.1 (Next)
+* [#109](https://github.com/dblock/iex-ruby-client/pull/109): Enabled upgrade to `money_helper` 2.0 - [@agrberg](https://github.com/agrberg).
 * Your contribution here.
 
 ### 1.5.0 (2021/08/15)
