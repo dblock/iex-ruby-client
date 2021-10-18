@@ -1,7 +1,7 @@
 Upgrading iex-ruby-client
 =========================
 
-### Upgrading to >= 1.5.1
+### Upgrading to >= 1.6.0
 
 [#110](https://github.com/dblock/iex-ruby-client/pull/110) drops the dependency on `money_helper` in favor of using the `money` library directly.
 

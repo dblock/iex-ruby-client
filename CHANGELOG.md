@@ -1,6 +1,5 @@
-### 1.5.1 (Next)
+### 1.6.0 (2021/10/17)
 * [#110](https://github.com/dblock/iex-ruby-client/pull/110): Drop `money_helper` dependency and utilize `money` gem directly - [@agrberg](https://github.com/agrberg).
-* Your contribution here.
 
 ### 1.5.0 (2021/08/15)
 * [#105](https://github.com/dblock/iex-ruby-client/pull/105): Added support for fetching latest foreign exchange rates - [@mathu97](https://github.com/mathu97).
