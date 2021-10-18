@@ -1,3 +1,6 @@
+### 1.6.1 (Next)
+* Your contribution here.
+
 ### 1.6.0 (2021/10/17)
 * [#110](https://github.com/dblock/iex-ruby-client/pull/110): Drop `money_helper` dependency and utilize `money` gem directly - [@agrberg](https://github.com/agrberg).
 
