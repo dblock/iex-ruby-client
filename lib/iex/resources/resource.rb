@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module IEX
   module Resources
     class Resource < Hashie::Trash
@@ -27,7 +29,9 @@ module IEX
       end
 
       def self.to_dollar(amount:, ignore_cents: true)
-        MoneyHelper.money_to_text(amount, 'USD', nil, no_cents: ignore_cents)
+        return nil unless amount
+
+        Money.new(amount * 100, 'USD').format(decimal_mark: '.', no_cents: ignore_cents, thousands_separator: ',')
       end
     end
   end

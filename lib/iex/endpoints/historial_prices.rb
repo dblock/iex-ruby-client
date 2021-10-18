@@ -3,8 +3,8 @@ module IEX
     module HistoricalPrices
       def historical_prices(symbol, options = {})
         if options[:range] == 'date'
-          raise ArgumentError unless options[:date].present?
-          raise ArgumentError unless options[:chartByDay].present?
+          raise ArgumentError unless options[:date]
+          raise ArgumentError unless options[:chartByDay]
         end
 
         options = options.dup
