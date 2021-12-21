@@ -108,4 +108,34 @@ describe IEX::Api::Client do
       end
     end
   end
+
+  describe '#ref_data_symbols_for_region', vcr: { cassette_name: 'ref-data/region_symbols' } do
+    subject { client.ref_data_symbols_for_region('ca') }
+
+    it 'retrieves all symbols' do
+      expect(subject.count).to eq 4977
+    end
+
+    context 'first symbol' do
+      subject { client.ref_data_symbols_for_region('ca').first }
+      it 'retrieves symbol data' do
+        expect(subject.symbol).to eq 'A-CT'
+        expect(subject.exchange).to eq 'XTSE'
+        expect(subject.exchange_suffix).to eq 'CT'
+        expect(subject.exchange_name).to eq 'Toronto Stock Exchange'
+        expect(subject.exchange_segment).to eq 'XTSE'
+        expect(subject.name).to eq 'Aurigen Capital Limited'
+        expect(subject.date).to eq Date.parse('2021-12-20')
+        expect(subject.enabled).to eq true
+        expect(subject.enabled?).to eq true
+        expect(subject.type).to eq 'cs'
+        expect(subject.region).to eq 'CA'
+        expect(subject.currency).to eq 'CAD'
+        expect(subject.iex_id).to eq nil
+        expect(subject.figi).to eq nil
+        expect(subject.cik).to eq nil
+        expect(subject.lei).to eq nil
+      end
+    end
+  end
 end

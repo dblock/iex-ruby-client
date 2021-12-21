@@ -1,5 +1,5 @@
 ### 1.6.1 (Next)
-* Your contribution here.
+* [#111](https://github.com/dblock/iex-ruby-client/pull/111): Added support for fetching symbols for a region - [@mathu97](https://github.com/mathu97)
 
 ### 1.6.0 (2021/10/17)
 * [#110](https://github.com/dblock/iex-ruby-client/pull/110): Drop `money_helper` dependency and utilize `money` gem directly - [@agrberg](https://github.com/agrberg).
