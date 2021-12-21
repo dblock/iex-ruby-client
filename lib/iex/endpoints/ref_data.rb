@@ -22,6 +22,11 @@ module IEX
         response = get("ref-data/exchange/#{exchange}/symbols", { token: publishable_token }.merge(options))
         response.map { |row| IEX::Resources::Symbols.new(row) }
       end
+
+      def ref_data_symbols_for_region(region, options = {})
+        response = get("ref-data/region/#{region}/symbols", { token: publishable_token }.merge(options))
+        response.map { |row| IEX::Resources::Symbols.new(row) }
+      end
     end
   end
 end

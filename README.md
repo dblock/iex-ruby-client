@@ -33,6 +33,7 @@ A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
   - [ISIN Mapping](#isin-mapping)
   - [Get Symbols](#get-symbols)
   - [Get Symbols for an Exchange](#get-symbols-for-an-exchange)
+  - [Get Symbols for a Region](#get-symbols-for-a-region)
   - [Get Latest Foreign Exchange Rates](#get-latest-foreign-exchange-rates)
   - [Get List](#get-list)
   - [Other Requests](#other-requests)
@@ -578,19 +579,33 @@ See [#symbols](https://iexcloud.io/docs/api/#symbols) for detailed documentation
 
 ### Get Symbols for an Exchange
 
-Returns an array of symbols for a given exchange.
+Returns an array of symbols for an exchange identified by a market identifier code.
 
 ```ruby
-symbols = client.ref_data_symbols_for_exchange('TSX')
+symbols = client.ref_data_symbols_for_exchange('XTSE')
 
 symbol = symbols.first
-symbol.exchange # TSX
+symbol.exchange # XTSE
 symbol.iex_id # IEX_4656374258322D52
 symbol.region # CA
 symbol.symbol # A-CV
 ```
 
 See [#international-symbols](https://iexcloud.io/docs/api/#international-symbols) for returned fields.
+
+### Get Symbols for a Region
+
+Returns an array of symbols for a region.
+
+```ruby
+symbols = client.ref_data_symbols_for_region('ca')
+
+symbol = symbols.first
+symbol.exchange # XTSE
+symbol.iex_id # IEX_4656374258322D53
+symbol.region # CA
+symbol.symbol # A-CT
+```
 
 ### Get Latest Foreign Exchange Rates
 
