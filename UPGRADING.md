@@ -1,6 +1,21 @@
 Upgrading iex-ruby-client
 =========================
 
+### Upgrading to >= 2.0.0
+
+[#113](https://github.com/dblock/iex-ruby-client/pull/113) Minimum Ruby version is 2.4
+
+[#113](https://github.com/dblock/iex-ruby-client/pull/113) Removes default values for Faraday's SSL settings `ca_file` and `ca_path`.
+
+If you previously relied on `OpenSSL::X509::DEFAULT_CERT_FILE` or `OpenSSL::X509::DEFAULT_CERT_DIR` to set these values you must now do so explicitly. E.g.:
+
+```ruby
+IEX::Api.configure do |config|
+  config.ca_file = OpenSSL::X509::DEFAULT_CERT_FILE
+  config.ca_path = OpenSSL::X509::DEFAULT_CERT_DIR
+end
+```
+
 ### Upgrading to >= 1.6.0
 
 [#110](https://github.com/dblock/iex-ruby-client/pull/110) drops the dependency on `money_helper` in favor of using the `money` library directly.
