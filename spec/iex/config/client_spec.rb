@@ -1,20 +1,26 @@
 require 'spec_helper'
 
 describe IEX::Api::Config::Client do
-  before do
-    IEX::Api.config.reset!
-  end
+  before { IEX::Api.config.reset! }
+
   describe '#defaults' do
     it 'sets endpoint' do
       expect(IEX::Api.config.endpoint).to eq 'https://cloud.iexapis.com/v1'
     end
+
+    it 'does not set SSL options by default' do
+      expect(IEX::Api.config.ca_file).to be_nil
+      expect(IEX::Api.config.ca_path).to be_nil
+    end
   end
+
   describe '#configure' do
     before do
       IEX::Api.configure do |config|
         config.endpoint = 'updated'
       end
     end
+
     it 'sets endpoint' do
       expect(IEX::Api.config.endpoint).to eq 'updated'
     end
