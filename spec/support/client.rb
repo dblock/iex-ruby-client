@@ -1,3 +1,5 @@
+require 'rspec'
+
 RSpec.shared_context 'client' do |opts|
   let(:client) { IEX::Api::Client.new(opts || {}) }
   before do
