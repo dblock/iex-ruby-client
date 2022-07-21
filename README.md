@@ -1,7 +1,7 @@
 # IEX Finance API
 
 [![Gem Version](https://badge.fury.io/rb/iex-ruby-client.svg)](https://badge.fury.io/rb/iex-ruby-client)
-[![Build Status](https://travis-ci.org/dblock/iex-ruby-client.svg?branch=master)](https://travis-ci.org/dblock/iex-ruby-client)
+[![Build Status](https://github.com/dblock/iex-ruby-client/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/dblock/iex-ruby-client/actions/workflows/test.yml)
 
 A Ruby client for the [The IEX Cloud API](https://iexcloud.io/docs/api/).
 
