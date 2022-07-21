@@ -11,7 +11,9 @@ module IEX
       property 'fiscal_end_date', from: 'fiscalEndDate'
       property 'year_ago', from: 'yearAgo'
       property 'year_ago_change_percent', from: 'yearAgoChangePercent'
-      property 'year_ago_change_percent_s', from: 'yearAgoChangePercent', with: ->(v) { Resource.float_to_percentage(v) }
+      property 'year_ago_change_percent_s', from: 'yearAgoChangePercent', with: lambda { |v|
+                                                                                  Resource.float_to_percentage(v)
+                                                                                }
     end
   end
 end

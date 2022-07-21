@@ -1,6 +1,7 @@
 AllCops:
   Exclude:
     - vendor/**/*
+  NewCops: enable
   TargetRubyVersion: 2.7
 
 Style/FrozenStringLiteralComment:
@@ -14,6 +15,9 @@ Naming/FileName:
     - "lib/iex-ruby-client.rb"
 
 Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
   Enabled: false
 
 Metrics:

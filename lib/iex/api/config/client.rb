@@ -22,8 +22,8 @@ module IEX
 
           def reset!
             self.endpoint = 'https://cloud.iexapis.com/v1'
-            self.publishable_token = ENV['IEX_API_PUBLISHABLE_TOKEN']
-            self.secret_token = ENV['IEX_API_SECRET_TOKEN']
+            self.publishable_token = ENV.fetch('IEX_API_PUBLISHABLE_TOKEN', nil)
+            self.secret_token = ENV.fetch('IEX_API_SECRET_TOKEN', nil)
             self.user_agent = "IEX Ruby Client/#{IEX::VERSION}"
 
             self.ca_file = nil

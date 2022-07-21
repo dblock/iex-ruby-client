@@ -5,11 +5,17 @@ module IEX
       property 'market_cap', from: 'marketcap'
       property 'market_cap_dollar', from: 'marketcap', with: ->(v) { Resource.to_dollar(amount: v) }
       property 'week_52_high', from: 'week52high'
-      property 'week_52_high_dollar', from: 'week52high', with: ->(v) { Resource.to_dollar(amount: v, ignore_cents: false) }
+      property 'week_52_high_dollar', from: 'week52high', with: lambda { |v|
+                                                                  Resource.to_dollar(amount: v, ignore_cents: false)
+                                                                }
       property 'week_52_low', from: 'week52low'
-      property 'week_52_low_dollar', from: 'week52low', with: ->(v) { Resource.to_dollar(amount: v, ignore_cents: false) }
+      property 'week_52_low_dollar', from: 'week52low', with: lambda { |v|
+                                                                Resource.to_dollar(amount: v, ignore_cents: false)
+                                                              }
       property 'week_52_change', from: 'week52change'
-      property 'week_52_change_dollar', from: 'week52change', with: ->(v) { Resource.to_dollar(amount: v, ignore_cents: false) }
+      property 'week_52_change_dollar', from: 'week52change', with: lambda { |v|
+                                                                      Resource.to_dollar(amount: v, ignore_cents: false)
+                                                                    }
       property 'dividend_yield', from: 'dividendYield'
       property 'ex_dividend_date', from: 'exDividendDate'
       property 'shares_outstanding', from: 'sharesOutstanding'
