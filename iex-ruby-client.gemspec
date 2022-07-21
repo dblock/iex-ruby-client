@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors = ['Daniel Doubrovkine']
   s.email = 'dblock@dblock.org'
   s.platform = Gem::Platform::RUBY
-  s.required_rubygems_version = '>= 1.3.6'
-  s.required_ruby_version = '>= 2.4.0'
+  s.required_rubygems_version = '>= 3.0'
+  s.required_ruby_version = '>= 2.7'
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- spec/*`.split("\n")
   s.require_paths = ['lib']

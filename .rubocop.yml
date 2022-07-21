@@ -1,7 +1,7 @@
 AllCops:
   Exclude:
     - vendor/**/*
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.7
 
 Style/FrozenStringLiteralComment:
   Enabled: false

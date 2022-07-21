@@ -3,7 +3,7 @@ Upgrading iex-ruby-client
 
 ### Upgrading to >= 2.0.0
 
-[#113](https://github.com/dblock/iex-ruby-client/pull/113) Minimum Ruby version is 2.4
+[#114](https://github.com/dblock/iex-ruby-client/pull/114) Require maintained Ruby version >= 2.7
 
 [#113](https://github.com/dblock/iex-ruby-client/pull/113) Removes default values for Faraday's SSL settings `ca_file` and `ca_path`.
 
