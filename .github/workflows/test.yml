@@ -22,4 +22,4 @@ jobs:
         continue-on-error: ${{ matrix.entry.ignore || false }}
         run: |
           bundle install
-          bundle exec rake
+          bundle exec rspec
