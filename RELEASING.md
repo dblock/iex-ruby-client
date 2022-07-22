@@ -11,7 +11,7 @@ bundle install
 rake
 ```
 
-Check that the last build succeeded in [Travis CI](https://travis-ci.com/github/dblock/iex-ruby-client) for all supported platforms.
+Check that the last build succeeded in [GitHub Actions](https://github.com/dblock/iex-ruby-client/actions/workflows/test.yml) for all supported platforms.
 
 Change "Next" in [CHANGELOG.md](CHANGELOG.md) to the current date.
 

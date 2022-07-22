@@ -1,0 +1,25 @@
+name: Tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        entry:
+          - { ruby: "2.7" }
+          - { ruby: "3.0" }
+          - { ruby: "3.1" }
+          - { ruby: ruby-head, ignore: true }
+          - { ruby: jruby-head, ignore: true }
+    name: test (ruby=${{ matrix.entry.ruby }})
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.entry.ruby }}
+      - name: Run Tests
+        continue-on-error: ${{ matrix.entry.ignore || false }}
+        run: |
+          bundle install
+          bundle exec rspec
