@@ -1,3 +1,6 @@
+### 2.0.1 (Next)
+* Your contribution here.
+
 ### 2.0.0 (2022/07/24)
 * [#111](https://github.com/dblock/iex-ruby-client/pull/111): Added support for fetching symbols for a region - [@mathu97](https://github.com/mathu97).
 * [#111](https://github.com/dblock/iex-ruby-client/pull/111): Added `Symbols#exchange_suffix`, `exchange_name`, `exchange_segment`, `exchange_segment_name`, and `lei` - [@mathu97](https://github.com/mathu97).
