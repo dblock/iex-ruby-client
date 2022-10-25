@@ -106,7 +106,7 @@ quote.change_percent # 0.00418
 quote.change_percent_s # '+0.42%'
 ```
 
-See [#quote](https://iexcloud.io/docs/api/#quote) for detailed documentation or [quote.rb](lib/iex/resources/quote.rb) for returned fields.
+See [#quote](https://iexcloud.io/docs/api/#quote) for detailed documentation or [quote.rb](lib/iex/resources/quote.rb) for returned fields. This endpoint requires a paid login.
 
 ### Get a OHLC (Open, High, Low, Close) price
 
@@ -122,6 +122,7 @@ ohlc.open.time
 ohlc.high # 0.00418
 ohlc.low # '+0.42%'
 ```
+NOTE: This endpoint requires a paid login.
 
 ### Get a Market OHLC (Open, High, Low, Close) prices
 
@@ -136,6 +137,7 @@ market['SPY'].open.time # 2018-06-12 16:30:00 +0300
 market['SPY'].high #
 market['SPY'].low #
 ```
+NOTE: This endpoint requires a paid login.
 
 ### Get Historical Prices
 
@@ -156,7 +158,8 @@ NOTE: If you use the `date` value for the `range` parameter:
 `Query params` supported include:
 `chartByDay`
 
-This is a complicated endpoint as there is a lot of granularity over the time period of data returned. See below for a variety of ways to request data, NOTE: this is _NOT_ as exhaustive list.
+This is a complicated endpoint as there is a lot of granularity over the time period of data returned. See below for a variety of ways to request data, NOTE: this is _NOT_ as exhaustive list. Access to Historical Prices from more than 5 years ago is only included with paid subscriptions
+
 
 ```ruby
 historical_prices = client.historical_prices('MSFT') # One month of data
@@ -376,6 +379,8 @@ advanced_stats.put_call_ratio # 0.6780362005229779
 
 See [#advanced-stats](https://iexcloud.io/docs/api/#advanced-stats) for detailed documentation or [advanced_stats.rb](lib/iex/resources/advanced_stats.rb) for returned fields.
 
+NOTE: This endpoint requires a paid login.
+
 ### Get Dividends
 
 Fetches dividends for a symbol.
@@ -390,6 +395,8 @@ dividends.amount # 0.42
 ```
 
 See [#dividends](https://iexcloud.io/docs/api/#dividends) for detailed documentation or [dividends.rb](lib/iex/resources/dividends.rb) for returned fields.
+
+NOTE: Dividends prior to last reported are only included with paid subscription plans
 
 ### Get Earnings
 
@@ -412,6 +419,8 @@ earnings.year_ago_change_percent_s # '+15.31%'
 ```
 
 See [#earnings](https://iexcloud.io/docs/api/#earnings) for detailed documentation or [earnings.rb](lib/iex/resources/earnings.rb) for returned fields.
+
+NOTE: This endpoint has been deprecated.
 
 ### Get Income Statement
 
@@ -436,6 +445,8 @@ income.gross_profit_dollar # '$20,335,000,000'
 
 See [#income-statement](https://iexcloud.io/docs/api/#income-statement) for detailed documentation or [income.rb](lib/iex/resources/income.rb) for returned fields.
 
+NOTE: This endpoint requires a paid login.
+
 ### Get Balance Sheet
 
 Fetches balance sheets for a symbol.
@@ -456,6 +467,8 @@ balance_sheet.short_term_investments_dollar # '$40,388,000,000'
 ```
 
 See [#balance-sheet](https://iexcloud.io/docs/api/#balance-sheet) for detailed documentation or [balance_sheet.rb](lib/iex/resources/balance_sheet.rb) for returned fields.
+
+NOTE: This endpoint requires a paid login.
 
 ### Get Cash Flow Statement
 
@@ -478,6 +491,8 @@ cash_flow.depreciation_dollar # '$2,754,000,000'
 
 See [#cash-flow](https://iexcloud.io/docs/api/#cash-flow) for detailed documentation or [cash_flow.rb](lib/iex/resources/cash_flow.rb) for returned fields.
 
+NOTE: This endpoint requires a paid login.
+
 ### Get Sector Performance
 
 Fetches latest sector's performance.
@@ -492,6 +507,8 @@ sectors.last_updated # 1533672000437
 ```
 
 See [#sector-performance](https://iexcloud.io/docs/api/#sector-performance) for detailed documentation or [sectors.rb](lib/iex/resources/sectors.rb) for returned fields.
+
+NOTE: This endpoint requires a paid login.
 
 ### Get Largest Trades
 
@@ -509,6 +526,8 @@ trades.first.venue_name # Cboe EDGX
 ```
 
 See [#largest-trades](https://iexcloud.io/docs/api/#largest-trades) for detailed documentation or [largest_trades.rb](lib/iex/resources/largest_trades.rb) for returned fields.
+
+NOTE: This endpoint requires a paid login.
 
 ### Get a Quote for Crypto Currencies
 
@@ -705,6 +724,8 @@ IEX recommends you use a sandbox token and endpoint for testing.
 However, please note that data in the IEX sandbox environment is scrambled. Therefore elements such as company and people names, descriptions, tags, and website URLs don't render any coherent data. In addition, results, such as closing market prices and dividend yield, are not accurate and vary on every call.
 
 See [IEX sandbox environment](https://intercom.help/iexcloud/en/articles/2915433-testing-with-the-iex-cloud-sandbox) for more information.
+
+NOTE: The Sandbox Environment has been deprecated.
 
 ## Errors
 
