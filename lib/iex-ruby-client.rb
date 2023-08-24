@@ -1,6 +1,5 @@
 require 'faraday'
-require 'faraday_middleware'
-require 'faraday_middleware/response_middleware'
+require 'faraday/multipart'
 require 'hashie'
 require 'money'
 require 'date'
