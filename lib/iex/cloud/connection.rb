@@ -9,11 +9,13 @@ module IEX
 
       def connection
         @connection ||= begin
-          options = {}
+          options = {
+            headers: {
+              'Accept' => 'application/json; charset=utf-8',
+              'Content-Type' => 'application/json; charset=utf-8'
+            }
+          }
 
-          options[:headers] = {}
-          options[:headers]['Accept'] = 'application/json; charset=utf-8'
-          options[:headers]['Content-Type'] = 'application/json; charset=utf-8'
           options[:headers]['User-Agent'] = user_agent if user_agent
           options[:headers]['Referer'] = referer if referer
           options[:proxy] = proxy if proxy
@@ -26,10 +28,10 @@ module IEX
           options[:request] = request_options if request_options.any?
 
           ::Faraday::Connection.new(endpoint, options) do |connection|
-            connection.use ::Faraday::Request::Multipart
-            connection.use ::Faraday::Request::UrlEncoded
+            connection.request :multipart
+            connection.request :url_encoded
             connection.use ::IEX::Cloud::Response::RaiseError
-            connection.use ::FaradayMiddleware::ParseJson, content_type: /\bjson$/
+            connection.response :json
             connection.response(:logger, logger.instance, logger.options, &logger.proc) if logger.instance
             connection.adapter ::Faraday.default_adapter
           end
