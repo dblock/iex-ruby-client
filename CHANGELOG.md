@@ -1,3 +1,6 @@
+### 2.1.1 (Next)
+* Your contribution here.
+
 ### 2.1.0 (2023-09-17)
 * [#120](https://github.com/dblock/iex-ruby-client/pull/120): Upgrade faraday to 2.7.10 - [@esarmstrong](https://github.com/esarmstrong).
 
