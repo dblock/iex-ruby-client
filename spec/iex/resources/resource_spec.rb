@@ -5,6 +5,7 @@ describe IEX::Resources::Resource do
     subject do
       IEX::Resources::Resource.float_to_percentage(0.09123)
     end
+
     it 'converts to percentage' do
       expect(subject).to eq '+9.12%'
     end
@@ -14,6 +15,7 @@ describe IEX::Resources::Resource do
     subject do
       IEX::Resources::Resource.float_to_percentage(-0.09123)
     end
+
     it 'converts to percentage' do
       expect(subject).to eq '-9.12%'
     end
@@ -23,6 +25,7 @@ describe IEX::Resources::Resource do
     subject do
       IEX::Resources::Resource.float_to_percentage(nil)
     end
+
     it 'nil argument does not convert' do
       expect(subject).to eq nil
     end
@@ -32,6 +35,7 @@ describe IEX::Resources::Resource do
     subject do
       IEX::Resources::Resource.float_to_percentage(0)
     end
+
     it 'Zero converts to +0.00%' do
       expect(subject).to eq '+0.00%'
     end
@@ -41,6 +45,7 @@ describe IEX::Resources::Resource do
     subject do
       IEX::Resources::Resource.percentage_to_string(3.3793)
     end
+
     it 'converts to percentage' do
       expect(subject).to eq '+3.38%'
     end
@@ -50,6 +55,7 @@ describe IEX::Resources::Resource do
     subject do
       IEX::Resources::Resource.percentage_to_string(-3.3793)
     end
+
     it 'converts to percentage' do
       expect(subject).to eq '-3.38%'
     end
@@ -59,6 +65,7 @@ describe IEX::Resources::Resource do
     subject do
       IEX::Resources::Resource.percentage_to_string(nil)
     end
+
     it 'nil argument does not convert' do
       expect(subject).to eq nil
     end
@@ -68,6 +75,7 @@ describe IEX::Resources::Resource do
     subject do
       IEX::Resources::Resource.percentage_to_string(0)
     end
+
     it 'Zero converts to +0.00%' do
       expect(subject).to eq '+0.00%'
     end
@@ -77,6 +85,7 @@ describe IEX::Resources::Resource do
     subject do
       IEX::Resources::Resource.to_dollar(amount: 123_391)
     end
+
     it 'converts to dollar' do
       expect(subject).to eq '$123,391'
     end

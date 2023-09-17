@@ -8,9 +8,9 @@ module IEX
       end
 
       def market(options = {})
-        Hash[get('stock/market/ohlc', { token: publishable_token }.merge(options)).map do |k, v|
+        get('stock/market/ohlc', { token: publishable_token }.merge(options)).map do |k, v|
           [k, IEX::Resources::OHLC.new(v)]
-        end]
+        end.to_h
       end
     end
   end

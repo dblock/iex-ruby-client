@@ -7,6 +7,7 @@ describe IEX::Resources::Crypto do
     subject do
       client.crypto('BTCUSDT')
     end
+
     it 'retrieves real-time information' do
       expect(subject.symbol).to eq 'BTCUSDT'
       expect(subject.company_name).to eq 'Bitcoin USD'

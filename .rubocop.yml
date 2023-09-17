@@ -1,4 +1,5 @@
 AllCops:
+  NewCops: enable
   Exclude:
     - vendor/**/*
   TargetRubyVersion: 2.4
@@ -16,7 +17,17 @@ Naming/FileName:
 Style/Documentation:
   Enabled: false
 
+Style/Lambda:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
 Metrics:
   Enabled: false
 
 inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rake
+  - rubocop-rspec

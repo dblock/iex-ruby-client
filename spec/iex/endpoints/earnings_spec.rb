@@ -8,7 +8,9 @@ describe IEX::Resources::Earnings do
       subject do
         client.earnings('MSFT')
       end
+
       let(:earnings) { subject.first }
+
       it 'retrieves earnings' do
         expect(subject.size).to eq 1
         expect(earnings.actual_eps).to eq 1.1
@@ -25,10 +27,12 @@ describe IEX::Resources::Earnings do
       end
     end
   end
+
   context 'invalid symbol', vcr: { cassette_name: 'earnings/invalid' } do
     subject do
       client.earnings('INVALID')
     end
+
     it 'fails with SymbolNotFoundError' do
       expect { subject }.to raise_error IEX::Errors::SymbolNotFoundError, 'Symbol INVALID Not Found'
     end

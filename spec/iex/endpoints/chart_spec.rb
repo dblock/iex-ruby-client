@@ -7,8 +7,10 @@ describe IEX::Resources::Chart do
     subject do
       client.chart('MSFT')
     end
+
     let(:first) { subject.first }
     let(:last) { subject.last }
+
     it 'retrieves a default chart' do
       expect(subject.count).to eq 23
       expect(first).to be_a IEX::Resources::Chart::Default
@@ -24,8 +26,10 @@ describe IEX::Resources::Chart do
     subject do
       client.chart('MSFT', '1d')
     end
+
     let(:first) { subject.first }
     let(:last) { subject.last }
+
     it 'retrieves a 1 day chart' do
       expect(subject.count).to eq 390
       expect(first).to be_a IEX::Resources::Chart::OneDay
@@ -40,7 +44,9 @@ describe IEX::Resources::Chart do
     subject do
       client.chart('MSFT', '1d', chart_interval: 10)
     end
+
     let(:first) { subject.first }
+
     it 'retrieves a 1 day chart with chartInterval applied' do
       expect(subject.count).to eq 39
       expect(first).to be_a IEX::Resources::Chart::OneDay
@@ -51,7 +57,9 @@ describe IEX::Resources::Chart do
     subject do
       client.chart('MSFT', Date.new(2019, 3, 6))
     end
+
     let(:first) { subject.first }
+
     it 'retrieves a 1 day chart from 2019/3/6' do
       expect(subject.count).to eq 390
       expect(first).to be_a IEX::Resources::Chart::OneDay
@@ -63,7 +71,9 @@ describe IEX::Resources::Chart do
     subject do
       client.chart('MSFT', :dynamic)
     end
+
     let(:first) { subject.first }
+
     it 'retrieves a 1m chart from' do
       expect(subject.count).to eq 23
       expect(first).to be_a IEX::Resources::Chart::Default
@@ -75,6 +85,7 @@ describe IEX::Resources::Chart do
     subject do
       client.chart('INVALID')
     end
+
     it 'fails with SymbolNotFoundError' do
       expect { subject }.to raise_error IEX::Errors::SymbolNotFoundError, 'Symbol INVALID Not Found'
     end

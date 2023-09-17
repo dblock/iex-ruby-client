@@ -1,8 +1,7 @@
 module IEX
   module Errors
     class InvalidSymbolsList < StandardError
-      attr_reader :symbols
-      attr_reader :response
+      attr_reader :symbols, :response
 
       def initialize(symbols, response)
         @response = response

@@ -7,6 +7,7 @@ describe IEX::Resources::BalanceSheet do
     subject do
       client.balance_sheet('MSFT')
     end
+
     let(:balance_sheet) { subject.first }
 
     it 'fetches balance sheet' do

@@ -66,6 +66,7 @@ describe IEX::Api::Client do
 
     context 'first symbol' do
       subject { client.ref_data_symbols.first }
+
       it 'retrieves a symbol data' do
         expect(subject.symbol).to eq 'A'
         expect(subject.exchange).to eq 'NYS'
@@ -92,6 +93,7 @@ describe IEX::Api::Client do
 
     context 'first symbol' do
       subject { client.ref_data_symbols_for_exchange('TSX').first }
+
       it 'retrieves a symbol data' do
         expect(subject.symbol).to eq 'A-CT'
         expect(subject.exchange).to eq 'XTSE'
@@ -118,6 +120,7 @@ describe IEX::Api::Client do
 
     context 'first symbol' do
       subject { client.ref_data_symbols_for_region('ca').first }
+
       it 'retrieves symbol data' do
         expect(subject.symbol).to eq 'A-CT'
         expect(subject.exchange).to eq 'XTSE'

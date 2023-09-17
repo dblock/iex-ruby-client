@@ -7,6 +7,7 @@ describe IEX::Resources::Company do
     subject do
       client.company('MSFT')
     end
+
     it 'retrieves company information' do
       expect(subject.symbol).to eq 'MSFT'
       expect(subject.ceo).to eq 'Satya Nadella'
@@ -22,10 +23,12 @@ describe IEX::Resources::Company do
       expect(subject.tags).to eq ['Technology Services', 'Packaged Software']
     end
   end
+
   context 'invalid symbol', vcr: { cassette_name: 'company/invalid' } do
     subject do
       client.company('INVALID')
     end
+
     it 'fails with SymbolNotFoundError' do
       expect { subject }.to raise_error IEX::Errors::SymbolNotFoundError, 'Symbol INVALID Not Found'
     end
