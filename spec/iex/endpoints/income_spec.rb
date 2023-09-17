@@ -10,6 +10,7 @@ describe IEX::Resources::Income do
       subject do
         client.income('MSFT')
       end
+
       let(:income) { subject.first }
 
       it 'retrieves income statement' do
@@ -54,6 +55,7 @@ describe IEX::Resources::Income do
     subject do
       client.income('nsrgy')
     end
+
     it 'returns empty array' do
       expect(subject).to eq []
     end
@@ -63,6 +65,7 @@ describe IEX::Resources::Income do
     subject do
       client.income('INVALID')
     end
+
     it 'fails with SymbolNotFoundError' do
       expect { subject }.to raise_error IEX::Errors::SymbolNotFoundError, 'Symbol INVALID Not Found'
     end

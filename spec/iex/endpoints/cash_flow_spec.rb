@@ -7,6 +7,7 @@ describe IEX::Resources::CashFlow do
     subject do
       client.cash_flow('MSFT')
     end
+
     let(:cash_flow) { subject.first }
 
     it 'fetches cash flow statement' do

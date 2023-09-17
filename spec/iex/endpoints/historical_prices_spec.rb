@@ -11,6 +11,7 @@ describe IEX::Resources::HistorialPrices do
         subject do
           client.historical_prices('MSFT')
         end
+
         let(:historical_price) { subject.first }
 
         it 'retrieves historical prices' do
@@ -45,6 +46,7 @@ describe IEX::Resources::HistorialPrices do
 
       context 'with a valid range provided', vcr: { cassette_name: 'historical_prices/msft_5d' } do
         subject { client.historical_prices('MSFT', range: '5d') }
+
         let(:historical_price) { subject.last }
 
         it 'retrieves historical prices' do
@@ -81,6 +83,7 @@ describe IEX::Resources::HistorialPrices do
               vcr: { cassette_name: 'historical_prices/msft_date_and_chart_by_day' } do
         options = { range: 'date', date: Date.parse('2020-11-10'), chartByDay: 'true' }
         subject { client.historical_prices('MSFT', options) }
+
         let(:historical_price) { subject.first }
 
         it 'retrieves historical prices' do
@@ -117,6 +120,7 @@ describe IEX::Resources::HistorialPrices do
               vcr: { cassette_name: 'historical_prices/msft_date_and_chart_by_day' } do
         options = { range: 'date', date: '20201110', chartByDay: 'true' }
         subject { client.historical_prices('MSFT', options) }
+
         let(:historical_price) { subject.first }
 
         it 'retrieves historical prices' do
@@ -190,6 +194,7 @@ describe IEX::Resources::HistorialPrices do
     subject do
       client.historical_prices('abcd')
     end
+
     it 'returns empty array' do
       expect(subject).to eq []
     end
@@ -199,6 +204,7 @@ describe IEX::Resources::HistorialPrices do
     subject do
       client.historical_prices('INVALID')
     end
+
     it 'fails with SymbolNotFoundError' do
       expect { subject }.to raise_error IEX::Errors::SymbolNotFoundError, 'Symbol INVALID Not Found'
     end

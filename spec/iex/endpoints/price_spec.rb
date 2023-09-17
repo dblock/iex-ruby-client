@@ -7,6 +7,7 @@ describe IEX::Api::Client do
     subject do
       client.price('MSFT')
     end
+
     it 'retrieves a price' do
       expect(subject).to eq 119.36
     end
@@ -16,6 +17,7 @@ describe IEX::Api::Client do
     subject do
       client.price('INVALID')
     end
+
     it 'fails with SymbolNotFoundError' do
       expect { subject }.to raise_error IEX::Errors::SymbolNotFoundError, 'Symbol INVALID Not Found'
     end

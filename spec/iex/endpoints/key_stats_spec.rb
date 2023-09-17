@@ -7,6 +7,7 @@ describe IEX::Resources::KeyStats do
     subject do
       client.key_stats('MSFT')
     end
+
     it 'retrieves a keyStats' do
       expect(subject.company_name).to eq 'Microsoft Corp.'
       expect(subject.market_cap).to eq 990_869_169_557

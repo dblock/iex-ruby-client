@@ -1,4 +1,5 @@
 ### 2.1.1 (Next)
+* [#121](https://github.com/dblock/iex-ruby-client/pull/121): Upgraded rubocop to 1.12 - [@dblock](https://github.com/dblock).
 * Your contribution here.
 
 ### 2.1.0 (2023-09-17)

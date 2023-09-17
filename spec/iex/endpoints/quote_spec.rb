@@ -6,11 +6,13 @@ describe IEX::Resources::Quote do
     subject do
       client.quote('MSFT')
     end
+
     it 'retrieves a quote' do
       expect(subject.symbol).to eq 'MSFT'
       expect(subject.company_name).to eq 'Microsoft Corp.'
       expect(subject.market_cap).to eq 915_754_985_600
     end
+
     it 'coerces numbers' do
       expect(subject.latest_price).to eq 119.36
       expect(subject.change).to eq(-0.61)
@@ -21,6 +23,7 @@ describe IEX::Resources::Quote do
       expect(subject.extended_change_percent).to eq(-0.00008)
       expect(subject.extended_change_percent_s).to eq '-0.01%'
     end
+
     it 'coerces times' do
       expect(subject.latest_update).to eq 1_554_408_000_193
       expect(subject.latest_update_t).to eq Time.at(1_554_408_000)
@@ -33,6 +36,7 @@ describe IEX::Resources::Quote do
     subject do
       client.quote('INVALID')
     end
+
     it 'fails with SymbolNotFoundError' do
       expect { subject }.to raise_error IEX::Errors::SymbolNotFoundError, 'Symbol INVALID Not Found'
     end

@@ -1,8 +1,7 @@
 module IEX
   module Errors
     class SymbolNotFoundError < StandardError
-      attr_reader :symbol
-      attr_reader :response
+      attr_reader :symbol, :response
 
       def initialize(symbol, response)
         @response = response

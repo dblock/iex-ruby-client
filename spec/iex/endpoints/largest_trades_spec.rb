@@ -7,6 +7,7 @@ describe IEX::Resources::LargestTrades do
     subject do
       client.largest_trades('aapl')
     end
+
     it 'retrieve largest trades' do
       expect(subject.first.size).to eq 18_400
       expect(subject.first.price).to eq 195.82
@@ -21,6 +22,7 @@ describe IEX::Resources::LargestTrades do
     subject do
       client.largest_trades('INVALID')
     end
+
     it 'fails with SymbolNotFoundError' do
       expect { subject }.to raise_error IEX::Errors::SymbolNotFoundError, 'Symbol INVALID Not Found'
     end

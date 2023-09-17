@@ -7,6 +7,7 @@ describe IEX::Endpoints::FX do
     subject do
       client.fx_latest('USDCAD')
     end
+
     it 'retrieves a list of CurrencyRates' do
       expect(subject.length).to eq 1
 
@@ -20,6 +21,7 @@ describe IEX::Endpoints::FX do
     subject do
       client.fx_latest(%w[USDCAD USDGBP USDJPY])
     end
+
     it 'retrieves a list of CurrencyRates' do
       expect(subject.length).to eq 3
 
@@ -41,6 +43,7 @@ describe IEX::Endpoints::FX do
     subject do
       client.fx_latest(%w[INVALID])
     end
+
     it 'fails with InvalidSymbolsList' do
       expect { subject }.to raise_error IEX::Errors::InvalidSymbolsList, 'Invalid symbol list: INVALID'
     end

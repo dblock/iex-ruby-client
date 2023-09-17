@@ -31,10 +31,10 @@ describe IEX::Endpoints::KeyStat do
 
     it 'keeps the API response so it can be used if caught' do
       response = begin
-                   subject
-                 rescue IEX::Errors::StatNotFoundError => e
-                   e.response
-                 end
+        subject
+      rescue IEX::Errors::StatNotFoundError => e
+        e.response
+      end
 
       expect(response).to be_a(Hash)
       expect(response).to have_key(stat)
