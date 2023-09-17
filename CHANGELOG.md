@@ -1,6 +1,5 @@
-### 2.0.1 (Next)
+### 2.1.0 (2023-09-17)
 * [#120](https://github.com/dblock/iex-ruby-client/pull/120): Upgrade faraday to 2.7.10 - [@esarmstrong](https://github.com/esarmstrong).
-* Your contribution here.
 
 ### 2.0.0 (2022/07/24)
 * [#111](https://github.com/dblock/iex-ruby-client/pull/111): Added support for fetching symbols for a region - [@mathu97](https://github.com/mathu97).
